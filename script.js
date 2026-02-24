@@ -1,5 +1,8 @@
 let teamSort = { key: null, asc: true };
 let playerSort = { key: null, asc: true };
+let heroSort = { key: null, asc: true };
+let heroPoolSort = { key: null, asc: true };
+let playerPoolsSort = { key: null, asc: true };
 
 const laneOrder = {
   "Gold Laner": 1,
@@ -22,6 +25,140 @@ const teamLogos = {
   "GAMESMY Kelantan": "https://i.imgur.com/ZEzKnRQ.png"
 };
 
+const constHero = {
+"Arlott": "https://i.imgur.com/4WJhGhe.png",
+"Nolan": "https://i.imgur.com/uRSvNxF.png",
+"Uranus": "https://i.imgur.com/yzhv75N.png",
+"Atlas": "https://i.imgur.com/lw8CROi.png",
+"Harith": "https://i.imgur.com/pYfO3Ad.png",
+"Novaria": "https://i.imgur.com/Cm315Fh.png",
+"Eudora": "https://i.imgur.com/Wprn5cR.png",
+"Zhuxin": "https://i.imgur.com/vVCqM7G.png",
+"Roger": "https://i.imgur.com/sjTQXJx.png",
+"Paquito": "https://i.imgur.com/hIprPnH.png",
+"Aurora": "https://i.imgur.com/9ueDYjh.png",
+"Khaleed": "https://i.imgur.com/KBW0271.png",
+"Hylos": "https://i.imgur.com/qtxxjAW.png",
+"Zetian": "https://i.imgur.com/vix1Y27.png",
+"Lesley": "https://i.imgur.com/sxSVgvF.png",
+"Barats": "https://i.imgur.com/CsH4l0T.png",
+"Popol": "https://i.imgur.com/OcC9vi3.png",
+"Miya": "https://i.imgur.com/3sy6waG.png",
+"Vale": "https://i.imgur.com/ByD9eS2.png",
+"Edith": "https://i.imgur.com/BqBs6GU.png",
+"Carmilla": "https://i.imgur.com/Ay77L1Z.png",
+"Vexana": "https://i.imgur.com/JWUIIl5.png",
+"Minotaur": "https://i.imgur.com/D6DrwXq.png",
+"Thamuz": "https://i.imgur.com/4KaYInZ.png",
+"Fredrinn": "https://i.imgur.com/Rsqas4g.png",
+"Kimmy": "https://i.imgur.com/riUISJC.png",
+"Yi Sun-Shin": "https://i.imgur.com/kwmYzNo.png",
+"Suyou": "https://i.imgur.com/FCIZSjo.png",
+"Jawhead": "https://i.imgur.com/ISvF7lo.png",
+"Julian": "https://i.imgur.com/btioHRZ.png",
+"Lukas": "https://i.imgur.com/8DCwMKp.png",
+"Karina": "https://i.imgur.com/VeIQntc.png",
+"Sora": "https://i.imgur.com/jNVZFrQ.png",
+"Badang": "https://i.imgur.com/BonOUbR.png",
+"Chang'e": "https://i.imgur.com/TfWvNTW.png",
+"Karrie": "https://i.imgur.com/Sheuj97.png",
+"Faramis": "https://i.imgur.com/1hxgE8E.png",
+"Tigreal": "https://i.imgur.com/ljB1xBX.png",
+"Cici": "https://i.imgur.com/waCNa9t.png",
+"Harley": "https://i.imgur.com/ut4hs4J.png",
+"Xavier": "https://i.imgur.com/Jb3iVre.png",
+"Floryn": "https://i.imgur.com/td7Seet.png",
+"Grock": "https://i.imgur.com/HBV9wlc.png",
+"Selena": "https://i.imgur.com/BHBYJ2A.png",
+"Aulus": "https://i.imgur.com/AzTuOL9.png",
+"Lolita": "https://i.imgur.com/djzz8lz.png",
+"Lylia": "https://i.imgur.com/K99yDUL.png",
+"Irithel": "https://i.imgur.com/rpkZinV.png",
+"Ruby": "https://i.imgur.com/wcW0oFc.png",
+"Khufra": "https://i.imgur.com/q3W71B0.png",
+"Kagura": "https://i.imgur.com/6ga1aEf.png",
+"Hayabusa": "https://i.imgur.com/0xpQnuP.png",
+"Natan": "https://i.imgur.com/ZPDkEou.png",
+"Bruno": "https://i.imgur.com/WZVRS07.png",
+"Lunox": "https://i.imgur.com/jw9Vu8p.png",
+"Joy": "https://i.imgur.com/FjIUlVb.png",
+"Gord": "https://i.imgur.com/jPRrDXW.png",
+"Phoveus": "https://i.imgur.com/447kSk9.png",
+"Balmond": "https://i.imgur.com/S0CgiAQ.png",
+"Leomord": "https://i.imgur.com/i0fb155.png",
+"Zilong": "https://i.imgur.com/flXkVx5.png",
+"Layla": "https://i.imgur.com/0gImcbn.png",
+"Masha": "https://i.imgur.com/7balUm2.png",
+"Odette": "https://i.imgur.com/Ih6wIUt.png",
+"Cyclops": "https://i.imgur.com/v8FvjBi.png",
+"Hanzo": "https://i.imgur.com/OGhLkkY.png",
+"Luoyi": "https://i.imgur.com/8baQPRw.png",
+"Valentina": "https://i.imgur.com/nVnhbCn.png",
+"Diggie": "https://i.imgur.com/wg1dGoO.png",
+"Yuzhong": "https://i.imgur.com/2nUwTwa.png",
+"Zhask": "https://i.imgur.com/Xrcq0gN.png",
+"Melissa": "https://i.imgur.com/teYdhsC.png",
+"Claude": "https://i.imgur.com/nz8vv59.png",
+"Akai": "https://i.imgur.com/WejZLnt.png",
+"Gusion": "https://i.imgur.com/VvqG2uH.png",
+"Bane": "https://i.imgur.com/FvBYCC5.png",
+"Chou": "https://i.imgur.com/NyczTOZ.png",
+"Hanabi": "https://i.imgur.com/FwdlSV1.png",
+"Chip": "https://i.imgur.com/PZxVfrJ.png",
+"Kaja": "https://i.imgur.com/8U56qO2.png",
+"Gloo": "https://i.imgur.com/L0zc7AY.png",
+"Fanny": "https://i.imgur.com/WIWR0Tt.png",
+"Obsidia": "https://i.imgur.com/bzro5dJ.png",
+"Yin": "https://i.imgur.com/aYQ6jJE.png",
+"Martis": "https://i.imgur.com/fMVTk0g.png",
+"Johnson": "https://i.imgur.com/EoE2ItZ.png",
+"Kalea": "https://i.imgur.com/YklbOOo.png",
+"Moskov": "https://i.imgur.com/iWMBRK4.png",
+"Granger": "https://i.imgur.com/muQish4.png",
+"Guinevere": "https://i.imgur.com/fxmH978.png",
+"Estes": "https://i.imgur.com/MqQwtGj.png",
+"Angela": "https://i.imgur.com/vAswQYM.png",
+"Lancelot": "https://i.imgur.com/sokqbAa.png",
+"Baxia": "https://i.imgur.com/IKa93wE.png",
+"Cecilion": "https://i.imgur.com/0moMfu8.png",
+"Saber": "https://i.imgur.com/T3BIG6j.png",
+"Lapu-Lapu": "https://i.imgur.com/NlOxl6l.png",
+"Freya": "https://i.imgur.com/W1fZET1.png",
+"Dyrroth": "https://i.imgur.com/s7fMChq.png",
+"Wanwan": "https://i.imgur.com/KbtrVJO.png",
+"Beatrix": "https://i.imgur.com/zTwq5Ky.png",
+"Aldous": "https://i.imgur.com/VXhKPWh.png",
+"Mathilda": "https://i.imgur.com/yTlMj1Z.png",
+"Ixia": "https://i.imgur.com/8MBmZB5.png",
+"Belerick": "https://i.imgur.com/y7JIAR8.png",
+"Aamon": "https://i.imgur.com/c00MQpK.png",
+"Xborg": "https://i.imgur.com/9kUt0UM.png",
+"Pharsa": "https://i.imgur.com/hptVtVX.png",
+"Valir": "https://i.imgur.com/hm7AT3g.png",
+"Nana": "https://i.imgur.com/8iYA0mD.png",
+"Alpha": "https://i.imgur.com/q51CUri.png",
+"Yve": "https://i.imgur.com/O0ojzAG.png",
+"Franco": "https://i.imgur.com/xVhY8cR.png",
+"Kadita": "https://i.imgur.com/dOaM8DZ.png",
+"Minsitthar": "https://i.imgur.com/LYb89tF.png",
+"Brody": "https://i.imgur.com/BRzmcCz.png",
+"Alucard": "https://i.imgur.com/3CnEK0O.png",
+"Gatotkaca": "https://i.imgur.com/4nHDoNr.png",
+"Sun": "https://i.imgur.com/zS4kDSi.png",
+"Alice": "https://i.imgur.com/7C43cD1.png",
+"Benedetta": "https://i.imgur.com/fotdI4V.png",
+"Natalia": "https://i.imgur.com/cIKLxiv.png",
+"Hilda": "https://i.imgur.com/u5I8Zpn.png",
+"Argus": "https://i.imgur.com/H0SvFsP.png",
+"Rafaela": "https://i.imgur.com/kGmWjYj.png",
+"Esmeralda": "https://i.imgur.com/rB09HDl.png",
+"Terizla": "https://i.imgur.com/LnwD5CM.png",
+"Silvanna": "https://i.imgur.com/KM2w9j1.png",
+"Clint": "https://i.imgur.com/7FypXeP.png"
+
+
+}
+
 // MPL MY S16 matches array
 let matches = [
   { //week 1 saturday match 1 (MV 2-0 VMS)
@@ -30,6 +167,7 @@ let matches = [
     games: [
       { //game 1
         winner: "Monster Vicious",
+        bans: ["Cici","Phoveus","Baxia","Ruby","Esmeralda","Fanny","Wanwan", "Lancelot","Zhuxin", "Pharsa"],
         players: [
           // Monster Vicious Players
           { name: "Rough", team: "Monster Vicious", lane: "Gold Laner", hero: "Harith", kills: 3, deaths: 0, assists: 7, picture: "https://i.imgur.com/scpwgUa.png" },
@@ -52,6 +190,7 @@ let matches = [
       },
       { //game 2
         winner: "Monster Vicious",
+        bans: ["Cici","Kimmy","Baxia","Ruby","Uranus","Fanny","Wanwan", "Kalea","Chou", "Yve"],
         players: [
           // Monster Vicious Players
           { name: "Rough", team: "Monster Vicious", lane: "Gold Laner", hero: "Esmeralda", kills: 4, deaths: 0, assists: 8, picture: "https://i.imgur.com/scpwgUa.png" },
@@ -80,6 +219,7 @@ let matches = [
         games: [
             { //game 1
         winner: "Untitled",
+        bans: ["Fredrinn","Arlott","Baxia","Yi Sun-Shin","Gatotkaca","Fanny","Wanwan", "Lancelot","Grock", "Uranus"],
         players: [
           // AERO Esports Players
           { name: "Kusey", team: "AERO Esports", lane: "Gold Laner", hero: "Harith", kills: 1, deaths: 2, assists: 0, picture: "https://i.imgur.com/413R26Z.png" },
@@ -102,6 +242,7 @@ let matches = [
       },
             { //game 2
         winner: "Untitled",
+        bans: ["Chou","Arlott","Baxia","Yi Sun-Shin","Joy","Fanny","Wanwan", "Lancelot","Hayabusa", "Benedetta"],
         players: [
           // AERO Esports Players
           { name: "Kusey", team: "AERO Esports", lane: "Gold Laner", hero: "Claude", kills: 2, deaths: 4, assists: 7, picture: "https://i.imgur.com/413R26Z.png" },
@@ -112,7 +253,7 @@ let matches = [
 
           // Untitled Players
           { name: "Skyzed", team: "Untitled", lane: "Gold Laner", hero: "Granger", kills: 14, deaths: 0, assists: 6, picture: "https://i.imgur.com/02b5lub.png" },
-          { name: "Keymin", team: "Untitled", lane: "Jungler", hero: "Fredrinna", kills: 3, deaths: 5, assists: 14, picture: "https://i.imgur.com/cVEas3K.png" },
+          { name: "Keymin", team: "Untitled", lane: "Jungler", hero: "Fredrinn", kills: 3, deaths: 5, assists: 14, picture: "https://i.imgur.com/cVEas3K.png" },
           { name: "Stowm", team: "Untitled", lane: "Midlaner", hero: "Zhuxin", kills: 4, deaths: 2, assists: 17, picture: "https://i.imgur.com/cOtDg24.png" },
           { name: "Sizkaa", team: "Untitled", lane: "Exp Laner", hero: "Masha", kills: 4, deaths: 3, assists: 8, picture: "https://i.imgur.com/CgldSAq.png" },
           { name: "Rasy", team: "Untitled", lane: "Roamer", hero: "Chip", kills: 0, deaths: 6, assists: 17, picture: "https://i.imgur.com/3xz28tZ.png"}
@@ -129,6 +270,7 @@ let matches = [
                 games: [
             { //game 1
         winner: "Selangor Red Giants",
+        bans: ["Fredrinn","Arlott","Baxia","Cici","Gloo","Pharsa","Wanwan", "Lancelot","Kalea", "Zhuxin"],
         players: [
           // Selangor Red Giants Players
           { name: "Innocent", team: "Selangor Red Giants", lane: "Gold Laner", hero: "Ruby", kills: 3, deaths: 2, assists: 8, picture: "https://i.imgur.com/SHdZx30.png" },
@@ -152,6 +294,7 @@ let matches = [
     
             { //game 2
         winner: "Homebois",
+        bans: ["Valentina","Lunox","Baxia","Harith","Esmeralda","Fanny","Wanwan", "Cici","Grock", "Zhuxin"],
         players: [
           // Selangor Red Giants Players
           { name: "Innocent", team: "Selangor Red Giants", lane: "Gold Laner", hero: "Lapu-Lapu", kills: 2, deaths: 3, assists: 2, picture: "https://i.imgur.com/SHdZx30.png" },
@@ -174,6 +317,7 @@ let matches = [
       },
             { //game 3
         winner: "Selangor Red Giants",
+        bans: ["Fredrinn","Arlott","Zhuxin","Selena","Luoyi","Fanny","Wanwan", "Cici","Grock", "Kalea"],
         players: [
                 // Selangor Red Giants Players
           { name: "Innocent", team: "Selangor Red Giants", lane: "Gold Laner", hero: "Ruby", kills: 3, deaths: 2, assists: 8, picture: "https://i.imgur.com/SHdZx30.png" },
@@ -201,6 +345,7 @@ let matches = [
                 games: [
             { //game 1
         winner: "Team Rey",
+        bans: ["Lancelot","Fanny","Zhuxin","Chip","Valentina","Cici","Kalea", "Arlott","Akai", "Hayabusa"],
         players: [
           // Team Rey Players
           { name: "Jowm", team: "Team Rey", lane: "Gold Laner", hero: "Moskov", kills: 8, deaths: 1, assists: 6, picture: "https://i.imgur.com/vVtCp4S.png" },
@@ -223,6 +368,7 @@ let matches = [
       },
             { //game 2
         winner: "Team Rey",
+        bans: ["Lancelot","Fanny","Wanwan","Ruby","Harith","Cici","Arlott", "Pharsa","Kalea", "Kimmy"],
         players: [
           // Team Rey Players
           { name: "Jowm", team: "Team Rey", lane: "Gold Laner", hero: "Moskov", kills: 1, deaths: 0, assists: 5, picture: "https://i.imgur.com/vVtCp4S.png" },
@@ -250,6 +396,7 @@ let matches = [
                 games: [
             { //game 1
         winner: "CG Esports",
+        bans: ["Phoveus","Arlott","Hayabusa","Moskov","Granger","Wanwan","Lancelot", "Pharsa","Lapu-Lapu", "Kadita"],
         players: [
           // CG Esports Players
           { name: "Amzziq", team: "CG Esports", lane: "Gold Laner", hero: "Harith", kills: 5, deaths: 1, assists: 3, picture: "https://i.imgur.com/wguX967.png" },
@@ -273,6 +420,7 @@ let matches = [
     
             { //game 2
         winner: "CG Esports",
+        bans: ["Wanwan","Arlott","Baxia","Grock","Moskov","Fanny","Cici", "Kimmy","Ruby", "Pharsa"],
         players: [
           // CG Esports Players
           { name: "Amzziq", team: "CG Esports", lane: "Gold Laner", hero: "Granger", kills: 4, deaths: 0, assists: 6, picture: "https://i.imgur.com/wguX967.png" },
@@ -300,6 +448,7 @@ let matches = [
                 games: [
             { //game 1
         winner: "Team Vamos",
+        bans: ["Baxia","Wanwan","Fanny","Esmeralda","Phoveus","Cici","Zhuxin", "Harith","Beatrix", "Luoyi"],
         players: [
           // Team Vamos Players
           // Team Vamos Players
@@ -323,6 +472,7 @@ let matches = [
       },
             { //game 2
         winner: "Team Vamos",
+        bans: ["Fanny","Zhuxin","Baxia","Kagura","Valentina","Cici","Yi Sun-Shin", "Wanwan","Phoveus", "Arlott"],
         players: [
           // Team Vamos Players
           { name: "Natco", team: "Team Vamos", lane: "Gold Laner", hero: "Granger", kills: 6, deaths: 0, assists: 6, picture: "https://i.imgur.com/48b6SmK.png" },
@@ -352,23 +502,60 @@ function calculateTeamStats() {
   let teamStats = {};
   for (let match of matches) {
     let teamAGameWins = 0, teamBGameWins = 0;
+
     for (let game of match.games) {
-      if (!teamStats[match.teamA]) teamStats[match.teamA] = { kills:0,deaths:0,assists:0,gamesPlayed:0,gameWins:0,matchesPlayed:0,matchWins:0 };
-      if (!teamStats[match.teamB]) teamStats[match.teamB] = { kills:0,deaths:0,assists:0,gamesPlayed:0,gameWins:0,matchesPlayed:0,matchWins:0 };
+      if (!teamStats[match.teamA]) {
+        teamStats[match.teamA] = {
+          kills:0,deaths:0,assists:0,
+          gamesPlayed:0,gameWins:0,
+          matchesPlayed:0,matchWins:0,
+          lord:0,turtle:0,tower:0
+        };
+      }
+      if (!teamStats[match.teamB]) {
+        teamStats[match.teamB] = {
+          kills:0,deaths:0,assists:0,
+          gamesPlayed:0,gameWins:0,
+          matchesPlayed:0,matchWins:0,
+          lord:0,turtle:0,tower:0
+        };
+      }
+
       if (game.winner === match.teamA) teamAGameWins++; else teamBGameWins++;
+
       for (let player of game.players) {
         let t = player.team;
         teamStats[t].kills += player.kills;
         teamStats[t].deaths += player.deaths;
         teamStats[t].assists += player.assists;
       }
+
+      // objectives totals (safe if missing)
+      if (game.objectives) {
+        const l = game.objectives.lord || {};
+        const tu = game.objectives.turtle || {};
+        const to = game.objectives.tower || {};
+
+        teamStats[match.teamA].lord += (l[match.teamA] || 0);
+        teamStats[match.teamB].lord += (l[match.teamB] || 0);
+
+        teamStats[match.teamA].turtle += (tu[match.teamA] || 0);
+        teamStats[match.teamB].turtle += (tu[match.teamB] || 0);
+
+        teamStats[match.teamA].tower += (to[match.teamA] || 0);
+        teamStats[match.teamB].tower += (to[match.teamB] || 0);
+      }
+
       teamStats[match.teamA].gamesPlayed++;
       teamStats[match.teamB].gamesPlayed++;
     }
+
     teamStats[match.teamA].gameWins += teamAGameWins;
     teamStats[match.teamB].gameWins += teamBGameWins;
+
     teamStats[match.teamA].matchesPlayed++;
     teamStats[match.teamB].matchesPlayed++;
+
     if (teamAGameWins > teamBGameWins) teamStats[match.teamA].matchWins++;
     else teamStats[match.teamB].matchWins++;
   }
@@ -405,8 +592,7 @@ function showTeams() {
 
   let arr = Object.keys(t).map(team => ({
     team,
-    ...t[team],
-    winRate: (t[team].matchWins / t[team].matchesPlayed) * 100
+    ...t[team]
   }));
 
   // SORTING
@@ -425,27 +611,26 @@ function showTeams() {
     });
   }
 
-function arrow(key) {
-  if (teamSort.key !== key) {
-    return ' <span style="opacity:0.4;">⇅</span>';
+  function arrow(key) {
+    if (teamSort.key !== key) {
+      return ' <span style="opacity:0.4;">⇅</span>';
+    }
+    return teamSort.asc
+      ? ' <span>▲</span>'
+      : ' <span>▼</span>';
   }
-  return teamSort.asc
-    ? ' <span>▲</span>'
-    : ' <span>▼</span>';
-}
 
   let html = `
   <table>
   <tr>
-    <th onclick="sortTeams('team')">Team${arrow('team')}</th>
-    <th onclick="sortTeams('matchesPlayed')">Matches${arrow('matchesPlayed')}</th>
-    <th onclick="sortTeams('matchWins')">Match Wins${arrow('matchWins')}</th>
-    <th onclick="sortTeams('gamesPlayed')">Games${arrow('gamesPlayed')}</th>
-    <th onclick="sortTeams('gameWins')">Game Wins${arrow('gameWins')}</th>
-    <th onclick="sortTeams('kills')">Kills${arrow('kills')}</th>
-    <th onclick="sortTeams('deaths')">Deaths${arrow('deaths')}</th>
-    <th onclick="sortTeams('assists')">Assists${arrow('assists')}</th>
-    <th onclick="sortTeams('winRate')">Win Rate${arrow('winRate')}</th>
+    <th onclick="sortTeams('team')">TEAM${arrow('team')}</th>
+    <th onclick="sortTeams('matchWins')">MATCHES WON${arrow('matchWins')}</th>
+    <th onclick="sortTeams('kills')">KILLS${arrow('kills')}</th>
+    <th onclick="sortTeams('deaths')">DEATHS${arrow('deaths')}</th>
+    <th onclick="sortTeams('assists')">ASSISTS${arrow('assists')}</th>
+    <th onclick="sortTeams('lord')">LORD${arrow('lord')}</th>
+    <th onclick="sortTeams('turtle')">TURTLE${arrow('turtle')}</th>
+    <th onclick="sortTeams('tower')">TOWER${arrow('tower')}</th>
   </tr>
   `;
 
@@ -456,14 +641,13 @@ function arrow(key) {
         <img src="${teamLogos[ts.team]}" width="50" height="50" style="border-radius:50%;">
         <span>${ts.team}</span>
       </td>
-      <td>${ts.matchesPlayed}</td>
       <td>${ts.matchWins}</td>
-      <td>${ts.gamesPlayed}</td>
-      <td>${ts.gameWins}</td>
       <td>${ts.kills}</td>
       <td>${ts.deaths}</td>
       <td>${ts.assists}</td>
-      <td>${ts.winRate.toFixed(1)}%</td>
+      <td>${ts.lord || 0}</td>
+      <td>${ts.turtle || 0}</td>
+      <td>${ts.tower || 0}</td>
     </tr>`;
   }
 
@@ -482,7 +666,7 @@ function sortTeams(key) {
 }
 
 function showPlayers() {
-
+  
   let p = calculatePlayerStats();
 
   const currentTeam = document.getElementById("teamFilter")?.value || "All";
@@ -553,9 +737,9 @@ function arrow(key) {
 }
   // ===== START HTML =====
   let html = `
-  <h2 style="text-align:center;">Top Players MPL MY S16</h2>
+  <h2 style="text-align:center;">TOP PLAYERS MPL MY S16</h2>
     <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-  <strong style="align-self:center;">Top 5 Kills:</strong>
+  <strong style="align-self:center;">TOP 5 KILLS:</strong>
   ${topKills.map(pl => `
     <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
       <img src="${pl.picture}" width="120" height="120" style="border-radius:50%;">
@@ -564,7 +748,7 @@ function arrow(key) {
   `).join('')}
 </div>
       <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-  <strong style="align-self:center;">Top 5 Assists:</strong>
+  <strong style="align-self:center;">TOP 5 ASSISTS:</strong>
   ${topAssists.map(pl => `
     <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
       <img src="${pl.picture}" width="120" height="120" style="border-radius:50%;">
@@ -573,7 +757,7 @@ function arrow(key) {
   `).join('')}
 </div>
       <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-  <strong style="align-self:center;">Top 5 KDA:</strong>
+  <strong style="align-self:center;">TOP 5 KDA:</strong>
   ${topKDA.map(pl => `
     <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
       <img src="${pl.picture}" width="120" height="120" style="border-radius:50%;">
@@ -584,17 +768,17 @@ function arrow(key) {
 
   <div style="margin-bottom:20px; display:flex; gap:20px; justify-content:center;">
     <div>
-      <label>Team: </label>
+      <label>TEAM: </label>
       <select id="teamFilter" onchange="showPlayers()">
-        <option value="All">All</option>
+        <option value="ALL TEAMS">ALL TEAMS</option>
         ${teams.map(t => `<option value="${t}" ${t === currentTeam ? "selected" : ""}>${t}</option>`).join("")}
       </select>
     </div>
 
     <div>
-      <label>Lane: </label>
+      <label>ROLE: </label>
       <select id="laneFilter" onchange="showPlayers()">
-        <option value="All">All</option>
+        <option value="ALL ROLES">ALL ROLES</option>
         ${lanes.map(l => `<option value="${l}" ${l === currentLane ? "selected" : ""}>${l}</option>`).join("")}
       </select>
     </div>
@@ -602,16 +786,16 @@ function arrow(key) {
 
   <table>
   <tr>
-    <th onclick="sortPlayers('name')">Player${arrow('name')}</th>
-    <th onclick="sortPlayers('team')">Team${arrow('team')}</th>
-    <th onclick="sortPlayers('lane')">Lane${arrow('lane')}</th>
-    <th onclick="sortPlayers('games')">Games${arrow('games')}</th>
-    <th onclick="sortPlayers('kills')">Kills${arrow('kills')}</th>
-    <th onclick="sortPlayers('avgK')">Avg Kills${arrow('avgK')}</th>
-    <th onclick="sortPlayers('deaths')">Deaths${arrow('deaths')}</th>
-    <th onclick="sortPlayers('avgD')">Avg Deaths${arrow('avgD')}</th>
-    <th onclick="sortPlayers('assists')">Assists${arrow('assists')}</th>
-    <th onclick="sortPlayers('avgA')">Avg Assists${arrow('avgA')}</th>
+    <th onclick="sortPlayers('name')">PLAYER${arrow('name')}</th>
+    <th onclick="sortPlayers('team')">TEAM${arrow('team')}</th>
+    <th onclick="sortPlayers('lane')">ROLE${arrow('lane')}</th>
+    <th onclick="sortPlayers('games')">GAMES${arrow('games')}</th>
+    <th onclick="sortPlayers('kills')">KILLS${arrow('kills')}</th>
+    <th onclick="sortPlayers('avgK')">AVG KILLS${arrow('avgK')}</th>
+    <th onclick="sortPlayers('deaths')">DEATHS${arrow('deaths')}</th>
+    <th onclick="sortPlayers('avgD')">AVG DEATHS${arrow('avgD')}</th>
+    <th onclick="sortPlayers('assists')">ASSISTS${arrow('assists')}</th>
+    <th onclick="sortPlayers('avgA')">AVG ASSISTS${arrow('avgA')}</th>
     <th onclick="sortPlayers('kda')">KDA${arrow('kda')}</th>
     <th onclick="sortPlayers('kp')">KP%${arrow('kp')}</th>
   </tr>
@@ -682,3 +866,585 @@ function showTopPlayers(category) {
   html += "</div>";
   document.getElementById("output").innerHTML = html;
 }
+
+function calculateHeroStats() {
+  let heroStats = {};
+
+  let totalPicks = 0;
+  let totalGames = 0;
+
+  for (let match of matches) {
+    for (let game of match.games) {
+      totalGames++;
+
+      // PICKS + WINS from players
+      for (let player of game.players) {
+        const h = player.hero;
+        if (!heroStats[h]) heroStats[h] = { hero: h, pick: 0, ban: 0, win: 0 };
+        heroStats[h].pick++;
+        totalPicks++;
+
+        if (player.team === game.winner) {
+          heroStats[h].win++;
+        }
+      }
+
+      // BANS (count ONCE per game per hero)
+      if (Array.isArray(game.bans)) {
+        const uniqueBans = new Set(game.bans);
+        for (let b of uniqueBans) {
+          if (!heroStats[b]) heroStats[b] = { hero: b, pick: 0, ban: 0, win: 0 };
+          heroStats[b].ban++; // = number of games banned
+        }
+      }
+    }
+  }
+
+  // Build final array with rates
+  let arr = Object.keys(heroStats).map(h => {
+    const hs = heroStats[h];
+    const winRate = hs.pick ? (hs.win / hs.pick) * 100 : 0;
+    const pickRate = totalPicks ? (hs.pick / totalPicks) * 100 : 0;
+
+    // ✅ ban rate by games (this is what you want)
+    const banRate = totalGames ? (hs.ban / totalGames) * 100 : 0;
+
+    return {
+      hero: hs.hero,
+      pick: hs.pick,
+      pickRate,
+      ban: hs.ban,
+      banRate,
+      winRate,
+      img: constHero[hs.hero] || ""
+    };
+  });
+
+  return arr;
+}
+
+function showHeroes() {
+  
+  let arr = calculateHeroStats();
+
+  // Top 5 Pick
+  let topPick = [...arr].sort((a,b) => b.pick - a.pick).slice(0,5);
+
+  // Top 5 Ban
+  let topBan = [...arr].sort((a,b) => b.ban - a.ban).slice(0,5);
+
+  // Top 5 Winrate (min 5 picks)
+  let topWin = arr
+    .filter(h => h.pick >= 5)
+    .sort((a,b) => b.winRate - a.winRate)
+    .slice(0,5);
+
+  // SORT table
+  if (heroSort.key) {
+    arr.sort((a, b) => {
+      let valA = a[heroSort.key];
+      let valB = b[heroSort.key];
+
+      if (typeof valA === "string") {
+        return heroSort.asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+      }
+      return heroSort.asc ? valA - valB : valB - valA;
+    });
+  }
+
+  function arrow(key) {
+    if (heroSort.key !== key) return ' <span style="opacity:0.4;">⇅</span>';
+    return heroSort.asc ? ' <span>▲</span>' : ' <span>▼</span>';
+  }
+
+  let html = `
+    <h2 style="text-align:center;">HERO STATS MPL MY S16</h2>
+
+    <div style="margin-bottom:14px; display:flex; justify-content:center; align-items:flex-start; gap:30px; flex-wrap:wrap;">
+
+      <div style="text-align:center;">
+        <strong>TOP 5 PICK</strong>
+        <div style="display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap;">
+          ${topPick.map(h => `
+            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:6px;">
+              <img src="${h.img}" width="80" height="80" style="border-radius:12px;">
+              ${h.hero} (${h.pick})
+            </span>
+          `).join("")}
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <strong>TOP 5 BAN</strong>
+        <div style="display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap;">
+          ${topBan.map(h => `
+            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:6px;">
+              <img src="${h.img}" width="80" height="80" style="border-radius:12px;">
+              ${h.hero} (${h.ban})
+            </span>
+          `).join("")}
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <strong>TOP 5 WINRATE % (MIN 5 GAMES PLAYED)</strong>
+        <div style="display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap;">
+          ${topWin.map(h => `
+            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:6px;">
+              <img src="${h.img}" width="80" height="80" style="border-radius:12px;">
+              ${h.hero} (${h.winRate.toFixed(1)}%)
+            </span>
+          `).join("")}
+        </div>
+      </div>
+
+    </div>
+
+    <table>
+      <tr>
+        <th onclick="sortHeroes('hero')">HERO${arrow('hero')}</th>
+        <th onclick="sortHeroes('pick')">PICK${arrow('pick')}</th>
+        <th onclick="sortHeroes('pickRate')">PICK RATE${arrow('pickRate')}</th>
+        <th onclick="sortHeroes('ban')">BAN${arrow('ban')}</th>
+        <th onclick="sortHeroes('banRate')">BAN RATE${arrow('banRate')}</th>
+        <th onclick="sortHeroes('winRate')">WIN RATE${arrow('winRate')}</th>
+      </tr>
+  `;
+
+  for (let h of arr) {
+    html += `
+      <tr>
+        <td style="display:flex; align-items:center; gap:10px;">
+          <img src="${h.img}" width="55" height="55" style="border-radius:12px;">
+          <span>${h.hero}</span>
+        </td>
+        <td>${h.pick}</td>
+        <td>${h.pickRate.toFixed(1)}%</td>
+        <td>${h.ban}</td>
+        <td>${h.banRate.toFixed(1)}%</td>
+        <td>${h.winRate.toFixed(1)}%</td>
+      </tr>
+    `;
+  }
+
+  html += `</table>`;
+  document.getElementById("output").innerHTML = html;
+}
+
+function sortHeroes(key) {
+  if (heroSort.key === key) {
+    heroSort.asc = !heroSort.asc;
+  } else {
+    heroSort.key = key;
+    heroSort.asc = true;
+  }
+  showHeroes();
+}
+
+function calculateHeroPoolStats() {
+  let pool = {};
+
+  for (let match of matches) {
+    for (let game of match.games) {
+      for (let player of game.players) {
+        if (!pool[player.name]) {
+          pool[player.name] = {
+            name: player.name,
+            team: player.team,
+            lane: player.lane,
+            picture: player.picture,
+            heroes: {} // heroName -> { games:0, wins:0 }
+          };
+        }
+
+        const ps = pool[player.name];
+        const heroName = player.hero;
+
+        if (!ps.heroes[heroName]) ps.heroes[heroName] = { games: 0, wins: 0 };
+
+        ps.heroes[heroName].games++;
+        if (player.team === game.winner) ps.heroes[heroName].wins++;
+      }
+    }
+  }
+
+  return pool;
+}
+
+function showHeroPool() {
+  
+  const pool = calculateHeroPoolStats();
+
+  let arr = Object.keys(pool).map(name => {
+    const ps = pool[name];
+    const uniqueHeroes = Object.keys(ps.heroes).length;
+
+    // Build heroes list (sorted by games desc)
+    const heroList = Object.keys(ps.heroes)
+      .map(h => ({
+        hero: h,
+        games: ps.heroes[h].games,
+        winRate: ps.heroes[h].games ? (ps.heroes[h].wins / ps.heroes[h].games) * 100 : 0,
+        img: constHero[h] || ""
+      }))
+      .sort((a,b) => b.games - a.games);
+
+    return {
+      name: ps.name,
+      team: ps.team,
+      lane: ps.lane,
+      picture: ps.picture,
+      totalHeroes: uniqueHeroes,
+      heroesPlayed: heroList
+    };
+  });
+
+  // Keep current filter values (same behavior as your players tab)
+  const currentTeam = document.getElementById("hpTeamFilter")?.value || "All";
+  const currentLane = document.getElementById("hpLaneFilter")?.value || "All";
+
+  // Build filter lists
+  const teams = [...new Set(arr.map(p => p.team))];
+  const lanes = [...new Set(arr.map(p => p.lane))];
+
+  // Apply filters
+  arr = arr.filter(ps => {
+    const teamMatch = currentTeam === "All" || ps.team === currentTeam;
+    const laneMatch = currentLane === "All" || ps.lane === currentLane;
+    return teamMatch && laneMatch;
+  });
+
+  // Sort
+  if (heroPoolSort.key) {
+    arr.sort((a, b) => {
+      let valA = a[heroPoolSort.key];
+      let valB = b[heroPoolSort.key];
+
+      if (heroPoolSort.key === "lane") {
+        return heroPoolSort.asc
+          ? laneOrder[a.lane] - laneOrder[b.lane]
+          : laneOrder[b.lane] - laneOrder[a.lane];
+      }
+
+      if (typeof valA === "string") {
+        return heroPoolSort.asc
+          ? valA.localeCompare(valB)
+          : valB.localeCompare(valA);
+      }
+
+      return heroPoolSort.asc ? valA - valB : valB - valA;
+    });
+  }
+
+  function arrow(key) {
+    if (heroPoolSort.key !== key) return ' <span style="opacity:0.4;">⇅</span>';
+    return heroPoolSort.asc ? ' <span>▲</span>' : ' <span>▼</span>';
+  }
+
+  // Render
+  let html = `
+    <h2 style="text-align:center;">HERO POOL MPL MY S16</h2>
+
+    <div style="margin-bottom:20px; display:flex; gap:20px; justify-content:center;">
+      <div>
+        <label>TEAM: </label>
+        <select id="hpTeamFilter" onchange="showHeroPool()">
+          <option value="ALL TEAMS">ALL TEAMS</option>
+          ${teams.map(t => `<option value="${t}" ${t === currentTeam ? "selected" : ""}>${t}</option>`).join("")}
+        </select>
+      </div>
+
+      <div>
+        <label>ROLE: </label>
+        <select id="hpLaneFilter" onchange="showHeroPool()">
+          <option value="ALL ROLES">ALL ROLES</option>
+          ${lanes.map(l => `<option value="${l}" ${l === currentLane ? "selected" : ""}>${l}</option>`).join("")}
+        </select>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th onclick="sortHeroPool('name')">PLAYER${arrow('name')}</th>
+        <th onclick="sortHeroPool('team')">TEAM${arrow('team')}</th>
+        <th onclick="sortHeroPool('lane')">ROLE${arrow('lane')}</th>
+        <th onclick="sortHeroPool('totalHeroes')">TOTAL HEROES${arrow('totalHeroes')}</th>
+        <th>HEROES PLAYED (GAMES - WINRATE %)</th>
+      </tr>
+  `;
+
+  for (let ps of arr) {
+    const heroesHTML = ps.heroesPlayed.map(h => `
+      <span style="display:inline-flex; align-items:center; gap:6px; margin:3px 10px 3px 0;">
+        <img
+          src="${h.img}"
+          width="45"
+          height="45"
+          style="border-radius:50%; object-fit:cover; border:2px solid #fff;"
+        >
+        <span>${h.games} - ${h.winRate.toFixed(0)}%</span>
+      </span>
+    `).join("");
+
+    html += `
+      <tr>
+        <td style="display:flex; align-items:center; gap:12px;">
+          <img src="${ps.picture}" width="70" height="70" style="border-radius:50%;">
+          <span>${ps.name}</span>
+        </td>
+
+        <td style="vertical-align:middle;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <img src="${teamLogos[ps.team]}" width="45" height="45" style="border-radius:50%;">
+            <span>${ps.team}</span>
+          </div>
+        </td>
+
+        <td>${ps.lane}</td>
+        <td>${ps.totalHeroes}</td>
+        <td style="text-align:left; max-width:650px;">${heroesHTML}</td>
+      </tr>
+    `;
+  }
+
+  html += `</table>`;
+  document.getElementById("output").innerHTML = html;
+}
+
+function sortHeroPool(key) {
+  
+  if (heroPoolSort.key === key) {
+    heroPoolSort.asc = !heroPoolSort.asc;
+  } else {
+    heroPoolSort.key = key;
+    heroPoolSort.asc = true;
+  }
+  showHeroPool();
+}
+
+function calculatePlayerPoolsStats() {
+  let pools = {};
+
+  for (let match of matches) {
+    for (let game of match.games) {
+      for (let player of game.players) {
+        const heroName = player.hero;
+
+        if (!pools[heroName]) {
+          pools[heroName] = {
+            hero: heroName,
+            players: {} // playerName -> { games:0, wins:0, lane, team, picture }
+          };
+        }
+
+        const hs = pools[heroName];
+
+        if (!hs.players[player.name]) {
+          hs.players[player.name] = {
+            name: player.name,
+            team: player.team,
+            lane: player.lane,
+            picture: player.picture,
+            games: 0,
+            wins: 0
+          };
+        }
+
+        hs.players[player.name].games++;
+        if (player.team === game.winner) hs.players[player.name].wins++;
+      }
+    }
+  }
+
+  return pools;
+}
+
+function showPlayerPools() {
+  const pools = calculatePlayerPoolsStats();
+
+  let arr = Object.keys(pools).map(heroName => {
+    const hs = pools[heroName];
+
+    const playerList = Object.keys(hs.players)
+      .map(pn => {
+        const p = hs.players[pn];
+        return {
+          name: p.name,
+          team: p.team,
+          lane: p.lane,
+          picture: p.picture,
+          games: p.games,
+          winRate: p.games ? (p.wins / p.games) * 100 : 0
+        };
+      })
+      .sort((a,b) => b.games - a.games);
+
+    return {
+      hero: heroName,
+      img: constHero[heroName] || "",
+      totalPlayers: playerList.length,
+      playersPlayed: playerList
+    };
+  });
+
+  // ===== Filters (Team + Lane) =====
+  const currentTeam = document.getElementById("ppTeamFilter")?.value || "All";
+  const currentLane = document.getElementById("ppLaneFilter")?.value || "All";
+
+  // Build filter options from all player entries
+  const allPlayers = arr.flatMap(h => h.playersPlayed);
+  const teams = [...new Set(allPlayers.map(p => p.team))];
+  const lanes = [...new Set(allPlayers.map(p => p.lane))];
+
+  // Apply filters:
+  // Keep hero rows where at least one player entry matches
+  arr = arr
+    .map(h => {
+      const filteredPlayers = h.playersPlayed.filter(p => {
+        const teamMatch = currentTeam === "All" || p.team === currentTeam;
+        const laneMatch = currentLane === "All" || p.lane === currentLane;
+        return teamMatch && laneMatch;
+      });
+
+      return {
+        ...h,
+        totalPlayers: filteredPlayers.length,
+        playersPlayed: filteredPlayers
+      };
+    })
+    .filter(h => h.playersPlayed.length > 0);
+
+  // ===== Sort =====
+  if (playerPoolsSort.key) {
+    arr.sort((a, b) => {
+      let valA = a[playerPoolsSort.key];
+      let valB = b[playerPoolsSort.key];
+
+      if (typeof valA === "string") {
+        return playerPoolsSort.asc
+          ? valA.localeCompare(valB)
+          : valB.localeCompare(valA);
+      }
+
+      return playerPoolsSort.asc ? valA - valB : valB - valA;
+    });
+  }
+
+  function arrow(key) {
+    if (playerPoolsSort.key !== key) return ' <span style="opacity:0.4;">⇅</span>';
+    return playerPoolsSort.asc ? ' <span>▲</span>' : ' <span>▼</span>';
+  }
+
+  // ===== Render =====
+  let html = `
+    <h2 style="text-align:center;">PLAYER POOL</h2>
+
+    <div style="margin-bottom:20px; display:flex; gap:20px; justify-content:center;">
+      <div>
+        <label>TEAM: </label>
+        <select id="ppTeamFilter" onchange="showPlayerPools()">
+          <option value="ALL TEAMS">ALL TEAMS</option>
+          ${teams.map(t => `<option value="${t}" ${t === currentTeam ? "selected" : ""}>${t}</option>`).join("")}
+        </select>
+      </div>
+
+      <div>
+        <label>ROLE: </label>
+        <select id="ppLaneFilter" onchange="showPlayerPools()">
+          <option value="ALL ROLES">ALL ROLES</option>
+          ${lanes.map(l => `<option value="${l}" ${l === currentLane ? "selected" : ""}>${l}</option>`).join("")}
+        </select>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th onclick="sortPlayerPools('hero')">HERO${arrow('hero')}</th>
+        <th onclick="sortPlayerPools('totalPlayers')">TOTAL PLAYERS${arrow('totalPlayers')}</th>
+        <th>PLAYERS PLAYED (GAMES - WIN RATE %)</th>
+      </tr>
+  `;
+
+  for (let h of arr) {
+    const playersHTML = h.playersPlayed.map(p => `
+      <span style="display:inline-flex; align-items:center; gap:6px; margin:3px 10px 3px 0;">
+        <img
+          src="${p.picture}"
+          width="85"
+          height="85"
+          style="border-radius:50%; object-fit:cover; border:2px solid #fff;"
+        >
+        <span>${p.name} (${p.games} - ${p.winRate.toFixed(0)}%)</span>
+      </span>
+    `).join("");
+
+    html += `
+      <tr>
+        <td style="vertical-align:middle;">
+         <div style="display:flex; align-items:center; gap:10px; height:100%;">
+          <img src="${h.img}" width="55" height="55"
+            style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
+          <span>${h.hero}</span>
+        </td>
+        <td>${h.totalPlayers}</td>
+        <td style="text-align:left; max-width:700px;">${playersHTML}</td>
+      </tr>
+    `;
+  }
+
+  html += `</table>`;
+  document.getElementById("output").innerHTML = html;
+}
+
+function sortPlayerPools(key) {
+  if (playerPoolsSort.key === key) {
+    playerPoolsSort.asc = !playerPoolsSort.asc;
+  } else {
+    playerPoolsSort.key = key;
+    playerPoolsSort.asc = true;
+  }
+  showPlayerPools();
+}
+
+// ===== Sociabuzz Position Control =====
+let _sbEl = null;
+
+function findSociabuzzElement() {
+  // Try common possibilities (works even if Sociabuzz changes wrapper)
+  return (
+    document.querySelector("#sbBoW") ||
+    document.querySelector(".sbBoW") ||
+    document.querySelector('[class*="sbBoW"]') ||
+    document.querySelector('iframe[src*="sociabuzz"]') ||
+    document.querySelector('a[href*="sociabuzz.com/izzat27"]') ||
+    null
+  );
+}
+
+function setSupportPos(mode) {
+  if (!_sbEl) _sbEl = findSociabuzzElement();
+  if (!_sbEl) return;
+
+  // Sometimes the clickable button is inside a wrapper; move the wrapper if possible
+  const el = _sbEl.parentElement && _sbEl.tagName.toLowerCase() === "iframe"
+    ? _sbEl.parentElement
+    : _sbEl;
+
+  el.style.position = "fixed";
+  el.style.zIndex = "9999";
+
+  if (mode === "center") {
+    el.style.top = "50%";
+    el.style.left = "50%";
+    el.style.right = "auto";
+    el.style.bottom = "auto";
+    el.style.transform = "translate(-50%, -50%)";
+  } else if (mode === "topRight") {
+    el.style.top = "15px";
+    el.style.right = "15px";
+    el.style.left = "auto";
+    el.style.bottom = "auto";
+    el.style.transform = "none";
+  }
+}
+
