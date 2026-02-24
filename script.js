@@ -295,8 +295,8 @@ let matches = [
       },
     ]},
             //week 1 SUNDAY match 3 (VMS 2-0 HB)
-{               teamA: "Monster Vicious",
-                teamB: "Team Vamos",
+{               teamA: "Team Vamos",
+                teamB: "Homebois",
                 games: [
             { //game 1
         winner: "Team Vamos",
