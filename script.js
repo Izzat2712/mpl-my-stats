@@ -438,13 +438,13 @@ function arrow(key) {
   <table>
   <tr>
     <th onclick="sortTeams('team')">Team${arrow('team')}</th>
+    <th onclick="sortTeams('matchesPlayed')">Matches${arrow('matchesPlayed')}</th>
+    <th onclick="sortTeams('matchWins')">Match Wins${arrow('matchWins')}</th>
+    <th onclick="sortTeams('gamesPlayed')">Games${arrow('gamesPlayed')}</th>
+    <th onclick="sortTeams('gameWins')">Game Wins${arrow('gameWins')}</th>
     <th onclick="sortTeams('kills')">Kills${arrow('kills')}</th>
     <th onclick="sortTeams('deaths')">Deaths${arrow('deaths')}</th>
     <th onclick="sortTeams('assists')">Assists${arrow('assists')}</th>
-    <th onclick="sortTeams('gamesPlayed')">Games${arrow('gamesPlayed')}</th>
-    <th onclick="sortTeams('gameWins')">Game Wins${arrow('gameWins')}</th>
-    <th onclick="sortTeams('matchesPlayed')">Matches${arrow('matchesPlayed')}</th>
-    <th onclick="sortTeams('matchWins')">Match Wins${arrow('matchWins')}</th>
     <th onclick="sortTeams('winRate')">Win Rate${arrow('winRate')}</th>
   </tr>
   `;
@@ -456,13 +456,13 @@ function arrow(key) {
         <img src="${teamLogos[ts.team]}" width="50" height="50" style="border-radius:50%;">
         <span>${ts.team}</span>
       </td>
+      <td>${ts.matchesPlayed}</td>
+      <td>${ts.matchWins}</td>
+      <td>${ts.gamesPlayed}</td>
+      <td>${ts.gameWins}</td>
       <td>${ts.kills}</td>
       <td>${ts.deaths}</td>
       <td>${ts.assists}</td>
-      <td>${ts.gamesPlayed}</td>
-      <td>${ts.gameWins}</td>
-      <td>${ts.matchesPlayed}</td>
-      <td>${ts.matchWins}</td>
       <td>${ts.winRate.toFixed(1)}%</td>
     </tr>`;
   }
@@ -564,20 +564,20 @@ function arrow(key) {
   `).join('')}
 </div>
       <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-  <strong style="align-self:center;">Top 5 Kills:</strong>
+  <strong style="align-self:center;">Top 5 Assists:</strong>
   ${topAssists.map(pl => `
     <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
       <img src="${pl.picture}" width="120" height="120" style="border-radius:50%;">
-      ${pl.name} (${pl.kills})
+      ${pl.name} (${pl.assists})
     </span>
   `).join('')}
 </div>
       <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-  <strong style="align-self:center;">Top 5 Kills:</strong>
+  <strong style="align-self:center;">Top 5 KDA:</strong>
   ${topKDA.map(pl => `
     <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
       <img src="${pl.picture}" width="120" height="120" style="border-radius:50%;">
-      ${pl.name} (${pl.kills})
+      ${pl.name} (${pl.kda})
     </span>
   `).join('')}
 </div>
@@ -607,11 +607,11 @@ function arrow(key) {
     <th onclick="sortPlayers('lane')">Lane${arrow('lane')}</th>
     <th onclick="sortPlayers('games')">Games${arrow('games')}</th>
     <th onclick="sortPlayers('kills')">Kills${arrow('kills')}</th>
-    <th onclick="sortPlayers('avgK')">Avg K${arrow('avgK')}</th>
+    <th onclick="sortPlayers('avgK')">Avg Kills${arrow('avgK')}</th>
     <th onclick="sortPlayers('deaths')">Deaths${arrow('deaths')}</th>
-    <th onclick="sortPlayers('avgD')">Avg D${arrow('avgD')}</th>
+    <th onclick="sortPlayers('avgD')">Avg Deaths${arrow('avgD')}</th>
     <th onclick="sortPlayers('assists')">Assists${arrow('assists')}</th>
-    <th onclick="sortPlayers('avgA')">Avg A${arrow('avgA')}</th>
+    <th onclick="sortPlayers('avgA')">Avg Assists${arrow('avgA')}</th>
     <th onclick="sortPlayers('kda')">KDA${arrow('kda')}</th>
     <th onclick="sortPlayers('kp')">KP%${arrow('kp')}</th>
   </tr>
