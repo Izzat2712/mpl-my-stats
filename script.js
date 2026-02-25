@@ -4,6 +4,40 @@ let heroSort = { key: null, asc: true };
 let heroPoolSort = { key: null, asc: true };
 let playerPoolsSort = { key: null, asc: true };
 
+// ===== SEARCH STATE (Players) =====
+let playerSearchState = { value: "", caret: 0 };
+
+function onPlayerSearchInput(e) {
+  playerSearchState.value = e.target.value;
+  playerSearchState.caret = e.target.selectionStart || playerSearchState.value.length;
+  showPlayers(true); // true = keep focus
+}
+
+// ===== SEARCH STATES (continuous typing) =====
+let heroSearchState = { value: "", caret: 0 };          // Heroes tab (hero name)
+let hpPlayerSearchState = { value: "", caret: 0 };      // Hero Pool tab (player name)
+let ppHeroSearchState = { value: "", caret: 0 };        // Player Pool tab (hero name)
+
+function onHeroSearchInput(e) {
+  heroSearchState.value = e.target.value;
+  heroSearchState.caret = e.target.selectionStart || heroSearchState.value.length;
+  showHeroes(true);
+}
+
+// HERO POOL: search PLAYER NAME
+function onHpPlayerSearchInput(e) {
+  hpPlayerSearchState.value = e.target.value;
+  hpPlayerSearchState.caret = e.target.selectionStart || hpPlayerSearchState.value.length;
+  showHeroPool(true);
+}
+
+// PLAYER POOL: search HERO NAME
+function onPpHeroSearchInput(e) {
+  ppHeroSearchState.value = e.target.value;
+  ppHeroSearchState.caret = e.target.selectionStart || ppHeroSearchState.value.length;
+  showPlayerPools(true);
+}
+
 const laneOrder = {
   "Gold Laner": 1,
   "Jungler": 2,
@@ -24,6 +58,70 @@ const teamLogos = {
   "CG Esports": "https://i.imgur.com/BJEdq8E.png",
   "GAMESMY Kelantan": "https://i.imgur.com/ZEzKnRQ.png"
 };
+
+// ===== MASTER ROSTER (include subs here) =====
+const roster = [
+  // Example format:
+  // { name:"PlayerName", team:"Team Name", lane:"Gold Laner", picture:"https://..." },
+
+  { name: "Rough", team: "Monster Vicious", lane: "Gold Laner", picture: "https://i.imgur.com/scpwgUa.png" },
+  { name: "Unii", team: "Monster Vicious", lane: "Jungler", picture: "https://i.imgur.com/Y6cCEK4.png" },
+  { name: "Bondolz", team: "Monster Vicious", lane: "Midlaner", picture: "https://i.imgur.com/lLUfZVt.png" },
+  { name: "Momo", team: "Monster Vicious", lane: "Exp Laner", picture: "https://i.imgur.com/aDKFRPI.png" },
+  { name: "Lyoni", team: "Monster Vicious", lane: "Roamer", picture: "https://i.imgur.com/ouVd1Kr.png" },
+  { name: "Natco", team: "Team Vamos", lane: "Gold Laner", picture: "https://i.imgur.com/48b6SmK.png" },
+  { name: "Chibi", team: "Team Vamos", lane: "Jungler", picture: "https://i.imgur.com/ahEyDfv.png" },
+  { name: "Clawkun", team: "Team Vamos", lane: "Midlaner",  picture: "https://i.imgur.com/mDZrBXV.png" },
+  { name: "Gojes", team: "Team Vamos", lane: "Exp Laner",  picture: "https://i.imgur.com/2inGQSn.png" },
+  { name: "Xorn", team: "Team Vamos", lane: "Roamer",  picture: "https://i.imgur.com/Ux5auTn.png"},
+  { name: "Kusey", team: "AERO Esports", lane: "Gold Laner",  picture: "https://i.imgur.com/413R26Z.png" },
+  { name: "Hazle", team: "AERO Esports", lane: "Jungler", picture: "https://i.imgur.com/MvL7jzh.png" },
+  { name: "Kyym", team: "AERO Esports", lane: "Midlaner",  picture: "https://i.imgur.com/5X4UXw8.png" },
+  { name: "Smooth", team: "AERO Esports", lane: "Exp Laner",  picture: "https://i.imgur.com/0bW64Ki.png" },
+  { name: "Zqeef", team: "AERO Esports", lane: "Roamer",  picture: "https://i.imgur.com/t7p2IxW.png"},
+  { name: "Skyzed", team: "Untitled", lane: "Gold Laner",  picture: "https://i.imgur.com/02b5lub.png" },
+  { name: "Keymin", team: "Untitled", lane: "Jungler",  picture: "https://i.imgur.com/cVEas3K.png" },
+  { name: "Stowm", team: "Untitled", lane: "Midlaner",  picture: "https://i.imgur.com/cOtDg24.png" },
+  { name: "Sizkaa", team: "Untitled", lane: "Exp Laner",  picture: "https://i.imgur.com/CgldSAq.png" },
+  { name: "Rasy", team: "Untitled", lane: "Roamer", picture: "https://i.imgur.com/3xz28tZ.png"},
+  { name: "Innocent", team: "Selangor Red Giants", lane: "Gold Laner",  picture: "https://i.imgur.com/SHdZx30.png" },
+  { name: "Sekys", team: "Selangor Red Giants", lane: "Jungler",  picture: "https://i.imgur.com/6cd6pGF.png" },
+  { name: "Stormie", team: "Selangor Red Giants", lane: "Midlaner",  picture: "https://i.imgur.com/1KIkUJ7.png" },
+  { name: "Kramm", team: "Selangor Red Giants", lane: "Exp Laner",  picture: "https://i.imgur.com/bPYW0sI.png" },
+  { name: "Yums", team: "Selangor Red Giants", lane: "Roamer",  picture: "https://i.imgur.com/ws8GoEJ.png"},
+  { name: "Melqt", team: "Homebois", lane: "Gold Laner",  picture: "https://i.imgur.com/ReSovOr.png" },
+  { name: "Eyymal", team: "Homebois", lane: "Jungler",  picture: "https://i.imgur.com/cMJUTQh.png" },
+  { name: "Izanami", team: "Homebois", lane: "Midlaner",  picture: "https://i.imgur.com/xaBAD77.png" },
+  { name: "Rezza", team: "Homebois", lane: "Exp Laner",  picture: "https://i.imgur.com/1HJiEgB.png" },
+  { name: "Cayden", team: "Homebois", lane: "Roamer",  picture: "https://i.imgur.com/O4oDGXc.png"},
+  { name: "Daniel", team: "Homebois", lane: "Roamer",  picture: "https://i.imgur.com/qZjDoLe.png"},
+  { name: "Zippyqt", team: "Homebois", lane: "Gold Laner",  picture: "https://i.imgur.com/Po8ykTi.png" },
+  { name: "Jowm", team: "Team Rey", lane: "Gold Laner",  picture: "https://i.imgur.com/vVtCp4S.png" },
+  { name: "Duskk", team: "Team Rey", lane: "Jungler",  picture: "https://i.imgur.com/yEpZzkl.png" },
+  { name: "Zakqt", team: "Team Rey", lane: "Midlaner",  picture: "https://i.imgur.com/rLCjvzJ.png" },
+  { name: "Der", team: "Team Rey", lane: "Exp Laner",  picture: "https://i.imgur.com/V0kSb6s.png" },
+  { name: "NovaXCobar", team: "Team Rey", lane: "Roamer",  picture: "https://i.imgur.com/dgfRft1.png"},
+  { name: "Zayyy", team: "Team Rey", lane: "Midlaner",  picture: "https://i.imgur.com/vuHaJz2.png" },
+  { name: "Error404", team: "Team Rey", lane: "Jungler",  picture: "https://i.imgur.com/2aJP8iR.png" },
+  { name: "Loleal", team: "Todak", lane: "Gold Laner",  picture: "https://i.imgur.com/Mmz80I7.png" },
+  { name: "Zahyed", team: "Todak", lane: "Jungler",  picture: "https://i.imgur.com/Zr5f3ZU.png" },
+  { name: "ZaimSempoi", team: "Todak", lane: "Midlaner",  picture: "https://i.imgur.com/J1dXujF.png" },
+  { name: "Fawndeer", team: "Todak", lane: "Exp Laner",  picture: "https://i.imgur.com/5AMdEih.png" },
+  { name: "Dreams", team: "Todak", lane: "Roamer",  picture: "https://i.imgur.com/aNDNWHb.png"},
+  { name: "Amzziq", team: "CG Esports", lane: "Gold Laner",  picture: "https://i.imgur.com/wguX967.png" },
+  { name: "Gary", team: "CG Esports", lane: "Jungler",  picture: "https://i.imgur.com/QPK02Ki.png" },
+  { name: "Ciku", team: "CG Esports", lane: "Midlaner",  picture: "https://i.imgur.com/r3iKJPK.png" },
+  { name: "Ye3", team: "CG Esports", lane: "Exp Laner",  picture: "https://i.imgur.com/Dzd9Bpy.png" },
+  { name: "Valenz", team: "CG Esports", lane: "Roamer",  picture: "https://i.imgur.com/nzbIpw1.png"},
+  { name: "Aj", team: "CG Esports", lane: "Midlaner",  picture: "https://i.imgur.com/f8zm6mw.png" },
+  { name: "Trap", team: "CG Esports", lane: "Gold Laner",  picture: "https://i.imgur.com/i4hCtRd.png" },
+  { name: "Immqt", team: "GAMESMY Kelantan", lane: "Gold Laner",  picture: "https://i.imgur.com/K18ycH2.png" },
+  { name: "Jaja", team: "GAMESMY Kelantan", lane: "Jungler",  picture: "https://i.imgur.com/qwypigC.png" },
+  { name: "Maima", team: "GAMESMY Kelantan", lane: "Midlaner",  picture: "https://i.imgur.com/0WNp0Ub.png" },
+  { name: "Munster", team: "GAMESMY Kelantan", lane: "Exp Laner",  picture: "https://i.imgur.com/2bBe6Ev.png" },
+  { name: "Matdinz", team: "GAMESMY Kelantan", lane: "Roamer",  picture: "https://i.imgur.com/lSWoHLl.png"},
+  { name: "Skyzar", team: "GAMESMY Kelantan", lane: "Gold Laner",  picture: "https://i.imgur.com/TN31Ebg.png" },
+];
 
 const constHero = {
 "Arlott": "https://i.imgur.com/4WJhGhe.png",
@@ -665,12 +763,15 @@ function sortTeams(key) {
   showTeams();
 }
 
-function showPlayers() {
+function showPlayers(keepSearchFocus = false) {
   
   let p = calculatePlayerStats();
 
   const currentTeam = document.getElementById("teamFilter")?.value || "ALL TEAMS";
   const currentLane = document.getElementById("laneFilter")?.value || "ALL ROLES";
+  const searchEl = document.getElementById("playerSearch");
+  const currentSearch = searchEl ? searchEl.value : (playerSearchState.value || "");
+  const q = currentSearch.trim().toLowerCase();
 
   let arr = Object.keys(p).map(name => ({
     name,
@@ -703,6 +804,11 @@ function showPlayers() {
     const laneMatch = currentLane === "ALL ROLES" || ps.lane === currentLane;
     return teamMatch && laneMatch;
   });
+
+  // ===== APPLY NAME SEARCH (PLAYER NAME ONLY) =====
+  if (q) {
+    arr = arr.filter(ps => ps.name.toLowerCase().includes(q));
+  }
 
   // ===== SORT =====
   if (playerSort.key) {
@@ -784,6 +890,17 @@ function arrow(key) {
     </div>
   </div>
 
+  <div style="margin-bottom:20px; display:flex; justify-content:center;">
+    <input
+      id="playerSearch"
+      type="text"
+      placeholder="Search player..."
+      value="${currentSearch.replace(/"/g, "&quot;")}"
+      oninput="onPlayerSearchInput(event)"
+      style="padding:10px 14px; width:320px; border-radius:10px; border:1px solid #444; background:#0b0b0b; color:#fff;"
+    />
+  </div>
+
   <table>
   <tr>
     <th onclick="sortPlayers('name')">PLAYER${arrow('name')}</th>
@@ -829,6 +946,16 @@ function arrow(key) {
   html += "</table>";
 
   document.getElementById("output").innerHTML = html;
+
+    if (keepSearchFocus) {
+    requestAnimationFrame(() => {
+      const el = document.getElementById("playerSearch");
+      if (!el) return;
+      el.focus();
+      const pos = Math.min(playerSearchState.caret || 0, el.value.length);
+      el.setSelectionRange(pos, pos);
+    });
+  }
 }
 
 function sortPlayers(key) {
@@ -894,19 +1021,25 @@ function calculateHeroStats() {
         const uniqueBans = new Set(game.bans);
         for (let b of uniqueBans) {
           if (!heroStats[b]) heroStats[b] = { hero: b, pick: 0, ban: 0, win: 0 };
-          heroStats[b].ban++; // = number of games banned
+          heroStats[b].ban++;
         }
       }
     }
   }
 
-  // Build final array with rates
-  let arr = Object.keys(heroStats).map(h => {
-    const hs = heroStats[h];
+  // ✅ Ensure unused heroes appear too:
+  // Start from ALL heroes in constHero, plus any extra picked/banned heroes not in constHero.
+  const allHeroes = new Set([
+    ...Object.keys(constHero || {}),
+    ...Object.keys(heroStats)
+  ]);
+
+  // Build final array with rates (including unused heroes)
+  let arr = Array.from(allHeroes).map(h => {
+    const hs = heroStats[h] || { hero: h, pick: 0, ban: 0, win: 0 };
+
     const winRate = hs.pick ? (hs.win / hs.pick) * 100 : 0;
     const pickRate = totalPicks ? (hs.pick / totalPicks) * 100 : 0;
-
-    // ✅ ban rate by games (this is what you want)
     const banRate = totalGames ? (hs.ban / totalGames) * 100 : 0;
 
     return {
@@ -923,8 +1056,8 @@ function calculateHeroStats() {
   return arr;
 }
 
-function showHeroes() {
-  
+function showHeroes(keepSearchFocus = false) {
+
   let arr = calculateHeroStats();
 
   // Top 5 Pick
@@ -938,6 +1071,15 @@ function showHeroes() {
     .filter(h => h.pick >= 5)
     .sort((a,b) => b.winRate - a.winRate)
     .slice(0,5);
+
+  // ===== SEARCH (HERO NAME ONLY) =====
+  const searchEl = document.getElementById("heroSearch");
+  const currentSearch = searchEl ? searchEl.value : (heroSearchState.value || "");
+  const q = currentSearch.trim().toLowerCase();
+
+  if (q) {
+    arr = arr.filter(h => h.hero.toLowerCase().includes(q));
+  }
 
   // SORT table
   if (heroSort.key) {
@@ -960,44 +1102,46 @@ function showHeroes() {
   let html = `
     <h2 style="text-align:center;">HERO STATS MPL MY S16</h2>
 
-    <div style="margin-bottom:14px; display:flex; justify-content:center; align-items:flex-start; gap:30px; flex-wrap:wrap;">
+    <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
+      <strong style="align-self:center;">TOP 5 PICK :</strong>
+      ${topPick.map(h => `
+        <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
+          <img src="${h.img}" width="120" height="120" style="border-radius:50%;">
+          ${h.hero} (${h.pick})
+        </span>
+      `).join('')}
+    </div>
 
-      <div style="text-align:center;">
-        <strong>TOP 5 PICK</strong>
-        <div style="display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap;">
-          ${topPick.map(h => `
-            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:6px;">
-              <img src="${h.img}" width="80" height="80" style="border-radius:12px;">
-              ${h.hero} (${h.pick})
-            </span>
-          `).join("")}
-        </div>
-      </div>
+    <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
+      <strong style="align-self:center;">TOP 5 BAN:</strong>
+      ${topBan.map(h => `
+        <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
+          <img src="${h.img}" width="120" height="120" style="border-radius:50%;">
+          ${h.hero} (${h.ban})
+        </span>
+      `).join('')}
+    </div>
 
-      <div style="text-align:center;">
-        <strong>TOP 5 BAN</strong>
-        <div style="display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap;">
-          ${topBan.map(h => `
-            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:6px;">
-              <img src="${h.img}" width="80" height="80" style="border-radius:12px;">
-              ${h.hero} (${h.ban})
-            </span>
-          `).join("")}
-        </div>
-      </div>
+    <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
+      <strong style="align-self:center;">TOP 5 WINRATE (MIN 5 GAMES PLAYED) :</strong>
+      ${topWin.map(h => `
+        <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
+          <img src="${h.img}" width="120" height="120" style="border-radius:50%;">
+          ${h.hero} (${h.winRate.toFixed(1)}%)
+        </span>
+      `).join("")}
+    </div>
 
-      <div style="text-align:center;">
-        <strong>TOP 5 WINRATE % (MIN 5 GAMES PLAYED)</strong>
-        <div style="display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap;">
-          ${topWin.map(h => `
-            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:6px;">
-              <img src="${h.img}" width="80" height="80" style="border-radius:12px;">
-              ${h.hero} (${h.winRate.toFixed(1)}%)
-            </span>
-          `).join("")}
-        </div>
-      </div>
-
+    <!-- SEARCH BELOW TOP 5 WINRATE -->
+    <div style="margin:20px 0; display:flex; justify-content:center;">
+      <input
+        id="heroSearch"
+        type="text"
+        placeholder="Search hero..."
+        value="${currentSearch.replace(/"/g, "&quot;")}"
+        oninput="onHeroSearchInput(event)"
+        style="padding:10px 14px; width:320px; border-radius:10px; border:1px solid #444; background:#0b0b0b; color:#fff;"
+      />
     </div>
 
     <table>
@@ -1029,6 +1173,17 @@ function showHeroes() {
 
   html += `</table>`;
   document.getElementById("output").innerHTML = html;
+
+  // keep continuous typing
+  if (keepSearchFocus) {
+    requestAnimationFrame(() => {
+      const el = document.getElementById("heroSearch");
+      if (!el) return;
+      el.focus();
+      const pos = Math.min(heroSearchState.caret || 0, el.value.length);
+      el.setSelectionRange(pos, pos);
+    });
+  }
 }
 
 function sortHeroes(key) {
@@ -1071,15 +1226,14 @@ function calculateHeroPoolStats() {
   return pool;
 }
 
-function showHeroPool() {
-  
+function showHeroPool(keepSearchFocus = false) {
+
   const pool = calculateHeroPoolStats();
 
   let arr = Object.keys(pool).map(name => {
     const ps = pool[name];
     const uniqueHeroes = Object.keys(ps.heroes).length;
 
-    // Build heroes list (sorted by games desc)
     const heroList = Object.keys(ps.heroes)
       .map(h => ({
         hero: h,
@@ -1099,20 +1253,30 @@ function showHeroPool() {
     };
   });
 
-  // Keep current filter values (same behavior as your players tab)
+  // Keep current filter values
   const currentTeam = document.getElementById("hpTeamFilter")?.value || "ALL TEAMS";
   const currentLane = document.getElementById("hpLaneFilter")?.value || "ALL ROLES";
+
+  // ===== SEARCH (PLAYER NAME ONLY) =====
+  const searchEl = document.getElementById("hpPlayerSearch");
+  const currentSearch = searchEl ? searchEl.value : (hpPlayerSearchState.value || "");
+  const q = currentSearch.trim().toLowerCase();
 
   // Build filter lists
   const teams = [...new Set(arr.map(p => p.team))];
   const lanes = [...new Set(arr.map(p => p.lane))];
 
-  // Apply filters
+  // Apply Team/Lane filters
   arr = arr.filter(ps => {
     const teamMatch = currentTeam === "ALL TEAMS" || ps.team === currentTeam;
     const laneMatch = currentLane === "ALL ROLES" || ps.lane === currentLane;
     return teamMatch && laneMatch;
   });
+
+  // Apply PLAYER NAME search
+  if (q) {
+    arr = arr.filter(ps => ps.name.toLowerCase().includes(q));
+  }
 
   // Sort
   if (heroPoolSort.key) {
@@ -1163,6 +1327,18 @@ function showHeroPool() {
       </div>
     </div>
 
+    <!-- SEARCH BELOW FILTERS (PLAYER NAME ONLY) -->
+    <div style="margin-bottom:20px; display:flex; justify-content:center;">
+      <input
+        id="hpPlayerSearch"
+        type="text"
+        placeholder="Search player..."
+        value="${currentSearch.replace(/"/g, "&quot;")}"
+        oninput="onHpPlayerSearchInput(event)"
+        style="padding:10px 14px; width:320px; border-radius:10px; border:1px solid #444; background:#0b0b0b; color:#fff;"
+      />
+    </div>
+
     <table>
       <tr>
         <th onclick="sortHeroPool('name')">PLAYER${arrow('name')}</th>
@@ -1182,17 +1358,18 @@ function showHeroPool() {
           height="45"
           style="border-radius:50%; object-fit:cover; border:2px solid #fff;"
         >
-        <span>${h.games} - ${h.winRate.toFixed(0)}%</span>
+        <span>${h.hero} (${h.games} - ${h.winRate.toFixed(0)}%)</span>
       </span>
     `).join("");
 
     html += `
       <tr>
         <td style="vertical-align:middle;">
-         <div style="display:flex; align-items:center; gap:10px; height:100%;">
-          <img src="${ps.picture}" width="55" height="55"
-            style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
-          <span>${ps.name}</span>
+          <div style="display:flex; align-items:center; gap:10px; height:100%;">
+            <img src="${ps.picture}" width="55" height="55"
+              style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
+            <span>${ps.name}</span>
+          </div>
         </td>
 
         <td style="vertical-align:middle;">
@@ -1211,6 +1388,17 @@ function showHeroPool() {
 
   html += `</table>`;
   document.getElementById("output").innerHTML = html;
+
+  // keep continuous typing
+  if (keepSearchFocus) {
+    requestAnimationFrame(() => {
+      const el = document.getElementById("hpPlayerSearch");
+      if (!el) return;
+      el.focus();
+      const pos = Math.min(hpPlayerSearchState.caret || 0, el.value.length);
+      el.setSelectionRange(pos, pos);
+    });
+  }
 }
 
 function sortHeroPool(key) {
@@ -1261,7 +1449,8 @@ function calculatePlayerPoolsStats() {
   return pools;
 }
 
-function showPlayerPools() {
+function showPlayerPools(keepSearchFocus = false) {
+
   const pools = calculatePlayerPoolsStats();
 
   let arr = Object.keys(pools).map(heroName => {
@@ -1293,13 +1482,17 @@ function showPlayerPools() {
   const currentTeam = document.getElementById("ppTeamFilter")?.value || "ALL TEAMS";
   const currentLane = document.getElementById("ppLaneFilter")?.value || "ALL ROLES";
 
+  // ===== SEARCH (HERO NAME ONLY) =====
+  const searchEl = document.getElementById("ppHeroSearch");
+  const currentSearch = searchEl ? searchEl.value : (ppHeroSearchState.value || "");
+  const q = currentSearch.trim().toLowerCase();
+
   // Build filter options from all player entries
   const allPlayers = arr.flatMap(h => h.playersPlayed);
   const teams = [...new Set(allPlayers.map(p => p.team))];
   const lanes = [...new Set(allPlayers.map(p => p.lane))];
 
-  // Apply filters:
-  // Keep hero rows where at least one player entry matches
+  // Apply Team/Lane filters (keep hero rows where at least one player matches)
   arr = arr
     .map(h => {
       const filteredPlayers = h.playersPlayed.filter(p => {
@@ -1316,7 +1509,12 @@ function showPlayerPools() {
     })
     .filter(h => h.playersPlayed.length > 0);
 
-  // ===== Sort =====
+  // Apply HERO NAME search (filters hero rows by hero name)
+  if (q) {
+    arr = arr.filter(h => h.hero.toLowerCase().includes(q));
+  }
+
+  // Sort
   if (playerPoolsSort.key) {
     arr.sort((a, b) => {
       let valA = a[playerPoolsSort.key];
@@ -1359,6 +1557,18 @@ function showPlayerPools() {
       </div>
     </div>
 
+    <!-- SEARCH BELOW FILTERS (HERO NAME ONLY) -->
+    <div style="margin-bottom:20px; display:flex; justify-content:center;">
+      <input
+        id="ppHeroSearch"
+        type="text"
+        placeholder="Search hero..."
+        value="${currentSearch.replace(/"/g, "&quot;")}"
+        oninput="onPpHeroSearchInput(event)"
+        style="padding:10px 14px; width:320px; border-radius:10px; border:1px solid #444; background:#0b0b0b; color:#fff;"
+      />
+    </div>
+
     <table>
       <tr>
         <th onclick="sortPlayerPools('hero')">HERO${arrow('hero')}</th>
@@ -1383,10 +1593,11 @@ function showPlayerPools() {
     html += `
       <tr>
         <td style="vertical-align:middle;">
-         <div style="display:flex; align-items:center; gap:10px; height:100%;">
-          <img src="${h.img}" width="55" height="55"
-            style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
-          <span>${h.hero}</span>
+          <div style="display:flex; align-items:center; gap:10px; height:100%;">
+            <img src="${h.img}" width="55" height="55"
+              style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
+            <span>${h.hero}</span>
+          </div>
         </td>
         <td>${h.totalPlayers}</td>
         <td style="text-align:left; max-width:700px;">${playersHTML}</td>
@@ -1396,6 +1607,17 @@ function showPlayerPools() {
 
   html += `</table>`;
   document.getElementById("output").innerHTML = html;
+
+  // keep continuous typing
+  if (keepSearchFocus) {
+    requestAnimationFrame(() => {
+      const el = document.getElementById("ppHeroSearch");
+      if (!el) return;
+      el.focus();
+      const pos = Math.min(ppHeroSearchState.caret || 0, el.value.length);
+      el.setSelectionRange(pos, pos);
+    });
+  }
 }
 
 function sortPlayerPools(key) {
@@ -1449,4 +1671,3 @@ function setSupportPos(mode) {
     el.style.transform = "none";
   }
 }
-
