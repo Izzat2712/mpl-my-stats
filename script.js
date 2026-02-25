@@ -1534,7 +1534,7 @@ let html = `
     />
   </div>
 
-  <table>
+  <table class="playersTable">
   <tr>
     <th onclick="sortPlayers('name')">PLAYER${arrow('name')}</th>
     <th onclick="sortPlayers('team')">TEAM${arrow('team')}</th>
@@ -1785,7 +1785,7 @@ function showHeroes(keepSearchFocus = false) {
     <table class="dataTable">
 
       <div class="tableWrap">
-        <table class="dataTable">
+        <table class="dataTable heroesTable">
           <tr>
             <th onclick="sortHeroes('hero')">HERO${arrow('hero')}</th>
             <th onclick="sortHeroes('pick')">PICK${arrow('pick')}</th>
@@ -2002,7 +2002,7 @@ function showHeroPool(keepSearchFocus = false) {
       />
     </div>
 
-    <table>
+    <table class="heroPoolTable">
       <tr>
         <th onclick="sortHeroPool('name')">PLAYER${arrow('name')}</th>
         <th onclick="sortHeroPool('team')">TEAM${arrow('team')}</th>
@@ -2252,7 +2252,7 @@ function showPlayerPools(keepSearchFocus = false) {
       </label>
     </div>
 
-    <table>
+    <table class="playerPoolTable">
       <tr>
         <th onclick="sortPlayerPools('hero')">HERO${arrow('hero')}</th>
         <th onclick="sortPlayerPools('totalPlayers')">TOTAL PLAYERS${arrow('totalPlayers')}</th>
