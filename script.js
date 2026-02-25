@@ -1337,6 +1337,10 @@ function showTeams() {
   }
 
   let html = `
+      <div class="rotateHint">
+    📱 Rotate your phone for full table view
+  </div>
+
     <table class="teamsTable">
       <tr>
         <th onclick="sortTeams('team')">TEAM${arrow('team')}</th>
@@ -1532,6 +1536,10 @@ let html = `
       oninput="onPlayerSearchInput(event)"
       style="padding:10px 14px; width:320px; border-radius:10px; border:1px solid #444; background:#0b0b0b; color:#fff;"
     />
+  </div>
+
+    <div class="rotateHint">
+    📱 Rotate your phone for full table view
   </div>
 
   <table class="playersTable">
@@ -1785,6 +1793,10 @@ function showHeroes(keepSearchFocus = false) {
     <table class="dataTable">
 
       <div class="tableWrap">
+            <div class="rotateHint">
+    📱 Rotate your phone for full table view
+  </div>
+
         <table class="dataTable heroesTable">
           <tr>
             <th onclick="sortHeroes('hero')">HERO${arrow('hero')}</th>
@@ -2001,6 +2013,10 @@ function showHeroPool(keepSearchFocus = false) {
         style="padding:10px 14px; width:320px; border-radius:10px; border:1px solid #444; background:#0b0b0b; color:#fff;"
       />
     </div>
+
+          <div class="rotateHint">
+    📱 Rotate your phone for full table view
+  </div>
 
     <table class="heroPoolTable">
       <tr>
@@ -2251,6 +2267,10 @@ function showPlayerPools(keepSearchFocus = false) {
         <span style="opacity:0.9;">Exclude unused heroes</span>
       </label>
     </div>
+
+          <div class="rotateHint">
+    📱 Rotate your phone for full table view
+  </div>
 
     <table class="playerPoolTable">
       <tr>
