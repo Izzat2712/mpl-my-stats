@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MPL MY S16 Stats</title>
-  <style>
-    table { border-collapse: collapse; margin: 20px auto; }
-    th, td { padding: 8px 12px; border: 1px solid #333; text-align: center; }
-    img { border-radius: 50%; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1 style="text-align:center;">MPL MY S16 STATISTICS</h1>
+<div class="container">
 
-<div style="text-align:center;">
-  <button onclick="showTeams()">Teams</button>
-  <button onclick="showPlayers()">Players</button>
-  <button onclick="showHeroes()">Heroes</button>
-  <button onclick="showHeroPool()">Hero Pool</button>
-  <button onclick="showPlayerPools()">Player Pool</button>
+  <div class="header">
+    <div>
+      <h1>MPL MY S16 STATISTICS</h1>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button type="button" onclick="showTeams()">Teams</button>
+    <button type="button" onclick="showPlayers()">Players</button>
+    <button type="button" onclick="showHeroes()">Heroes</button>
+    <button type="button" onclick="showHeroPool()">Hero Pool</button>
+    <button type="button" onclick="showPlayerPools()">Player Pool</button>
+  </div>
+
+  <div id="output" class="panel"></div>
+
 </div>
 
-<div id="output"></div>
+<script src="script.js"></script>
 
-  <script src="script.js"></script>
+<script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>
+<script>
+  sbBoW.draw("izzat27","R2l2ZSBTdXBwb3J0","position-bottom-right","#3B82F6","#FFFFFF")
+</script>
 
-  <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script><script>sbBoW.draw("izzat27","R2l2ZSBTdXBwb3J0","position-bottom-right","#76CC11","#FFFFFF")</script>
 </body>
 </html>
