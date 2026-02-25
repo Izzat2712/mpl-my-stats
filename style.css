@@ -370,3 +370,84 @@ select:focus{
 }
 
 .cellHeroName{ font-weight:700; }
+
+/* ===================================================
+   MOBILE ONLY: TEAMS table becomes vertical cards
+   (PC stays exactly the same)
+=================================================== */
+@media (max-width: 700px){
+
+  /* make the panel a bit tighter on phones */
+  .panel{
+    width: calc(100% - 24px);
+    margin: 16px auto 40px;
+    padding: 16px 12px;
+  }
+
+  /* only target the Teams table if you add class="teamsTable" in JS */
+  table.teamsTable{
+    display:block;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+    margin-top: 12px;
+  }
+
+  /* hide header row on mobile */
+  table.teamsTable tr:first-child{
+    display:none;
+  }
+
+  /* each row becomes a card */
+  table.teamsTable tr{
+    display:block;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  /* each cell becomes a stacked stat row */
+  table.teamsTable td{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    text-align:right !important;
+    padding: 12px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  table.teamsTable tr td:last-child{
+    border-bottom:none;
+  }
+
+  /* labels (left side) */
+  table.teamsTable td::before{
+    font-weight: 800;
+    opacity: 0.85;
+    text-align:left;
+    margin-right: 12px;
+    white-space: nowrap;
+  }
+
+  /* map labels based on your column order */
+  table.teamsTable tr td:nth-child(1)::before{ content:"TEAM"; }
+  table.teamsTable tr td:nth-child(2)::before{ content:"MATCHES WON"; }
+  table.teamsTable tr td:nth-child(3)::before{ content:"KILLS"; }
+  table.teamsTable tr td:nth-child(4)::before{ content:"DEATHS"; }
+  table.teamsTable tr td:nth-child(5)::before{ content:"ASSISTS"; }
+  table.teamsTable tr td:nth-child(6)::before{ content:"LORD"; }
+  table.teamsTable tr td:nth-child(7)::before{ content:"TURTLE"; }
+  table.teamsTable tr td:nth-child(8)::before{ content:"TOWER"; }
+
+  /* TEAM row: keep logo+name nice */
+  table.teamsTable td:first-child{
+    justify-content:flex-start;
+    text-align:left !important;
+  }
+
+  table.teamsTable .teamCell{
+    justify-content:flex-start; /* looks best on mobile cards */
+  }
+}
