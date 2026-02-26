@@ -1358,12 +1358,12 @@ function showTeams() {
     const logo = teamLogos[ts.team] || "";
     html += `
       <tr>
-        <td>
-          <div class="teamCell">
-            ${logo ? `<img src="${logo}" alt="${ts.team}">` : ""}
-            <span>${ts.team}</span>
-          </div>
-        </td>
+<td>
+  <div class="teamCell">
+    <img class="teamLogo" src="${teamLogos[ts.team]}" width="50" height="50">
+    <span>${ts.team}</span>
+  </div>
+</td>
         <td>${ts.matchWins}</td>
         <td>${ts.kills}</td>
         <td>${ts.deaths}</td>
@@ -1474,22 +1474,51 @@ let html = `
 <div class="topRow">
   <strong>TOP 5 KILLS:</strong>
   <div class="topItems">
-    ${topKills.map(pl => `
-      <div class="topItem">
-        <img src="${pl.picture}">
-        ${pl.name} (${pl.kills})
-      </div>
-    `).join('')}
+${topKills.map((pl, i) => `
+  <div class="topItem topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}">
+    
+    <div class="avatarWrap">
+      <img class="playerAvatar" src="${pl.picture}" alt="${pl.name}">
+      
+      <img class="teamMiniLogo"
+           src="${teamLogos[pl.team] || ''}"
+           alt="${pl.team}">
+      
+      <div class="rankBadge">#${i+1}</div>
+    </div>
+
+    <div class="topLabel">
+      <span class="topName">${pl.name}</span>
+      <span class="topValue">${pl.kills}</span>
+    </div>
+
+  </div>
+`).join('')}
   </div>
 </div>
 
 <div class="topRow">
   <strong>TOP 5 ASSISTS:</strong>
   <div class="topItems">
-    ${topAssists.map(pl => `
-      <div class="topItem">
-        <img src="${pl.picture}">
-        ${pl.name} (${pl.assists})
+    ${topAssists.map((pl, i) => `
+      <div class="topItem topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}">
+        
+        <div class="avatarWrap">
+          <img class="playerAvatar" src="${pl.picture}" alt="${pl.name}">
+          
+          ${teamLogos[pl.team] 
+            ? `<img class="teamMiniLogo" src="${teamLogos[pl.team]}" alt="${pl.team}">`
+            : ''
+          }
+
+          <div class="rankBadge">#${i+1}</div>
+        </div>
+
+        <div class="topLabel">
+          <span class="topName">${pl.name}</span>
+          <span class="topValue">${pl.assists}</span>
+        </div>
+
       </div>
     `).join('')}
   </div>
@@ -1498,14 +1527,30 @@ let html = `
 <div class="topRow">
   <strong>TOP 5 KDA:</strong>
   <div class="topItems">
-    ${topKDA.map(pl => `
-      <div class="topItem">
-        <img src="${pl.picture}">
-        ${pl.name} (${pl.kda.toFixed(2)})
+    ${topKDA.map((pl, i) => `
+      <div class="topItem topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}">
+        
+        <div class="avatarWrap">
+          <img class="playerAvatar" src="${pl.picture}" alt="${pl.name}">
+          
+          ${teamLogos[pl.team] 
+            ? `<img class="teamMiniLogo" src="${teamLogos[pl.team]}" alt="${pl.team}">`
+            : ''
+          }
+
+          <div class="rankBadge">#${i+1}</div>
+        </div>
+
+        <div class="topLabel">
+          <span class="topName">${pl.name}</span>
+          <span class="topValue">${pl.kda.toFixed(2)}</span>
+        </div>
+
       </div>
     `).join('')}
   </div>
 </div>
+
 
 
 
@@ -1569,12 +1614,12 @@ html += `
     </div>
   </td>
 
-  <td>
-    <div class="teamCell">
-      <img src="${teamLogos[ps.team] || ""}" width="50" height="50" style="border-radius:50%;">
-      <span>${ps.team}</span>
-    </div>
-  </td>
+<td style="vertical-align:middle;">
+  <div class="teamCell">
+    <img class="teamLogo" src="${teamLogos[ps.team]}" width="50" height="50">
+    <span>${ps.team}</span>
+  </div>
+</td>
 
   <td>${ps.lane}</td>
   <td>${ps.games}</td>
@@ -1748,91 +1793,91 @@ function showHeroes(keepSearchFocus = false) {
   }
 
   // ===== unified top row renderer (centered + consistent card/avatar) =====
-  function renderTopRow(label, list, valueFn) {
-    return `
-      <div class="toprow">
-        <div class="toprow-label">${label}</div>
+function renderTopRow(label, list, valueFn) {
+  return `
+    <div class="toprow">
+      <div class="toprow-label">${label}</div>
 
-        <div class="toprow-grid">
-          ${list.map(item => `
-            <div class="topcard">
-              <img class="topavatar" src="${item.img}" alt="${item.hero}">
-              <div class="topname">${item.hero} <span class="topvalue">(${valueFn(item)})</span></div>
+      <div class="toprow-grid">
+        ${list.map((item, i) => `
+          <div class="topcard topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}">
+            <div class="rankBadge">#${i+1}</div>
+            <img class="topavatar" src="${item.img}" alt="${item.hero}">
+            <div class="topLabel">
+              <span class="topName">${item.hero}</span>
+              <span class="topValue">${valueFn(item)}</span>
             </div>
-          `).join("")}
-        </div>
-      </div>
-    `;
-  }
-
-  const topPickRow = renderTopRow("TOP 5 PICK:", topPick, h => h.pick);
-  const topBanRow  = renderTopRow("TOP 5 BAN:",  topBan,  h => h.ban);
-  const topWinRow  = renderTopRow(winLabel,      topWin,  h => `${h.winRate.toFixed(1)}%`);
-
-  let html = `
-  <h2 class="panel-title">HERO STATS MPL MY S16</h2>
-
-  <div class="toprows">
-    ${topPickRow}
-    ${topBanRow}
-    ${topWinRow}
-  </div>
-
-  <div class="searchRow">
-    <input
-      id="heroSearch"
-      class="searchInput"
-      type="text"
-      placeholder="Search hero..."
-      value="${currentSearch.replace(/"/g, "&quot;")}"
-      oninput="onHeroSearchInput(event)"
-    />
-  </div>
-
-  <div class="tableWrap">
-    <table class="dataTable">
-
-      <div class="tableWrap">
-            <div class="rotateHint">
-    📱 Rotate your phone for full table view
-  </div>
-
-        <table class="dataTable heroesTable">
-          <tr>
-            <th onclick="sortHeroes('hero')">HERO${arrow('hero')}</th>
-            <th onclick="sortHeroes('pick')">PICK${arrow('pick')}</th>
-            <th onclick="sortHeroes('pickRate')">PICK RATE${arrow('pickRate')}</th>
-            <th onclick="sortHeroes('ban')">BAN${arrow('ban')}</th>
-            <th onclick="sortHeroes('banRate')">BAN RATE${arrow('banRate')}</th>
-            <th onclick="sortHeroes('winRate')">WIN RATE${arrow('winRate')}</th>
-          </tr>
-  `;
-
-  for (let h of arr) {
-    html += `
-      <tr>
-        <td>
-          <div class="cellHero">
-            <img class="cellHeroImg" src="${h.img}" alt="${h.hero}">
-            <span class="cellHeroName">${h.hero}</span>
           </div>
-        </td>
-        <td class="tdCenter">${h.pick}</td>
-        <td class="tdCenter">${h.pickRate.toFixed(1)}%</td>
-        <td class="tdCenter">${h.ban}</td>
-        <td class="tdCenter">${h.banRate.toFixed(1)}%</td>
-        <td class="tdCenter">${h.winRate.toFixed(1)}%</td>
-      </tr>
-    `;
-  }
-
-  html += `
-        </table>
+        `).join("")}
       </div>
     </div>
   `;
+}
 
-  document.getElementById("output").innerHTML = html;
+const topPickRow = renderTopRow("TOP 5 PICK:", topPick, h => h.pick);
+const topBanRow  = renderTopRow("TOP 5 BAN:",  topBan,  h => h.ban);
+const topWinRow  = renderTopRow(winLabel,      topWin,  h => `${h.winRate.toFixed(1)}%`);
+
+let html = `
+<h2 class="panel-title">HERO STATS MPL MY S16</h2>
+
+<div class="toprows">
+  ${topPickRow}
+  ${topBanRow}
+  ${topWinRow}
+</div>
+
+<div class="searchRow">
+  <input
+    id="heroSearch"
+    class="searchInput"
+    type="text"
+    placeholder="Search hero..."
+    value="${currentSearch.replace(/"/g, "&quot;")}"
+    oninput="onHeroSearchInput(event)"
+  />
+</div>
+
+<div class="tableWrap">
+  <div class="rotateHint">
+    📱 Rotate your phone for full table view
+  </div>
+
+  <table class="dataTable heroesTable">
+    <tr>
+      <th onclick="sortHeroes('hero')">HERO${arrow('hero')}</th>
+      <th onclick="sortHeroes('pick')">PICK${arrow('pick')}</th>
+      <th onclick="sortHeroes('pickRate')">PICK RATE${arrow('pickRate')}</th>
+      <th onclick="sortHeroes('ban')">BAN${arrow('ban')}</th>
+      <th onclick="sortHeroes('banRate')">BAN RATE${arrow('banRate')}</th>
+      <th onclick="sortHeroes('winRate')">WIN RATE${arrow('winRate')}</th>
+    </tr>
+`;
+
+for (let h of arr) {
+  html += `
+    <tr>
+      <td>
+        <div class="cellHero">
+          <img class="cellHeroImg" src="${h.img}" alt="${h.hero}">
+          <span class="cellHeroName">${h.hero}</span>
+        </div>
+      </td>
+      <td class="tdCenter">${h.pick}</td>
+      <td class="tdCenter">${h.pickRate.toFixed(1)}%</td>
+      <td class="tdCenter">${h.ban}</td>
+      <td class="tdCenter">${h.banRate.toFixed(1)}%</td>
+      <td class="tdCenter">${h.winRate.toFixed(1)}%</td>
+    </tr>
+  `;
+}
+
+html += `
+  </table>
+</div>
+`;
+
+document.getElementById("output").innerHTML = html;
 
   // keep continuous typing
   if (keepSearchFocus) {
@@ -2051,12 +2096,12 @@ function showHeroPool(keepSearchFocus = false) {
           </div>
         </td>
 
-        <td style="vertical-align:middle;">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <img src="${teamLogos[ps.team] || ""}" width="45" height="45" style="border-radius:50%;">
-            <span>${ps.team}</span>
-          </div>
-        </td>
+<td style="vertical-align:middle;">
+  <div class="teamCell">
+    <img class="teamLogo" src="${teamLogos[ps.team] || ""}" width="45" height="45">
+    <span>${ps.team}</span>
+  </div>
+</td>
 
         <td>${ps.lane}</td>
         <td>${ps.totalHeroes}</td>
