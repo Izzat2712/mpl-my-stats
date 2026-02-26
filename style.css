@@ -1398,3 +1398,49 @@ select:focus{
 }
 
 
+/* ===================================================
+   MOBILE PATCH: Center ALL card tables (tabs)
+   (PC layout unchanged)
+=================================================== */
+@media (max-width: 700px){
+
+  /* Center the "card list" container */
+  table.teamsTable,
+  table.playersTable,
+  table.heroesTable,
+  table.heroPoolTable,
+  table.playerPoolTable{
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Ensure tbody behaves predictably in block-table mode */
+  table.teamsTable tbody,
+  table.playersTable tbody,
+  table.heroesTable tbody,
+  table.heroPoolTable tbody,
+  table.playerPoolTable tbody{
+    display: block;
+    width: 100%;
+  }
+
+  /* Each TR is the card — center it */
+  table.teamsTable tr,
+  table.playersTable tr,
+  table.heroesTable tr,
+  table.heroPoolTable tr,
+  table.playerPoolTable tr{
+    width: min(520px, 100%);     /* adjust 520px if you want wider/narrower cards */
+    margin: 10px auto !important; /* ✅ centers the card */
+  }
+
+  /* Make TD fill the card width cleanly */
+  table.teamsTable td,
+  table.playersTable td,
+  table.heroesTable td,
+  table.heroPoolTable td,
+  table.playerPoolTable td{
+    width: 100%;
+  }
+}
