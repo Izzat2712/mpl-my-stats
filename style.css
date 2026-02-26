@@ -1,3 +1,6 @@
+/* =========================================================
+   THEME TOKENS
+========================================================= */
 :root{
   --bg1:#0a0f2c;
   --bg2:#111c4e;
@@ -13,13 +16,21 @@
 
   --text:#ffffff;
   --muted:rgba(255,255,255,0.7);
+
+  /* glass extras */
+  --glass-1: rgba(255,255,255,0.10);
+  --glass-2: rgba(255,255,255,0.04);
+  --edge: rgba(255,255,255,0.18);
 }
 
 *{ box-sizing:border-box; }
 
+/* =========================================================
+   PAGE LAYOUT
+========================================================= */
 body{
   margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family:'Segoe UI', Arial, sans-serif;
   color:var(--text);
 
   background:
@@ -52,14 +63,17 @@ h1{
   color:var(--muted);
 }
 
+/* =========================================================
+   NAV
+========================================================= */
 .nav{
   display:flex;
   justify-content:center;
   gap:12px;
   flex-wrap:wrap;
   margin-bottom:25px;
-  position: relative;
-  z-index: 5;
+  position:relative;
+  z-index:5;
 }
 
 .nav button{
@@ -79,21 +93,104 @@ h1{
   transform:translateY(-2px);
 }
 
+/* =========================================================
+   PANEL / SECTIONS
+========================================================= */
 .panel{
-  width: min(1280px, calc(100% - 40px));
-  margin: 24px auto 60px;
-  padding: 28px 22px;
-  border-radius: 16px;
-  background: rgba(90, 92, 98, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  width:min(1280px, calc(100% - 40px));
+  margin:24px auto 60px;
+  padding:28px 22px;
+  border-radius:16px;
+
+  background:rgba(90, 92, 98, 0.55);
+  border:1px solid rgba(255,255,255,0.14);
   backdrop-filter: blur(10px);
-  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
-  position: relative;
-  z-index: 1;
+
+  box-shadow:0 18px 60px rgba(0,0,0,0.35);
+  position:relative;
+  z-index:1;
 }
 
-/* ===================== TABLES ===================== */
+/* Fancy title style for .panel-title OR panel h2/h3 */
+.panel-title,
+.panel h2,
+.panel h3{
+  position:relative;
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  margin:0 auto 22px;
+  padding:14px 22px;
 
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.18);
+
+  background:
+    radial-gradient(circle at 25% 30%, rgba(59,130,246,0.22), transparent 55%),
+    radial-gradient(circle at 85% 20%, rgba(251,191,36,0.18), transparent 55%),
+    linear-gradient(180deg, var(--glass-1), var(--glass-2));
+
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:1.6px;
+
+  font-size:26px;
+  text-shadow:
+    0 2px 10px rgba(0,0,0,0.55),
+    0 0 16px rgba(59,130,246,0.16);
+}
+
+.panel-title::before,
+.panel h2::before,
+.panel h3::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:16px;
+  padding:1px;
+
+  background:linear-gradient(135deg,
+    rgba(59,130,246,0.75),
+    rgba(251,191,36,0.65)
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+
+  opacity:0.45;
+  pointer-events:none;
+}
+
+.panel-title::after,
+.panel h2::after,
+.panel h3::after{
+  content:"";
+  position:absolute;
+  left:16px;
+  right:16px;
+  bottom:8px;
+  height:2px;
+  border-radius:2px;
+  background:linear-gradient(90deg,
+    transparent,
+    rgba(59,130,246,0.85),
+    rgba(251,191,36,0.85),
+    transparent
+  );
+  opacity:0.75;
+}
+
+/* =========================================================
+   TABLES (DESKTOP DEFAULT)
+========================================================= */
 table{
   width:100%;
   border-collapse:collapse;
@@ -121,38 +218,56 @@ table th{
   z-index:2;
 }
 
-table tr:nth-child(even){
-  background:rgba(255,255,255,0.03);
-}
+table tr:nth-child(even){ background:rgba(255,255,255,0.03); }
 
 table tr:hover{
   background:rgba(59,130,246,0.15);
   transition:0.2s;
 }
 
-/* ✅ THIS is what centers Team logo + Team name */
+/* =========================================================
+   TEAM CELL + LOGOS
+========================================================= */
 .teamCell{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
 }
 
-.teamCell img{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  object-fit: cover;
+/* Make team logos premium (no circle) */
+.teamCell img,
+.teamLogo{
+  width:60px !important;
+  height:60px !important;
+  border-radius:0 !important;
+  object-fit:contain !important;
+  background:transparent !important;
+  padding:0 !important;
+
+  filter:
+    drop-shadow(0 6px 14px rgba(0,0,0,0.45))
+    drop-shadow(0 0 10px rgba(59,130,246,0.18));
+
+  transition: transform 160ms ease, filter 160ms ease;
 }
 
-/* Images */
+.teamCell:hover img,
+.teamLogo:hover{
+  transform: translateY(-2px) scale(1.03);
+  filter:
+    drop-shadow(0 10px 18px rgba(0,0,0,0.55))
+    drop-shadow(0 0 14px rgba(251,191,36,0.25));
+}
+
+/* global images */
 img{ object-fit:cover; }
 td img{ border-radius:50%; }
 
-/* ===================== INPUTS & SELECTS ===================== */
-
-input,
-select{
+/* =========================================================
+   INPUTS
+========================================================= */
+input, select{
   background:rgba(0,0,0,0.4);
   border:1px solid var(--border);
   padding:8px 12px;
@@ -160,42 +275,83 @@ select{
   color:white;
 }
 
-input:focus,
-select:focus{
+input:focus, select:focus{
   outline:none;
   border-color:var(--yellow);
   box-shadow:0 0 0 3px rgba(251,191,36,0.25);
 }
 
-/* ===================== TOP 5 BLOCKS (Players) ===================== */
-/* ✅ Grid keeps the LABEL column + ITEMS block centered as one unit,
-      and prevents wrapped items from sliding under the label. */
-
-/* ===================== TOP 5 BLOCKS (Players) ===================== */
-
+/* =========================================================
+   TOP 5 (PLAYERS)
+========================================================= */
 .topRow{
   display:flex;
-  flex-direction:column;        /* stack label on top */
-  align-items:center;           /* center everything */
+  flex-direction:column;
+  align-items:center;
   justify-content:center;
-  gap:28px;                     /* space between label and players */
-  margin:60px 0;                /* ✅ bigger spacing between 3 blocks */
+  gap:28px;
+  margin:55px 0;
   width:100%;
 }
 
 .topRow strong{
   font-weight:800;
   font-size:16px;
-  text-align:center;            /* ✅ center the text */
-  width:100%;
+  text-align:center;
+  width:fit-content;         /* important: pill stays tight */
+  margin:0 auto;
   letter-spacing:1px;
+
+  /* premium pill */
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.16);
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(251,191,36,0.16), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(59,130,246,0.16), transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.08));
+
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  text-shadow:0 2px 10px rgba(0,0,0,0.55);
+}
+
+.topRow strong::before,
+.topRow strong::after{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  opacity:0.75;
+}
+
+.topRow strong::before{
+  margin-right:10px;
+  background:rgba(251,191,36,0.9);
+  box-shadow:0 0 12px rgba(251,191,36,0.35);
+}
+
+.topRow strong::after{
+  margin-left:10px;
+  background:rgba(59,130,246,0.95);
+  box-shadow:0 0 12px rgba(59,130,246,0.35);
 }
 
 .topItems{
   display:flex;
-  justify-content:center;       /* center the 5 players */
+  justify-content:center;
   align-items:center;
-  gap:40px;                     /* spacing between players */
+  gap:40px;
   flex-wrap:wrap;
 }
 
@@ -206,6 +362,7 @@ select:focus{
   text-align:center;
   font-size:14px;
   font-weight:600;
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
 }
 
 .topItem img{
@@ -214,68 +371,88 @@ select:focus{
   border-radius:50%;
   border:3px solid var(--yellow);
   box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  transition:
+    transform 0.35s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
 }
 
-@media (max-width:900px){
-  .topRow{
-    grid-template-columns: 1fr;
-    justify-items:center;
-  }
-
-  .topRow strong{
-    justify-self:center;
-    text-align:center;
-  }
-
-  table{
-    display:block;
-    overflow-x:auto;
-  }
-}
-
-/* ===== HERO TAB: Top 5 blocks (your existing) ===== */
-
-.panel-title {
-  margin: 0 0 18px;
-  text-align: center;
-  font-size: 26px;
-  letter-spacing: 0.5px;
-}
-
-/* ===== HERO TAB: Top 5 blocks ===== */
-
+/* =========================================================
+   TOP 5 (HEROES)
+========================================================= */
 .toprows{
   display:flex;
   flex-direction:column;
-  gap:60px;                 /* ✅ bigger spacing between 3 blocks */
+  gap:60px;
   width:100%;
   max-width:1100px;
-  margin:0 auto 24px auto;
+  margin:0 auto 24px;
 }
 
 .toprow{
   display:flex;
-  flex-direction:column;    /* ✅ label on top like Players */
-  align-items:center;       /* ✅ center block */
+  flex-direction:column;
+  align-items:center;
   justify-content:center;
-  gap:28px;                 /* ✅ spacing label -> cards */
+  gap:28px;
   width:100%;
 }
 
 .toprow-label{
   font-weight:800;
   font-size:16px;
-  text-align:center;        /* ✅ center the text */
-  width:100%;
+  text-align:center;
+  width:fit-content;
+  margin:0 auto;
   letter-spacing:1px;
   white-space:nowrap;
-  padding-right:0;          /* ✅ remove old offset */
-  justify-self:auto;        /* harmless reset */
+
+  /* same pill as players */
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.16);
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(251,191,36,0.16), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(59,130,246,0.16), transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.08));
+
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  text-shadow:0 2px 10px rgba(0,0,0,0.55);
 }
 
-/* keep your existing grid/card styles */
+.toprow-label::before,
+.toprow-label::after{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  opacity:0.75;
+}
+
+.toprow-label::before{
+  margin-right:10px;
+  background:rgba(251,191,36,0.9);
+  box-shadow:0 0 12px rgba(251,191,36,0.35);
+}
+
+.toprow-label::after{
+  margin-left:10px;
+  background:rgba(59,130,246,0.95);
+  box-shadow:0 0 12px rgba(59,130,246,0.35);
+}
+
 .toprow-grid{
-  justify-self:center;
   display:flex;
   gap:26px;
   align-items:center;
@@ -291,6 +468,7 @@ select:focus{
   font-weight:700;
   font-size:13px;
   text-align:center;
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
 }
 
 .topavatar{
@@ -299,26 +477,18 @@ select:focus{
   border-radius:50%;
   object-fit:cover;
   border:3px solid #f6c000;
-  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+  box-shadow:0 10px 22px rgba(0,0,0,.35);
+  transition:
+    transform 0.35s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
 }
 
-@media (max-width: 900px){
-  .toprow{
-    grid-template-columns: 1fr;
-    gap:10px;
-    text-align:center;
-  }
-  .toprow-label{
-    justify-self:center;
-    padding-right:0;
-  }
-}
-
-.topname { font-weight:700; font-size:14px; text-align:center; }
-.topvalue { font-weight:800; opacity:.95; }
-
+/* =========================================================
+   SEARCH ROW + WRAPS
+========================================================= */
 .searchRow{
-  margin: 18px 0 10px;
+  margin:18px 0 10px;
   display:flex;
   justify-content:center;
 }
@@ -352,8 +522,6 @@ select:focus{
   padding:12px 10px;
 }
 
-.tdCenter{ text-align:center; }
-
 .cellHero{
   display:inline-flex;
   align-items:center;
@@ -371,30 +539,317 @@ select:focus{
 
 .cellHeroName{ font-weight:700; }
 
-/* ===================================================
-   MOBILE ONLY: Convert ALL tables to card layout
-   PC stays unchanged
-=================================================== */
-@media (max-width: 700px){
+/* =========================================================
+   TOP LABEL / NAME BADGES
+========================================================= */
+.topLabel{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
 
-  /* tighter panel on phones */
+  margin-top:10px;
+  padding:8px 12px;
+
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.18);
+
+  background:linear-gradient(135deg,
+    rgba(59,130,246,0.12),
+    rgba(251,191,36,0.10)
+  );
+
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.topName{ font-weight:800; font-size:14px; }
+.topValue{
+  padding:4px 10px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.18);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(251,191,36,0.22), transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(59,130,246,0.18), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+  font-weight:900;
+  font-size:13px;
+}
+
+/* If you still use .topname/.topvalue anywhere */
+.topname{ font-weight:700; font-size:14px; text-align:center; }
+.topvalue{ font-weight:800; opacity:.95; }
+
+/* =========================================================
+   FX / ANIMATION (Top 5)
+========================================================= */
+@keyframes glowPulse{
+  0%   { filter: drop-shadow(0 0 0 rgba(59,130,246,0.0)) drop-shadow(0 0 0 rgba(251,191,36,0.0)); }
+  50%  { filter: drop-shadow(0 0 16px rgba(59,130,246,0.25)) drop-shadow(0 0 18px rgba(251,191,36,0.18)); }
+  100% { filter: drop-shadow(0 0 0 rgba(59,130,246,0.0)) drop-shadow(0 0 0 rgba(251,191,36,0.0)); }
+}
+
+@keyframes crownFloat{
+  0%   { transform: translate(-50%, 0); }
+  50%  { transform: translate(-50%, -6px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+.topItem.topRank,
+.topcard.topRank{ position:relative; }
+
+.topItem.topRank img,
+.topcard.topRank .topavatar{
+  animation: glowPulse 2.4s ease-in-out infinite;
+}
+
+.rankBadge{
+  position:absolute;
+  top:-10px;
+  left:-10px;
+  z-index:7;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:0.4px;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.22);
+  background:linear-gradient(135deg, rgba(59,130,246,0.55), rgba(0,0,0,0.35));
+  box-shadow:0 10px 20px rgba(0,0,0,0.35);
+}
+
+.topRank--1 .rankBadge{
+  background:linear-gradient(135deg, rgba(251,191,36,0.85), rgba(245,158,11,0.35));
+  border-color:rgba(251,191,36,0.55);
+  box-shadow:0 12px 26px rgba(251,191,36,0.22), 0 10px 22px rgba(0,0,0,0.35);
+}
+
+.topRank--1 img,
+.topRank--1 .topavatar{
+  border-color:rgba(251,191,36,0.95) !important;
+  box-shadow:0 14px 30px rgba(0,0,0,0.45), 0 0 18px rgba(251,191,36,0.18) !important;
+}
+
+.topMVP::after{
+  content:"";
+  position:absolute;
+  top:-42px;
+  left:50%;
+  transform:translateX(-50%);
+  width:38px;
+  height:30px;
+  z-index:10;
+
+  background-image:url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2064%2048%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27gold%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23FFD700%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23F59E0B%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%27M4%2036%20L10%2014%20L24%2028%20L32%208%20L40%2028%20L54%2014%20L60%2036%20Z%27%20fill%3D%27url(%23gold)%27%20stroke%3D%27%23B8860B%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%274%27%20y%3D%2736%27%20width%3D%2756%27%20height%3D%276%27%20fill%3D%27url(%23gold)%27%20stroke%3D%27%23B8860B%27%20stroke-width%3D%272%27/%3E%3C/svg%3E");
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,0.45))
+          drop-shadow(0 0 10px rgba(251,191,36,0.45));
+
+  animation: crownFloat 1.8s ease-in-out infinite;
+}
+
+.topRank--1 .topLabel{
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.45),
+    0 0 18px rgba(251,191,36,0.14),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Hover enlarge */
+.topItem:hover,
+.topcard:hover{
+  transform: translateY(-6px) scale(1.05);
+  z-index:5;
+}
+
+.topItem:hover img,
+.topcard:hover .topavatar{
+  transform: scale(1.18);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.5),
+    0 0 25px rgba(251,191,36,0.35);
+  filter: brightness(1.05);
+}
+
+.topItem:hover .topLabel,
+.topcard:hover .topLabel{
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.45),
+    0 0 18px rgba(59,130,246,0.25);
+}
+
+.topItems:hover .topItem:not(:hover),
+.toprow-grid:hover .topcard:not(:hover){
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+/* =========================================================
+   AVATAR + TEAM LOGO OVERLAY (Top 5 Players)
+========================================================= */
+.avatarWrap{
+  position:relative;
+  display:inline-block;
+  width:110px;
+  height:110px;
+}
+
+.playerAvatar{
+  width:110px !important;
+  height:110px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  border:3px solid var(--yellow) !important;
+  box-shadow:0 12px 28px rgba(0,0,0,0.45) !important;
+  display:block;
+  transition: transform 0.35s ease;
+}
+
+/* One clean final version of teamMiniLogo (glass) */
+.teamMiniLogo{
+  position:absolute;
+  bottom:-10px;
+  left:-10px;
+  z-index:6;
+
+  width:44px !important;
+  height:44px !important;
+  object-fit:contain !important;
+
+  padding:6px;
+  border-radius:14px;
+
+  background:linear-gradient(135deg, rgba(255,255,255,0.20), rgba(255,255,255,0.05));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border:1px solid rgba(255,255,255,0.35);
+
+  box-shadow:
+    0 12px 22px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    0 0 14px rgba(59,130,246,0.18);
+
+  animation:none !important;
+  filter:none !important;
+  transform:none !important;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topItem:hover .playerAvatar{ transform: scale(1.12); }
+.topItem:hover .teamMiniLogo{
+  transform: scale(1.1);
+  box-shadow:
+    0 16px 28px rgba(0,0,0,0.65),
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 0 20px rgba(251,191,36,0.25);
+}
+
+/* =========================================================
+   ROTATE HINT
+========================================================= */
+.rotateHint{
+  display:none;
+  margin:0 auto 18px;
+  padding:10px 14px;
+  width:fit-content;
+  max-width:90%;
+  text-align:center;
+  font-size:13px;
+  font-weight:600;
+  border-radius:10px;
+  background:rgba(59,130,246,0.18);
+  border:1px solid rgba(59,130,246,0.4);
+  color:#fff;
+  backdrop-filter: blur(6px);
+}
+
+@media (max-width:700px) and (orientation:portrait){
+  .rotateHint{ display:block; }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width:900px){
+  table{
+    display:block;
+    overflow-x:auto;
+  }
+}
+
+@media (max-width:700px){
   .panel{
-    width: calc(100% - 24px);
-    margin: 16px auto 40px;
-    padding: 16px 12px;
+    width:calc(100% - 24px);
+    margin:16px auto 40px;
+    padding:16px 12px;
   }
 
-  /* generic card-table behavior */
+  .panel-title,
+  .panel h2,
+  .panel h3{
+    font-size:22px;
+    padding:12px 16px;
+    letter-spacing:1.2px;
+  }
+
+  .topRow strong,
+  .toprow-label{
+    font-size:13px;
+    padding:9px 14px;
+    letter-spacing:1px;
+  }
+}
+
+@media (max-width:420px){
+  .teamCell img,
+  .teamLogo{
+    width:52px !important;
+    height:52px !important;
+  }
+}
+
+/* =========================================================
+   MOBILE: TABLE -> CARD (CENTERED FOR ALL TABS)
+   PC layout unchanged
+========================================================= */
+@media (max-width:700px){
+
+  /* card-table mode */
   table.teamsTable,
   table.playersTable,
   table.heroesTable,
   table.heroPoolTable,
   table.playerPoolTable{
     display:block;
-    background: transparent;
-    border-radius: 0;
-    overflow: visible;
-    margin-top: 12px;
+    background:transparent;
+    border-radius:0;
+    overflow:visible;
+    margin-top:12px;
+
+    width:100% !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  /* prevent weird table inner layout in block mode */
+  table.teamsTable tbody,
+  table.playersTable tbody,
+  table.heroesTable tbody,
+  table.heroPoolTable tbody,
+  table.playerPoolTable tbody{
+    display:block;
+    width:100%;
   }
 
   /* hide header row */
@@ -406,32 +861,35 @@ select:focus{
     display:none;
   }
 
-  /* each row becomes a card */
+  /* each row becomes a centered card */
   table.teamsTable tr,
   table.playersTable tr,
   table.heroesTable tr,
   table.heroPoolTable tr,
   table.playerPoolTable tr{
     display:block;
-    margin: 10px 0;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 14px;
-    overflow: hidden;
+    width:min(520px, 100%);
+    margin:10px auto !important;
+
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:14px;
+    overflow:hidden;
   }
 
-  /* each cell becomes a stacked stat line */
+  /* each cell becomes a stat line */
   table.teamsTable td,
   table.playersTable td,
   table.heroesTable td,
   table.heroPoolTable td,
   table.playerPoolTable td{
     display:flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items:center;
     text-align:right !important;
-    padding: 12px 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding:12px 12px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    width:100%;
   }
 
   table.teamsTable tr td:last-child,
@@ -448,11 +906,11 @@ select:focus{
   table.heroesTable td::before,
   table.heroPoolTable td::before,
   table.playerPoolTable td::before{
-    font-weight: 800;
-    opacity: 0.85;
+    font-weight:800;
+    opacity:0.85;
     text-align:left;
-    margin-right: 12px;
-    white-space: nowrap;
+    margin-right:12px;
+    white-space:nowrap;
   }
 
   /* ========= TEAMS labels (8 cols) ========= */
@@ -465,7 +923,7 @@ select:focus{
   table.teamsTable tr td:nth-child(7)::before{ content:"TURTLE"; }
   table.teamsTable tr td:nth-child(8)::before{ content:"TOWER"; }
 
-  /* TEAM row content */
+  /* TEAM cell layout inside card */
   table.teamsTable td:first-child{
     justify-content:flex-start;
     text-align:left !important;
@@ -488,7 +946,6 @@ select:focus{
   table.playersTable tr td:nth-child(11)::before{ content:"KDA"; }
   table.playersTable tr td:nth-child(12)::before{ content:"KP%"; }
 
-  /* make PLAYER + TEAM rows left aligned so avatars look nice */
   table.playersTable td:nth-child(1),
   table.playersTable td:nth-child(2){
     justify-content:flex-start;
@@ -521,16 +978,15 @@ select:focus{
     text-align:left !important;
   }
 
-  /* let the long heroes list wrap nicely */
   table.heroPoolTable td:nth-child(5){
-    flex-direction: column;
+    flex-direction:column;
     align-items:flex-start;
     text-align:left !important;
-    gap: 8px;
+    gap:8px;
   }
   table.heroPoolTable td:nth-child(5)::before{
-    margin-right: 0;
-    margin-bottom: 6px;
+    margin-right:0;
+    margin-bottom:6px;
   }
 
   /* ========= PLAYER POOL labels (3 cols) ========= */
@@ -544,903 +1000,19 @@ select:focus{
   }
 
   table.playerPoolTable td:nth-child(3){
-    flex-direction: column;
+    flex-direction:column;
     align-items:flex-start;
     text-align:left !important;
-    gap: 8px;
+    gap:8px;
   }
   table.playerPoolTable td:nth-child(3)::before{
-    margin-right: 0;
-    margin-bottom: 6px;
+    margin-right:0;
+    margin-bottom:6px;
   }
 
-  /* smaller images in long lists so it fits mobile better */
   table.heroPoolTable td img,
   table.playerPoolTable td img{
-    max-width: 64px;
-    max-height: 64px;
-  }
-}
-
-/* =========================================
-   MOBILE ROTATE HINT
-   Shows only on small screens in portrait
-========================================= */
-
-.rotateHint{
-  display:none;
-  margin: 0 auto 18px;
-  padding: 10px 14px;
-  width: fit-content;
-  max-width: 90%;
-  text-align:center;
-  font-size:13px;
-  font-weight:600;
-  border-radius:10px;
-  background: rgba(59,130,246,0.18);
-  border:1px solid rgba(59,130,246,0.4);
-  color:#fff;
-  backdrop-filter: blur(6px);
-}
-
-/* Show only on mobile portrait */
-@media (max-width:700px) and (orientation:portrait){
-  .rotateHint{
-    display:block;
-  }
-}
-
-/* ===================== TEAM LOGOS (Premium) ===================== */
-/* Works for Teams tab + Players tab + Hero Pool tab */
-.teamCell img,
-.teamLogo {
-  width: 60px !important;
-  height: 60px !important;
-
-  border-radius: 0 !important;        /* no circle */
-  object-fit: contain !important;     /* auto-scale based on logo shape */
-  background: transparent !important; /* no grey box */
-  padding: 0 !important;
-
-  /* subtle glow */
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45))
-          drop-shadow(0 0 10px rgba(59,130,246,0.18));
-  transition: transform 160ms ease, filter 160ms ease;
-}
-
-/* soft hover effect */
-.teamCell:hover img,
-.teamLogo:hover {
-  transform: translateY(-2px) scale(1.03);
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.55))
-          drop-shadow(0 0 14px rgba(251,191,36,0.25));
-}
-
-/* optional: slightly smaller on very small phones */
-@media (max-width: 420px) {
-  .teamCell img,
-  .teamLogo {
-    width: 52px !important;
-    height: 52px !important;
-  }
-}
-
-/* =========================================
-   FANCY TITLES + LABEL PANELS
-   Paste at bottom of style.css
-========================================= */
-
-/* Optional extra tokens */
-:root{
-  --glass-1: rgba(255,255,255,0.10);
-  --glass-2: rgba(255,255,255,0.04);
-  --edge: rgba(255,255,255,0.18);
-}
-
-/* ===== BIG PANEL TITLES (TOP PLAYERS / HERO STATS / HERO POOL / PLAYER POOL) ===== */
-.panel-title{
-  /* keep your existing sizing if you want; these improve style */
-  position: relative;
-  display: inline-block;
-  margin: 0 auto 22px;
-  padding: 14px 22px;
-
-  border-radius: 16px;
-  border: 1px solid var(--edge);
-
-  background:
-    radial-gradient(circle at 25% 30%, rgba(59,130,246,0.22), transparent 55%),
-    radial-gradient(circle at 85% 20%, rgba(251,191,36,0.18), transparent 55%),
-    linear-gradient(180deg, var(--glass-1), var(--glass-2));
-
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 16px 40px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.10);
-
-  text-transform: uppercase;
-  letter-spacing: 1.6px;
-  text-shadow:
-    0 2px 10px rgba(0,0,0,0.55),
-    0 0 16px rgba(59,130,246,0.16);
-}
-
-/* Gradient “trim” border glow */
-.panel-title::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius: 16px;
-  padding: 1px;
-
-  background: linear-gradient(135deg,
-    rgba(59,130,246,0.75),
-    rgba(251,191,36,0.65)
-  );
-
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-
-  opacity: 0.45;
-  pointer-events:none;
-}
-
-/* small highlight line under text */
-.panel-title::after{
-  content:"";
-  position:absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 8px;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(59,130,246,0.85),
-    rgba(251,191,36,0.85),
-    transparent
-  );
-  opacity: 0.75;
-}
-
-/* ===== SUB LABELS (TOP 5 KILLS / ASSISTS / KDA / PICK / BAN / WINRATE) ===== */
-/* Players tab labels: .topRow strong */
-/* Heroes tab labels:  .toprow-label */
-.topRow strong,
-.toprow-label{
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.16);
-
-  background:
-    radial-gradient(circle at 20% 30%, rgba(251,191,36,0.16), transparent 55%),
-    radial-gradient(circle at 80% 20%, rgba(59,130,246,0.16), transparent 55%),
-    linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.08));
-
-  box-shadow:
-    0 10px 26px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.10);
-
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
-}
-
-/* tiny side “caps” for a premium look */
-.topRow strong::before,
-.topRow strong::after,
-.toprow-label::before,
-.toprow-label::after{
-  content:"";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(251,191,36,0.9);
-  box-shadow: 0 0 12px rgba(251,191,36,0.35);
-  opacity: 0.75;
-}
-
-.topRow strong::before,
-.toprow-label::before{ margin-right: 10px; }
-
-.topRow strong::after,
-.toprow-label::after{
-  margin-left: 10px;
-  background: rgba(59,130,246,0.95);
-  box-shadow: 0 0 12px rgba(59,130,246,0.35);
-}
-
-/* Make spacing look intentional around these labels */
-.topRow{ margin: 70px 0; }
-.toprow{ gap: 30px; }
-
-/* Mobile tightening */
-@media (max-width:700px){
-  .panel-title{
-    font-size: 22px;
-    padding: 12px 16px;
-    letter-spacing: 1.2px;
-  }
-  .topRow strong,
-  .toprow-label{
-    font-size: 13px;
-    padding: 9px 14px;
-    letter-spacing: 1px;
-  }
-}
-
-/* =========================================
-   PATCH: Fix main titles + fit subtitle pills
-   Paste at VERY BOTTOM
-========================================= */
-
-/* 1) Make ALL these titles use the fancy panel:
-   - If your titles are h2/h3 inside .panel, target them directly.
-   - Also keep .panel-title support.
-*/
-.panel-title,
-.panel h2,
-.panel h3{
-  position: relative;
-  display: block;            /* ✅ lets margin auto work reliably */
-  width: fit-content;        /* ✅ only as wide as text */
-  max-width: 100%;
-  margin: 0 auto 22px;       /* ✅ centered */
-  padding: 14px 22px;
-
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.18);
-
-  background:
-    radial-gradient(circle at 25% 30%, rgba(59,130,246,0.22), transparent 55%),
-    radial-gradient(circle at 85% 20%, rgba(251,191,36,0.18), transparent 55%),
-    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
-
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 16px 40px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.10);
-
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1.6px;
-  text-shadow:
-    0 2px 10px rgba(0,0,0,0.55),
-    0 0 16px rgba(59,130,246,0.16);
-}
-
-/* Gradient trim */
-.panel-title::before,
-.panel h2::before,
-.panel h3::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(135deg,
-    rgba(59,130,246,0.75),
-    rgba(251,191,36,0.65)
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  opacity: 0.45;
-  pointer-events:none;
-}
-
-/* small underline glow */
-.panel-title::after,
-.panel h2::after,
-.panel h3::after{
-  content:"";
-  position:absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 8px;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(59,130,246,0.85),
-    rgba(251,191,36,0.85),
-    transparent
-  );
-  opacity: 0.75;
-}
-
-/* 2) Subtitles (TOP 5 KILLS / etc) should NOT stretch full width */
-.topRow strong,
-.toprow-label{
-  width: fit-content !important;     /* ✅ stops full-width bar */
-  display: inline-flex !important;
-  margin: 0 auto !important;         /* ✅ centered */
-  padding: 10px 16px !important;
-  border-radius: 999px;
-}
-
-/* (Your current .topRow strong has width:100% — override it) */
-.topRow strong{
-  text-align:center;
-}
-
-/* Optional: reduce the spacing so it feels tighter */
-.topRow{ margin: 55px 0; }
-
-/* =========================================
-   TOP 5 NAME BADGES (Players + Heroes)
-========================================= */
-
-/* Player names (Players tab) */
-.topItem span,
-.topname{
-  display: inline-block;
-  margin-top: 8px;
-  padding: 6px 12px;
-
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.18);
-
-  background:
-    linear-gradient(135deg,
-      rgba(59,130,246,0.15),
-      rgba(251,191,36,0.15)
-    );
-
-  backdrop-filter: blur(6px);
-
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-
-  transition: all 0.2s ease;
-}
-
-/* Hero names (Heroes tab cards) */
-.topcard span{
-  display: inline-block;
-  margin-top: 8px;
-  padding: 6px 12px;
-
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.18);
-
-  background:
-    linear-gradient(135deg,
-      rgba(251,191,36,0.18),
-      rgba(59,130,246,0.18)
-    );
-
-  backdrop-filter: blur(6px);
-
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-
-  transition: all 0.2s ease;
-}
-
-/* Hover effect (both players + heroes) */
-.topItem:hover span,
-.topcard:hover span,
-.topItem:hover .topname{
-  transform: translateY(-2px);
-  box-shadow:
-    0 10px 22px rgba(0,0,0,0.45),
-    0 0 14px rgba(251,191,36,0.25);
-}
-/* Players tab: name badge under top 5 avatars */
-.topLabel{
-  display:inline-block;
-  margin-top:8px;
-  padding:6px 12px;
-
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.18);
-
-  background: linear-gradient(135deg,
-    rgba(59,130,246,0.15),
-    rgba(251,191,36,0.15)
-  );
-
-  backdrop-filter: blur(6px);
-
-  font-weight:700;
-  font-size:14px;
-  letter-spacing:0.5px;
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.topItem:hover .topLabel{
-  transform: translateY(-2px);
-  box-shadow:
-    0 10px 22px rgba(0,0,0,0.45),
-    0 0 14px rgba(251,191,36,0.25);
-}
-
-.topLabel{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  margin-top: 10px;
-  padding: 8px 12px;
-
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.18);
-
-  background: linear-gradient(135deg,
-    rgba(59,130,246,0.12),
-    rgba(251,191,36,0.10)
-  );
-
-  backdrop-filter: blur(6px);
-
-  box-shadow:
-    0 8px 20px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-}
-
-.topName{
-  font-weight: 800;
-  font-size: 14px;
-}
-
-.topValue{
-  padding: 4px 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.18);
-
-  background:
-    radial-gradient(circle at 30% 30%, rgba(251,191,36,0.22), transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(59,130,246,0.18), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
-
-  font-weight: 900;
-  font-size: 13px;
-}
-
-/* Heroes tab: allow topLabel inside topcard to match Players style */
-.topcard .topLabel{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-/* optional: if old .topname is still used somewhere */
-.topcard .topname{
-  display:none; /* remove if you still need it elsewhere */
-}
-
-/* =========================================
-   TOP 5 FX: Animated glow + Rank + Gold #1 + Crown MVP
-========================================= */
-
-/* 0) Keyframes */
-@keyframes glowPulse {
-  0%   { filter: drop-shadow(0 0 0 rgba(59,130,246,0.0)) drop-shadow(0 0 0 rgba(251,191,36,0.0)); }
-  50%  { filter: drop-shadow(0 0 16px rgba(59,130,246,0.25)) drop-shadow(0 0 18px rgba(251,191,36,0.18)); }
-  100% { filter: drop-shadow(0 0 0 rgba(59,130,246,0.0)) drop-shadow(0 0 0 rgba(251,191,36,0.0)); }
-}
-
-@keyframes crownFloat {
-  0%   { transform: translate(-50%, 0) rotate(-6deg); }
-  50%  { transform: translate(-50%, -6px) rotate(6deg); }
-  100% { transform: translate(-50%, 0) rotate(-6deg); }
-}
-
-/* 1) Make top cards/items positionable */
-.topItem.topRank,
-.topcard.topRank{
-  position: relative;
-}
-
-/* 2) Animated glow around the avatar image */
-.topItem.topRank img,
-.topcard.topRank .topavatar{
-  animation: glowPulse 2.4s ease-in-out infinite;
-}
-
-/* 3) Rank badge (#1 #2 #3...) */
-.rankBadge{
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  z-index: 3;
-
-  padding: 6px 10px;
-  border-radius: 999px;
-
-  font-weight: 900;
-  font-size: 12px;
-  letter-spacing: 0.4px;
-
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.22);
-  background: linear-gradient(135deg, rgba(59,130,246,0.55), rgba(0,0,0,0.35));
-  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
-}
-
-/* 4) Gold highlight only for #1 */
-.topRank--1 .rankBadge{
-  background: linear-gradient(135deg, rgba(251,191,36,0.85), rgba(245,158,11,0.35));
-  border-color: rgba(251,191,36,0.55);
-  box-shadow: 0 12px 26px rgba(251,191,36,0.22), 0 10px 22px rgba(0,0,0,0.35);
-}
-
-/* Make #1 avatar border look “champion” */
-.topRank--1 img,
-.topRank--1 .topavatar{
-  border-color: rgba(251,191,36,0.95) !important;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.45), 0 0 18px rgba(251,191,36,0.18) !important;
-}
-
-/* ===== MVP SVG Crown (SAFE: single-line encoded) ===== */
-.topMVP::after{
-  content:"";
-  position:absolute;
-  top:-42px;
-  left:50%;
-  transform:translateX(-50%);
-  width:38px;
-  height:30px;
-  z-index:10;
-
-  background-image:url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2064%2048%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27gold%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23FFD700%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23F59E0B%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%27M4%2036%20L10%2014%20L24%2028%20L32%208%20L40%2028%20L54%2014%20L60%2036%20Z%27%20fill%3D%27url(%23gold)%27%20stroke%3D%27%23B8860B%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%274%27%20y%3D%2736%27%20width%3D%2756%27%20height%3D%276%27%20fill%3D%27url(%23gold)%27%20stroke%3D%27%23B8860B%27%20stroke-width%3D%272%27/%3E%3C/svg%3E");
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:center;
-
-  filter:drop-shadow(0 8px 14px rgba(0,0,0,0.45)) drop-shadow(0 0 10px rgba(251,191,36,0.45));
-  animation:crownFloat 1.8s ease-in-out infinite;
-}
-
-@keyframes crownFloat{
-  0%{transform:translate(-50%,0);}
-  50%{transform:translate(-50%,-6px);}
-  100%{transform:translate(-50%,0);}
-}
-
-/* Floating animation */
-@keyframes crownFloat{
-  0%   { transform: translate(-50%, 0); }
-  50%  { transform: translate(-50%, -6px); }
-  100% { transform: translate(-50%, 0); }
-}
-
-/* Optional: subtle gold glow behind #1 label container */
-.topRank--1 .topLabel{
-  box-shadow:
-    0 10px 26px rgba(0,0,0,0.45),
-    0 0 18px rgba(251,191,36,0.14),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-}
-
-/* =========================================
-   TOP 5 HOVER ENLARGE EFFECT (Players + Heroes)
-========================================= */
-
-/* Make transitions smooth */
-.topItem,
-.topcard{
-  transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
-}
-
-.topItem img,
-.topcard .topavatar{
-  transition: 
-    transform 0.35s cubic-bezier(.2,.8,.2,1),
-    box-shadow 0.35s ease,
-    filter 0.35s ease;
-}
-
-/* ===== HOVER EFFECT ===== */
-.topItem:hover,
-.topcard:hover{
-  transform: translateY(-6px) scale(1.05);
-  z-index: 5;
-}
-
-/* Enlarge avatar image */
-.topItem:hover img,
-.topcard:hover .topavatar{
-  transform: scale(1.18);
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.5),
-    0 0 25px rgba(251,191,36,0.35);
-  filter: brightness(1.05);
-}
-
-/* Slight boost to label when hovering */
-.topItem:hover .topLabel,
-.topcard:hover .topLabel{
-  transform: translateY(-3px);
-  box-shadow:
-    0 14px 28px rgba(0,0,0,0.45),
-    0 0 18px rgba(59,130,246,0.25);
-}
-
-.topItems:hover .topItem:not(:hover),
-.toprow-grid:hover .topcard:not(:hover){
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-/* =========================================
-   Player Avatar + Team Logo Overlay
-========================================= */
-
-/* Wrap avatar so we can position elements */
-.avatarWrap{
-  position: relative;
-  display: inline-block;
-}
-
-/* Main player avatar */
-.playerAvatar{
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--yellow);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
-  transition: transform 0.35s ease;
-}
-
-/* Small team logo bottom-left */
-.teamMiniLogo{
-  position: absolute;
-  bottom: -6px;
-  left: -6px;
-
-  width: 38px;
-  height: 38px;
-
-  object-fit: contain;
-  background: rgba(0,0,0,0.55);
-  padding: 6px;
-
-  border-radius: 12px;
-  border: 2px solid rgba(255,255,255,0.25);
-
-  box-shadow:
-    0 8px 16px rgba(0,0,0,0.5),
-    0 0 12px rgba(59,130,246,0.25);
-
-  transition: transform 0.35s ease;
-}
-
-/* Hover boost */
-.topItem:hover .playerAvatar{
-  transform: scale(1.15);
-}
-
-.topItem:hover .teamMiniLogo{
-  transform: scale(1.1);
-}
-
-/* =========================================
-   FIX: Team logo overlay (Top 5 Players)
-========================================= */
-
-.avatarWrap{
-  position: relative;
-  display: inline-block;
-  width: 110px;
-  height: 110px;
-}
-
-/* ONLY the player avatar gets circle/border */
-.playerAvatar{
-  width: 110px !important;
-  height: 110px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-
-  border: 3px solid var(--yellow) !important;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.45) !important;
-
-  display:block;
-}
-
-/* Team logo overlay bottom-left */
-.teamMiniLogo{
-  position: absolute;
-  bottom: -8px;
-  left: -8px;
-  z-index: 6;
-
-  width: 34px !important;
-  height: 34px !important;
-
-  object-fit: contain !important;
-  border-radius: 10px !important;
-
-  background: rgba(0,0,0,0.55) !important;
-  padding: 5px !important;
-
-  border: 1px solid rgba(255,255,255,0.25) !important;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.55) !important;
-
-  /* prevent your glow animation / circle styling from affecting it */
-  animation: none !important;
-  filter: none !important;
-  transform: none !important;
-}
-
-/* Keep rank badge on top-left */
-.avatarWrap .rankBadge{
-  top: -10px;
-  left: -10px;
-  z-index: 7;
-}
-
-/* Crown stays above everything */
-.topMVP::after{
-  z-index: 8;
-}
-
-/* Hover: enlarge only avatar, not the logo */
-.topItem:hover .playerAvatar{
-  transform: scale(1.12);
-}
-
-.topItem:hover .teamMiniLogo{
-  transform: scale(1.05) !important;
-}
-
-/* Slightly bigger team logo (Top 5 Players) */
-.teamMiniLogo{
-  position: absolute;
-  bottom: -10px;   /* adjust to sit nicely */
-  left: -10px;
-
-  width: 44px !important;
-  height: 44px !important;
-
-  object-fit: contain !important;
-
-  background: rgba(0,0,0,0.55);
-  padding: 6px;
-
-  border-radius: 14px; /* slightly round square */
-  border: 2px solid rgba(255,255,255,0.25);
-
-  box-shadow:
-    0 10px 18px rgba(0,0,0,0.55),
-    0 0 14px rgba(59,130,246,0.25);
-
-  animation: none !important;
-  filter: none !important;
-  transform: none !important;
-
-  transition: transform 0.3s ease;
-}
-
-/* Slight hover boost */
-.topItem:hover .teamMiniLogo{
-  transform: scale(1.08);
-}
-
-/* =========================================
-   Team Logo – Glass Style (Top 5 Players)
-========================================= */
-
-.teamMiniLogo{
-  position: absolute;
-  bottom: -10px;
-  left: -10px;
-
-  width: 44px !important;
-  height: 44px !important;
-
-  object-fit: contain !important;
-
-  padding: 6px;
-
-  border-radius: 14px;
-
-  /* ✨ GLASS EFFECT */
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.20),
-    rgba(255,255,255,0.05)
-  );
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-
-  border: 1px solid rgba(255,255,255,0.35);
-
-  box-shadow:
-    0 12px 22px rgba(0,0,0,0.55),
-    inset 0 1px 0 rgba(255,255,255,0.35),
-    0 0 14px rgba(59,130,246,0.18);
-
-  animation: none !important;
-  filter: none !important;
-  transform: none !important;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover enhancement */
-.topItem:hover .teamMiniLogo{
-  transform: scale(1.1);
-  box-shadow:
-    0 16px 28px rgba(0,0,0,0.65),
-    inset 0 1px 0 rgba(255,255,255,0.4),
-    0 0 20px rgba(251,191,36,0.25);
-}
-
-
-/* ===================================================
-   MOBILE PATCH: Center ALL card tables (tabs)
-   (PC layout unchanged)
-=================================================== */
-@media (max-width: 700px){
-
-  /* Center the "card list" container */
-  table.teamsTable,
-  table.playersTable,
-  table.heroesTable,
-  table.heroPoolTable,
-  table.playerPoolTable{
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  /* Ensure tbody behaves predictably in block-table mode */
-  table.teamsTable tbody,
-  table.playersTable tbody,
-  table.heroesTable tbody,
-  table.heroPoolTable tbody,
-  table.playerPoolTable tbody{
-    display: block;
-    width: 100%;
-  }
-
-  /* Each TR is the card — center it */
-  table.teamsTable tr,
-  table.playersTable tr,
-  table.heroesTable tr,
-  table.heroPoolTable tr,
-  table.playerPoolTable tr{
-    width: min(520px, 100%);     /* adjust 520px if you want wider/narrower cards */
-    margin: 10px auto !important; /* ✅ centers the card */
-  }
-
-  /* Make TD fill the card width cleanly */
-  table.teamsTable td,
-  table.playersTable td,
-  table.heroesTable td,
-  table.heroPoolTable td,
-  table.playerPoolTable td{
-    width: 100%;
+    max-width:64px;
+    max-height:64px;
   }
 }
