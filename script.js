@@ -6,7 +6,7 @@ let playerPoolsSort = { key: null, asc: true };
 
 
 
-// ===== SEARCH STATE (Players) =====
+// ===== SEARCH STATE (Players) ====
 let playerSearchState = { value: "", caret: 0 };
 
 function onPlayerSearchInput(e) {
@@ -3377,3 +3377,4 @@ function setSupportPos(mode) {
 window.addEventListener("DOMContentLoaded", () => {
   showTeams();
 });
+
