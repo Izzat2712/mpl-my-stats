@@ -1,0 +1,290 @@
+[
+    {
+        "name":  "SRG Player 1",
+        "team":  "SRG",
+        "lane":  "Gold Laner",
+        "picture":  "https://your-player-image-link-here.com/srg-player-1.png"
+    },
+    {
+        "name":  "SRG Player 2",
+        "team":  "SRG",
+        "lane":  "Jungler",
+        "picture":  "https://your-player-image-link-here.com/srg-player-2.png"
+    },
+    {
+        "name":  "SRG Player 3",
+        "team":  "SRG",
+        "lane":  "Midlaner",
+        "picture":  "https://your-player-image-link-here.com/srg-player-3.png"
+    },
+    {
+        "name":  "SRG Player 4",
+        "team":  "SRG",
+        "lane":  "Exp Laner",
+        "picture":  "https://your-player-image-link-here.com/srg-player-4.png"
+    },
+    {
+        "name":  "SRG Player 5",
+        "team":  "SRG",
+        "lane":  "Roamer",
+        "picture":  "https://your-player-image-link-here.com/srg-player-5.png"
+    },
+    {
+        "name":  "SRG Player 6",
+        "team":  "SRG",
+        "lane":  "Substitute",
+        "picture":  "https://your-player-image-link-here.com/srg-player-6.png"
+    },
+    {
+        "name":  "TR Player 1",
+        "team":  "TR",
+        "lane":  "Gold Laner",
+        "picture":  "https://your-player-image-link-here.com/tr-player-1.png"
+    },
+    {
+        "name":  "TR Player 2",
+        "team":  "TR",
+        "lane":  "Jungler",
+        "picture":  "https://your-player-image-link-here.com/tr-player-2.png"
+    },
+    {
+        "name":  "TR Player 3",
+        "team":  "TR",
+        "lane":  "Midlaner",
+        "picture":  "https://your-player-image-link-here.com/tr-player-3.png"
+    },
+    {
+        "name":  "TR Player 4",
+        "team":  "TR",
+        "lane":  "Exp Laner",
+        "picture":  "https://your-player-image-link-here.com/tr-player-4.png"
+    },
+    {
+        "name":  "TR Player 5",
+        "team":  "TR",
+        "lane":  "Roamer",
+        "picture":  "https://your-player-image-link-here.com/tr-player-5.png"
+    },
+    {
+        "name":  "TR Player 6",
+        "team":  "TR",
+        "lane":  "Substitute",
+        "picture":  "https://your-player-image-link-here.com/tr-player-6.png"
+    },
+    {
+        "name":  "VMS Player 1",
+        "team":  "VMS",
+        "lane":  "Gold Laner",
+        "picture":  "https://your-player-image-link-here.com/vms-player-1.png"
+    },
+    {
+        "name":  "VMS Player 2",
+        "team":  "VMS",
+        "lane":  "Jungler",
+        "picture":  "https://your-player-image-link-here.com/vms-player-2.png"
+    },
+    {
+        "name":  "VMS Player 3",
+        "team":  "VMS",
+        "lane":  "Midlaner",
+        "picture":  "https://your-player-image-link-here.com/vms-player-3.png"
+    },
+    {
+        "name":  "VMS Player 4",
+        "team":  "VMS",
+        "lane":  "Exp Laner",
+        "picture":  "https://your-player-image-link-here.com/vms-player-4.png"
+    },
+    {
+        "name":  "VMS Player 5",
+        "team":  "VMS",
+        "lane":  "Roamer",
+        "picture":  "https://your-player-image-link-here.com/vms-player-5.png"
+    },
+    {
+        "name":  "VMS Player 6",
+        "team":  "VMS",
+        "lane":  "Substitute",
+        "picture":  "https://your-player-image-link-here.com/vms-player-6.png"
+    },
+    {
+        "name":  "RRQ Player 1",
+        "team":  "RRQ",
+        "lane":  "Gold Laner",
+        "picture":  "https://your-player-image-link-here.com/rrq-player-1.png"
+    },
+    {
+        "name":  "RRQ Player 2",
+        "team":  "RRQ",
+        "lane":  "Jungler",
+        "picture":  "https://your-player-image-link-here.com/rrq-player-2.png"
+    },
+    {
+        "name":  "RRQ Player 3",
+        "team":  "RRQ",
+        "lane":  "Midlaner",
+        "picture":  "https://your-player-image-link-here.com/rrq-player-3.png"
+    },
+    {
+        "name":  "RRQ Player 4",
+        "team":  "RRQ",
+        "lane":  "Exp Laner",
+        "picture":  "https://your-player-image-link-here.com/rrq-player-4.png"
+    },
+    {
+        "name":  "RRQ Player 5",
+        "team":  "RRQ",
+        "lane":  "Roamer",
+        "picture":  "https://your-player-image-link-here.com/rrq-player-5.png"
+    },
+    {
+        "name":  "RRQ Player 6",
+        "team":  "RRQ",
+        "lane":  "Substitute",
+        "picture":  "https://your-player-image-link-here.com/rrq-player-6.png"
+    },
+    {
+        "name":  "BTR Player 1",
+        "team":  "BTR",
+        "lane":  "Gold Laner",
+        "picture":  "https://your-player-image-link-here.com/btr-player-1.png"
+    },
+    {
+        "name":  "BTR Player 2",
+        "team":  "BTR",
+        "lane":  "Jungler",
+        "picture":  "https://your-player-image-link-here.com/btr-player-2.png"
+    },
+    {
+        "name":  "BTR Player 3",
+        "team":  "BTR",
+        "lane":  "Midlaner",
+        "picture":  "https://your-player-image-link-here.com/btr-player-3.png"
+    },
+    {
+        "name":  "BTR Player 4",
+        "team":  "BTR",
+        "lane":  "Exp Laner",
+        "picture":  "https://your-player-image-link-here.com/btr-player-4.png"
+    },
+    {
+        "name":  "BTR Player 5",
+        "team":  "BTR",
+        "lane":  "Roamer",
+        "picture":  "https://your-player-image-link-here.com/btr-player-5.png"
+    },
+    {
+        "name":  "BTR Player 6",
+        "team":  "BTR",
+        "lane":  "Substitute",
+        "picture":  "https://your-player-image-link-here.com/btr-player-6.png"
+    },
+    {
+        "name":  "AC Player 1",
+        "team":  "AC",
+        "lane":  "Gold Laner",
+        "picture":  "https://your-player-image-link-here.com/ac-player-1.png"
+    },
+    {
+        "name":  "AC Player 2",
+        "team":  "AC",
+        "lane":  "Jungler",
+        "picture":  "https://your-player-image-link-here.com/ac-player-2.png"
+    },
+    {
+        "name":  "AC Player 3",
+        "team":  "AC",
+        "lane":  "Midlaner",
+        "picture":  "https://your-player-image-link-here.com/ac-player-3.png"
+    },
+    {
+        "name":  "AC Player 4",
+        "team":  "AC",
+        "lane":  "Exp Laner",
+        "picture":  "https://your-player-image-link-here.com/ac-player-4.png"
+    },
+    {
+        "name":  "AC Player 5",
+        "team":  "AC",
+        "lane":  "Roamer",
+        "picture":  "https://your-player-image-link-here.com/ac-player-5.png"
+    },
+    {
+        "name":  "AC Player 6",
+        "team":  "AC",
+        "lane":  "Substitute",
+        "picture":  "https://your-player-image-link-here.com/ac-player-6.png"
+    },
+    {
+        "name":  "IG Player 1",
+        "team":  "IG",
+        "lane":  "Gold Laner",
+        "picture":  "https://your-player-image-link-here.com/ig-player-1.png"
+    },
+    {
+        "name":  "IG Player 2",
+        "team":  "IG",
+        "lane":  "Jungler",
+        "picture":  "https://your-player-image-link-here.com/ig-player-2.png"
+    },
+    {
+        "name":  "IG Player 3",
+        "team":  "IG",
+        "lane":  "Midlaner",
+        "picture":  "https://your-player-image-link-here.com/ig-player-3.png"
+    },
+    {
+        "name":  "IG Player 4",
+        "team":  "IG",
+        "lane":  "Exp Laner",
+        "picture":  "https://your-player-image-link-here.com/ig-player-4.png"
+    },
+    {
+        "name":  "IG Player 5",
+        "team":  "IG",
+        "lane":  "Roamer",
+        "picture":  "https://your-player-image-link-here.com/ig-player-5.png"
+    },
+    {
+        "name":  "IG Player 6",
+        "team":  "IG",
+        "lane":  "Substitute",
+        "picture":  "https://your-player-image-link-here.com/ig-player-6.png"
+    },
+    {
+        "name":  "TF Player 1",
+        "team":  "TF",
+        "lane":  "Gold Laner",
+        "picture":  "https://your-player-image-link-here.com/tf-player-1.png"
+    },
+    {
+        "name":  "TF Player 2",
+        "team":  "TF",
+        "lane":  "Jungler",
+        "picture":  "https://your-player-image-link-here.com/tf-player-2.png"
+    },
+    {
+        "name":  "TF Player 3",
+        "team":  "TF",
+        "lane":  "Midlaner",
+        "picture":  "https://your-player-image-link-here.com/tf-player-3.png"
+    },
+    {
+        "name":  "TF Player 4",
+        "team":  "TF",
+        "lane":  "Exp Laner",
+        "picture":  "https://your-player-image-link-here.com/tf-player-4.png"
+    },
+    {
+        "name":  "TF Player 5",
+        "team":  "TF",
+        "lane":  "Roamer",
+        "picture":  "https://your-player-image-link-here.com/tf-player-5.png"
+    },
+    {
+        "name":  "TF Player 6",
+        "team":  "TF",
+        "lane":  "Substitute",
+        "picture":  "https://your-player-image-link-here.com/tf-player-6.png"
+    }
+]

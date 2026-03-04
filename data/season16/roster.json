@@ -1,0 +1,344 @@
+[
+    {
+        "name":  "Rough",
+        "team":  "MV",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/scpwgUa.png"
+    },
+    {
+        "name":  "Unii",
+        "team":  "MV",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/Y6cCEK4.png"
+    },
+    {
+        "name":  "Bondolz",
+        "team":  "MV",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/lLUfZVt.png"
+    },
+    {
+        "name":  "Momo",
+        "team":  "MV",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/aDKFRPI.png"
+    },
+    {
+        "name":  "Lyoni",
+        "team":  "MV",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/ouVd1Kr.png"
+    },
+    {
+        "name":  "Natco",
+        "team":  "VMS",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/48b6SmK.png"
+    },
+    {
+        "name":  "Chibi",
+        "team":  "VMS",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/ahEyDfv.png"
+    },
+    {
+        "name":  "Clawkun",
+        "team":  "VMS",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/mDZrBXV.png"
+    },
+    {
+        "name":  "Gojes",
+        "team":  "VMS",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/2inGQSn.png"
+    },
+    {
+        "name":  "Xorn",
+        "team":  "VMS",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/Ux5auTn.png"
+    },
+    {
+        "name":  "Kusey",
+        "team":  "AERO",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/413R26Z.png"
+    },
+    {
+        "name":  "Hazle",
+        "team":  "AERO",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/MvL7jzh.png"
+    },
+    {
+        "name":  "Kyym",
+        "team":  "AERO",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/5X4UXw8.png"
+    },
+    {
+        "name":  "Smooth",
+        "team":  "AERO",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/0bW64Ki.png"
+    },
+    {
+        "name":  "Zqeef",
+        "team":  "AERO",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/t7p2IxW.png"
+    },
+    {
+        "name":  "Skyzed",
+        "team":  "UNT",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/02b5lub.png"
+    },
+    {
+        "name":  "Keymin",
+        "team":  "UNT",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/cVEas3K.png"
+    },
+    {
+        "name":  "Stowm",
+        "team":  "UNT",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/cOtDg24.png"
+    },
+    {
+        "name":  "Sizkaa",
+        "team":  "UNT",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/CgldSAq.png"
+    },
+    {
+        "name":  "Rasy",
+        "team":  "UNT",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/3xz28tZ.png"
+    },
+    {
+        "name":  "Innocent",
+        "team":  "SRG",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/SHdZx30.png"
+    },
+    {
+        "name":  "Sekys",
+        "team":  "SRG",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/6cd6pGF.png"
+    },
+    {
+        "name":  "Stormie",
+        "team":  "SRG",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/1KIkUJ7.png"
+    },
+    {
+        "name":  "Kramm",
+        "team":  "SRG",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/bPYW0sI.png"
+    },
+    {
+        "name":  "Yums",
+        "team":  "SRG",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/ws8GoEJ.png"
+    },
+    {
+        "name":  "Melqt",
+        "team":  "HB",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/ReSovOr.png"
+    },
+    {
+        "name":  "Eyymal",
+        "team":  "HB",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/cMJUTQh.png"
+    },
+    {
+        "name":  "Izanami",
+        "team":  "HB",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/xaBAD77.png"
+    },
+    {
+        "name":  "Rezza",
+        "team":  "HB",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/1HJiEgB.png"
+    },
+    {
+        "name":  "Cayden",
+        "team":  "HB",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/O4oDGXc.png"
+    },
+    {
+        "name":  "Daniel",
+        "team":  "HB",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/qZjDoLe.png"
+    },
+    {
+        "name":  "Zippyqt",
+        "team":  "HB",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/Po8ykTi.png"
+    },
+    {
+        "name":  "Jowm",
+        "team":  "TR",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/vVtCp4S.png"
+    },
+    {
+        "name":  "Duskk",
+        "team":  "TR",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/yEpZzkl.png"
+    },
+    {
+        "name":  "Zakqt",
+        "team":  "TR",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/rLCjvzJ.png"
+    },
+    {
+        "name":  "Der",
+        "team":  "TR",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/V0kSb6s.png"
+    },
+    {
+        "name":  "NovaXCobar",
+        "team":  "TR",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/dgfRft1.png"
+    },
+    {
+        "name":  "Zayyy",
+        "team":  "TR",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/vuHaJz2.png"
+    },
+    {
+        "name":  "Error404",
+        "team":  "TR",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/2aJP8iR.png"
+    },
+    {
+        "name":  "Loleal",
+        "team":  "TDK",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/Mmz80I7.png"
+    },
+    {
+        "name":  "Zahyed",
+        "team":  "TDK",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/Zr5f3ZU.png"
+    },
+    {
+        "name":  "ZaimSempoi",
+        "team":  "TDK",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/J1dXujF.png"
+    },
+    {
+        "name":  "Fawndeer",
+        "team":  "TDK",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/5AMdEih.png"
+    },
+    {
+        "name":  "Dreams",
+        "team":  "TDK",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/aNDNWHb.png"
+    },
+    {
+        "name":  "Amzziq",
+        "team":  "CG",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/wguX967.png"
+    },
+    {
+        "name":  "Gary",
+        "team":  "CG",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/QPK02Ki.png"
+    },
+    {
+        "name":  "Ciku",
+        "team":  "CG",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/r3iKJPK.png"
+    },
+    {
+        "name":  "Ye3",
+        "team":  "CG",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/Dzd9Bpy.png"
+    },
+    {
+        "name":  "Valenz",
+        "team":  "CG",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/nzbIpw1.png"
+    },
+    {
+        "name":  "Aj",
+        "team":  "CG",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/f8zm6mw.png"
+    },
+    {
+        "name":  "Trap",
+        "team":  "CG",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/i4hCtRd.png"
+    },
+    {
+        "name":  "Immqt",
+        "team":  "GMXK",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/K18ycH2.png"
+    },
+    {
+        "name":  "Jaja",
+        "team":  "GMXK",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/qwypigC.png"
+    },
+    {
+        "name":  "Maima",
+        "team":  "GMXK",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/0WNp0Ub.png"
+    },
+    {
+        "name":  "Munster",
+        "team":  "GMXK",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/2bBe6Ev.png"
+    },
+    {
+        "name":  "Matdinz",
+        "team":  "GMXK",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/lSWoHLl.png"
+    },
+    {
+        "name":  "Skyzar",
+        "team":  "GMXK",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/TN31Ebg.png"
+    }
+]

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPL MY Season 16 Stats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260304-5" />
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div>
+      <h1 id="seasonHeading">MPL MY SEASON 16 STATISTICS</h1>
+    </div>
+  </div>
+
+  <div class="seasonSelectorWrap">
+    <label for="seasonSelect">Season</label>
+    <select id="seasonSelect" onchange="onSeasonChange(this.value)">
+      <option value="season16">MPL MY SEASON 16</option>
+    </select>
+  </div>
+
+  <div class="nav">
+    <button type="button" onclick="showTeams()">Teams</button>
+    <button type="button" onclick="showPlayers()">Players</button>
+    <button type="button" onclick="showHeroes()">Heroes</button>
+    <button type="button" onclick="showHeroPool()">Hero Pool</button>
+    <button type="button" onclick="showPlayerPools()">Player Pool</button>
+  </div>
+
+  <div id="output" class="panel">Loading data...</div>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
+
+<script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>
+<script>
+  sbBoW.draw("izzat27","R2l2ZSBTdXBwb3J0","position-bottom-right","#3B82F6","#FFFFFF")
+</script>
+
+</body>
+</html>
+
