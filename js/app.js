@@ -50,17 +50,56 @@ const appState = {
 };
 
 const ENABLED_SEASONS = new Set(["season16"]);
-let h2hTabBound = false;
+const VIEW_ROUTES = {
+  teams: "/",
+  players: "/players",
+  heroes: "/heroes",
+  "hero pool": "/hero-pool",
+  "player pool": "/player-pool",
+  h2h: "/h2h"
+};
 
-function bindH2HTabClick() {
-  if (h2hTabBound) return;
-  const h2hBtn = document.getElementById("tabH2H");
-  if (!h2hBtn) return;
-  h2hBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    showH2HView();
+const ROUTE_VIEWS = Object.fromEntries(
+  Object.entries(VIEW_ROUTES).map(([view, route]) => [route, view])
+);
+
+let navLinksBound = false;
+
+function normalizePathname(pathname) {
+  if (!pathname) return "/";
+  const trimmed = pathname.endsWith("/") && pathname !== "/"
+    ? pathname.slice(0, -1)
+    : pathname;
+  return trimmed || "/";
+}
+
+function getViewFromPathname(pathname) {
+  return ROUTE_VIEWS[normalizePathname(pathname)] || "teams";
+}
+
+function updateUrlForView(view, { replace = false } = {}) {
+  const nextPath = VIEW_ROUTES[view] || VIEW_ROUTES.teams;
+  const currentPath = normalizePathname(window.location.pathname);
+  if (currentPath === nextPath) return;
+  const method = replace ? "replaceState" : "pushState";
+  window.history[method]({ view }, "", nextPath);
+}
+
+function navigateToView(view, options = {}) {
+  const nextView = VIEW_ROUTES[view] ? view : "teams";
+  if (options.updateUrl !== false) {
+    updateUrlForView(nextView, { replace: options.replace === true });
+  }
+  appState.view = nextView;
+  renderCurrentView();
+}
+
+function bindNavLinks() {
+  if (navLinksBound) return;
+  window.addEventListener("popstate", () => {
+    navigateToView(getViewFromPathname(window.location.pathname), { updateUrl: false });
   });
-  h2hTabBound = true;
+  navLinksBound = true;
 }
 
 function setLoading(message) {
@@ -94,45 +133,55 @@ function showLoadError(err) {
 function setActiveNavByLabel(label) {
   const nav = document.querySelector(".nav");
   if (!nav) return;
-  for (const btn of nav.querySelectorAll("button")) {
-    const active = btn.textContent.trim().toLowerCase() === label.toLowerCase();
-    btn.classList.toggle("is-active", active);
-    btn.setAttribute("aria-pressed", active ? "true" : "false");
+  for (const control of nav.querySelectorAll("[data-route]")) {
+    const active = control.textContent.trim().toLowerCase() === label.toLowerCase();
+    control.classList.toggle("is-active", active);
+    if (active) {
+      control.setAttribute("aria-current", "page");
+    } else {
+      control.removeAttribute("aria-current");
+    }
   }
 }
 
 function showTeamsView(...args) {
   appState.view = "teams";
+  updateUrlForView("teams");
   setActiveNavByLabel("Teams");
   return showTeams(...args);
 }
 
 function showPlayersView(...args) {
   appState.view = "players";
+  updateUrlForView("players");
   setActiveNavByLabel("Players");
   return showPlayers(...args);
 }
 
 function showHeroesView(...args) {
   appState.view = "heroes";
+  updateUrlForView("heroes");
   setActiveNavByLabel("Heroes");
   return showHeroes(...args);
 }
 
 function showHeroPoolView(...args) {
   appState.view = "hero pool";
+  updateUrlForView("hero pool");
   setActiveNavByLabel("Hero Pool");
   return showHeroPool(...args);
 }
 
 function showPlayerPoolsView(...args) {
   appState.view = "player pool";
+  updateUrlForView("player pool");
   setActiveNavByLabel("Player Pool");
   return showPlayerPools(...args);
 }
 
 function showH2HView(...args) {
   appState.view = "h2h";
+  updateUrlForView("h2h");
   setActiveNavByLabel("H2H");
   return showH2H(...args);
 }
@@ -147,7 +196,7 @@ function renderCurrentView() {
 }
 
 export async function initApp() {
-  bindH2HTabClick();
+  bindNavLinks();
 
   const startupWatchdog = setTimeout(() => {
     const output = document.getElementById("output");
@@ -169,7 +218,8 @@ export async function initApp() {
     refreshDataRefs();
     updateSeasonMeta();
     appState.loaded = true;
-    showTeamsView();
+    appState.view = getViewFromPathname(window.location.pathname);
+    renderCurrentView();
 
     const selector = document.getElementById("seasonSelect");
     if (selector) selector.value = appState.season;

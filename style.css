@@ -146,6 +146,7 @@ h1{
   z-index:10001;
 }
 
+.nav a,
 .nav button{
   padding:11px 18px;
   border-radius:10px;
@@ -161,8 +162,13 @@ h1{
   transition:0.25s ease;
   clip-path:polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
   box-shadow:0 8px 18px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
 
+.nav a:hover,
 .nav button:hover{
   background:linear-gradient(135deg,var(--blue),var(--yellow));
   border-color:rgba(255,255,255,0.55);
@@ -170,6 +176,7 @@ h1{
   transform:translateY(-3px);
 }
 
+.nav a.is-active,
 .nav button.is-active{
   background:linear-gradient(135deg,var(--blue),var(--yellow));
   border-color:rgba(255,255,255,0.55);
@@ -177,6 +184,7 @@ h1{
   box-shadow:0 14px 24px rgba(3,9,30,0.4), 0 0 22px rgba(59,130,246,0.25);
 }
 
+a:focus-visible,
 button:focus-visible,
 select:focus-visible,
 input:focus-visible{

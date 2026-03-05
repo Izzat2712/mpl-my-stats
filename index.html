@@ -27,12 +27,12 @@
   </div>
 
   <div class="nav">
-    <button type="button" onclick="showTeams()">Teams</button>
-    <button type="button" onclick="showPlayers()">Players</button>
-    <button type="button" onclick="showHeroes()">Heroes</button>
-    <button type="button" onclick="showHeroPool()">Hero Pool</button>
-    <button type="button" onclick="showPlayerPools()">Player Pool</button>
-    <button id="tabH2H" type="button" onclick="showH2H()">H2H</button>
+    <button type="button" data-route="teams" onclick="showTeams()">Teams</button>
+    <button type="button" data-route="players" onclick="showPlayers()">Players</button>
+    <button type="button" data-route="heroes" onclick="showHeroes()">Heroes</button>
+    <button type="button" data-route="hero pool" onclick="showHeroPool()">Hero Pool</button>
+    <button type="button" data-route="player pool" onclick="showPlayerPools()">Player Pool</button>
+    <button id="tabH2H" type="button" data-route="h2h" onclick="showH2H()">H2H</button>
   </div>
 
   <div id="output" class="panel">Loading data...</div>

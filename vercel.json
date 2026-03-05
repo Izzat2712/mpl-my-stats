@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/players",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/heroes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/hero-pool",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/player-pool",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/h2h",
+      "destination": "/index.html"
+    }
+  ]
+}
