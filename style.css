@@ -143,7 +143,7 @@ h1{
   background:linear-gradient(160deg, rgba(8,18,50,0.78), rgba(11,26,69,0.58));
   backdrop-filter:blur(8px);
   position:relative;
-  z-index:5;
+  z-index:10001;
 }
 
 .nav button{
@@ -216,6 +216,350 @@ input:focus-visible{
   border:1px solid #444;
   background:#0b0b0b;
   color:#fff;
+}
+
+.teamCompareWrap{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(280px, 1fr));
+  gap:16px;
+  margin:0 auto 18px;
+  max-width:1100px;
+}
+
+.teamCompareCard{
+  border:1px solid rgba(126,169,255,0.28);
+  border-radius:14px;
+  background:linear-gradient(165deg, rgba(8,18,52,0.8), rgba(13,28,70,0.58));
+  padding:14px;
+  box-shadow:0 14px 30px rgba(2,8,28,0.35);
+}
+
+.teamCompareHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.teamCompareLabel{
+  font-family:'Orbitron','Rajdhani',sans-serif;
+  font-weight:800;
+  letter-spacing:1px;
+  font-size:12px;
+}
+
+.teamCompareIdentity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.teamCompareLogo{
+  width:50px !important;
+  height:50px !important;
+  border-radius:0 !important;
+  object-fit:contain !important;
+}
+
+.teamCompareStats{
+  display:grid;
+  gap:8px;
+}
+
+.teamCompareRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.03);
+  font-weight:700;
+}
+
+.teamCompareValue{
+  min-width:64px;
+  text-align:center;
+  padding:4px 8px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.18);
+}
+
+.teamCompareValue.is-better{
+  background:linear-gradient(135deg,var(--blue),var(--yellow));
+  color:#04132f;
+  border-color:rgba(255,255,255,0.5);
+  font-weight:900;
+}
+
+.teamCompareEmpty{
+  text-align:center;
+  opacity:0.8;
+  padding:16px 8px 10px;
+}
+
+.compareSearchInput{
+  width:220px;
+  max-width:100%;
+}
+
+.compareSearchWrap{
+  position:relative;
+  width:220px;
+  max-width:100%;
+}
+
+.compareSelectInput{
+  width:100%;
+  margin-top:8px;
+}
+
+.compareSuggestList{
+  position:absolute;
+  left:0;
+  right:0;
+  top:calc(100% + 6px);
+  z-index:20;
+  border:1px solid rgba(126,169,255,0.35);
+  border-radius:10px;
+  background:linear-gradient(165deg, rgba(8,18,52,0.95), rgba(13,28,70,0.92));
+  box-shadow:0 14px 30px rgba(2,8,28,0.45);
+  max-height:220px;
+  overflow:auto;
+}
+
+.compareSuggestItem{
+  width:100%;
+  text-align:left;
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  background:transparent;
+  color:#fff;
+  padding:8px 10px;
+  cursor:pointer;
+  font-family:'Rajdhani','Segoe UI',Arial,sans-serif;
+  font-weight:700;
+}
+
+.compareSuggestItem:last-child{
+  border-bottom:0;
+}
+
+.compareSuggestItem:hover{
+  background:linear-gradient(135deg,var(--blue),var(--yellow));
+  color:#04132f;
+}
+
+.compareSuggestEmpty{
+  padding:8px 10px;
+  opacity:0.75;
+  font-size:13px;
+}
+
+.playerCompareAvatar{
+  width:56px !important;
+  height:56px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  border:2px solid rgba(255,255,255,0.35);
+}
+
+.heroCompareAvatar{
+  width:56px !important;
+  height:56px !important;
+  border-radius:14px !important;
+  object-fit:cover !important;
+  border:2px solid rgba(255,255,255,0.35);
+}
+
+.playerCompareMeta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  font-size:13px;
+  opacity:0.9;
+  margin:0 0 10px;
+}
+
+.playerCompareTeamBadge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:linear-gradient(145deg, rgba(59,130,246,0.22), rgba(251,191,36,0.18));
+  box-shadow:0 8px 18px rgba(0,0,0,0.28);
+}
+
+.playerCompareTeamLogo{
+  width:24px !important;
+  height:24px !important;
+  border-radius:0 !important;
+  object-fit:contain !important;
+  background:transparent !important;
+}
+
+.playerCompareTeamName{
+  font-weight:800;
+  letter-spacing:0.3px;
+}
+
+.playerCompareLane{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.08);
+  font-weight:700;
+}
+
+.comparePoolRow{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:0 0 12px;
+}
+
+.comparePoolLabel{
+  font-size:13px;
+  font-weight:800;
+  opacity:0.9;
+}
+
+.comparePoolIcons{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.comparePoolIcon{
+  width:28px !important;
+  height:28px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  border:2px solid rgba(255,255,255,0.35);
+  background:rgba(255,255,255,0.06);
+}
+
+.comparePoolIcon--player{
+  object-fit:cover !important;
+}
+
+.comparePoolEmpty{
+  opacity:0.7;
+  font-size:13px;
+}
+
+.compareStatActionBtn{
+  border:1px solid rgba(255,255,255,0.28);
+  background:linear-gradient(135deg, rgba(59,130,246,0.32), rgba(251,191,36,0.26));
+  color:#fff;
+  border-radius:8px;
+  padding:5px 10px;
+  font-weight:800;
+  cursor:pointer;
+  font-family:'Rajdhani','Segoe UI',Arial,sans-serif;
+}
+
+.h2hModalBackdrop{
+  position:fixed;
+  inset:0;
+  z-index:12000;
+  background:rgba(2, 8, 28, 0.68);
+  backdrop-filter:blur(4px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+}
+
+.h2hModalCard{
+  width:min(740px, 100%);
+  max-height:min(82vh, 760px);
+  overflow:auto;
+  border-radius:14px;
+  border:1px solid rgba(126,169,255,0.32);
+  background:linear-gradient(170deg, rgba(8,19,56,0.95), rgba(9,20,50,0.9));
+  box-shadow:0 24px 50px rgba(0,0,0,0.45);
+  padding:14px;
+}
+
+.h2hModalHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.h2hModalHead h3{
+  margin:0;
+  font-size:18px;
+}
+
+.h2hModalClose{
+  border:1px solid rgba(255,255,255,0.28);
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  border-radius:8px;
+  padding:6px 10px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.h2hModalList{
+  display:grid;
+  gap:8px;
+}
+
+.h2hModalItem{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:10px;
+  padding:8px 10px;
+  background:rgba(255,255,255,0.04);
+}
+
+.h2hModalMain{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+.h2hModalImg{
+  width:36px !important;
+  height:36px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  border:2px solid rgba(255,255,255,0.35);
+}
+
+.h2hModalImg--player{
+  border-radius:50% !important;
+}
+
+.h2hModalMeta{
+  font-size:13px;
+  opacity:0.9;
+  white-space:nowrap;
+}
+
+.h2hModalEmpty{
+  opacity:0.75;
+  padding:8px 2px;
 }
 
 /* =========================================================
@@ -956,6 +1300,10 @@ select option:hover{
   table{
     display:block;
     overflow-x:auto;
+  }
+
+  .teamCompareWrap{
+    grid-template-columns:1fr;
   }
 }
 

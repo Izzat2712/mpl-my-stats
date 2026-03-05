@@ -1,4 +1,4 @@
-﻿import { getCurrentSeasonLabel, getHeroesMap, getRosterList, getTeamDisplayName, getTeamLogosMap } from "./data-store.js";
+﻿import { getCurrentSeasonLabel, getHeroesMap, getMatches, getRosterList, getTeamDisplayName, getTeamLogosMap } from "./data-store.js";
 import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
 
 let roster = [];
@@ -24,6 +24,11 @@ let playerSort = { key: "kda", asc: false };
 let heroSort = { key: "pickRate", asc: false };
 let heroPoolSort = { key: "totalHeroes", asc: false };
 let playerPoolsSort = { key: "totalPlayers", asc: false };
+let h2hSubTab = "team";
+let teamCompareState = { left: "", right: "" };
+let playerCompareState = { left: "", right: "" };
+let heroCompareState = { left: "", right: "" };
+let h2hPopupState = { kind: "", side: "" };
 
 
 
@@ -74,6 +79,37 @@ const laneOrder = {
   "Exp Laner": 4,
   "Roamer": 5
 };
+
+function onTeamCompareChange(side, value) {
+  if (side !== "left" && side !== "right") return;
+  teamCompareState[side] = value || "";
+  showH2H();
+}
+
+function onPlayerCompareChange(side, value, caret = null) {
+  if (side !== "left" && side !== "right") return;
+  playerCompareState[side] = value || "";
+  const focusId = `h2hPlayerSearch-${side}`;
+  showH2H({ focusId, caret });
+}
+
+function onHeroCompareChange(side, value, caret = null) {
+  if (side !== "left" && side !== "right") return;
+  heroCompareState[side] = value || "";
+  const focusId = `h2hHeroSearch-${side}`;
+  showH2H({ focusId, caret });
+}
+
+function openH2hPoolPopup(kind, side) {
+  if (!kind || (side !== "left" && side !== "right")) return;
+  h2hPopupState = { kind, side };
+  showH2H();
+}
+
+function closeH2hPoolPopup() {
+  h2hPopupState = { kind: "", side: "" };
+  showH2H();
+}
 
 
 function showTeams() {
@@ -1032,6 +1068,550 @@ function sortPlayerPools(key) {
   showPlayerPools();
 }
 
+function setH2hSubTab(tab) {
+  if (!tab) return;
+  const next = String(tab).toLowerCase();
+  if (next !== "team" && next !== "player" && next !== "hero") return;
+  h2hSubTab = next;
+  h2hPopupState = { kind: "", side: "" };
+  showH2H();
+}
+
+function renderTeamH2HCompare() {
+  const t = calculateTeamStats();
+  const statRows = [
+    { key: "matchWins", label: "MATCHES WON" },
+    { key: "kills", label: "KILLS" },
+    { key: "deaths", label: "DEATHS" },
+    { key: "assists", label: "ASSISTS" },
+    { key: "lord", label: "LORD" },
+    { key: "turtle", label: "TURTLE" },
+    { key: "tower", label: "TOWER" }
+  ];
+  const teamOptions = Object.keys(t).sort((a, b) => teamLabel(a).localeCompare(teamLabel(b)));
+
+  function toStat(teamStats, key) {
+    const raw = teamStats?.[key];
+    const num = Number(raw);
+    return Number.isFinite(num) ? num : 0;
+  }
+
+  function renderCompareCard(sideKey, title) {
+    const teamCode = teamCompareState[sideKey];
+    const selected = teamCode && t[teamCode] ? t[teamCode] : null;
+    const otherCode = sideKey === "left" ? teamCompareState.right : teamCompareState.left;
+    const other = otherCode && t[otherCode] ? t[otherCode] : null;
+
+    return `
+      <div class="teamCompareCard">
+        <div class="teamCompareHead">
+          <div class="teamCompareLabel">${title}</div>
+          <select onchange="onTeamCompareChange('${sideKey}', this.value)">
+            <option value="">Select team</option>
+            ${teamOptions.map(code => `<option value="${code}" ${code === teamCode ? "selected" : ""}>${teamLabel(code)}</option>`).join("")}
+          </select>
+        </div>
+
+        ${selected ? `
+          <div class="teamCompareIdentity">
+            <img class="teamCompareLogo" src="${teamLogos[teamCode] || ""}" alt="${teamLabel(teamCode)} logo">
+            <span>${teamLabel(teamCode)}</span>
+          </div>
+
+          <div class="teamCompareStats">
+            ${statRows.map(row => {
+              const currentVal = toStat(selected, row.key);
+              const otherVal = other ? toStat(other, row.key) : null;
+              const isHigher = otherVal !== null && currentVal > otherVal;
+              return `
+                <div class="teamCompareRow">
+                  <span>${row.label}</span>
+                  <span class="teamCompareValue ${isHigher ? "is-better" : ""}">${currentVal}</span>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        ` : `
+          <div class="teamCompareEmpty">Select a team to load stats.</div>
+        `}
+      </div>
+    `;
+  }
+
+  return `
+    <div class="teamCompareWrap">
+      ${renderCompareCard("left", "TEAM A")}
+      ${renderCompareCard("right", "TEAM B")}
+    </div>
+  `;
+}
+
+function renderPlayerH2HCompare() {
+  const p = calculatePlayerStats();
+  const heroPools = calculateHeroPoolStats();
+  const playerOptions = Object.keys(p).sort((a, b) => a.localeCompare(b));
+  const statRows = [
+    { key: "games", label: "GAMES", format: v => `${v}` },
+    { key: "heroPoolCount", label: "HERO POOL", format: v => `${v}` },
+    { key: "kills", label: "KILLS", format: v => `${v}` },
+    { key: "avgK", label: "AVG KILLS", format: v => v.toFixed(2) },
+    { key: "deaths", label: "DEATHS", format: v => `${v}` },
+    { key: "avgD", label: "AVG DEATHS", format: v => v.toFixed(2) },
+    { key: "assists", label: "ASSISTS", format: v => `${v}` },
+    { key: "avgA", label: "AVG ASSISTS", format: v => v.toFixed(2) },
+    { key: "kda", label: "KDA", format: v => v.toFixed(2) },
+    { key: "kp", label: "KP%", format: v => `${v.toFixed(1)}%` }
+  ];
+
+  function buildPlayerStats(name) {
+    const ps = p[name];
+    if (!ps) return null;
+    const games = Number(ps.games) || 0;
+    const kills = Number(ps.kills) || 0;
+    const deaths = Number(ps.deaths) || 0;
+    const assists = Number(ps.assists) || 0;
+    const kpTotal = Number(ps.kpTotal) || 0;
+    const pool = heroPools[name] || { heroes: {} };
+    const heroPoolDetails = Object.keys(pool.heroes || {}).map(heroName => {
+      const hs = (pool.heroes || {})[heroName] || {};
+      const gamesUsed = Number(hs.games) || 0;
+      const wins = Number(hs.wins) || 0;
+      return {
+        hero: heroName,
+        img: constHero[heroName] || "",
+        gamesUsed,
+        winRate: gamesUsed ? (wins / gamesUsed) * 100 : 0
+      };
+    }).sort((a, b) => b.gamesUsed - a.gamesUsed);
+
+    return {
+      name,
+      team: ps.team,
+      lane: ps.lane,
+      picture: ps.picture,
+      games,
+      kills,
+      deaths,
+      assists,
+      avgK: games ? kills / games : 0,
+      avgD: games ? deaths / games : 0,
+      avgA: games ? assists / games : 0,
+      kda: (kills + assists) / (deaths || 1),
+      kp: games ? (kpTotal / games) * 100 : 0,
+      heroPoolCount: Object.keys(pool.heroes || {}).length,
+      heroPoolDetails
+    };
+  }
+
+  function resolvePlayerName(input) {
+    const q = String(input || "").trim().toLowerCase();
+    if (!q) return "";
+    return playerOptions.find(name => name.toLowerCase() === q) || "";
+  }
+
+  function renderCompareCard(sideKey, title) {
+    const typedName = playerCompareState[sideKey] || "";
+    const selectedName = resolvePlayerName(typedName);
+    const selected = buildPlayerStats(selectedName);
+    const otherName = sideKey === "left" ? playerCompareState.right : playerCompareState.left;
+    const other = buildPlayerStats(resolvePlayerName(otherName));
+
+    const q = typedName.trim().toLowerCase();
+    const isExactMatch = !!selectedName && selectedName.toLowerCase() === q;
+    const showSuggestions = !!q && !isExactMatch;
+    const suggestions = q
+      ? playerOptions.filter(name => name.toLowerCase().startsWith(q)).slice(0, 12)
+      : [];
+
+    return `
+      <div class="teamCompareCard">
+        <div class="teamCompareHead">
+          <div class="teamCompareLabel">${title}</div>
+          <div class="compareSearchWrap">
+            <input
+              id="h2hPlayerSearch-${sideKey}"
+              class="compareSearchInput"
+              placeholder="Search player..."
+              value="${typedName.replace(/"/g, "&quot;")}"
+              oninput="onPlayerCompareChange('${sideKey}', this.value, this.selectionStart)"
+            />
+            <select
+              class="compareSelectInput"
+              onchange="onPlayerCompareChange('${sideKey}', this.value, this.value.length)"
+            >
+              <option value="">Select player from list</option>
+              ${playerOptions.map(name => `
+                <option value="${name}" ${name === selectedName ? "selected" : ""}>${name}</option>
+              `).join("")}
+            </select>
+            ${showSuggestions ? `
+              <div class="compareSuggestList">
+                ${suggestions.length
+                  ? suggestions.map(name => `
+                    ${(() => {
+                      const safeName = name.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+                      return `
+                    <button
+                      type="button"
+                      class="compareSuggestItem"
+                      onmousedown="onPlayerCompareChange('${sideKey}', '${safeName}', ${name.length})"
+                    >
+                      ${name}
+                    </button>
+                  `;
+                    })()}
+                  `).join("")
+                  : `<div class="compareSuggestEmpty">No player found</div>`
+                }
+              </div>
+            ` : ""}
+          </div>
+        </div>
+
+        ${selected ? `
+          <div class="teamCompareIdentity">
+            <img class="playerCompareAvatar" src="${selected.picture}" alt="${selected.name}">
+            <span>${selected.name}</span>
+          </div>
+          <div class="playerCompareMeta">
+            <span class="playerCompareTeamBadge">
+              <img class="playerCompareTeamLogo" src="${teamLogos[selected.team] || ""}" alt="${teamLabel(selected.team)} logo">
+              <span class="playerCompareTeamName">${teamLabel(selected.team)}</span>
+            </span>
+            <span class="playerCompareLane">${selected.lane}</span>
+          </div>
+          <div class="teamCompareStats">
+            ${statRows.map(row => {
+              const currentVal = Number(selected[row.key]) || 0;
+              const otherVal = other ? (Number(other[row.key]) || 0) : null;
+              const isHigher = otherVal !== null && currentVal > otherVal;
+              const actionBtn = row.key === "heroPoolCount"
+                ? `<button type="button" class="compareStatActionBtn" onclick="openH2hPoolPopup('playerHeroPool', '${sideKey}')">Show Hero</button>`
+                : "";
+              return `
+                <div class="teamCompareRow">
+                  <span>${row.label}</span>
+                  <span style="display:inline-flex; align-items:center; gap:8px;">
+                    ${actionBtn}
+                    <span class="teamCompareValue ${isHigher ? "is-better" : ""}">${row.format(currentVal)}</span>
+                  </span>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        ` : `
+          <div class="teamCompareEmpty">Select a player to load stats.</div>
+        `}
+      </div>
+    `;
+  }
+
+  function renderPoolPopup() {
+    if (h2hPopupState.kind !== "playerHeroPool") return "";
+    const side = h2hPopupState.side === "right" ? "right" : "left";
+    const selectedName = resolvePlayerName(playerCompareState[side] || "");
+    const selected = buildPlayerStats(selectedName);
+    if (!selected) return "";
+
+    return `
+      <div class="h2hModalBackdrop" onclick="closeH2hPoolPopup()">
+        <div class="h2hModalCard" onclick="event.stopPropagation()">
+          <div class="h2hModalHead">
+            <h3>${selected.name} - Hero List</h3>
+            <button type="button" class="h2hModalClose" onclick="closeH2hPoolPopup()">Close</button>
+          </div>
+          <div class="h2hModalList">
+            ${(selected.heroPoolDetails || []).map(item => `
+              <div class="h2hModalItem">
+                <div class="h2hModalMain">
+                  <img class="h2hModalImg" src="${item.img}" alt="${item.hero}">
+                  <span>${item.hero}</span>
+                </div>
+                <div class="h2hModalMeta">${item.gamesUsed} ${item.gamesUsed === 1 ? "game" : "games"} | ${item.winRate.toFixed(0)}% WR</div>
+              </div>
+            `).join("") || `<div class="h2hModalEmpty">No hero data.</div>`}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="teamCompareWrap">
+      ${renderCompareCard("left", "PLAYER A")}
+      ${renderCompareCard("right", "PLAYER B")}
+    </div>
+    ${renderPoolPopup()}
+  `;
+}
+
+function renderHeroH2HCompare() {
+  const heroStats = calculateHeroStats();
+  const playerPools = calculatePlayerPoolsStats();
+  const heroMap = Object.fromEntries(heroStats.map(h => [h.hero, h]));
+  const heroOptions = Object.keys(heroMap).sort((a, b) => a.localeCompare(b));
+
+  const extra = {};
+  for (const match of getMatches()) {
+    for (const game of (match.games || [])) {
+      for (const p of (game.players || [])) {
+        const heroName = String(p.hero || "").trim();
+        if (!heroName) continue;
+        if (!extra[heroName]) {
+          extra[heroName] = { kills: 0, deaths: 0, assists: 0 };
+        }
+        extra[heroName].kills += Number(p.kills) || 0;
+        extra[heroName].deaths += Number(p.deaths) || 0;
+        extra[heroName].assists += Number(p.assists) || 0;
+      }
+    }
+  }
+
+  const statRows = [
+    { key: "pick", label: "PICK", format: v => `${v}` },
+    { key: "playerPoolCount", label: "PLAYER POOL", format: v => `${v}` },
+    { key: "pickRate", label: "PICK RATE", format: v => `${v.toFixed(1)}%` },
+    { key: "ban", label: "BAN", format: v => `${v}` },
+    { key: "banRate", label: "BAN RATE", format: v => `${v.toFixed(1)}%` },
+    { key: "winRate", label: "WIN RATE", format: v => `${v.toFixed(1)}%` },
+    { key: "kills", label: "KILLS", format: v => `${v}` },
+    { key: "deaths", label: "DEATHS", format: v => `${v}` },
+    { key: "assists", label: "ASSISTS", format: v => `${v}` },
+    { key: "kda", label: "KDA", format: v => v.toFixed(2) }
+  ];
+
+  function resolveHeroName(input) {
+    const q = String(input || "").trim().toLowerCase();
+    if (!q) return "";
+    return heroOptions.find(name => name.toLowerCase() === q) || "";
+  }
+
+  function buildHeroStats(name) {
+    const hs = heroMap[name];
+    if (!hs) return null;
+    const ext = extra[name] || { kills: 0, deaths: 0, assists: 0 };
+    const kills = Number(ext.kills) || 0;
+    const deaths = Number(ext.deaths) || 0;
+    const assists = Number(ext.assists) || 0;
+    const pool = playerPools[name] || { players: {} };
+    const playerPoolDetails = Object.keys(pool.players || {}).map(playerName => {
+      const pl = pool.players[playerName] || {};
+      const gamesUsed = Number(pl.games) || 0;
+      const wins = Number(pl.wins) || 0;
+      return {
+        name: playerName,
+        picture: pl.picture || "",
+        gamesUsed,
+        winRate: gamesUsed ? (wins / gamesUsed) * 100 : 0
+      };
+    }).sort((a, b) => b.gamesUsed - a.gamesUsed);
+
+    return {
+      hero: hs.hero,
+      img: hs.img || constHero[hs.hero] || "",
+      pick: Number(hs.pick) || 0,
+      pickRate: Number(hs.pickRate) || 0,
+      ban: Number(hs.ban) || 0,
+      banRate: Number(hs.banRate) || 0,
+      winRate: Number(hs.winRate) || 0,
+      kills,
+      deaths,
+      assists,
+      kda: (kills + assists) / (deaths || 1),
+      playerPoolCount: Object.keys(pool.players || {}).length,
+      playerPoolDetails
+    };
+  }
+
+  function renderCompareCard(sideKey, title) {
+    const typedName = heroCompareState[sideKey] || "";
+    const selectedName = resolveHeroName(typedName);
+    const selected = buildHeroStats(selectedName);
+    const otherName = sideKey === "left" ? heroCompareState.right : heroCompareState.left;
+    const other = buildHeroStats(resolveHeroName(otherName));
+
+    const q = typedName.trim().toLowerCase();
+    const isExactMatch = !!selectedName && selectedName.toLowerCase() === q;
+    const showSuggestions = !!q && !isExactMatch;
+    const suggestions = q
+      ? heroOptions.filter(name => name.toLowerCase().startsWith(q)).slice(0, 12)
+      : [];
+
+    return `
+      <div class="teamCompareCard">
+        <div class="teamCompareHead">
+          <div class="teamCompareLabel">${title}</div>
+          <div class="compareSearchWrap">
+            <input
+              id="h2hHeroSearch-${sideKey}"
+              class="compareSearchInput"
+              placeholder="Search hero..."
+              value="${typedName.replace(/"/g, "&quot;")}"
+              oninput="onHeroCompareChange('${sideKey}', this.value, this.selectionStart)"
+            />
+            <select
+              class="compareSelectInput"
+              onchange="onHeroCompareChange('${sideKey}', this.value, this.value.length)"
+            >
+              <option value="">Select hero from list</option>
+              ${heroOptions.map(name => `
+                <option value="${name}" ${name === selectedName ? "selected" : ""}>${name}</option>
+              `).join("")}
+            </select>
+            ${showSuggestions ? `
+              <div class="compareSuggestList">
+                ${suggestions.length
+                  ? suggestions.map(name => `
+                    ${(() => {
+                      const safeName = name.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+                      return `
+                    <button
+                      type="button"
+                      class="compareSuggestItem"
+                      onmousedown="onHeroCompareChange('${sideKey}', '${safeName}', ${name.length})"
+                    >
+                      ${name}
+                    </button>
+                  `;
+                    })()}
+                  `).join("")
+                  : `<div class="compareSuggestEmpty">No hero found</div>`
+                }
+              </div>
+            ` : ""}
+          </div>
+        </div>
+
+        ${selected ? `
+          <div class="teamCompareIdentity">
+            <img class="heroCompareAvatar" src="${selected.img}" alt="${selected.hero}">
+            <span>${selected.hero}</span>
+          </div>
+          <div class="teamCompareStats">
+            ${statRows.map(row => {
+              const currentVal = Number(selected[row.key]) || 0;
+              const otherVal = other ? (Number(other[row.key]) || 0) : null;
+              const isHigher = otherVal !== null && currentVal > otherVal;
+              const actionBtn = row.key === "playerPoolCount"
+                ? `<button type="button" class="compareStatActionBtn" onclick="openH2hPoolPopup('heroPlayerPool', '${sideKey}')">Show Player</button>`
+                : "";
+              return `
+                <div class="teamCompareRow">
+                  <span>${row.label}</span>
+                  <span style="display:inline-flex; align-items:center; gap:8px;">
+                    ${actionBtn}
+                    <span class="teamCompareValue ${isHigher ? "is-better" : ""}">${row.format(currentVal)}</span>
+                  </span>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        ` : `
+          <div class="teamCompareEmpty">Select a hero to load stats.</div>
+        `}
+      </div>
+    `;
+  }
+
+  function renderPoolPopup() {
+    if (h2hPopupState.kind !== "heroPlayerPool") return "";
+    const side = h2hPopupState.side === "right" ? "right" : "left";
+    const selectedName = resolveHeroName(heroCompareState[side] || "");
+    const selected = buildHeroStats(selectedName);
+    if (!selected) return "";
+
+    return `
+      <div class="h2hModalBackdrop" onclick="closeH2hPoolPopup()">
+        <div class="h2hModalCard" onclick="event.stopPropagation()">
+          <div class="h2hModalHead">
+            <h3>${selected.hero} - Player List</h3>
+            <button type="button" class="h2hModalClose" onclick="closeH2hPoolPopup()">Close</button>
+          </div>
+          <div class="h2hModalList">
+            ${(selected.playerPoolDetails || []).map(item => `
+              <div class="h2hModalItem">
+                <div class="h2hModalMain">
+                  <img class="h2hModalImg h2hModalImg--player" src="${item.picture}" alt="${item.name}">
+                  <span>${item.name}</span>
+                </div>
+                <div class="h2hModalMeta">${item.gamesUsed} ${item.gamesUsed === 1 ? "game" : "games"} | ${item.winRate.toFixed(0)}% WR</div>
+              </div>
+            `).join("") || `<div class="h2hModalEmpty">No player data.</div>`}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="teamCompareWrap">
+      ${renderCompareCard("left", "HERO A")}
+      ${renderCompareCard("right", "HERO B")}
+    </div>
+    ${renderPoolPopup()}
+  `;
+}
+
+function showH2H(focus = null) {
+  const tabs = [
+    { key: "team", label: "Team" },
+    { key: "player", label: "Player" },
+    { key: "hero", label: "Hero" }
+  ];
+
+  const title = h2hSubTab === "team"
+    ? "TEAM H2H"
+    : h2hSubTab === "player"
+      ? "PLAYER H2H"
+      : "HERO H2H";
+
+  const html = `
+    <h2 class="panel-title">H2H ${seasonLabel()}</h2>
+
+    <div class="nav" style="margin: 0 auto 22px; max-width: 540px;">
+      ${tabs.map(tab => `
+        <button
+          type="button"
+          class="${h2hSubTab === tab.key ? "is-active" : ""}"
+          aria-pressed="${h2hSubTab === tab.key ? "true" : "false"}"
+          onclick="setH2hSubTab('${tab.key}')"
+        >
+          ${tab.label}
+        </button>
+      `).join("")}
+    </div>
+
+    ${h2hSubTab === "team"
+      ? renderTeamH2HCompare()
+      : h2hSubTab === "player"
+        ? renderPlayerH2HCompare()
+        : h2hSubTab === "hero"
+          ? renderHeroH2HCompare()
+        : `
+        <div style="text-align:center; padding: 12px 10px 4px;">
+          <h3 style="margin-bottom:12px;">${title}</h3>
+          <p style="margin:0; opacity:0.9;">No data yet.</p>
+        </div>
+      `
+    }
+  `;
+
+  document.getElementById("output").innerHTML = html;
+
+  if (focus && focus.focusId) {
+    requestAnimationFrame(() => {
+      const el = document.getElementById(focus.focusId);
+      if (!el) return;
+      el.focus();
+      const nextCaret = Number(focus.caret);
+      const pos = Number.isFinite(nextCaret)
+        ? Math.min(nextCaret, el.value.length)
+        : el.value.length;
+      el.setSelectionRange(pos, pos);
+    });
+  }
+}
+
 // ===== Sociabuzz Position Control =====
 let _sbEl = null;
 
@@ -1074,6 +1654,11 @@ function setSupportPos(mode) {
 
   }}
 export {
+  onTeamCompareChange,
+  onPlayerCompareChange,
+  onHeroCompareChange,
+  openH2hPoolPopup,
+  closeH2hPoolPopup,
   onPlayerSearchInput,
   onHeroSearchInput,
   onHpPlayerSearchInput,
@@ -1089,8 +1674,11 @@ export {
   sortHeroPool,
   showPlayerPools,
   sortPlayerPools,
+  showH2H,
+  setH2hSubTab,
   setSupportPos
 };
+
 
 
 

@@ -2,6 +2,11 @@ import { getCurrentSeasonLabel, loadData } from "./data-store.js";
 import { invalidateStatsCache } from "./stats.js";
 import {
   refreshDataRefs,
+  onTeamCompareChange,
+  onPlayerCompareChange,
+  onHeroCompareChange,
+  openH2hPoolPopup,
+  closeH2hPoolPopup,
   onPlayerSearchInput,
   onHeroSearchInput,
   onHpPlayerSearchInput,
@@ -17,6 +22,8 @@ import {
   sortHeroPool,
   showPlayerPools,
   sortPlayerPools,
+  showH2H,
+  setH2hSubTab,
   setSupportPos
 } from "./views.js";
 
@@ -43,6 +50,18 @@ const appState = {
 };
 
 const ENABLED_SEASONS = new Set(["season16"]);
+let h2hTabBound = false;
+
+function bindH2HTabClick() {
+  if (h2hTabBound) return;
+  const h2hBtn = document.getElementById("tabH2H");
+  if (!h2hBtn) return;
+  h2hBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    showH2HView();
+  });
+  h2hTabBound = true;
+}
 
 function setLoading(message) {
   const output = document.getElementById("output");
@@ -112,15 +131,24 @@ function showPlayerPoolsView(...args) {
   return showPlayerPools(...args);
 }
 
+function showH2HView(...args) {
+  appState.view = "h2h";
+  setActiveNavByLabel("H2H");
+  return showH2H(...args);
+}
+
 function renderCurrentView() {
   if (appState.view === "players") return showPlayersView();
   if (appState.view === "heroes") return showHeroesView();
   if (appState.view === "hero pool") return showHeroPoolView();
   if (appState.view === "player pool") return showPlayerPoolsView();
+  if (appState.view === "h2h") return showH2HView();
   return showTeamsView();
 }
 
 export async function initApp() {
+  bindH2HTabClick();
+
   const startupWatchdog = setTimeout(() => {
     const output = document.getElementById("output");
     if (!output) return;
@@ -187,7 +215,14 @@ window.showHeroPool = showHeroPoolView;
 window.sortHeroPool = sortHeroPool;
 window.showPlayerPools = showPlayerPoolsView;
 window.sortPlayerPools = sortPlayerPools;
+window.showH2H = showH2HView;
+window.setH2hSubTab = setH2hSubTab;
 window.onPlayerSearchInput = onPlayerSearchInput;
+window.onTeamCompareChange = onTeamCompareChange;
+window.onPlayerCompareChange = onPlayerCompareChange;
+window.onHeroCompareChange = onHeroCompareChange;
+window.openH2hPoolPopup = openH2hPoolPopup;
+window.closeH2hPoolPopup = closeH2hPoolPopup;
 window.onHeroSearchInput = onHeroSearchInput;
 window.onHpPlayerSearchInput = onHpPlayerSearchInput;
 window.onPpHeroSearchInput = onPpHeroSearchInput;
