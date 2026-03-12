@@ -1,6 +1,26 @@
 {
   "rewrites": [
     {
+      "source": "/season16",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/season16/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/season17",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/season17/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/schedule",
+      "destination": "/index.html"
+    },
+    {
       "source": "/players",
       "destination": "/index.html"
     },
