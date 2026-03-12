@@ -29,9 +29,11 @@ function calculateTeamStatsImpl() {
   }
 
   for (let match of getMatches()) {
+    const games = Array.isArray(match.games) ? match.games : [];
+    if (games.length === 0) continue;
     let teamAGameWins = 0, teamBGameWins = 0;
 
-    for (let game of match.games) {
+    for (let game of games) {
       if (!teamStats[match.teamA]) {
         teamStats[match.teamA] = {
           kills:0,deaths:0,assists:0,
@@ -51,7 +53,7 @@ function calculateTeamStatsImpl() {
 
       if (game.winner === match.teamA) teamAGameWins++; else teamBGameWins++;
 
-for (let player of game.players) {
+for (let player of (game.players || [])) {
   const info = getRoster(player.name);
   const t = info.team;
 
@@ -124,17 +126,19 @@ function calculatePlayerStatsImpl() {
 
   // Add match data
   for (let match of getMatches()) {
-    for (let game of match.games) {
+    const games = Array.isArray(match.games) ? match.games : [];
+    if (games.length === 0) continue;
+    for (let game of games) {
 
       // teamKills needs team info from getRosterList()
       let teamKills = {};
-      for (let player of game.players) {
+      for (let player of (game.players || [])) {
         const t = getRoster(player.name).team;
         if (!teamKills[t]) teamKills[t] = 0;
         teamKills[t] += player.kills;
       }
 
-      for (let player of game.players) {
+      for (let player of (game.players || [])) {
         const info = getRoster(player.name);
 
         // if player not in getRosterList() (typo/new), still include them

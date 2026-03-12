@@ -1,290 +1,308 @@
 [
     {
-        "name":  "SRG Player 1",
+        "name":  "Innocent",
         "team":  "SRG",
         "lane":  "Gold Laner",
-        "picture":  "https://your-player-image-link-here.com/srg-player-1.png"
+        "picture":  "https://i.imgur.com/QN1qiW8.png"
     },
     {
-        "name":  "SRG Player 2",
+        "name":  "Sekyss",
         "team":  "SRG",
         "lane":  "Jungler",
-        "picture":  "https://your-player-image-link-here.com/srg-player-2.png"
+        "picture":  "https://i.imgur.com/6cd6pGF.png"
     },
     {
-        "name":  "SRG Player 3",
+        "name":  "Stormie",
         "team":  "SRG",
         "lane":  "Midlaner",
-        "picture":  "https://your-player-image-link-here.com/srg-player-3.png"
+        "picture":  "https://i.imgur.com/co4ct6o.png"
     },
     {
-        "name":  "SRG Player 4",
+        "name":  "Kramm",
         "team":  "SRG",
         "lane":  "Exp Laner",
-        "picture":  "https://your-player-image-link-here.com/srg-player-4.png"
+        "picture":  "https://i.imgur.com/enKl2m2.png"
     },
     {
-        "name":  "SRG Player 5",
+        "name":  "Yums",
         "team":  "SRG",
         "lane":  "Roamer",
-        "picture":  "https://your-player-image-link-here.com/srg-player-5.png"
+        "picture":  "https://i.imgur.com/yErVspT.png"
     },
     {
-        "name":  "SRG Player 6",
+        "name":  "Unii",
         "team":  "SRG",
-        "lane":  "Substitute",
-        "picture":  "https://your-player-image-link-here.com/srg-player-6.png"
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/OSZYv6j.png"
     },
     {
-        "name":  "TR Player 1",
+        "name":  "Loleal",
         "team":  "TR",
         "lane":  "Gold Laner",
-        "picture":  "https://your-player-image-link-here.com/tr-player-1.png"
+        "picture":  "https://i.imgur.com/ShaDc9h.png"
     },
     {
-        "name":  "TR Player 2",
+        "name":  "Zahyed",
         "team":  "TR",
         "lane":  "Jungler",
-        "picture":  "https://your-player-image-link-here.com/tr-player-2.png"
+        "picture":  "https://i.imgur.com/Qb3GI8e.png"
     },
     {
-        "name":  "TR Player 3",
+        "name":  "Martzy",
         "team":  "TR",
         "lane":  "Midlaner",
-        "picture":  "https://your-player-image-link-here.com/tr-player-3.png"
+        "picture":  "https://i.imgur.com/9Yyh0sm.png"
     },
     {
-        "name":  "TR Player 4",
+        "name":  "Sizkaa",
         "team":  "TR",
         "lane":  "Exp Laner",
-        "picture":  "https://your-player-image-link-here.com/tr-player-4.png"
+        "picture":  "https://i.imgur.com/TB3QRBT.png"
     },
     {
-        "name":  "TR Player 5",
+        "name":  "Ivann",
         "team":  "TR",
         "lane":  "Roamer",
-        "picture":  "https://your-player-image-link-here.com/tr-player-5.png"
+        "picture":  "https://i.imgur.com/3PMNfhp.png"
     },
     {
-        "name":  "TR Player 6",
+        "name":  "Just Garrr",
         "team":  "TR",
-        "lane":  "Substitute",
-        "picture":  "https://your-player-image-link-here.com/tr-player-6.png"
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/Tk2oHXt.png"
     },
     {
-        "name":  "VMS Player 1",
+        "name":  "Zay La Nina",
+        "team":  "TR",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/Qk1a4b0.png"
+    },    
+    {
+        "name":  "Natco",
         "team":  "VMS",
         "lane":  "Gold Laner",
-        "picture":  "https://your-player-image-link-here.com/vms-player-1.png"
+        "picture":  "https://i.imgur.com/k5AZDTA.png"
     },
     {
-        "name":  "VMS Player 2",
+        "name":  "Error 404",
         "team":  "VMS",
         "lane":  "Jungler",
-        "picture":  "https://your-player-image-link-here.com/vms-player-2.png"
+        "picture":  "https://i.imgur.com/Z3W50vx.png"
     },
     {
-        "name":  "VMS Player 3",
+        "name":  "Claw Kun",
         "team":  "VMS",
         "lane":  "Midlaner",
-        "picture":  "https://your-player-image-link-here.com/vms-player-3.png"
+        "picture":  "https://i.imgur.com/TIEcKEx.png"
     },
     {
-        "name":  "VMS Player 4",
+        "name":  "Zeno",
         "team":  "VMS",
         "lane":  "Exp Laner",
-        "picture":  "https://your-player-image-link-here.com/vms-player-4.png"
+        "picture":  "https://i.imgur.com/DChiqjU.png"
     },
     {
-        "name":  "VMS Player 5",
+        "name":  "Zqeef",
         "team":  "VMS",
         "lane":  "Roamer",
-        "picture":  "https://your-player-image-link-here.com/vms-player-5.png"
+        "picture":  "https://i.imgur.com/ZPzpLxy.png"
     },
     {
-        "name":  "VMS Player 6",
+        "name":  "Chibi",
         "team":  "VMS",
-        "lane":  "Substitute",
-        "picture":  "https://your-player-image-link-here.com/vms-player-6.png"
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/wwYOowD.png"
+    },
+        {
+        "name":  "Xorn",
+        "team":  "VMS",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/fLvlwLp.png"
     },
     {
-        "name":  "RRQ Player 1",
+        "name":  "Rough",
         "team":  "RRQ",
         "lane":  "Gold Laner",
-        "picture":  "https://your-player-image-link-here.com/rrq-player-1.png"
+        "picture":  "https://i.imgur.com/0VEPFw0.png"
     },
     {
-        "name":  "RRQ Player 2",
+        "name":  "Garyy",
         "team":  "RRQ",
         "lane":  "Jungler",
-        "picture":  "https://your-player-image-link-here.com/rrq-player-2.png"
+        "picture":  "https://i.imgur.com/LA2MSKa.png"
     },
     {
-        "name":  "RRQ Player 3",
+        "name":  "Kyym",
         "team":  "RRQ",
         "lane":  "Midlaner",
-        "picture":  "https://your-player-image-link-here.com/rrq-player-3.png"
+        "picture":  "https://i.imgur.com/OUZUPfs.png"
     },
     {
-        "name":  "RRQ Player 4",
+        "name":  "Dyrennn",
         "team":  "RRQ",
         "lane":  "Exp Laner",
-        "picture":  "https://your-player-image-link-here.com/rrq-player-4.png"
+        "picture":  "https://i.imgur.com/LYlxoaU.png"
     },
     {
-        "name":  "RRQ Player 5",
+        "name":  "SuperYoshi",
         "team":  "RRQ",
         "lane":  "Roamer",
-        "picture":  "https://your-player-image-link-here.com/rrq-player-5.png"
+        "picture":  "https://i.imgur.com/CcQjqSK.png"
     },
     {
-        "name":  "RRQ Player 6",
+        "name":  "Aj",
         "team":  "RRQ",
-        "lane":  "Substitute",
-        "picture":  "https://your-player-image-link-here.com/rrq-player-6.png"
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/oTEsSEH.png"
     },
     {
-        "name":  "BTR Player 1",
+        "name":  "Amzziq",
         "team":  "BTR",
         "lane":  "Gold Laner",
-        "picture":  "https://your-player-image-link-here.com/btr-player-1.png"
+        "picture":  "https://i.imgur.com/7IWR5NN.png"
     },
     {
-        "name":  "BTR Player 2",
+        "name":  "Anavel",
         "team":  "BTR",
         "lane":  "Jungler",
-        "picture":  "https://your-player-image-link-here.com/btr-player-2.png"
+        "picture":  "https://i.imgur.com/IxvMBiv.png"
     },
     {
-        "name":  "BTR Player 3",
+        "name":  "Cikugais",
         "team":  "BTR",
-        "lane":  "Midlaner",
-        "picture":  "https://your-player-image-link-here.com/btr-player-3.png"
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/mDQOfu8.png"
     },
     {
-        "name":  "BTR Player 4",
+        "name":  "Smooth",
         "team":  "BTR",
         "lane":  "Exp Laner",
-        "picture":  "https://your-player-image-link-here.com/btr-player-4.png"
+        "picture":  "https://i.imgur.com/TUKDa7U.png"
     },
     {
-        "name":  "BTR Player 5",
+        "name":  "Rasy",
         "team":  "BTR",
         "lane":  "Roamer",
-        "picture":  "https://your-player-image-link-here.com/btr-player-5.png"
+        "picture":  "https://i.imgur.com/c669Q5w.png"
     },
     {
-        "name":  "BTR Player 6",
+        "name":  "Fakez",
         "team":  "BTR",
-        "lane":  "Substitute",
-        "picture":  "https://your-player-image-link-here.com/btr-player-6.png"
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/XVqjNNp.png"
     },
     {
-        "name":  "AC Player 1",
+        "name":  "Kusey",
         "team":  "AC",
         "lane":  "Gold Laner",
-        "picture":  "https://your-player-image-link-here.com/ac-player-1.png"
+        "picture":  "https://i.imgur.com/iCfswhQ.png"
     },
     {
-        "name":  "AC Player 2",
+        "name":  "Eyymal",
         "team":  "AC",
         "lane":  "Jungler",
-        "picture":  "https://your-player-image-link-here.com/ac-player-2.png"
+        "picture":  "https://i.imgur.com/65UBh9z.png"
     },
     {
-        "name":  "AC Player 3",
+        "name":  "Izanami",
         "team":  "AC",
         "lane":  "Midlaner",
-        "picture":  "https://your-player-image-link-here.com/ac-player-3.png"
+        "picture":  "https://i.imgur.com/iOrOOXX.png"
     },
     {
-        "name":  "AC Player 4",
+        "name":  "Momo",
         "team":  "AC",
         "lane":  "Exp Laner",
-        "picture":  "https://your-player-image-link-here.com/ac-player-4.png"
+        "picture":  "https://i.imgur.com/r4LhzTx.png"
     },
     {
-        "name":  "AC Player 5",
+        "name":  "Widy",
         "team":  "AC",
         "lane":  "Roamer",
-        "picture":  "https://your-player-image-link-here.com/ac-player-5.png"
+        "picture":  "https://i.imgur.com/xlTa6ov.png"
     },
     {
-        "name":  "AC Player 6",
+        "name":  "Yeepz",
         "team":  "AC",
-        "lane":  "Substitute",
-        "picture":  "https://your-player-image-link-here.com/ac-player-6.png"
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/XITM68u.png"
     },
     {
-        "name":  "IG Player 1",
+        "name":  "Melqt",
         "team":  "IG",
         "lane":  "Gold Laner",
-        "picture":  "https://your-player-image-link-here.com/ig-player-1.png"
+        "picture":  "https://i.imgur.com/SV9U3oy.png"
     },
     {
-        "name":  "IG Player 2",
+        "name":  "Hazle",
         "team":  "IG",
         "lane":  "Jungler",
-        "picture":  "https://your-player-image-link-here.com/ig-player-2.png"
+        "picture":  "https://i.imgur.com/OtuA6dx.png"
     },
     {
-        "name":  "IG Player 3",
+        "name":  "Spencer",
         "team":  "IG",
         "lane":  "Midlaner",
-        "picture":  "https://your-player-image-link-here.com/ig-player-3.png"
+        "picture":  "https://i.imgur.com/kmljYAS.png"
     },
     {
-        "name":  "IG Player 4",
+        "name":  "Gojes",
         "team":  "IG",
         "lane":  "Exp Laner",
-        "picture":  "https://your-player-image-link-here.com/ig-player-4.png"
+        "picture":  "https://i.imgur.com/YkqwreW.png"
     },
     {
-        "name":  "IG Player 5",
+        "name":  "NovaXcobar",
         "team":  "IG",
         "lane":  "Roamer",
-        "picture":  "https://your-player-image-link-here.com/ig-player-5.png"
+        "picture":  "https://i.imgur.com/x7682Z4.png"
     },
     {
-        "name":  "IG Player 6",
+        "name":  "Cayden",
         "team":  "IG",
-        "lane":  "Substitute",
-        "picture":  "https://your-player-image-link-here.com/ig-player-6.png"
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/OHPuXJo.png"
     },
     {
-        "name":  "TF Player 1",
+        "name":  "Skyzed",
         "team":  "TF",
         "lane":  "Gold Laner",
-        "picture":  "https://your-player-image-link-here.com/tf-player-1.png"
+        "picture":  "https://i.imgur.com/pNwBwtW.png"
     },
     {
-        "name":  "TF Player 2",
+        "name":  "Razin",
         "team":  "TF",
         "lane":  "Jungler",
-        "picture":  "https://your-player-image-link-here.com/tf-player-2.png"
+        "picture":  "https://i.imgur.com/m4OvkOd.png"
     },
     {
-        "name":  "TF Player 3",
+        "name":  "KurtTzy",
         "team":  "TF",
         "lane":  "Midlaner",
-        "picture":  "https://your-player-image-link-here.com/tf-player-3.png"
+        "picture":  "https://i.imgur.com/XfPxcFx.png"
     },
     {
-        "name":  "TF Player 4",
+        "name":  "Diablo",
         "team":  "TF",
         "lane":  "Exp Laner",
-        "picture":  "https://your-player-image-link-here.com/tf-player-4.png"
+        "picture":  "https://i.imgur.com/sT5c8hQ.png"
     },
     {
-        "name":  "TF Player 5",
+        "name":  "Hadess",
         "team":  "TF",
         "lane":  "Roamer",
-        "picture":  "https://your-player-image-link-here.com/tf-player-5.png"
+        "picture":  "https://i.imgur.com/pu2W9PH.png"
     },
     {
-        "name":  "TF Player 6",
+        "name":  "Ryzz",
         "team":  "TF",
-        "lane":  "Substitute",
-        "picture":  "https://your-player-image-link-here.com/tf-player-6.png"
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/34DofN2.png"
+    },
+        {
+        "name":  "Bearrr",
+        "team":  "TF",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/kKOMBc5.png"
     }
 ]

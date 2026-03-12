@@ -1,0 +1,317 @@
+ [   {
+        "teamA":  "SRG",
+        "teamB":  "TR",
+        "week": 1,
+        "day": "friday",
+        "dayMatch": 1,
+        "date": "2026-04-10",
+        "startTime": "3:00 PM",
+        "games":  [ {
+                          "winner":  "SRG",
+                          "mvp":  "SRG Player 1",
+                          "bans":  [
+                                       "TBD Ban 1",
+                                       "TBD Ban 2",
+                                       "TBD Ban 3",
+                                       "TBD Ban 4",
+                                       "TBD Ban 5",
+                                       "TBD Ban 6",
+                                       "TBD Ban 7",
+                                       "TBD Ban 8",
+                                       "TBD Ban 9",
+                                       "TBD Ban 10"
+                                   ],
+                          "players":  [
+                                          {
+                                              "name":  "SRG Player 1",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 2",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 3",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 4",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 5",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 1",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 2",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 3",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 4",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 5",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          }
+                                      ],
+                          "objectives":  {
+                                             "lord":  {
+                                                          "SRG":  0,
+                                                          "TR":  0
+                                                      },
+                                             "turtle":  {
+                                                            "SRG":  0,
+                                                            "TR":  0
+                                                        },
+                                             "tower":  {
+                                                           "SRG":  0,
+                                                           "TR":  0
+                                                       }
+                                         }
+                      },
+                      {
+                          "winner":  "TR",
+                          "mvp": "",
+                          "bans":  [
+                                       "TBD Ban 1",
+                                       "TBD Ban 2",
+                                       "TBD Ban 3",
+                                       "TBD Ban 4",
+                                       "TBD Ban 5",
+                                       "TBD Ban 6",
+                                       "TBD Ban 7",
+                                       "TBD Ban 8",
+                                       "TBD Ban 9",
+                                       "TBD Ban 10"
+                                   ],
+                          "players":  [
+                                          {
+                                              "name":  "SRG Player 1",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 2",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 3",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 4",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 5",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 1",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 2",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 3",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 4",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 5",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          }
+                                      ],
+                          "objectives":  {
+                                             "lord":  {
+                                                          "SRG":  0,
+                                                          "TR":  0
+                                                      },
+                                             "turtle":  {
+                                                            "SRG":  0,
+                                                            "TR":  0
+                                                        },
+                                             "tower":  {
+                                                           "SRG":  0,
+                                                           "TR":  0
+                                                       }
+                                         }
+                      },
+                      {
+                          "winner":  "SRG",
+                          "mvp": "",
+                          "bans":  [
+                                       "TBD Ban 1",
+                                       "TBD Ban 2",
+                                       "TBD Ban 3",
+                                       "TBD Ban 4",
+                                       "TBD Ban 5",
+                                       "TBD Ban 6",
+                                       "TBD Ban 7",
+                                       "TBD Ban 8",
+                                       "TBD Ban 9",
+                                       "TBD Ban 10"
+                                   ],
+                          "players":  [
+                                          {
+                                              "name":  "SRG Player 1",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 2",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 3",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 4",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "SRG Player 5",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 1",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 2",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 3",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 4",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          },
+                                          {
+                                              "name":  "TR Player 5",
+                                              "hero":  "TBD Hero",
+                                              "kills":  0,
+                                              "deaths":  0,
+                                              "assists":  0
+                                          }
+                                      ],
+                          "objectives":  {
+                                             "lord":  {
+                                                          "SRG":  0,
+                                                          "TR":  0
+                                                      },
+                                             "turtle":  {
+                                                            "SRG":  0,
+                                                            "TR":  0
+                                                        },
+                                             "tower":  {
+                                                           "SRG":  0,
+                                                           "TR":  0
+                                                       }
+                                         }
+                      }
+                      
+                  ]
+    },]
