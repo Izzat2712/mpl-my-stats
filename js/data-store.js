@@ -10,6 +10,7 @@ const SEASON_DATA_FILES = {
   season17: {
     label: "MPL MY SEASON 17",
     roster: "/data/season17/roster.json",
+    staff: "/data/season17/staff.json",
     heroes: "/data/heroes.json",
     matches: "/data/season17/matches.json",
     teamLogos: "/data/season17/teamLogos.json",
@@ -25,6 +26,7 @@ const HERO_ALIASES = {
 
 let dataVersion = 0;
 let roster = [];
+let staff = [];
 let heroes = {};
 let matches = [];
 let teamLogos = {};
@@ -51,18 +53,36 @@ function validateHeroes(map) {
   }
 }
 
+function validateStaff(list) {
+  if (!Array.isArray(list)) throw new Error("staff.json must be an array");
+  for (const item of list) {
+    if (!item || typeof item.name !== "string" || typeof item.team !== "string" || typeof item.role !== "string") {
+      throw new Error("staff.json contains invalid staff records");
+    }
+  }
+}
+
 function validateMatches(list) {
   if (!Array.isArray(list)) throw new Error("matches.json must be an array");
 
   for (const match of list) {
-    if (!match || !Array.isArray(match.games)) {
+    if (!match || typeof match.teamA !== "string" || typeof match.teamB !== "string") {
+      throw new Error("matches.json match must include teamA and teamB");
+    }
+    if (match.games != null && !Array.isArray(match.games)) {
       throw new Error("matches.json contains invalid match.games");
     }
-    for (const game of match.games) {
-      if (!game || !Array.isArray(game.players)) {
+    for (const game of (match.games || [])) {
+      if (!game) {
+        throw new Error("matches.json contains invalid game records");
+      }
+      if (game.mvp != null && typeof game.mvp !== "string") {
+        throw new Error("matches.json game.mvp must be a string");
+      }
+      if (game.players != null && !Array.isArray(game.players)) {
         throw new Error("matches.json contains invalid game.players");
       }
-      for (const p of game.players) {
+      for (const p of (game.players || [])) {
         if (!p || typeof p.name !== "string" || typeof p.hero !== "string") {
           throw new Error("matches.json player must include name and hero");
         }
@@ -102,7 +122,7 @@ function normalizeHeroesMap(map) {
 function normalizeMatchesHeroes(list) {
   return (list || []).map((match) => ({
     ...match,
-    games: (match.games || []).map((game) => ({
+    games: (Array.isArray(match.games) ? match.games : []).map((game) => ({
       ...game,
       bans: Array.isArray(game.bans) ? game.bans.map((b) => normalizeHeroName(b)) : [],
       players: (game.players || []).map((p) => ({
@@ -136,6 +156,18 @@ async function loadJson(path) {
     return JSON.parse(stripJsonComments(raw));
   } catch (err) {
     throw new Error(`Invalid JSON in ${path}: ${err.message || err}`);
+  }
+}
+
+async function loadOptionalJson(path, fallbackValue) {
+  if (!path) return fallbackValue;
+  try {
+    return await loadJson(path);
+  } catch (err) {
+    if (String(err?.message || "").includes("(404)")) {
+      return fallbackValue;
+    }
+    throw err;
   }
 }
 
@@ -208,8 +240,9 @@ function getSeasonConfig(seasonKey) {
 
 export async function loadData(seasonKey = "season16") {
   const config = getSeasonConfig(seasonKey);
-  const [nextRoster, nextHeroes, nextMatches, nextTeamLogos, nextTeamNames] = await Promise.all([
+  const [nextRoster, nextStaff, nextHeroes, nextMatches, nextTeamLogos, nextTeamNames] = await Promise.all([
     loadJson(config.roster),
+    loadOptionalJson(config.staff, []),
     loadJson(config.heroes),
     loadJson(config.matches),
     loadJson(config.teamLogos),
@@ -217,6 +250,7 @@ export async function loadData(seasonKey = "season16") {
   ]);
 
   validateRoster(nextRoster);
+  validateStaff(nextStaff);
   const normalizedHeroes = normalizeHeroesMap(nextHeroes);
   const normalizedMatches = normalizeMatchesHeroes(nextMatches);
 
@@ -226,6 +260,7 @@ export async function loadData(seasonKey = "season16") {
   validateTeamNames(nextTeamNames);
 
   roster = nextRoster;
+  staff = nextStaff;
   heroes = normalizedHeroes;
   matches = normalizedMatches;
   teamLogos = nextTeamLogos;
@@ -254,6 +289,10 @@ export function getRoster(name) {
 
 export function getRosterList() {
   return roster;
+}
+
+export function getStaffList() {
+  return staff;
 }
 
 export function getHeroesMap() {

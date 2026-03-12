@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MPL MY Season 16 Stats</title>
+  <title>MPL MY Season 17 Stats</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=20260306-2" />
+  <link rel="stylesheet" href="/style.css?v=20260312-1" />
 </head>
 <body>
 
@@ -15,18 +15,41 @@
 
   <div class="header">
     <div>
-      <h1 id="seasonHeading">MPL MY SEASON 16 STATISTICS</h1>
+      <p class="siteOwner">This website belong to : Izzat Zakhir</p>
+      <h1 id="seasonHeading">MPL MY SEASON 17 STATISTICS</h1>
+      <p class="siteDisclaimer">Team and player assets are sourced from the official MPL MY website.</p>
     </div>
   </div>
 
-  <div class="seasonSelectorWrap">
-    <label for="seasonSelect">Season</label>
-    <select id="seasonSelect" onchange="onSeasonChange(this.value)">
-      <option value="season16">MPL MY SEASON 16</option>
-    </select>
+  <div class="topControls">
+    <div class="seasonSelectorWrap">
+      <label for="seasonSelect">Season</label>
+      <select id="seasonSelect" onchange="onSeasonChange(this.value)">
+        <option value="season17">MPL MY SEASON 17</option>
+        <option value="season16">MPL MY SEASON 16</option>
+      </select>
+    </div>
+
+    <div id="nextMatchCountdown" class="countdownCard" aria-live="polite">
+      <div class="countdownLabel">Next Match</div>
+      <div class="countdownMatchup">
+        <div class="countdownTeam">
+          <img id="countdownLogoA" class="countdownLogo" src="" alt="" hidden>
+          <span id="countdownTeamA" class="countdownTeamName">Loading...</span>
+        </div>
+        <div class="countdownVs">VS</div>
+        <div class="countdownTeam">
+          <img id="countdownLogoB" class="countdownLogo" src="" alt="" hidden>
+          <span id="countdownTeamB" class="countdownTeamName">Loading...</span>
+        </div>
+      </div>
+      <div id="countdownMeta" class="countdownMeta"></div>
+      <div id="countdownTimer" class="countdownTimer">--d --h --m --s</div>
+    </div>
   </div>
 
   <div class="nav">
+    <a id="tabSchedule" href="/schedule" data-route="schedule">Schedule</a>
     <a href="/" data-route="teams">Teams</a>
     <a href="/players" data-route="players">Players</a>
     <a href="/heroes" data-route="heroes">Heroes</a>
@@ -39,7 +62,7 @@
 
 </div>
 
-<script type="module" src="/js/app.js"></script>
+<script type="module" src="/js/app.js?v=20260312-1"></script>
 
 <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>
 <script>

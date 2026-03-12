@@ -1,20 +1,460 @@
 ﻿import { getCurrentSeasonLabel, getHeroesMap, getMatches, getRosterList, getTeamDisplayName, getTeamLogosMap } from "./data-store.js";
 import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
+import { getStaffList } from "./data-store.js";
 
 let roster = [];
+let staff = [];
 let constHero = {};
 let teamLogos = {};
+const TEAM_CODE_ALIASES = {
+  FL: "TF"
+};
 
 function teamLabel(teamCode) {
-  return getTeamDisplayName(teamCode);
+  return getTeamDisplayName(TEAM_CODE_ALIASES[teamCode] || teamCode);
 }
 
 function seasonLabel() {
   return getCurrentSeasonLabel();
 }
 
+const SCHEDULE_DAYS = [
+  { key: "friday", label: "Friday", slots: 2 },
+  { key: "saturday", label: "Saturday", slots: 3 },
+  { key: "sunday", label: "Sunday", slots: 2 }
+];
+const MATCH_SOURCE_UTC_OFFSET_HOURS = 8;
+
+function getDefaultScheduleMeta(index) {
+  const week = Math.floor(index / 7) + 1;
+  const indexInWeek = index % 7;
+  let offset = 0;
+
+  for (const day of SCHEDULE_DAYS) {
+    if (indexInWeek < offset + day.slots) {
+      return {
+        week,
+        day: day.key,
+        dayLabel: day.label,
+        dayMatch: indexInWeek - offset + 1
+      };
+    }
+    offset += day.slots;
+  }
+
+  return { week, day: "friday", dayLabel: "Friday", dayMatch: 1 };
+}
+
+function getMatchScheduleMeta(match, index) {
+  const fallback = getDefaultScheduleMeta(index);
+  const schedule = match.schedule && typeof match.schedule === "object" ? match.schedule : {};
+  const dayValue = String(schedule.day || match.day || fallback.day).trim().toLowerCase();
+  const dayConfig = SCHEDULE_DAYS.find((entry) => entry.key === dayValue) || SCHEDULE_DAYS[0];
+
+  return {
+    week: Number(schedule.week ?? match.week) || fallback.week,
+    day: dayConfig.key,
+    dayLabel: dayConfig.label,
+    dayMatch: Number(schedule.dayMatch ?? match.dayMatch) || fallback.dayMatch,
+    date: String(schedule.date || match.date || "").trim(),
+    startTime: String(schedule.startTime || match.startTime || "").trim()
+  };
+}
+
+function parseScheduleMatchDateTime(dateValue, startTimeValue) {
+  const dateMatch = String(dateValue || "").trim().match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/);
+  const timeMatch = String(startTimeValue || "").trim().match(/^(\d{1,2}):(\d{2})\s*([AP]M)$/i);
+  if (!dateMatch || !timeMatch) return null;
+
+  const year = Number(dateMatch[1]);
+  const monthIndex = Number(dateMatch[2]) - 1;
+  const day = Number(dateMatch[3]);
+  let hours = Number(timeMatch[1]) % 12;
+  const minutes = Number(timeMatch[2]);
+  if (timeMatch[3].toUpperCase() === "PM") hours += 12;
+
+  const utcMs = Date.UTC(year, monthIndex, day, hours - MATCH_SOURCE_UTC_OFFSET_HOURS, minutes, 0, 0);
+  const parsed = new Date(utcMs);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function formatScheduleCountdown(diffMs) {
+  const totalSeconds = Math.max(0, Math.floor(diffMs / 1000));
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return `${days}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
+}
+
+function getScheduleStatusMeta(match, meta, selectedTeam = "") {
+  const score = getMatchScore(match);
+  if (score.played) {
+    const normalizedSelectedTeam = normalizeScheduleTeamCode(selectedTeam);
+    let stateClass = "is-finished";
+
+    if (normalizedSelectedTeam) {
+      if (score.teamAScore > score.teamBScore) {
+        stateClass = normalizeScheduleTeamCode(match.teamA) === normalizedSelectedTeam ? "is-win" : "is-loss";
+      } else if (score.teamBScore > score.teamAScore) {
+        stateClass = normalizeScheduleTeamCode(match.teamB) === normalizedSelectedTeam ? "is-win" : "is-loss";
+      }
+    }
+
+    return {
+      label: "Finished",
+      detail: "",
+      stateClass
+    };
+  }
+
+  const startAt = parseScheduleMatchDateTime(meta.date, meta.startTime);
+  if (startAt && startAt.getTime() > Date.now()) {
+    return {
+      label: "Upcoming",
+      detail: formatScheduleCountdown(startAt.getTime() - Date.now()),
+      stateClass: "is-upcoming",
+      startAtMs: startAt.getTime()
+    };
+  }
+
+  return {
+    label: "Upcoming",
+    detail: "TBD",
+    stateClass: "is-upcoming"
+  };
+}
+
+function refreshScheduleCountdowns() {
+  const countdownNodes = document.querySelectorAll(".scheduleTeamStatus[data-start-at]");
+  if (!countdownNodes.length) return;
+
+  const now = Date.now();
+  for (const node of countdownNodes) {
+    const startAtMs = Number(node.getAttribute("data-start-at"));
+    const detailNode = node.querySelector(".scheduleTeamStatusDetail");
+    if (!detailNode || !Number.isFinite(startAtMs)) continue;
+
+    const diffMs = startAtMs - now;
+    detailNode.textContent = diffMs > 0 ? formatScheduleCountdown(diffMs) : "0d 00h 00m 00s";
+  }
+}
+
+function getMatchScore(match) {
+  let teamAScore = 0;
+  let teamBScore = 0;
+
+  for (const game of (match.games || [])) {
+    if (game?.winner === match.teamA) teamAScore += 1;
+    if (game?.winner === match.teamB) teamBScore += 1;
+  }
+
+  return {
+    teamAScore,
+    teamBScore,
+    played: teamAScore > 0 || teamBScore > 0
+  };
+}
+
+function hasScorecardPlayers(game) {
+  return Array.isArray(game?.players) && game.players.length > 0;
+}
+
+function getAvailableScorecardGames(match) {
+  return (match.games || [])
+    .map((game, index) => ({ game, index }))
+    .filter((entry) => hasScorecardPlayers(entry.game));
+}
+
+function normalizeScheduleTeamCode(teamCode) {
+  return TEAM_CODE_ALIASES[String(teamCode || "").trim()] || String(teamCode || "").trim();
+}
+
+function getScheduleTeamLogo(teamCode) {
+  const normalizedTeamCode = normalizeScheduleTeamCode(teamCode);
+  return teamLogos[normalizedTeamCode] || teamLogos[teamCode] || "";
+}
+
+function renderScheduleMatchCard(match, index) {
+  const meta = getMatchScheduleMeta(match, index);
+  const score = getMatchScore(match);
+  const availableGames = getAvailableScorecardGames(match);
+  const hasScorecard = availableGames.length > 0;
+  const teamALogo = getScheduleTeamLogo(match.teamA);
+  const teamBLogo = getScheduleTeamLogo(match.teamB);
+  const scoreLabel = score.played ? `${score.teamAScore} - ${score.teamBScore}` : "VS";
+
+  return `
+    <article class="scheduleMatchCard">
+      <div class="scheduleMatchMeta">
+        <span>Match ${index + 1}</span>
+        <span>${meta.date || "TBD date"}</span>
+        <span>${meta.startTime || "TBD time"}</span>
+      </div>
+      <div class="scheduleTeams">
+        <button
+          type="button"
+          class="scheduleTeam scheduleTeamTrigger"
+          onclick="openTeamRoster('${match.teamA}')"
+          aria-label="Open ${teamLabel(match.teamA)} roster"
+        >
+          ${teamALogo ? `<img class="scheduleTeamLogo" src="${teamALogo}" alt="${teamLabel(match.teamA)} logo">` : ""}
+          <span>${teamLabel(match.teamA)}</span>
+        </button>
+        ${hasScorecard ? `
+          <button
+            type="button"
+            class="scheduleScore ${score.played ? "is-played" : ""} is-clickable"
+            onclick="openScheduleScorecard(${index}, 0)"
+            aria-label="Open scorecard for ${teamLabel(match.teamA)} versus ${teamLabel(match.teamB)}"
+          >
+            ${scoreLabel}
+          </button>
+        ` : `
+          <div class="scheduleScore ${score.played ? "is-played" : ""}">
+            ${scoreLabel}
+          </div>
+        `}
+        <button
+          type="button"
+          class="scheduleTeam scheduleTeamTrigger"
+          onclick="openTeamRoster('${match.teamB}')"
+          aria-label="Open ${teamLabel(match.teamB)} roster"
+        >
+          ${teamBLogo ? `<img class="scheduleTeamLogo" src="${teamBLogo}" alt="${teamLabel(match.teamB)} logo">` : ""}
+          <span>${teamLabel(match.teamB)}</span>
+        </button>
+      </div>
+    </article>
+  `;
+}
+
+function getScheduleTeams(matches) {
+  return Array.from(new Set(
+    matches.flatMap((match) => [match.teamA, match.teamB]).filter(Boolean).map((teamCode) => normalizeScheduleTeamCode(teamCode))
+  )).sort((a, b) => teamLabel(a).localeCompare(teamLabel(b)));
+}
+
+function renderScheduleTeamSelector(matches, selectedTeam = "") {
+  const teams = getScheduleTeams(matches);
+
+  return `
+    <div class="scheduleFilterBar">
+      <label for="scheduleTeamFilter">Team</label>
+      <select id="scheduleTeamFilter" onchange="onScheduleTeamChange(this.value)">
+        <option value="" ${selectedTeam ? "" : "selected"}>All teams</option>
+        ${teams.map((teamCode) => `
+          <option value="${teamCode}" ${teamCode === selectedTeam ? "selected" : ""}>${teamLabel(teamCode)}</option>
+        `).join("")}
+      </select>
+    </div>
+  `;
+}
+
+function renderScheduleTeamWeekSection(week, entries, selectedTeam = "") {
+  return `
+    <section class="scheduleTeamWeekSection">
+      <h3 class="scheduleTeamWeekTitle">Week ${week}</h3>
+      <div class="scheduleTeamWeekList">
+        ${entries.map(({ match, index, meta }) => {
+          const score = getMatchScore(match);
+          const result = score.played ? `${score.teamAScore} - ${score.teamBScore}` : "";
+          const matchupLabel = score.played ? result : "vs";
+          const teamALogo = getScheduleTeamLogo(match.teamA);
+          const teamBLogo = getScheduleTeamLogo(match.teamB);
+          const hasScorecard = getAvailableScorecardGames(match).length > 0;
+          const status = getScheduleStatusMeta(match, meta, selectedTeam);
+
+          return `
+            <article class="scheduleTeamTextRow">
+              <span class="scheduleTeamMatchNo">Match ${index + 1}</span>
+              <span class="scheduleTeamDateTime">
+                <span>${meta.dayLabel}</span>
+                <span>${meta.date || "TBD date"}</span>
+                <span>${meta.startTime || "TBD time"}</span>
+              </span>
+              <span class="scheduleTeamMatchup">
+                <button
+                  type="button"
+                  class="scheduleTeamMatchupSide scheduleTeamMatchupTrigger"
+                  onclick="openTeamRoster('${match.teamA}')"
+                  aria-label="Open ${teamLabel(match.teamA)} roster"
+                >
+                  ${teamALogo ? `<img class="scheduleTeamInlineLogo" src="${teamALogo}" alt="${teamLabel(match.teamA)} logo">` : ""}
+                  <span>${teamLabel(match.teamA)}</span>
+                </button>
+                ${hasScorecard ? `
+                  <button
+                    type="button"
+                    class="scheduleTeamMatchupVs is-clickable ${score.played ? "is-played" : ""}"
+                    onclick="openScheduleScorecard(${index}, 0)"
+                    aria-label="Open scorecard for ${teamLabel(match.teamA)} versus ${teamLabel(match.teamB)}"
+                  >
+                    ${matchupLabel}
+                  </button>
+                ` : `
+                  <span class="scheduleTeamMatchupVs ${score.played ? "is-played" : ""}">${matchupLabel}</span>
+                `}
+                <button
+                  type="button"
+                  class="scheduleTeamMatchupSide scheduleTeamMatchupTrigger"
+                  onclick="openTeamRoster('${match.teamB}')"
+                  aria-label="Open ${teamLabel(match.teamB)} roster"
+                >
+                  ${teamBLogo ? `<img class="scheduleTeamInlineLogo" src="${teamBLogo}" alt="${teamLabel(match.teamB)} logo">` : ""}
+                  <span>${teamLabel(match.teamB)}</span>
+                </button>
+              </span>
+              <span class="scheduleTeamTextScore scheduleTeamStatus ${status.stateClass}" ${status.startAtMs ? `data-start-at="${status.startAtMs}"` : ""}>
+                <span class="scheduleTeamStatusLabel">${status.label}</span>
+                ${status.detail ? `<span class="scheduleTeamStatusDetail">${status.detail}</span>` : ""}
+              </span>
+            </article>
+          `;
+        }).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderScheduleTeamView(matchEntries, selectedTeam = "", activeWeek = 1, weekTabs = []) {
+  const groupedByWeek = new Map();
+
+  for (const entry of matchEntries) {
+    const weekEntries = groupedByWeek.get(entry.meta.week) || [];
+    weekEntries.push(entry);
+    groupedByWeek.set(entry.meta.week, weekEntries);
+  }
+
+  const orderedWeeks = Array.from(groupedByWeek.keys()).sort((a, b) => a - b);
+
+  if (!orderedWeeks.length) {
+    return `<div class="scheduleEmpty">No matches set for this team.</div>`;
+  }
+
+  const availableWeekSet = new Set(orderedWeeks);
+  const visibleWeek = availableWeekSet.has(activeWeek) ? activeWeek : orderedWeeks[0];
+  const visibleEntries = (groupedByWeek.get(visibleWeek) || []).sort((a, b) => {
+    if (a.meta.day !== b.meta.day) {
+      return SCHEDULE_DAYS.findIndex((day) => day.key === a.meta.day)
+        - SCHEDULE_DAYS.findIndex((day) => day.key === b.meta.day);
+    }
+    return a.meta.dayMatch - b.meta.dayMatch;
+  });
+
+  return `
+    <div class="nav scheduleWeekNav">
+      ${weekTabs.map((tabWeek) => `
+        <button
+          type="button"
+          class="${tabWeek === visibleWeek ? "is-active" : ""} ${availableWeekSet.has(tabWeek) ? "" : "is-disabled"}"
+          onclick="showSchedule(${tabWeek})"
+        >
+          Week ${tabWeek}
+        </button>
+      `).join("")}
+    </div>
+    <div class="scheduleTeamView">
+      ${renderScheduleTeamWeekSection(visibleWeek, visibleEntries, selectedTeam)}
+    </div>
+  `;
+}
+
+function showSchedule(week = null) {
+  const matches = getMatches();
+  const availableTeams = getScheduleTeams(matches);
+  const maxWeek = Math.max(1, ...matches.map((match, index) => getMatchScheduleMeta(match, index).week));
+  const weekTabs = Array.from({ length: maxWeek }, (_, i) => i + 1);
+  const activeWeek = Math.min(Math.max(Number(week ?? window.appState?.scheduleWeek ?? 1), 1), maxWeek);
+  const requestedTeam = normalizeScheduleTeamCode(window.appState?.scheduleTeam || "");
+  const selectedTeam = availableTeams.includes(requestedTeam) ? requestedTeam : "";
+
+  if (window.appState) {
+    window.appState.scheduleWeek = activeWeek;
+    window.appState.scheduleTeam = selectedTeam;
+  }
+
+  const matchEntries = matches.map((match, index) => ({ match, index, meta: getMatchScheduleMeta(match, index) }));
+  const matchesForWeek = matchEntries.filter((entry) => entry.meta.week === activeWeek);
+  const matchesForTeam = selectedTeam
+    ? matchEntries.filter((entry) => {
+        const teamA = normalizeScheduleTeamCode(entry.match.teamA);
+        const teamB = normalizeScheduleTeamCode(entry.match.teamB);
+        return teamA === selectedTeam || teamB === selectedTeam;
+      })
+    : [];
+
+  const html = `
+    <h2 class="panel-title">Schedule ${seasonLabel()}</h2>
+
+    ${renderScheduleTeamSelector(matches, selectedTeam)}
+
+    ${selectedTeam ? renderScheduleTeamView(matchesForTeam, selectedTeam, activeWeek, weekTabs) : `
+      <div class="nav scheduleWeekNav">
+        ${weekTabs.map((tabWeek) => `
+          <button
+            type="button"
+            class="${tabWeek === activeWeek ? "is-active" : ""}"
+            onclick="showSchedule(${tabWeek})"
+          >
+            Week ${tabWeek}
+          </button>
+        `).join("")}
+      </div>
+
+      <div class="scheduleBoard">
+        ${SCHEDULE_DAYS.map((day) => {
+          const dayMatches = matchesForWeek
+            .filter((entry) => entry.meta.day === day.key)
+            .sort((a, b) => a.meta.dayMatch - b.meta.dayMatch);
+
+          return `
+            <section class="scheduleDayColumn">
+              <div class="scheduleDayHeader">
+                <h3>${day.label}</h3>
+              </div>
+              <div class="scheduleDayBody">
+                ${dayMatches.length
+                  ? dayMatches.map((entry) => renderScheduleMatchCard(entry.match, entry.index)).join("")
+                  : `<div class="scheduleEmpty">No matches set.</div>`
+                }
+              </div>
+            </section>
+          `;
+        }).join("")}
+      </div>
+    `}
+
+  `;
+
+  document.getElementById("output").innerHTML = html;
+  mountScheduleScorecardModal();
+  refreshScheduleCountdowns();
+}
+
+function mountScheduleScorecardModal() {
+  const modalId = "scheduleScorecardModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderScheduleScorecardModal();
+}
+
+function onScheduleTeamChange(teamCode) {
+  if (window.appState) {
+    window.appState.scheduleTeam = normalizeScheduleTeamCode(teamCode);
+  }
+  showSchedule(window.appState?.scheduleWeek ?? null);
+}
+
 export function refreshDataRefs() {
   roster = getRosterList();
+  staff = getStaffList();
   constHero = getHeroesMap();
   teamLogos = getTeamLogosMap();
 }
@@ -25,6 +465,12 @@ let heroSort = { key: "pickRate", asc: false };
 let heroPoolSort = { key: "totalHeroes", asc: false };
 let playerPoolsSort = { key: "totalPlayers", asc: false };
 let h2hSubTab = "team";
+let scheduleScorecardState = { matchIndex: null, gameIndex: 0 };
+let teamRosterModalState = { teamCode: "" };
+
+function getScheduleScorecardPositionStyle() {
+  return "";
+}
 let teamCompareState = { left: "", right: "" };
 let playerCompareState = { left: "", right: "" };
 let heroCompareState = { left: "", right: "" };
@@ -111,6 +557,330 @@ function closeH2hPoolPopup() {
   showH2H();
 }
 
+function openScheduleScorecard(matchIndex, gameIndex = 0) {
+  const match = getMatches()[matchIndex];
+  const availableGames = match ? getAvailableScorecardGames(match) : [];
+  if (!availableGames.length) return;
+
+  scheduleScorecardState = {
+    matchIndex,
+    gameIndex: Math.min(Math.max(Number(gameIndex) || 0, 0), availableGames.length - 1)
+  };
+  showSchedule(window.appState?.scheduleWeek ?? null);
+}
+
+function closeScheduleScorecard() {
+  scheduleScorecardState = { matchIndex: null, gameIndex: 0 };
+  showSchedule(window.appState?.scheduleWeek ?? null);
+}
+
+function selectScheduleScorecardGame(gameIndex) {
+  if (scheduleScorecardState.matchIndex == null) return;
+  scheduleScorecardState = {
+    ...scheduleScorecardState,
+    gameIndex: Math.max(0, Number(gameIndex) || 0)
+  };
+  showSchedule(window.appState?.scheduleWeek ?? null);
+}
+
+function getRosterTeamForPlayer(name) {
+  const normalizedName = String(name || "").trim().toLowerCase();
+  if (!normalizedName) return "";
+
+  const record = roster.find((item) => String(item?.name || "").trim().toLowerCase() === normalizedName);
+  return record?.team || "";
+}
+
+function getRosterPlayerRecord(name) {
+  const normalizedName = String(name || "").trim().toLowerCase();
+  if (!normalizedName) return null;
+  return roster.find((item) => String(item?.name || "").trim().toLowerCase() === normalizedName) || null;
+}
+
+function partitionScorecardPlayers(match, game) {
+  const grouped = {
+    [match.teamA]: [],
+    [match.teamB]: []
+  };
+  const unresolved = [];
+
+  for (const player of (game.players || [])) {
+    const explicitTeam = String(player?.team || "").trim();
+    const rosterTeam = getRosterTeamForPlayer(player?.name);
+    const resolvedTeam = explicitTeam || rosterTeam;
+
+    if (resolvedTeam === match.teamA || resolvedTeam === match.teamB) {
+      grouped[resolvedTeam].push(player);
+    } else {
+      unresolved.push(player);
+    }
+  }
+
+  for (const player of unresolved) {
+    const nextTeam = grouped[match.teamA].length < 5 ? match.teamA : match.teamB;
+    grouped[nextTeam].push(player);
+  }
+
+  return grouped;
+}
+
+function renderScorecardPlayerRow(player, isMvp = false) {
+  const heroName = String(player?.hero || "").trim();
+  const heroImg = constHero[heroName] || "";
+  const playerRecord = getRosterPlayerRecord(player?.name);
+  const playerPicture = playerRecord?.picture || "";
+  const kda = `${Number(player?.kills) || 0}/${Number(player?.deaths) || 0}/${Number(player?.assists) || 0}`;
+
+  return `
+    <div class="scheduleScorecardPlayer ${isMvp ? "is-mvp topMVP" : ""}">
+      ${isMvp ? `<div class="scheduleScorecardMvpBadge">MVP</div>` : ""}
+      <div class="scheduleScorecardPlayerMain">
+        <span class="scheduleScorecardPlayerFaceWrap">
+          ${playerPicture ? `<img class="scheduleScorecardPlayerFace" src="${playerPicture}" alt="${player?.name || "Player"}">` : ""}
+        </span>
+        <span class="scheduleScorecardPlayerName">${player?.name || "TBD Player"}</span>
+      </div>
+      <div class="scheduleScorecardHero">
+        ${heroImg ? `<img class="scheduleScorecardHeroImg" src="${heroImg}" alt="${heroName}">` : ""}
+        <span>${heroName || "TBD Hero"}</span>
+      </div>
+      <div class="scheduleScorecardKda">${kda}</div>
+    </div>
+  `;
+}
+
+function renderScorecardTeamCard(teamCode, players) {
+  const teamLogo = teamLogos[teamCode] || "";
+  const activeMatch = getMatches()[scheduleScorecardState.matchIndex];
+  const availableGames = activeMatch ? getAvailableScorecardGames(activeMatch) : [];
+  const activeIndex = Math.min(Math.max(scheduleScorecardState.gameIndex, 0), Math.max(availableGames.length - 1, 0));
+  const activeGame = availableGames[activeIndex]?.game || null;
+  const mvpName = String(activeGame?.mvp || "").trim().toLowerCase();
+
+  return `
+    <section class="scheduleScorecardTeamCard">
+      <div class="scheduleScorecardTeamHead">
+        ${teamLogo ? `<img class="scheduleScorecardTeamLogo" src="${teamLogo}" alt="${teamLabel(teamCode)} logo">` : ""}
+        <div>
+          <h4>${teamLabel(teamCode) || "TBD Team"}</h4>
+        </div>
+      </div>
+      <div class="scheduleScorecardPlayerList">
+        ${players.length
+          ? players.map((player) => renderScorecardPlayerRow(player, String(player?.name || "").trim().toLowerCase() === mvpName)).join("")
+          : `<div class="scheduleScorecardEmpty">No player data for this team yet.</div>`
+        }
+      </div>
+    </section>
+  `;
+}
+
+function renderScorecardBans(game) {
+  const bans = Array.isArray(game?.bans) ? game.bans.slice(0, 10) : [];
+
+  return `
+    <section class="scheduleScorecardBansPanel" aria-label="Banned heroes">
+      <div class="scheduleScorecardBansGrid">
+        ${bans.length
+          ? bans.map((heroName) => {
+              const heroImg = constHero[String(heroName || "").trim()] || "";
+              return `
+                <div class="scheduleScorecardBan" title="${heroName || "TBD Hero"}">
+                  ${heroImg ? `<img class="scheduleScorecardBanImg" src="${heroImg}" alt="${heroName}">` : `<span class="scheduleScorecardBanFallback">?</span>`}
+                  <span class="scheduleScorecardBanX" aria-hidden="true">X</span>
+                </div>
+              `;
+            }).join("")
+          : `<div class="scheduleScorecardEmpty">No ban data yet.</div>`
+        }
+      </div>
+    </section>
+  `;
+}
+
+function renderScheduleScorecardModal() {
+  if (scheduleScorecardState.matchIndex == null) return "";
+
+  const match = getMatches()[scheduleScorecardState.matchIndex];
+  if (!match) return "";
+
+  const availableGames = getAvailableScorecardGames(match);
+  if (!availableGames.length) return "";
+
+  const activeIndex = Math.min(Math.max(scheduleScorecardState.gameIndex, 0), availableGames.length - 1);
+  const activeEntry = availableGames[activeIndex];
+  const activeGame = activeEntry.game;
+  const playersByTeam = partitionScorecardPlayers(match, activeGame);
+  const teamALogo = teamLogos[match.teamA] || "";
+  const teamBLogo = teamLogos[match.teamB] || "";
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closeScheduleScorecard()">
+      <div class="scheduleScorecardModal h2hModalCard" ${getScheduleScorecardPositionStyle()} onclick="event.stopPropagation()">
+        <div class="h2hModalHead scheduleScorecardModalHead">
+          <button type="button" class="scheduleScorecardClose" onclick="closeScheduleScorecard()" aria-label="Close scorecard">X</button>
+          <div class="scheduleScorecardTopStack">
+            <div class="scheduleScorecardMatchHead">
+              <div class="scheduleScorecardMatchup">
+                <span class="scheduleScorecardMatchTeam">
+                  ${teamALogo ? `<img class="scheduleScorecardMatchLogo" src="${teamALogo}" alt="${teamLabel(match.teamA)} logo">` : ""}
+                  <span>${teamLabel(match.teamA)}</span>
+                </span>
+                <span class="scheduleScorecardMatchVs">vs</span>
+                <span class="scheduleScorecardMatchTeam">
+                  ${teamBLogo ? `<img class="scheduleScorecardMatchLogo" src="${teamBLogo}" alt="${teamLabel(match.teamB)} logo">` : ""}
+                  <span>${teamLabel(match.teamB)}</span>
+                </span>
+              </div>
+            </div>
+            <div class="scheduleScorecardTabs">
+              ${availableGames.map((entry, tabIndex) => `
+                <button
+                  type="button"
+                  class="scheduleScorecardTab ${tabIndex === activeIndex ? "is-active" : ""}"
+                  onclick="selectScheduleScorecardGame(${tabIndex})"
+                >
+                  Game ${entry.index + 1}
+                </button>
+              `).join("")}
+            </div>
+            <div class="scheduleScorecardGameMeta">
+              <span>Winner: ${teamLabel(activeGame.winner) || "TBD"}</span>
+            </div>
+          </div>
+        </div>
+        ${renderScorecardBans(activeGame)}
+        <div class="scheduleScorecardGrid">
+          ${renderScorecardTeamCard(match.teamA, playersByTeam[match.teamA] || [])}
+          ${renderScorecardTeamCard(match.teamB, playersByTeam[match.teamB] || [])}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function mountTeamRosterModal() {
+  const modalId = "teamRosterModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderTeamRosterModal();
+}
+
+function openTeamRoster(teamCode) {
+  teamRosterModalState = { teamCode: String(teamCode || "").trim() };
+  mountTeamRosterModal();
+}
+
+function closeTeamRoster() {
+  teamRosterModalState = { teamCode: "" };
+  mountTeamRosterModal();
+}
+
+function getTeamRosterPlayers(teamCode) {
+  const roleOrder = {
+    "Gold Laner": 1,
+    Jungler: 2,
+    Midlaner: 3,
+    "Exp Laner": 4,
+    Roamer: 5
+  };
+
+  return (roster || [])
+    .filter((player) => String(player?.team || "").trim() === teamCode)
+    .sort((a, b) => {
+      const laneDiff = (roleOrder[a.lane] || 99) - (roleOrder[b.lane] || 99);
+      if (laneDiff !== 0) return laneDiff;
+      return String(a.name || "").localeCompare(String(b.name || ""));
+    });
+}
+
+function getTeamStaff(teamCode) {
+  return (staff || [])
+    .filter((member) => String(member?.team || "").trim() === teamCode)
+    .sort((a, b) => String(a.role || "").localeCompare(String(b.role || "")) || String(a.name || "").localeCompare(String(b.name || "")));
+}
+
+function renderTeamRosterMemberCard(member, options = {}) {
+  const isPlaceholder = Boolean(options.placeholder);
+  const image = String(member?.picture || "").trim();
+  const role = String(member?.lane || member?.role || "TBD").trim() || "TBD";
+  const name = String(member?.name || "TBD").trim() || "TBD";
+  const initials = name === "TBD"
+    ? "?"
+    : name.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
+
+  return `
+    <article class="teamRosterCard ${isPlaceholder ? "is-placeholder" : ""}">
+      <div class="teamRosterPortraitWrap">
+        ${image
+          ? `<img class="teamRosterPortrait" src="${image}" alt="${name}">`
+          : `<div class="teamRosterPortraitFallback" aria-hidden="true">${initials}</div>`
+        }
+      </div>
+      <div class="teamRosterCardBody">
+        <h4>${name}</h4>
+        <p>${role}</p>
+      </div>
+    </article>
+  `;
+}
+
+function renderTeamRosterModal() {
+  const teamCode = String(teamRosterModalState.teamCode || "").trim();
+  if (!teamCode) return "";
+
+  const players = getTeamRosterPlayers(teamCode);
+  const teamLogo = teamLogos[teamCode] || "";
+  const teamStaff = getTeamStaff(teamCode);
+  const placeholderStaff = [
+    { name: "TBD", role: "Head Coach", picture: "" },
+    { name: "TBD", role: "Assistant Coach", picture: "" }
+  ];
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closeTeamRoster()">
+      <div class="teamRosterModal h2hModalCard" onclick="event.stopPropagation()">
+        <div class="h2hModalHead teamRosterModalHead">
+          <div class="teamRosterModalTitle">
+            ${teamLogo ? `<img class="teamRosterModalLogo" src="${teamLogo}" alt="${teamLabel(teamCode)} logo">` : ""}
+            <div>
+              <h3>${teamLabel(teamCode)}</h3>
+            </div>
+          </div>
+          <button type="button" class="h2hModalClose" onclick="closeTeamRoster()">Close</button>
+        </div>
+        <section class="teamRosterSection">
+          <div class="teamRosterSectionHead">
+            <h4>Players</h4>
+          </div>
+          <div class="teamRosterGrid">
+            ${players.length
+              ? players.map((player) => renderTeamRosterMemberCard(player)).join("")
+              : `<div class="h2hModalEmpty">No roster data for this team yet.</div>`
+            }
+          </div>
+        </section>
+        <section class="teamRosterSection">
+          <div class="teamRosterSectionHead">
+            <h4>Coaching Staff</h4>
+          </div>
+          <div class="teamRosterGrid teamRosterGrid--staff">
+            ${(teamStaff.length ? teamStaff : placeholderStaff)
+              .map((member) => renderTeamRosterMemberCard(member, { placeholder: !teamStaff.length }))
+              .join("")}
+          </div>
+        </section>
+      </div>
+    </div>
+  `;
+}
+
 
 function showTeams() {
   let t = calculateTeamStats();
@@ -167,8 +937,10 @@ function showTeams() {
       <tr>
 <td>
   <div class="teamCell">
-    <img class="teamLogo" src="${logo}" width="50" height="50" alt="${teamLabel(ts.team)} logo">
-    <span>${teamLabel(ts.team)}</span>
+    <button type="button" class="teamLogoTrigger" onclick="openTeamRoster('${ts.team}')" aria-label="Open ${teamLabel(ts.team)} roster">
+      <img class="teamLogo" src="${logo}" width="50" height="50" alt="${teamLabel(ts.team)} logo">
+    </button>
+    <button type="button" class="teamRosterTrigger" onclick="openTeamRoster('${ts.team}')">${teamLabel(ts.team)}</button>
   </div>
 </td>
         <td>${ts.matchWins}</td>
@@ -184,6 +956,7 @@ function showTeams() {
 
   html += `</table>`;
   document.getElementById("output").innerHTML = html;
+  mountTeamRosterModal();
 }
 
 function sortTeams(key) {
@@ -1668,6 +2441,14 @@ function setSupportPos(mode) {
 
   }}
 export {
+  showSchedule,
+  refreshScheduleCountdowns,
+  onScheduleTeamChange,
+  openScheduleScorecard,
+  closeScheduleScorecard,
+  selectScheduleScorecardGame,
+  openTeamRoster,
+  closeTeamRoster,
   onTeamCompareChange,
   onPlayerCompareChange,
   onHeroCompareChange,

@@ -1,0 +1,110 @@
+[
+  {
+    "name": "COACH ARCADIA",
+    "team": "SRG",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/bjsFAme.png"
+  },
+  {
+    "name": "OZORAVEKI",
+    "team": "SRG",
+    "role": "Tactical Coach",
+    "picture": "https://i.imgur.com/2A5wsSk.png"
+  },
+  {
+    "name": "P4K ATAN",
+    "team": "VMS",
+    "role": "Analyst",
+    "picture": "https://i.imgur.com/AJHL9kj.png"
+  },
+    {
+    "name": "VALDO",
+    "team": "VMS",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/k5AL56D.png"
+  },
+    {
+    "name": "P4K BET",
+    "team": "VMS",
+    "role": "Tactical Coach",
+    "picture": "https://i.imgur.com/mQtOPB0.png"
+  },
+    {
+    "name": "JIFDEGAMING",
+    "team": "TR",
+    "role": "ANALYST",
+    "picture": "https://i.imgur.com/841OzwM.png"
+  },
+    {
+    "name": "SAINTDELUCAZ",
+    "team": "TR",
+    "role": "Tactical Coach",
+    "picture": "https://i.imgur.com/oxF0wE3.png"
+  },
+    {
+    "name": "CALEB",
+    "team": "TR",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/f5fjw6x.png"
+  },
+    {
+    "name": "COACH LINK",
+    "team": "RRQ",
+    "role": "Tactical Coach",
+    "picture": "https://i.imgur.com/BmK3uWW.png"
+  },
+    {
+    "name": "SASA",
+    "team": "RRQ",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/2zQk9FJ.png"
+  },
+    {
+    "name": "BARBOSSA",
+    "team": "BTR",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/6oMpsQ1.png"
+  },
+    {
+    "name": "KENJI",
+    "team": "BTR",
+    "role": "Tactical Coach",
+    "picture": "https://i.imgur.com/ClJ8EMo.png"
+  },
+    {
+    "name": "LOONG",
+    "team": "AC",
+    "role": "Tactical Coach",
+    "picture": "https://i.imgur.com/cen8Ubm.png"
+  },
+    {
+    "name": "COACH ADI",
+    "team": "AC",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/kPEmSZ4.png"
+  },
+    {
+    "name": "COACH BAM",
+    "team": "IG",
+    "role": "Tactical Coach",
+    "picture": "https://i.imgur.com/3zVYbnY.png"
+  },
+    {
+    "name": "COACH JES",
+    "team": "IG",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/z8SEHYj.png"
+  },
+    {
+    "name": "RANSEL",
+    "team": "TF",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/vekWRMe.png"
+  },
+    {
+    "name": "NOBODY",
+    "team": "TF",
+    "role": "ASSISTANT COACH",
+    "picture": "https://i.imgur.com/Bu47VJd.png"
+  }
+]

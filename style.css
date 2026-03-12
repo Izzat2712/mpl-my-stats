@@ -28,6 +28,28 @@
 
 html{
   scroll-behavior:smooth;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(96,165,250,0.85) rgba(6,14,38,0.9);
+}
+
+html::-webkit-scrollbar{
+  width:12px;
+}
+
+html::-webkit-scrollbar-track{
+  background:linear-gradient(180deg, rgba(6,14,38,0.95), rgba(8,19,56,0.92));
+  border-radius:999px;
+}
+
+html::-webkit-scrollbar-thumb{
+  border-radius:999px;
+  border:2px solid rgba(6,14,38,0.95);
+  background:linear-gradient(180deg, rgba(59,130,246,0.95), rgba(14,165,233,0.92), rgba(251,191,36,0.8));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.16), 0 0 14px rgba(59,130,246,0.25);
+}
+
+html::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg, rgba(96,165,250,1), rgba(56,189,248,1), rgba(251,191,36,0.9));
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -83,14 +105,65 @@ body::before{
   margin-bottom:25px;
 }
 
+.siteOwner{
+  margin:0 0 8px;
+  font-size:10px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.62);
+}
+
 h1{
   margin:0;
   font-size:clamp(28px, 4vw, 42px);
   font-family:'Orbitron','Rajdhani',sans-serif;
   font-weight:900;
-  letter-spacing:1.8px;
+  letter-spacing:2.6px;
   text-transform:uppercase;
-  text-shadow:0 0 24px rgba(59,130,246,0.38), 0 0 12px rgba(251,191,36,0.25);
+  line-height:1.05;
+  position:relative;
+  display:inline-block;
+  padding:8px 20px 12px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:
+    radial-gradient(circle at 18% 30%, rgba(251,191,36,0.18), transparent 42%),
+    radial-gradient(circle at 82% 18%, rgba(59,130,246,0.18), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  box-shadow:
+    0 18px 34px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.09);
+  text-shadow:
+    0 0 28px rgba(59,130,246,0.26),
+    0 0 12px rgba(251,191,36,0.18),
+    0 3px 12px rgba(0,0,0,0.28);
+}
+
+h1::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  padding:1px;
+  background:linear-gradient(135deg, rgba(251,191,36,0.32), rgba(255,255,255,0.04), rgba(59,130,246,0.32));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+
+h1::after{
+  content:"";
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:6px;
+  height:3px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(251,191,36,0), rgba(251,191,36,0.92), rgba(59,130,246,0.92), rgba(59,130,246,0));
+  box-shadow:0 0 18px rgba(59,130,246,0.2);
 }
 
 .subtitle{
@@ -99,20 +172,35 @@ h1{
   color:var(--muted);
 }
 
+.siteDisclaimer{
+  margin:8px 0 0;
+  font-size:10px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.62);
+}
+
 .seasonSelectorWrap{
   display:flex;
   align-items:center;
   justify-content:center;
   gap:10px;
-  margin-bottom:20px;
   padding:10px 14px;
   border:1px solid rgba(122,166,255,0.28);
   background:linear-gradient(135deg, rgba(6,17,49,0.72), rgba(14,30,77,0.48));
   border-radius:16px;
   width:fit-content;
-  margin-left:auto;
-  margin-right:auto;
+  margin:0;
   backdrop-filter:blur(8px);
+}
+
+.topControls{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:16px;
+  flex-wrap:wrap;
 }
 
 .seasonSelectorWrap label{
@@ -126,6 +214,89 @@ h1{
 .seasonSelectorWrap select{
   min-width:250px;
   font-weight:700;
+}
+
+.countdownCard{
+  min-width:320px;
+  padding:10px 14px;
+  border:1px solid rgba(122,166,255,0.28);
+  background:linear-gradient(135deg, rgba(6,17,49,0.72), rgba(14,30,77,0.48));
+  border-radius:16px;
+  backdrop-filter:blur(8px);
+  display:grid;
+  gap:2px;
+  align-content:center;
+}
+
+.countdownLabel{
+  font-weight:700;
+  font-family:'Orbitron','Rajdhani',sans-serif;
+  letter-spacing:1.2px;
+  font-size:12px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.countdownMatchup{
+  display:grid;
+  grid-template-columns:minmax(0, max-content) auto minmax(0, max-content);
+  align-items:center;
+  gap:10px;
+  justify-content:start;
+}
+
+.countdownTeam{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+
+.countdownTeam:last-child{
+  justify-content:flex-start;
+}
+
+.countdownTeamName{
+  font-family:'Orbitron','Rajdhani',sans-serif;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.countdownLogo{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+
+.countdownVs{
+  font-family:'Orbitron','Rajdhani',sans-serif;
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+  letter-spacing:0.12em;
+}
+
+.countdownMeta{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.countdownTimer{
+  font-family:'Orbitron','Rajdhani',sans-serif;
+  font-size:18px;
+  font-weight:800;
+  color:#f9d56e;
+  letter-spacing:0.08em;
+}
+
+.countdownCard.is-empty .countdownTimer{
+  color:rgba(255,255,255,0.55);
 }
 
 /* =========================================================
@@ -182,6 +353,763 @@ h1{
   border-color:rgba(255,255,255,0.55);
   color:#04132f;
   box-shadow:0 14px 24px rgba(3,9,30,0.4), 0 0 22px rgba(59,130,246,0.25);
+}
+
+.nav a.is-disabled,
+.nav button.is-disabled{
+  background:linear-gradient(135deg, rgba(40,52,88,0.7), rgba(20,28,50,0.7));
+  border-color:rgba(148,163,184,0.25);
+  color:rgba(255,255,255,0.45);
+  cursor:not-allowed;
+  box-shadow:none;
+  pointer-events:none;
+}
+
+.nav a.is-disabled:hover,
+.nav button.is-disabled:hover{
+  background:linear-gradient(135deg, rgba(40,52,88,0.7), rgba(20,28,50,0.7));
+  border-color:rgba(148,163,184,0.25);
+  color:rgba(255,255,255,0.45);
+  transform:none;
+}
+
+.scheduleWeekNav{
+  margin:0 auto 24px;
+}
+
+.scheduleFilterBar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:0 auto 24px;
+  flex-wrap:wrap;
+}
+
+.scheduleFilterBar label{
+  font-family:"Orbitron",sans-serif;
+  font-weight:800;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:#dce8ff;
+}
+
+.scheduleFilterBar select{
+  min-width:min(100%, 280px);
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(96,165,250,0.28);
+  background:linear-gradient(180deg, rgba(16,24,46,0.95), rgba(7,12,28,0.95));
+  color:#eef6ff;
+  font-weight:700;
+}
+
+.scheduleBoard{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:18px;
+}
+
+.scheduleDayColumn{
+  background:rgba(13,18,34,0.88);
+  border:1px solid rgba(96,165,250,0.22);
+  border-radius:22px;
+  padding:18px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.scheduleDayHeader{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:14px;
+  text-align:center;
+}
+
+.scheduleDayHeader > :not(h3){
+  display:none;
+}
+
+.scheduleDayHeader h3{
+  margin:0;
+  width:100%;
+  font-family:"Orbitron",sans-serif;
+  font-size:1rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+.scheduleDayBody{
+  display:grid;
+  gap:14px;
+}
+
+.scheduleMatchCard{
+  padding:14px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(23,33,60,0.95), rgba(8,12,24,0.95));
+  border:1px solid rgba(255,255,255,0.07);
+}
+
+.scheduleTeamView{
+  display:grid;
+  gap:18px;
+}
+
+.scheduleTeamWeekSection{
+  background:rgba(13,18,34,0.88);
+  border:1px solid rgba(96,165,250,0.22);
+  border-radius:22px;
+  padding:18px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.scheduleTeamWeekTitle{
+  margin:0 0 14px;
+  font-family:"Orbitron",sans-serif;
+  font-size:1rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+.scheduleTeamWeekList{
+  display:grid;
+  gap:12px;
+}
+
+.scheduleTeamTextRow{
+  display:grid;
+  grid-template-columns:minmax(110px, 140px) minmax(0, 1fr) minmax(110px, 140px);
+  grid-template-areas:
+    "match matchup score"
+    ". datetime .";
+  gap:16px;
+  align-items:center;
+  justify-items:center;
+  padding:14px;
+  border-radius:16px;
+  background:linear-gradient(180deg, rgba(23,33,60,0.95), rgba(8,12,24,0.95));
+  border:1px solid rgba(255,255,255,0.07);
+}
+
+.scheduleTeamMatchNo,
+.scheduleTeamDateTime,
+.scheduleTeamTextScore{
+  color:#9db8df;
+  font-size:0.9rem;
+}
+
+.scheduleTeamMatchNo{
+  grid-area:match;
+  grid-row:1 / span 2;
+  align-self:center;
+  font-weight:800;
+  text-align:center;
+}
+
+.scheduleTeamDateTime{
+  grid-area:datetime;
+  display:grid;
+  gap:2px;
+  justify-items:center;
+  text-align:center;
+}
+
+.scheduleTeamMatchup{
+  grid-area:matchup;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  min-width:0;
+  width:100%;
+}
+
+.scheduleTeamTextScore{
+  grid-area:score;
+  grid-row:1 / span 2;
+  align-self:center;
+  text-align:center;
+}
+
+.scheduleTeamStatus{
+  display:grid;
+  gap:6px;
+  justify-items:center;
+  min-width:110px;
+  padding:10px 12px;
+  border-radius:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.scheduleTeamStatusLabel{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:88px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-family:"Orbitron",sans-serif;
+  font-size:0.72rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:#04132f;
+  background:linear-gradient(135deg, #93c5fd, #38bdf8);
+}
+
+.scheduleTeamStatusDetail{
+  display:block;
+  width:100%;
+  font-family:"Orbitron",sans-serif;
+  font-size:0.76rem;
+  letter-spacing:0.04em;
+  color:#dce8ff;
+  white-space:nowrap;
+  text-align:center;
+}
+
+.scheduleTeamStatus.is-finished .scheduleTeamStatusLabel{
+  background:linear-gradient(135deg, #cbd5e1, #94a3b8);
+}
+
+.scheduleTeamStatus.is-upcoming .scheduleTeamStatusLabel{
+  background:linear-gradient(135deg, #facc15, #f59e0b);
+}
+
+.scheduleTeamStatus.is-win .scheduleTeamStatusLabel{
+  background:linear-gradient(135deg, #86efac, #22c55e);
+}
+
+.scheduleTeamStatus.is-loss .scheduleTeamStatusLabel{
+  background:linear-gradient(135deg, #fca5a5, #ef4444);
+}
+
+.scheduleTeamMatchupSide{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-width:0;
+  font-weight:800;
+  color:#eef6ff;
+  text-align:center;
+}
+
+.scheduleTeamMatchupSide span{
+  min-width:0;
+}
+
+.scheduleTeamInlineLogo{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+
+.scheduleTeamMatchupVs{
+  border:0;
+  background:transparent;
+  padding:0;
+  color:#9db8df;
+  font-family:"Orbitron",sans-serif;
+  font-size:0.82rem;
+  text-transform:uppercase;
+  flex:0 0 auto;
+}
+
+.scheduleTeamMatchupVs.is-played{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:70px;
+  padding:10px 12px;
+  border-radius:999px;
+  background:linear-gradient(135deg, #f59e0b, #f97316);
+  color:#111827;
+}
+
+.scheduleTeamMatchupVs.is-clickable{
+  cursor:pointer;
+  transition:transform 160ms ease, color 160ms ease, filter 160ms ease;
+}
+
+.scheduleTeamMatchupVs.is-clickable:hover{
+  transform:translateY(-1px);
+  color:#ffffff;
+  filter:brightness(1.08);
+}
+
+.scheduleMatchMeta{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+  color:#9db8df;
+  font-size:0.82rem;
+  flex-wrap:wrap;
+}
+
+.scheduleTeams{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items:center;
+  gap:12px;
+}
+
+.scheduleTeam{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  text-align:center;
+  font-weight:700;
+}
+
+.scheduleTeamTrigger,
+.scheduleTeamMatchupTrigger{
+  border:0;
+  padding:0;
+  background:none;
+  color:inherit;
+  font:inherit;
+  cursor:pointer;
+}
+
+.scheduleTeamTrigger:focus-visible,
+.scheduleTeamMatchupTrigger:focus-visible{
+  outline:none;
+}
+
+.scheduleTeamTrigger:hover,
+.scheduleTeamTrigger:focus-visible,
+.scheduleTeamMatchupTrigger:hover,
+.scheduleTeamMatchupTrigger:focus-visible{
+  color:#ffe082;
+}
+
+.scheduleTeamLogo{
+  width:54px;
+  height:54px;
+  object-fit:contain;
+}
+
+.scheduleScore{
+  min-width:70px;
+  padding:10px 12px;
+  border:0;
+  border-radius:999px;
+  background:rgba(255,255,255,0.08);
+  text-align:center;
+  font-family:"Orbitron",sans-serif;
+  letter-spacing:0.08em;
+  color:inherit;
+}
+
+.scheduleScore.is-played{
+  background:linear-gradient(135deg, #f59e0b, #f97316);
+  color:#111827;
+}
+
+.scheduleScore.is-clickable{
+  cursor:pointer;
+  transition:transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.scheduleScore.is-clickable:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 24px rgba(0,0,0,0.28);
+  filter:brightness(1.04);
+}
+
+.scheduleScorecardModal{
+  width:min(1360px, calc(100vw - 28px));
+  position:relative;
+  overflow-x:hidden;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(96,165,250,0.85) rgba(6,14,38,0.9);
+}
+
+.scheduleScorecardModal::-webkit-scrollbar{
+  width:12px;
+}
+
+.scheduleScorecardModal::-webkit-scrollbar-track{
+  background:linear-gradient(180deg, rgba(6,14,38,0.95), rgba(8,19,56,0.92));
+  border-radius:999px;
+}
+
+.scheduleScorecardModal::-webkit-scrollbar-thumb{
+  border-radius:999px;
+  border:2px solid rgba(6,14,38,0.95);
+  background:linear-gradient(180deg, rgba(59,130,246,0.95), rgba(14,165,233,0.92), rgba(251,191,36,0.8));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.16), 0 0 14px rgba(59,130,246,0.25);
+}
+
+.scheduleScorecardModal::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg, rgba(96,165,250,1), rgba(56,189,248,1), rgba(251,191,36,0.9));
+}
+
+.scheduleScorecardModalHead{
+  position:relative;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.scheduleScorecardTopStack{
+  display:grid;
+  justify-items:center;
+  gap:10px;
+  width:100%;
+}
+
+.scheduleScorecardMatchHead{
+  min-width:0;
+}
+
+.scheduleScorecardMatchup{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  font-family:"Orbitron",sans-serif;
+  letter-spacing:0.05em;
+  text-align:center;
+}
+
+.scheduleScorecardMatchTeam{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+.scheduleScorecardMatchLogo{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+
+.scheduleScorecardMatchVs{
+  color:#9db8df;
+  text-transform:uppercase;
+}
+
+.scheduleScorecardTabs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.scheduleScorecardTab{
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.06);
+  color:#dce8ff;
+  border-radius:999px;
+  padding:8px 14px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.scheduleScorecardTab.is-active{
+  background:linear-gradient(135deg, rgba(59,130,246,0.9), rgba(14,165,233,0.9));
+  color:#fff;
+  border-color:rgba(125,211,252,0.7);
+}
+
+.scheduleScorecardGameMeta{
+  color:#9db8df;
+  font-weight:700;
+  text-align:center;
+}
+
+.scheduleScorecardClose{
+  position:absolute;
+  top:0;
+  right:0;
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  border:1px solid rgba(122,166,255,0.26);
+  background:linear-gradient(180deg, rgba(10,22,58,0.95), rgba(7,17,45,0.95));
+  color:#dce8ff;
+  font-family:"Orbitron",sans-serif;
+  font-size:0.86rem;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 10px 18px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.08);
+  transition:transform 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.scheduleScorecardClose:hover{
+  transform:translateY(-1px) scale(1.03);
+  border-color:rgba(251,191,36,0.55);
+  color:#fff3c4;
+  box-shadow:0 12px 22px rgba(0,0,0,0.28), 0 0 12px rgba(251,191,36,0.12);
+}
+
+.scheduleScorecardBansPanel{
+  margin-bottom:14px;
+  padding:12px 14px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(3, 10, 31, 0.72);
+}
+
+.scheduleScorecardBansGrid{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0, 1fr));
+  gap:8px 10px;
+}
+
+.scheduleScorecardBan{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  aspect-ratio:1 / 1;
+  width:min(100%, 50px);
+  margin:0 auto;
+  border-radius:50%;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  overflow:hidden;
+}
+
+.scheduleScorecardBanImg{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:grayscale(1) brightness(0.78);
+}
+
+.scheduleScorecardBanFallback{
+  font-family:"Orbitron",sans-serif;
+  color:#cbd5e1;
+  font-weight:800;
+}
+
+.scheduleScorecardBanX{
+  position:absolute;
+  inset:0;
+  color:transparent;
+  pointer-events:none;
+}
+
+.scheduleScorecardBanX::before,
+.scheduleScorecardBanX::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:118%;
+  height:5px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(127,29,29,0.92), #ef4444 45%, #f87171 55%, rgba(127,29,29,0.92));
+  box-shadow:0 0 10px rgba(239,68,68,0.45), 0 0 2px rgba(255,255,255,0.35);
+  transform-origin:center;
+}
+
+.scheduleScorecardBanX::before{
+  transform:translate(-50%, -50%) rotate(45deg);
+}
+
+.scheduleScorecardBanX::after{
+  transform:translate(-50%, -50%) rotate(-45deg);
+}
+
+.scheduleScorecardGrid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+}
+
+.scheduleScorecardTeamCard{
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  padding:14px;
+  min-width:0;
+  background:rgba(255,255,255,0.04);
+}
+
+.scheduleScorecardTeamHead{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:12px;
+  text-align:center;
+}
+
+.scheduleScorecardTeamHead h4,
+.scheduleScorecardTeamHead p{
+  margin:0;
+}
+
+.scheduleScorecardTeamHead p{
+  color:#9db8df;
+  font-size:0.9rem;
+}
+
+.scheduleScorecardTeamLogo{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+}
+
+.scheduleScorecardPlayerList{
+  display:grid;
+  gap:8px;
+}
+
+.scheduleScorecardPlayer{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  align-items:center;
+  position:relative;
+  padding:10px 12px;
+  border-radius:12px;
+  background:rgba(7, 15, 37, 0.72);
+  border:1px solid rgba(255,255,255,0.06);
+  min-height:56px;
+}
+
+.scheduleScorecardPlayer.is-mvp{
+  border-color:rgba(251,191,36,0.6);
+  box-shadow:0 14px 26px rgba(0,0,0,0.28), 0 0 18px rgba(251,191,36,0.14);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(251,191,36,0.14), transparent 36%),
+    linear-gradient(180deg, rgba(24, 22, 10, 0.42), rgba(7, 15, 37, 0.88));
+}
+
+.scheduleScorecardMvpBadge{
+  position:absolute;
+  top:-10px;
+  right:12px;
+  z-index:3;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:0.7rem;
+  font-weight:900;
+  letter-spacing:0.08em;
+  color:#fff8dc;
+  border:1px solid rgba(251,191,36,0.55);
+  background:linear-gradient(135deg, rgba(251,191,36,0.88), rgba(245,158,11,0.38));
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.scheduleScorecardPlayer.is-mvp .scheduleScorecardPlayerFace,
+.scheduleScorecardPlayer.is-mvp .scheduleScorecardHeroImg{
+  border-color:rgba(251,191,36,0.92);
+  box-shadow:0 0 16px rgba(251,191,36,0.18);
+}
+
+.scheduleScorecardPlayerMain{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  flex:1.35 1 0;
+}
+
+.scheduleScorecardPlayerFaceWrap{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+}
+
+.scheduleScorecardPlayer.is-mvp::after{
+  content:none;
+}
+
+.scheduleScorecardPlayer.is-mvp .scheduleScorecardPlayerFaceWrap::after{
+  content:"";
+  position:absolute;
+  top:-28px;
+  left:50%;
+  transform:translateX(-50%);
+  width:30px;
+  height:24px;
+  z-index:4;
+  background-image:url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2064%2048%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27gold%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23FFD700%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23F59E0B%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%27M4%2036%20L10%2014%20L24%2028%20L32%208%20L40%2028%20L54%2014%20L60%2036%20Z%27%20fill%3D%27url(%23gold)%27%20stroke%3D%27%23B8860B%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%274%27%20y%3D%2736%27%20width%3D%2756%27%20height%3D%276%27%20fill%3D%27url(%23gold)%27%20stroke%3D%27%23B8860B%27%20stroke-width%3D%272%27/%3E%3C/svg%3E");
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,0.4)) drop-shadow(0 0 8px rgba(251,191,36,0.3));
+  animation:crownFloat 1.8s ease-in-out infinite;
+}
+
+.scheduleScorecardPlayerFace{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,0.2);
+  flex:0 0 auto;
+}
+
+.scheduleScorecardPlayerName{
+  display:block;
+  font-weight:800;
+  min-width:0;
+  line-height:1.1;
+}
+
+.scheduleScorecardHero{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+  flex:0.9 1 0;
+  margin-left:6px;
+}
+
+.scheduleScorecardHero span{
+  min-width:0;
+  line-height:1.1;
+}
+
+.scheduleScorecardHeroImg{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,0.22);
+}
+
+.scheduleScorecardKda{
+  font-family:"Rajdhani","Segoe UI",Arial,sans-serif;
+  font-size:1.02rem;
+  font-weight:800;
+  letter-spacing:0.02em;
+  white-space:nowrap;
+  flex:0 0 auto;
+  min-width:58px;
+  text-align:right;
+}
+
+.scheduleScorecardEmpty{
+  padding:16px;
+  border-radius:12px;
+  text-align:center;
+  color:#9db8df;
+  background:rgba(255,255,255,0.04);
+}
+
+.scheduleEmpty{
+  padding:18px;
+  border-radius:16px;
+  text-align:center;
+  color:#9db8df;
+  background:rgba(255,255,255,0.04);
 }
 
 a:focus-visible,
@@ -570,6 +1498,141 @@ input:focus-visible{
   padding:8px 2px;
 }
 
+.teamRosterModal{
+  width:min(1120px, calc(100vw - 28px));
+}
+
+.teamRosterModalHead{
+  align-items:flex-start;
+  margin-bottom:18px;
+}
+
+.teamRosterModalTitle{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.teamRosterModalTitle h3,
+.teamRosterModalTitle p,
+.teamRosterSectionHead h4,
+.teamRosterSectionHead span,
+.teamRosterCardBody h4,
+.teamRosterCardBody p{
+  margin:0;
+}
+
+.teamRosterModalTitle p{
+  color:#9db8df;
+  font-size:0.9rem;
+  font-weight:700;
+}
+
+.teamRosterModalLogo{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+}
+
+.teamRosterSection + .teamRosterSection{
+  margin-top:18px;
+}
+
+.teamRosterSectionHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.teamRosterSectionHead span{
+  color:#9db8df;
+  font-size:0.8rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+}
+
+.teamRosterGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+  gap:14px;
+}
+
+.teamRosterGrid--staff{
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.teamRosterCard{
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+    rgba(5,12,32,0.88);
+  box-shadow:0 16px 30px rgba(0,0,0,0.24);
+}
+
+.teamRosterCard.is-placeholder{
+  background:
+    linear-gradient(180deg, rgba(96,165,250,0.08), rgba(148,163,184,0.05)),
+    rgba(5,12,32,0.88);
+}
+
+.teamRosterPortraitWrap{
+  aspect-ratio:4 / 4.5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 12px 0;
+  background:
+    radial-gradient(circle at top, rgba(59,130,246,0.24), transparent 44%),
+    linear-gradient(180deg, rgba(12,29,73,0.9), rgba(6,12,30,0.9));
+}
+
+.teamRosterPortrait{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:12px 12px 0 0;
+}
+
+.teamRosterPortraitFallback{
+  width:100%;
+  height:100%;
+  min-height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px 12px 0 0;
+  background:
+    linear-gradient(135deg, rgba(30,41,59,0.9), rgba(15,23,42,0.95));
+  color:#dce8ff;
+  font-family:"Orbitron",sans-serif;
+  font-size:3rem;
+  font-weight:900;
+  letter-spacing:0.08em;
+}
+
+.teamRosterCardBody{
+  padding:14px 14px 16px;
+  text-align:center;
+}
+
+.teamRosterCardBody h4{
+  font-size:1.05rem;
+  margin-bottom:4px;
+}
+
+.teamRosterCardBody p{
+  color:#facc15;
+  font-weight:800;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  font-size:0.84rem;
+}
+
 /* =========================================================
    PANEL / SECTIONS
 ========================================================= */
@@ -589,7 +1652,7 @@ input:focus-visible{
   box-shadow:0 24px 65px rgba(2,8,28,0.65), 0 0 40px rgba(59,130,246,0.08);
   position:relative;
   z-index:1;
-  animation:panelEnter .42s ease-out both;
+  animation:panelEnter .42s ease-out;
 }
 
 /* Fancy title style for .panel-title OR panel h2/h3 */
@@ -720,6 +1783,40 @@ table tr:hover{
   align-items:center;
   justify-content:center;
   gap:10px;
+}
+
+.teamLogoTrigger{
+  border:0;
+  padding:0;
+  background:none;
+  cursor:pointer;
+}
+
+.teamLogoTrigger:focus-visible{
+  outline:none;
+}
+
+.teamRosterTrigger{
+  border:0;
+  padding:0;
+  background:none;
+  color:inherit;
+  font:inherit;
+  font-weight:800;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:color 160ms ease, text-shadow 160ms ease;
+}
+
+.teamRosterTrigger:hover,
+.teamRosterTrigger:focus-visible{
+  color:#ffe082;
+  text-shadow:0 0 10px rgba(251,191,36,0.28);
+}
+
+.teamRosterTrigger:focus-visible{
+  outline:none;
 }
 
 /* Make team logos premium (no circle) */
@@ -1541,5 +2638,104 @@ select option:hover{
   table.playerPoolTable td img{
     max-width:64px;
     max-height:64px;
+  }
+}
+
+@media (max-width: 980px){
+  .topControls{
+    align-items:stretch;
+  }
+
+  .seasonSelectorWrap,
+  .countdownCard{
+    width:min(100%, 520px);
+  }
+
+  .scheduleBoard{
+    grid-template-columns:1fr;
+  }
+
+  .scheduleTeamTextRow{
+    grid-template-columns:minmax(96px, 120px) minmax(0, 1fr) minmax(96px, 120px);
+  }
+
+  .scheduleScorecardGrid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 700px){
+  .scheduleFilterBar{
+    align-items:stretch;
+  }
+
+  .scheduleFilterBar select{
+    width:100%;
+  }
+
+  .scheduleTeamTextRow{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "match"
+      "matchup"
+      "datetime"
+      "score";
+  }
+
+  .scheduleTeamMatchNo,
+  .scheduleTeamTextScore{
+    grid-row:auto;
+  }
+
+  .scheduleTeamMatchup{
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+  }
+
+  .scheduleTeamStatusDetail{
+    white-space:normal;
+  }
+
+  .scheduleScorecardBansGrid{
+    grid-template-columns:repeat(5, minmax(0, 1fr));
+    gap:6px;
+  }
+
+  .scheduleScorecardBan{
+    width:min(100%, 42px);
+  }
+
+  .scheduleScorecardPlayer{
+    grid-template-columns:1fr;
+    align-items:flex-start;
+  }
+
+  .scheduleScorecardModalHead{
+    align-items:stretch;
+  }
+
+  .scheduleScorecardMatchup{
+    gap:10px;
+  }
+
+  .scheduleScorecardClose{
+    top:2px;
+    right:2px;
+  }
+
+  .teamRosterModalHead,
+  .teamRosterSectionHead{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .teamRosterModalTitle{
+    width:100%;
+  }
+
+  .teamRosterGrid,
+  .teamRosterGrid--staff{
+    grid-template-columns:1fr;
   }
 }
