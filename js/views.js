@@ -140,6 +140,19 @@ function refreshScheduleCountdowns() {
   }
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function encodeInlineString(value) {
+  return encodeURIComponent(String(value ?? ""));
+}
+
 function getMatchScore(match) {
   let teamAScore = 0;
   let teamBScore = 0;
@@ -467,6 +480,8 @@ let playerPoolsSort = { key: "totalPlayers", asc: false };
 let h2hSubTab = "team";
 let scheduleScorecardState = { matchIndex: null, gameIndex: 0 };
 let teamRosterModalState = { teamCode: "" };
+let playerDetailsModalState = { playerName: "" };
+let heroDetailsModalState = { heroName: "" };
 
 function getScheduleScorecardPositionStyle() {
   return "";
@@ -595,6 +610,87 @@ function getRosterPlayerRecord(name) {
   const normalizedName = String(name || "").trim().toLowerCase();
   if (!normalizedName) return null;
   return roster.find((item) => String(item?.name || "").trim().toLowerCase() === normalizedName) || null;
+}
+
+function getPlayerSummary(name) {
+  const normalizedName = String(name || "").trim().toLowerCase();
+  if (!normalizedName) return null;
+
+  const playerStats = calculatePlayerStats();
+  const heroPools = calculateHeroPoolStats();
+  const statName = Object.keys(playerStats).find(
+    (playerName) => String(playerName || "").trim().toLowerCase() === normalizedName
+  ) || "";
+  const stats = statName ? playerStats[statName] : null;
+  const record = getRosterPlayerRecord(statName || name);
+  const pool = heroPools[statName] || heroPools[String(record?.name || "").trim()] || { heroes: {} };
+
+  if (!stats && !record) return null;
+
+  const games = Number(stats?.games) || 0;
+  const kills = Number(stats?.kills) || 0;
+  const deaths = Number(stats?.deaths) || 0;
+  const assists = Number(stats?.assists) || 0;
+  const kpTotal = Number(stats?.kpTotal) || 0;
+
+  return {
+    name: String(stats?.name || record?.name || statName || name).trim() || "Unknown Player",
+    team: String(stats?.team || record?.team || "").trim(),
+    lane: String(stats?.lane || record?.lane || "Unknown").trim() || "Unknown",
+    picture: String(stats?.picture || record?.picture || "").trim(),
+    games,
+    heroPoolCount: Object.keys(pool.heroes || {}).length,
+    kills,
+    deaths,
+    assists,
+    avgK: games ? kills / games : 0,
+    avgD: games ? deaths / games : 0,
+    avgA: games ? assists / games : 0,
+    kda: (kills + assists) / (deaths || 1),
+    kp: games ? (kpTotal / games) * 100 : 0
+  };
+}
+
+function getHeroSummary(name) {
+  const normalizedName = String(name || "").trim().toLowerCase();
+  if (!normalizedName) return null;
+
+  const heroStats = calculateHeroStats();
+  const playerPools = calculatePlayerPoolsStats();
+  const heroEntry = heroStats.find((hero) => String(hero?.hero || "").trim().toLowerCase() === normalizedName);
+  if (!heroEntry) return null;
+
+  let kills = 0;
+  let deaths = 0;
+  let assists = 0;
+  for (const match of getMatches()) {
+    for (const game of (match.games || [])) {
+      for (const player of (game.players || [])) {
+        const heroName = String(player?.hero || "").trim().toLowerCase();
+        if (heroName !== normalizedName) continue;
+        kills += Number(player?.kills) || 0;
+        deaths += Number(player?.deaths) || 0;
+        assists += Number(player?.assists) || 0;
+      }
+    }
+  }
+
+  const pool = playerPools[heroEntry.hero] || { players: {} };
+
+  return {
+    hero: String(heroEntry.hero || name).trim(),
+    img: String(heroEntry.img || constHero[heroEntry.hero] || "").trim(),
+    pick: Number(heroEntry.pick) || 0,
+    pickRate: Number(heroEntry.pickRate) || 0,
+    ban: Number(heroEntry.ban) || 0,
+    banRate: Number(heroEntry.banRate) || 0,
+    winRate: Number(heroEntry.winRate) || 0,
+    kills,
+    deaths,
+    assists,
+    kda: (kills + assists) / (deaths || 1),
+    playerPoolCount: Object.keys(pool.players || {}).length
+  };
 }
 
 function partitionScorecardPlayers(match, game) {
@@ -772,6 +868,32 @@ function mountTeamRosterModal() {
   modalRoot.innerHTML = renderTeamRosterModal();
 }
 
+function mountPlayerDetailsModal() {
+  const modalId = "playerDetailsModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderPlayerDetailsModal();
+}
+
+function mountHeroDetailsModal() {
+  const modalId = "heroDetailsModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderHeroDetailsModal();
+}
+
 function openTeamRoster(teamCode) {
   teamRosterModalState = { teamCode: String(teamCode || "").trim() };
   mountTeamRosterModal();
@@ -780,6 +902,26 @@ function openTeamRoster(teamCode) {
 function closeTeamRoster() {
   teamRosterModalState = { teamCode: "" };
   mountTeamRosterModal();
+}
+
+function openPlayerDetailsModal(playerName) {
+  playerDetailsModalState = { playerName: String(playerName || "").trim() };
+  mountPlayerDetailsModal();
+}
+
+function closePlayerDetailsModal() {
+  playerDetailsModalState = { playerName: "" };
+  mountPlayerDetailsModal();
+}
+
+function openHeroDetailsModal(heroName) {
+  heroDetailsModalState = { heroName: String(heroName || "").trim() };
+  mountHeroDetailsModal();
+}
+
+function closeHeroDetailsModal() {
+  heroDetailsModalState = { heroName: "" };
+  mountHeroDetailsModal();
 }
 
 function getTeamRosterPlayers(teamCode) {
@@ -876,6 +1018,115 @@ function renderTeamRosterModal() {
               .join("")}
           </div>
         </section>
+      </div>
+    </div>
+  `;
+}
+
+function renderPlayerDetailsModal() {
+  const playerName = String(playerDetailsModalState.playerName || "").trim();
+  if (!playerName) return "";
+
+  const player = getPlayerSummary(playerName);
+  if (!player) return "";
+
+  const teamLogo = player.team ? (teamLogos[player.team] || "") : "";
+  const statRows = [
+    {
+      label: "PLAYER",
+      value: `
+        <div class="playerDetailsIdentity">
+          ${player.picture ? `<img class="playerDetailsPortrait" src="${player.picture}" alt="${escapeHtml(player.name)}">` : ""}
+          <span>${escapeHtml(player.name)}</span>
+        </div>
+      `
+    },
+    {
+      label: "TEAM",
+      value: `
+        <div class="playerDetailsIdentity">
+          ${teamLogo ? `<img class="playerDetailsTeamLogo" src="${teamLogo}" alt="${escapeHtml(teamLabel(player.team))} logo">` : ""}
+          <span>${escapeHtml(player.team ? teamLabel(player.team) : "Unknown")}</span>
+        </div>
+      `
+    },
+    { label: "ROLE", value: escapeHtml(player.lane) },
+    { label: "GAMES", value: `${player.games}` },
+    { label: "HERO POOL", value: `${player.heroPoolCount}` },
+    { label: "KILLS", value: `${player.kills}` },
+    { label: "AVG KILLS", value: player.avgK.toFixed(2) },
+    { label: "DEATHS", value: `${player.deaths}` },
+    { label: "AVG DEATHS", value: player.avgD.toFixed(2) },
+    { label: "ASSISTS", value: `${player.assists}` },
+    { label: "AVG ASSISTS", value: player.avgA.toFixed(2) },
+    { label: "KDA", value: player.kda.toFixed(2) },
+    { label: "KP%", value: `${player.kp.toFixed(1)}%` }
+  ];
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closePlayerDetailsModal()">
+      <div class="playerDetailsModal h2hModalCard" onclick="event.stopPropagation()">
+        <div class="h2hModalHead playerDetailsModalHead">
+          <h3>${escapeHtml(player.name)}</h3>
+          <button type="button" class="h2hModalClose" onclick="closePlayerDetailsModal()">Close</button>
+        </div>
+        <div class="playerDetailsCard">
+          ${statRows.map((row) => `
+            <div class="playerDetailsRow">
+              <div class="playerDetailsLabel">${row.label}</div>
+              <div class="playerDetailsValue">${row.value}</div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderHeroDetailsModal() {
+  const heroName = String(heroDetailsModalState.heroName || "").trim();
+  if (!heroName) return "";
+
+  const hero = getHeroSummary(heroName);
+  if (!hero) return "";
+
+  const statRows = [
+    {
+      label: "HERO",
+      value: `
+        <div class="heroDetailsIdentity">
+          ${hero.img ? `<img class="heroDetailsPortrait" src="${hero.img}" alt="${escapeHtml(hero.hero)}">` : ""}
+          <span>${escapeHtml(hero.hero)}</span>
+        </div>
+      `
+    },
+    { label: "PICK", value: `${hero.pick}` },
+    { label: "PLAYER POOL", value: `${hero.playerPoolCount}` },
+    { label: "PICK RATE", value: `${hero.pickRate.toFixed(1)}%` },
+    { label: "BAN", value: `${hero.ban}` },
+    { label: "BAN RATE", value: `${hero.banRate.toFixed(1)}%` },
+    { label: "WIN RATE", value: `${hero.winRate.toFixed(1)}%` },
+    { label: "KILLS", value: `${hero.kills}` },
+    { label: "DEATHS", value: `${hero.deaths}` },
+    { label: "ASSISTS", value: `${hero.assists}` },
+    { label: "KDA", value: hero.kda.toFixed(2) }
+  ];
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closeHeroDetailsModal()">
+      <div class="heroDetailsModal h2hModalCard" onclick="event.stopPropagation()">
+        <div class="h2hModalHead playerDetailsModalHead">
+          <h3>${escapeHtml(hero.hero)}</h3>
+          <button type="button" class="h2hModalClose" onclick="closeHeroDetailsModal()">Close</button>
+        </div>
+        <div class="playerDetailsCard">
+          ${statRows.map((row) => `
+            <div class="playerDetailsRow">
+              <div class="playerDetailsLabel">${row.label}</div>
+              <div class="playerDetailsValue">${row.value}</div>
+            </div>
+          `).join("")}
+        </div>
       </div>
     </div>
   `;
@@ -1061,7 +1312,12 @@ let html = `
   <strong>TOP 5 KILLS:</strong>
   <div class="topItems">
 ${topKills.map((pl, i) => `
-  <div class="topItem topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}">
+  <button
+    type="button"
+    class="topItem topPlayerTrigger topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}"
+    onclick="openPlayerDetailsModal(decodeURIComponent('${encodeInlineString(pl.name)}'))"
+    aria-label="Open player details for ${escapeHtml(pl.name)}"
+  >
     <div class="rankBadge">#${i+1}</div>
 
     <div class="avatarWrap">
@@ -1077,7 +1333,7 @@ ${topKills.map((pl, i) => `
       <span class="topValue">${pl.kills}</span>
     </div>
 
-  </div>
+  </button>
 `).join('')}
   </div>
 </div>
@@ -1086,7 +1342,12 @@ ${topKills.map((pl, i) => `
   <strong>TOP 5 ASSISTS:</strong>
   <div class="topItems">
     ${topAssists.map((pl, i) => `
-      <div class="topItem topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}">
+      <button
+        type="button"
+        class="topItem topPlayerTrigger topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}"
+        onclick="openPlayerDetailsModal(decodeURIComponent('${encodeInlineString(pl.name)}'))"
+        aria-label="Open player details for ${escapeHtml(pl.name)}"
+      >
         <div class="rankBadge">#${i+1}</div>
 
         <div class="avatarWrap">
@@ -1103,7 +1364,7 @@ ${topKills.map((pl, i) => `
           <span class="topValue">${pl.assists}</span>
         </div>
 
-      </div>
+      </button>
     `).join('')}
   </div>
 </div>
@@ -1112,7 +1373,12 @@ ${topKills.map((pl, i) => `
   <strong>TOP 5 KDA:</strong>
   <div class="topItems">
     ${topKDA.map((pl, i) => `
-      <div class="topItem topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}">
+      <button
+        type="button"
+        class="topItem topPlayerTrigger topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}"
+        onclick="openPlayerDetailsModal(decodeURIComponent('${encodeInlineString(pl.name)}'))"
+        aria-label="Open player details for ${escapeHtml(pl.name)}"
+      >
         <div class="rankBadge">#${i+1}</div>
 
         <div class="avatarWrap">
@@ -1129,7 +1395,7 @@ ${topKills.map((pl, i) => `
           <span class="topValue">${pl.kda.toFixed(2)}</span>
         </div>
 
-      </div>
+      </button>
     `).join('')}
   </div>
 </div>
@@ -1327,14 +1593,19 @@ function renderTopRow(label, list, valueFn) {
 
       <div class="toprow-grid">
         ${list.map((item, i) => `
-          <div class="topcard topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}">
+          <button
+            type="button"
+            class="topcard topPlayerTrigger topRank topRank--${i+1} ${i===0 ? "topMVP" : ""}"
+            onclick="openHeroDetailsModal(decodeURIComponent('${encodeInlineString(item.hero)}'))"
+            aria-label="Open hero details for ${escapeHtml(item.hero)}"
+          >
             <div class="rankBadge">#${i+1}</div>
             <img class="topavatar" src="${item.img}" alt="${item.hero}">
             <div class="topLabel">
               <span class="topName">${item.hero}</span>
               <span class="topValue">${valueFn(item)}</span>
             </div>
-          </div>
+          </button>
         `).join("")}
       </div>
     </div>
@@ -2449,6 +2720,10 @@ export {
   selectScheduleScorecardGame,
   openTeamRoster,
   closeTeamRoster,
+  openPlayerDetailsModal,
+  closePlayerDetailsModal,
+  openHeroDetailsModal,
+  closeHeroDetailsModal,
   onTeamCompareChange,
   onPlayerCompareChange,
   onHeroCompareChange,

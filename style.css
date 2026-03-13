@@ -1502,6 +1502,117 @@ input:focus-visible{
   width:min(1120px, calc(100vw - 28px));
 }
 
+.playerDetailsModal{
+  width:min(380px, calc(100vw - 20px));
+  padding:0;
+  overflow:hidden;
+}
+
+.heroDetailsModal{
+  width:min(380px, calc(100vw - 20px));
+  padding:0;
+  overflow:hidden;
+}
+
+.playerDetailsModalHead{
+  padding:14px 16px 0;
+  margin-bottom:12px;
+}
+
+.playerDetailsCard{
+  display:flex;
+  flex-direction:column;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.playerDetailsRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 16px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+    rgba(7,16,48,0.4);
+}
+
+.playerDetailsRow:last-child{
+  border-bottom:none;
+}
+
+.playerDetailsLabel{
+  flex:0 0 112px;
+  color:rgba(255,255,255,0.85);
+  font-family:"Orbitron","Rajdhani",sans-serif;
+  font-size:0.92rem;
+  font-weight:800;
+  letter-spacing:0.04em;
+}
+
+.playerDetailsValue{
+  flex:1 1 auto;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  text-align:right;
+  font-size:1rem;
+  font-weight:700;
+  min-width:0;
+}
+
+.playerDetailsIdentity{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+  min-width:0;
+}
+
+.playerDetailsIdentity span{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.playerDetailsPortrait{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+.heroDetailsIdentity{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+  min-width:0;
+}
+
+.heroDetailsIdentity span{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.heroDetailsPortrait{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,0.22);
+  box-shadow:
+    0 10px 18px rgba(0,0,0,0.34),
+    0 0 12px rgba(59,130,246,0.16);
+}
+
+.playerDetailsTeamLogo{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
 .teamRosterModalHead{
   align-items:flex-start;
   margin-bottom:18px;
@@ -1967,6 +2078,19 @@ select option:hover{
   border:1px solid rgba(123,168,255,0.24);
   border-radius:16px;
   box-shadow:0 14px 30px rgba(2,8,28,0.45);
+}
+
+.topPlayerTrigger{
+  appearance:none;
+  -webkit-appearance:none;
+  cursor:pointer;
+  color:inherit;
+  font:inherit;
+}
+
+.topPlayerTrigger:focus-visible{
+  outline:2px solid rgba(250, 204, 21, 0.95);
+  outline-offset:4px;
 }
 
 .topItem img{
@@ -2495,10 +2619,14 @@ select option:hover{
     width:min(520px, 100%);
     margin:10px auto !important;
 
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.12);
-    border-radius:14px;
+    background:
+      radial-gradient(circle at top right, rgba(59,130,246,0.2), transparent 42%),
+      radial-gradient(circle at left center, rgba(251,191,36,0.12), transparent 36%),
+      linear-gradient(170deg, rgba(8,19,56,0.95), rgba(9,20,50,0.9));
+    border:1px solid rgba(126,169,255,0.28);
+    border-radius:18px;
     overflow:hidden;
+    box-shadow:0 18px 36px rgba(0,0,0,0.34);
   }
 
   /* each cell becomes a stat line */
@@ -2511,9 +2639,12 @@ select option:hover{
     justify-content:space-between;
     align-items:center;
     text-align:right !important;
-    padding:12px 12px;
+    padding:14px 16px;
     border-bottom:1px solid rgba(255,255,255,0.08);
     width:100%;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+      rgba(7,16,48,0.4);
   }
 
   table.teamsTable tr td:last-child,
@@ -2530,8 +2661,12 @@ select option:hover{
   table.heroesTable td::before,
   table.heroPoolTable td::before,
   table.playerPoolTable td::before{
+    color:rgba(255,255,255,0.85);
+    font-family:"Orbitron","Rajdhani",sans-serif;
+    font-size:0.84rem;
     font-weight:800;
-    opacity:0.85;
+    letter-spacing:0.04em;
+    opacity:0.9;
     text-align:left;
     margin-right:12px;
     white-space:nowrap;
@@ -2551,9 +2686,16 @@ select option:hover{
   table.teamsTable td:first-child{
     justify-content:flex-start;
     text-align:left !important;
+    padding-top:18px;
+    padding-bottom:18px;
+    background:
+      radial-gradient(circle at 18% 50%, rgba(59,130,246,0.2), transparent 30%),
+      linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+      rgba(10,22,58,0.68);
   }
   table.teamsTable .teamCell{
     justify-content:flex-start;
+    gap:14px;
   }
 
   /* ========= PLAYERS labels (12 cols) ========= */
@@ -2576,6 +2718,26 @@ select option:hover{
     text-align:left !important;
   }
 
+  table.playersTable td:first-child,
+  table.playersTable td:nth-child(2){
+    padding-top:18px;
+    padding-bottom:18px;
+  }
+
+  table.playersTable td:first-child{
+    background:
+      radial-gradient(circle at 18% 50%, rgba(59,130,246,0.2), transparent 30%),
+      linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+      rgba(10,22,58,0.68);
+  }
+
+  table.playersTable td:nth-child(2){
+    background:
+      radial-gradient(circle at 18% 50%, rgba(251,191,36,0.14), transparent 30%),
+      linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+      rgba(9,20,50,0.55);
+  }
+
   /* ========= HEROES labels (6 cols) ========= */
   table.heroesTable tr td:nth-child(1)::before{ content:"HERO"; }
   table.heroesTable tr td:nth-child(2)::before{ content:"PICK"; }
@@ -2587,6 +2749,12 @@ select option:hover{
   table.heroesTable td:first-child{
     justify-content:flex-start;
     text-align:left !important;
+    padding-top:18px;
+    padding-bottom:18px;
+    background:
+      radial-gradient(circle at 18% 50%, rgba(59,130,246,0.2), transparent 30%),
+      linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+      rgba(10,22,58,0.68);
   }
 
   /* ========= HERO POOL labels (5 cols) ========= */
@@ -2638,6 +2806,65 @@ select option:hover{
   table.playerPoolTable td img{
     max-width:64px;
     max-height:64px;
+  }
+
+  table.heroesTable td:first-child .cellHero{
+    justify-content:flex-start;
+    gap:14px;
+  }
+
+  table.heroesTable td:first-child .cellHeroImg{
+    width:58px;
+    height:58px;
+    border-radius:14px;
+    border:2px solid rgba(255,255,255,0.22);
+    box-shadow:
+      0 12px 20px rgba(0,0,0,0.34),
+      0 0 14px rgba(59,130,246,0.16);
+  }
+
+  table.heroesTable td:first-child .cellHeroName{
+    font-family:"Orbitron","Rajdhani",sans-serif;
+    font-size:1rem;
+    letter-spacing:0.05em;
+    text-align:left;
+  }
+
+  table.teamsTable .teamCell,
+  table.playersTable .teamCell{
+    gap:14px;
+  }
+
+  table.teamsTable .teamLogoTrigger,
+  table.playersTable .teamLogoTrigger{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto;
+  }
+
+  table.teamsTable .teamRosterTrigger,
+  table.playersTable .teamRosterTrigger{
+    font-family:"Orbitron","Rajdhani",sans-serif;
+    font-size:1rem;
+    letter-spacing:0.05em;
+    text-align:left;
+  }
+
+  table.playersTable td:first-child img{
+    width:58px !important;
+    height:58px !important;
+    border-radius:14px !important;
+    border:2px solid rgba(255,255,255,0.22);
+    box-shadow:
+      0 12px 20px rgba(0,0,0,0.34),
+      0 0 14px rgba(59,130,246,0.16);
+  }
+
+  table.teamsTable td:first-child .teamCell img,
+  table.playersTable td:nth-child(2) .teamCell img{
+    width:56px !important;
+    height:56px !important;
   }
 }
 
@@ -2732,6 +2959,20 @@ select option:hover{
 
   .teamRosterModalTitle{
     width:100%;
+  }
+
+  .playerDetailsRow{
+    align-items:flex-start;
+  }
+
+  .playerDetailsLabel{
+    flex-basis:100px;
+    font-size:0.84rem;
+  }
+
+  .playerDetailsValue,
+  .playerDetailsIdentity{
+    justify-content:flex-end;
   }
 
   .teamRosterGrid,

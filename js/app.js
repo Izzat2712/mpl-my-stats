@@ -9,6 +9,10 @@ import {
   selectScheduleScorecardGame,
   openTeamRoster,
   closeTeamRoster,
+  openPlayerDetailsModal,
+  closePlayerDetailsModal,
+  openHeroDetailsModal,
+  closeHeroDetailsModal,
   onTeamCompareChange,
   onPlayerCompareChange,
   onHeroCompareChange,
@@ -678,6 +682,10 @@ window.closeScheduleScorecard = closeScheduleScorecard;
 window.selectScheduleScorecardGame = selectScheduleScorecardGame;
 window.openTeamRoster = openTeamRoster;
 window.closeTeamRoster = closeTeamRoster;
+window.openPlayerDetailsModal = openPlayerDetailsModal;
+window.closePlayerDetailsModal = closePlayerDetailsModal;
+window.openHeroDetailsModal = openHeroDetailsModal;
+window.closeHeroDetailsModal = closeHeroDetailsModal;
 window.showTeams = showTeamsView;
 window.sortTeams = sortTeams;
 window.showPlayers = showPlayersView;

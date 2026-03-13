@@ -111,6 +111,35 @@ function normalizeHeroName(name) {
   return HERO_ALIASES[key] || key;
 }
 
+function normalizePlayerNameKey(name) {
+  return String(name || "").trim().toLowerCase();
+}
+
+function normalizeTeamCodeKey(teamCode) {
+  return String(teamCode || "").trim().toLowerCase();
+}
+
+function getCanonicalTeamCode(teamCode, sourceMaps = []) {
+  const raw = String(teamCode || "").trim();
+  const key = normalizeTeamCodeKey(raw);
+  if (!key) return raw;
+
+  for (const map of sourceMaps) {
+    const matchKey = Object.keys(map || {}).find((item) => normalizeTeamCodeKey(item) === key);
+    if (matchKey) return matchKey;
+  }
+
+  return raw.toUpperCase();
+}
+
+function getCanonicalRosterName(name, rosterList) {
+  const key = normalizePlayerNameKey(name);
+  if (!key) return String(name || "").trim();
+
+  const record = (rosterList || []).find((player) => normalizePlayerNameKey(player?.name) === key);
+  return record?.name || String(name || "").trim();
+}
+
 function normalizeHeroesMap(map) {
   const out = {};
   for (const [name, img] of Object.entries(map || {})) {
@@ -119,16 +148,28 @@ function normalizeHeroesMap(map) {
   return out;
 }
 
-function normalizeMatchesHeroes(list) {
+function normalizeMatchesData(list, rosterList, teamNamesMap, teamLogosMap) {
+  const teamSources = [teamNamesMap, teamLogosMap];
   return (list || []).map((match) => ({
     ...match,
+    teamA: getCanonicalTeamCode(match.teamA, teamSources),
+    teamB: getCanonicalTeamCode(match.teamB, teamSources),
     games: (Array.isArray(match.games) ? match.games : []).map((game) => ({
       ...game,
+      winner: getCanonicalTeamCode(game.winner, teamSources),
+      mvp: game.mvp == null ? game.mvp : getCanonicalRosterName(game.mvp, rosterList),
       bans: Array.isArray(game.bans) ? game.bans.map((b) => normalizeHeroName(b)) : [],
       players: (game.players || []).map((p) => ({
         ...p,
+        name: getCanonicalRosterName(p.name, rosterList),
         hero: normalizeHeroName(p.hero)
-      }))
+      })),
+      objectives: !game.objectives ? game.objectives : {
+        ...game.objectives,
+        lord: Object.fromEntries(Object.entries(game.objectives.lord || {}).map(([team, value]) => [getCanonicalTeamCode(team, teamSources), value])),
+        turtle: Object.fromEntries(Object.entries(game.objectives.turtle || {}).map(([team, value]) => [getCanonicalTeamCode(team, teamSources), value])),
+        tower: Object.fromEntries(Object.entries(game.objectives.tower || {}).map(([team, value]) => [getCanonicalTeamCode(team, teamSources), value]))
+      }
     }))
   }));
 }
@@ -252,7 +293,7 @@ export async function loadData(seasonKey = "season16") {
   validateRoster(nextRoster);
   validateStaff(nextStaff);
   const normalizedHeroes = normalizeHeroesMap(nextHeroes);
-  const normalizedMatches = normalizeMatchesHeroes(nextMatches);
+  const normalizedMatches = normalizeMatchesData(nextMatches, nextRoster, nextTeamNames, nextTeamLogos);
 
   validateHeroes(normalizedHeroes);
   validateMatches(normalizedMatches);
@@ -265,7 +306,7 @@ export async function loadData(seasonKey = "season16") {
   matches = normalizedMatches;
   teamLogos = nextTeamLogos;
   teamNames = nextTeamNames;
-  rosterMap = Object.fromEntries(roster.map((p) => [p.name, p]));
+  rosterMap = Object.fromEntries(roster.map((p) => [normalizePlayerNameKey(p.name), p]));
   currentSeasonKey = seasonKey in SEASON_DATA_FILES ? seasonKey : "season16";
 
   dataVersion += 1;
@@ -284,7 +325,8 @@ export function getCurrentSeasonLabel() {
 }
 
 export function getRoster(name) {
-  return rosterMap[name] || { name, team: "Unknown", lane: "Unknown", picture: "" };
+  const key = normalizePlayerNameKey(name);
+  return rosterMap[key] || { name: String(name || "").trim(), team: "Unknown", lane: "Unknown", picture: "" };
 }
 
 export function getRosterList() {
