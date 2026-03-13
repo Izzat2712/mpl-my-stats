@@ -11,6 +11,7 @@ const SEASON_DATA_FILES = {
     label: "MPL MY SEASON 17",
     roster: "/data/season17/roster.json",
     staff: "/data/season17/staff.json",
+    profiles: "/data/season17/profiles.json",
     heroes: "/data/heroes.json",
     matches: "/data/season17/matches.json",
     teamLogos: "/data/season17/teamLogos.json",
@@ -32,6 +33,7 @@ let matches = [];
 let teamLogos = {};
 let teamNames = {};
 let rosterMap = {};
+let seasonProfiles = {};
 let currentSeasonKey = "season16";
 
 function isNumber(value) {
@@ -90,6 +92,24 @@ function validateMatches(list) {
           throw new Error("matches.json player KDA fields must be numeric");
         }
       }
+    }
+  }
+}
+
+function validateProfiles(payload) {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    throw new Error("profiles.json must be an object");
+  }
+
+  const profiles = payload.profiles;
+  if (profiles == null) return;
+  if (!profiles || typeof profiles !== "object" || Array.isArray(profiles)) {
+    throw new Error("profiles.json profiles must be an object map");
+  }
+
+  for (const [key, value] of Object.entries(profiles)) {
+    if (!key || !value || typeof value !== "object" || Array.isArray(value)) {
+      throw new Error("profiles.json contains invalid profile records");
     }
   }
 }
@@ -281,9 +301,10 @@ function getSeasonConfig(seasonKey) {
 
 export async function loadData(seasonKey = "season16") {
   const config = getSeasonConfig(seasonKey);
-  const [nextRoster, nextStaff, nextHeroes, nextMatches, nextTeamLogos, nextTeamNames] = await Promise.all([
+  const [nextRoster, nextStaff, nextProfiles, nextHeroes, nextMatches, nextTeamLogos, nextTeamNames] = await Promise.all([
     loadJson(config.roster),
     loadOptionalJson(config.staff, []),
+    loadOptionalJson(config.profiles, { profiles: {} }),
     loadJson(config.heroes),
     loadJson(config.matches),
     loadJson(config.teamLogos),
@@ -292,6 +313,7 @@ export async function loadData(seasonKey = "season16") {
 
   validateRoster(nextRoster);
   validateStaff(nextStaff);
+  validateProfiles(nextProfiles);
   const normalizedHeroes = normalizeHeroesMap(nextHeroes);
   const normalizedMatches = normalizeMatchesData(nextMatches, nextRoster, nextTeamNames, nextTeamLogos);
 
@@ -307,6 +329,7 @@ export async function loadData(seasonKey = "season16") {
   teamLogos = nextTeamLogos;
   teamNames = nextTeamNames;
   rosterMap = Object.fromEntries(roster.map((p) => [normalizePlayerNameKey(p.name), p]));
+  seasonProfiles = nextProfiles.profiles || {};
   currentSeasonKey = seasonKey in SEASON_DATA_FILES ? seasonKey : "season16";
 
   dataVersion += 1;
@@ -351,6 +374,10 @@ export function getTeamLogosMap() {
 
 export function getTeamNamesMap() {
   return teamNames;
+}
+
+export function getSeasonProfilesMap() {
+  return seasonProfiles;
 }
 
 export function getTeamDisplayName(teamCode) {

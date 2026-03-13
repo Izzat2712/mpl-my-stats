@@ -1,11 +1,19 @@
 ﻿import { getCurrentSeasonLabel, getHeroesMap, getMatches, getRosterList, getTeamDisplayName, getTeamLogosMap } from "./data-store.js";
 import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
 import { getStaffList } from "./data-store.js";
+import { getSeasonProfilesMap } from "./data-store.js";
+
 
 let roster = [];
 let staff = [];
 let constHero = {};
 let teamLogos = {};
+let seasonProfiles = {};
+const OBJECTIVE_ICONS = {
+  lord: "https://static.wikia.nocookie.net/mobile-legends/images/2/27/Elemental_Lord.jpg/revision/latest?cb=20220104081726",
+  turtle: "https://static.wikia.nocookie.net/mobile-legends/images/5/58/Dragon_Turtle.jpg/revision/latest?cb=20220104065903",
+  tower: "https://static.wikia.nocookie.net/mobile-legends/images/3/31/IS_Base.jpg/revision/latest?cb=20200601110910"
+};
 const TEAM_CODE_ALIASES = {
   FL: "TF"
 };
@@ -153,6 +161,12 @@ function encodeInlineString(value) {
   return encodeURIComponent(String(value ?? ""));
 }
 
+function toDisplayLabel(value) {
+  const text = String(value ?? "").trim();
+  if (!text) return "";
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 function getMatchScore(match) {
   let teamAScore = 0;
   let teamBScore = 0;
@@ -208,8 +222,8 @@ function renderScheduleMatchCard(match, index) {
         <button
           type="button"
           class="scheduleTeam scheduleTeamTrigger"
-          onclick="openTeamRoster('${match.teamA}')"
-          aria-label="Open ${teamLabel(match.teamA)} roster"
+          onclick="openScheduleTeamModal('${match.teamA}')"
+          aria-label="Open ${teamLabel(match.teamA)} team summary"
         >
           ${teamALogo ? `<img class="scheduleTeamLogo" src="${teamALogo}" alt="${teamLabel(match.teamA)} logo">` : ""}
           <span>${teamLabel(match.teamA)}</span>
@@ -231,8 +245,8 @@ function renderScheduleMatchCard(match, index) {
         <button
           type="button"
           class="scheduleTeam scheduleTeamTrigger"
-          onclick="openTeamRoster('${match.teamB}')"
-          aria-label="Open ${teamLabel(match.teamB)} roster"
+          onclick="openScheduleTeamModal('${match.teamB}')"
+          aria-label="Open ${teamLabel(match.teamB)} team summary"
         >
           ${teamBLogo ? `<img class="scheduleTeamLogo" src="${teamBLogo}" alt="${teamLabel(match.teamB)} logo">` : ""}
           <span>${teamLabel(match.teamB)}</span>
@@ -290,8 +304,8 @@ function renderScheduleTeamWeekSection(week, entries, selectedTeam = "") {
                 <button
                   type="button"
                   class="scheduleTeamMatchupSide scheduleTeamMatchupTrigger"
-                  onclick="openTeamRoster('${match.teamA}')"
-                  aria-label="Open ${teamLabel(match.teamA)} roster"
+                  onclick="openScheduleTeamModal('${match.teamA}')"
+                  aria-label="Open ${teamLabel(match.teamA)} team summary"
                 >
                   ${teamALogo ? `<img class="scheduleTeamInlineLogo" src="${teamALogo}" alt="${teamLabel(match.teamA)} logo">` : ""}
                   <span>${teamLabel(match.teamA)}</span>
@@ -311,8 +325,8 @@ function renderScheduleTeamWeekSection(week, entries, selectedTeam = "") {
                 <button
                   type="button"
                   class="scheduleTeamMatchupSide scheduleTeamMatchupTrigger"
-                  onclick="openTeamRoster('${match.teamB}')"
-                  aria-label="Open ${teamLabel(match.teamB)} roster"
+                  onclick="openScheduleTeamModal('${match.teamB}')"
+                  aria-label="Open ${teamLabel(match.teamB)} team summary"
                 >
                   ${teamBLogo ? `<img class="scheduleTeamInlineLogo" src="${teamBLogo}" alt="${teamLabel(match.teamB)} logo">` : ""}
                   <span>${teamLabel(match.teamB)}</span>
@@ -442,6 +456,7 @@ function showSchedule(week = null) {
 
   document.getElementById("output").innerHTML = html;
   mountScheduleScorecardModal();
+  mountScheduleTeamModal();
   refreshScheduleCountdowns();
 }
 
@@ -458,6 +473,19 @@ function mountScheduleScorecardModal() {
   modalRoot.innerHTML = renderScheduleScorecardModal();
 }
 
+function mountScheduleTeamModal() {
+  const modalId = "scheduleTeamModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderScheduleTeamModal();
+}
+
 function onScheduleTeamChange(teamCode) {
   if (window.appState) {
     window.appState.scheduleTeam = normalizeScheduleTeamCode(teamCode);
@@ -465,11 +493,93 @@ function onScheduleTeamChange(teamCode) {
   showSchedule(window.appState?.scheduleWeek ?? null);
 }
 
+function getEmptyTeamSummary(teamCode) {
+  return {
+    team: teamCode,
+    matchWins: 0,
+    kills: 0,
+    deaths: 0,
+    assists: 0,
+    lord: 0,
+    turtle: 0,
+    tower: 0
+  };
+}
+
+function getTeamSummary(teamCode) {
+  const normalizedTeamCode = normalizeScheduleTeamCode(teamCode);
+  const teamStats = calculateTeamStats();
+  const summary = teamStats[normalizedTeamCode] || teamStats[teamCode] || getEmptyTeamSummary(normalizedTeamCode || String(teamCode || "").trim());
+
+  return {
+    teamCode: normalizedTeamCode || String(teamCode || "").trim(),
+    label: teamLabel(normalizedTeamCode || teamCode),
+    logo: getScheduleTeamLogo(normalizedTeamCode || teamCode),
+    matchWins: Number(summary?.matchWins) || 0,
+    kills: Number(summary?.kills) || 0,
+    deaths: Number(summary?.deaths) || 0,
+    assists: Number(summary?.assists) || 0,
+    lord: Number(summary?.lord) || 0,
+    turtle: Number(summary?.turtle) || 0,
+    tower: Number(summary?.tower) || 0
+  };
+}
+
+function openScheduleTeamModal(teamCode) {
+  scheduleTeamModalState = { teamCode: normalizeScheduleTeamCode(teamCode) };
+  showSchedule(window.appState?.scheduleWeek ?? null);
+}
+
+function closeScheduleTeamModal() {
+  scheduleTeamModalState = { teamCode: "" };
+  showSchedule(window.appState?.scheduleWeek ?? null);
+}
+
+function renderScheduleTeamModal() {
+  const teamCode = String(scheduleTeamModalState.teamCode || "").trim();
+  if (!teamCode) return "";
+
+  const summary = getTeamSummary(teamCode);
+  const rows = [
+    { label: "Matches Won", value: summary.matchWins },
+    { label: "Kills", value: summary.kills },
+    { label: "Deaths", value: summary.deaths },
+    { label: "Assists", value: summary.assists },
+    { label: "Lord", value: summary.lord },
+    { label: "Turtle", value: summary.turtle },
+    { label: "Tower", value: summary.tower }
+  ];
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closeScheduleTeamModal()">
+      <div class="scheduleTeamSummaryModal h2hModalCard" onclick="event.stopPropagation()">
+        <button type="button" class="scheduleScorecardClose scheduleTeamSummaryClose" onclick="closeScheduleTeamModal()" aria-label="Close team summary">X</button>
+        <div class="scheduleTeamSummaryHeader">
+          <div class="scheduleTeamSummaryIdentity">
+            <div class="scheduleTeamSummaryLabel">Team</div>
+            ${summary.logo ? `<img class="scheduleTeamSummaryLogo" src="${summary.logo}" alt="${escapeHtml(summary.label)} logo">` : ""}
+            <h3>${escapeHtml(summary.label)}</h3>
+          </div>
+        </div>
+        <div class="scheduleTeamSummaryRows">
+          ${rows.map((row) => `
+            <div class="scheduleTeamSummaryRow">
+              <span class="scheduleTeamSummaryRowLabel">${escapeHtml(row.label)}</span>
+              <span class="scheduleTeamSummaryRowValue">${row.value}</span>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 export function refreshDataRefs() {
   roster = getRosterList();
   staff = getStaffList();
   constHero = getHeroesMap();
   teamLogos = getTeamLogosMap();
+  seasonProfiles = getSeasonProfilesMap();
 }
 
 let teamSort = {key: "matchWins", asc: false }; // false = DESC (highest matchWins first)
@@ -479,8 +589,10 @@ let heroPoolSort = { key: "totalHeroes", asc: false };
 let playerPoolsSort = { key: "totalPlayers", asc: false };
 let h2hSubTab = "team";
 let scheduleScorecardState = { matchIndex: null, gameIndex: 0 };
-let teamRosterModalState = { teamCode: "" };
+let scheduleTeamModalState = { teamCode: "" };
+let teamRosterModalState = { teamCode: "", memberName: "", memberType: "" };
 let playerDetailsModalState = { playerName: "" };
+let playerProfileModalState = { playerName: "" };
 let heroDetailsModalState = { heroName: "" };
 
 function getScheduleScorecardPositionStyle() {
@@ -794,6 +906,53 @@ function renderScorecardBans(game) {
   `;
 }
 
+function getScorecardObjectiveCount(game, objectiveKey, teamCode) {
+  return Number(game?.objectives?.[objectiveKey]?.[teamCode]) || 0;
+}
+
+function renderScorecardObjectives(match, game) {
+  const objectiveKeys = ["lord", "turtle", "tower"];
+  const hasObjectiveData = objectiveKeys.some((key) => {
+    const values = game?.objectives?.[key];
+    return values && typeof values === "object";
+  });
+
+  if (!hasObjectiveData) return "";
+
+  return `
+    <section class="scheduleScorecardObjectivesPanel" aria-label="Game objectives">
+      <div class="scheduleScorecardObjectivesGrid">
+        ${objectiveKeys.map((key) => {
+          const label = key === "tower" ? "Turret" : toDisplayLabel(key);
+          const teamAValue = getScorecardObjectiveCount(game, key, match.teamA);
+          const teamBValue = getScorecardObjectiveCount(game, key, match.teamB);
+          const icon = OBJECTIVE_ICONS[key] || "";
+
+          return `
+            <div class="scheduleScorecardObjectiveCard">
+              <div class="scheduleScorecardObjectiveHead">
+                ${icon ? `<img class="scheduleScorecardObjectiveIcon" src="${icon}" alt="${label} icon">` : ""}
+                <span>${label}</span>
+              </div>
+              <div class="scheduleScorecardObjectiveValues">
+                <span class="scheduleScorecardObjectiveValue">
+                  <strong>${teamAValue}</strong>
+                  <span>${teamLabel(match.teamA)}</span>
+                </span>
+                <span class="scheduleScorecardObjectiveDivider">-</span>
+                <span class="scheduleScorecardObjectiveValue">
+                  <strong>${teamBValue}</strong>
+                  <span>${teamLabel(match.teamB)}</span>
+                </span>
+              </div>
+            </div>
+          `;
+        }).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderScheduleScorecardModal() {
   if (scheduleScorecardState.matchIndex == null) return "";
 
@@ -845,6 +1004,7 @@ function renderScheduleScorecardModal() {
             </div>
           </div>
         </div>
+        ${renderScorecardObjectives(match, activeGame)}
         ${renderScorecardBans(activeGame)}
         <div class="scheduleScorecardGrid">
           ${renderScorecardTeamCard(match.teamA, playersByTeam[match.teamA] || [])}
@@ -881,6 +1041,19 @@ function mountPlayerDetailsModal() {
   modalRoot.innerHTML = renderPlayerDetailsModal();
 }
 
+function mountPlayerProfileModal() {
+  const modalId = "playerProfileModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderPlayerProfileModal();
+}
+
 function mountHeroDetailsModal() {
   const modalId = "heroDetailsModalRoot";
   let modalRoot = document.getElementById(modalId);
@@ -895,12 +1068,31 @@ function mountHeroDetailsModal() {
 }
 
 function openTeamRoster(teamCode) {
-  teamRosterModalState = { teamCode: String(teamCode || "").trim() };
+  teamRosterModalState = { teamCode: String(teamCode || "").trim(), memberName: "", memberType: "" };
   mountTeamRosterModal();
 }
 
 function closeTeamRoster() {
-  teamRosterModalState = { teamCode: "" };
+  teamRosterModalState = { teamCode: "", memberName: "", memberType: "" };
+  mountTeamRosterModal();
+}
+
+function openTeamRosterProfile(teamCode, memberName, memberType) {
+  teamRosterModalState = {
+    teamCode: decodeURIComponent(String(teamCode || "").trim()),
+    memberName: decodeURIComponent(String(memberName || "").trim()),
+    memberType: decodeURIComponent(String(memberType || "").trim()).toLowerCase()
+  };
+  mountTeamRosterModal();
+}
+
+function backToTeamRoster() {
+  if (!teamRosterModalState.teamCode) return;
+  teamRosterModalState = {
+    teamCode: teamRosterModalState.teamCode,
+    memberName: "",
+    memberType: ""
+  };
   mountTeamRosterModal();
 }
 
@@ -912,6 +1104,16 @@ function openPlayerDetailsModal(playerName) {
 function closePlayerDetailsModal() {
   playerDetailsModalState = { playerName: "" };
   mountPlayerDetailsModal();
+}
+
+function openPlayerProfileModal(playerName) {
+  playerProfileModalState = { playerName: String(playerName || "").trim() };
+  mountPlayerProfileModal();
+}
+
+function closePlayerProfileModal() {
+  playerProfileModalState = { playerName: "" };
+  mountPlayerProfileModal();
 }
 
 function openHeroDetailsModal(heroName) {
@@ -948,17 +1150,33 @@ function getTeamStaff(teamCode) {
     .sort((a, b) => String(a.role || "").localeCompare(String(b.role || "")) || String(a.name || "").localeCompare(String(b.name || "")));
 }
 
+function normalizeProfileKey(name) {
+  return String(name || "").trim().toLowerCase();
+}
+
+function getTeamRosterProfile(memberName) {
+  return seasonProfiles[normalizeProfileKey(memberName)] || null;
+}
+
 function renderTeamRosterMemberCard(member, options = {}) {
   const isPlaceholder = Boolean(options.placeholder);
+  const teamCode = String(options.teamCode || member?.team || "").trim();
+  const memberType = String(options.memberType || "player").trim().toLowerCase();
   const image = String(member?.picture || "").trim();
   const role = String(member?.lane || member?.role || "TBD").trim() || "TBD";
   const name = String(member?.name || "TBD").trim() || "TBD";
+  const canOpen = !isPlaceholder && name !== "TBD";
   const initials = name === "TBD"
     ? "?"
     : name.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
 
   return `
-    <article class="teamRosterCard ${isPlaceholder ? "is-placeholder" : ""}">
+    <button
+      type="button"
+      class="teamRosterCard ${isPlaceholder ? "is-placeholder" : ""} ${canOpen ? "is-clickable" : ""}"
+      ${canOpen ? `onclick="openTeamRosterProfile('${encodeInlineString(teamCode)}', '${encodeInlineString(name)}', '${encodeInlineString(memberType)}')"` : "disabled"}
+      ${canOpen ? `aria-label="Open ${escapeHtml(name)} profile"` : `aria-label="${escapeHtml(name)} profile unavailable"`}
+    >
       <div class="teamRosterPortraitWrap">
         ${image
           ? `<img class="teamRosterPortrait" src="${image}" alt="${name}">`
@@ -969,13 +1187,128 @@ function renderTeamRosterMemberCard(member, options = {}) {
         <h4>${name}</h4>
         <p>${role}</p>
       </div>
-    </article>
+    </button>
+  `;
+}
+
+function renderTeamRosterProfileSection(title, rows) {
+  if (!rows.length) return "";
+
+  return `
+    <section class="teamRosterProfileSection">
+      <div class="teamRosterProfileSectionTitle">${escapeHtml(title)}</div>
+      <div class="teamRosterProfileRows">
+        ${rows.map((row) => `
+          <div class="teamRosterProfileRow">
+            <div class="teamRosterProfileLabel">${escapeHtml(row.label)}</div>
+            <div class="teamRosterProfileValue">${row.value}</div>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderTeamRosterProfileView(teamCode, memberName, memberType) {
+  const profile = getTeamRosterProfile(memberName);
+  const teamLogo = teamLogos[teamCode] || "";
+  const displayName = teamLabel(teamCode);
+  const rosterRecord = memberType === "coach"
+    ? getTeamStaff(teamCode).find((member) => normalizeProfileKey(member?.name) === normalizeProfileKey(memberName))
+    : getTeamRosterPlayers(teamCode).find((member) => normalizeProfileKey(member?.name) === normalizeProfileKey(memberName));
+  const picture = String(profile?.image || rosterRecord?.picture || "").trim();
+
+  if (!profile) {
+    return `
+      <section class="teamRosterProfileShell">
+        <div class="teamRosterProfileTopBar">
+          <button type="button" class="teamRosterBackButton" onclick="backToTeamRoster()" aria-label="Back to roster">&#8592;</button>
+          <div class="teamRosterProfileTitleBlock">
+            <h4>${escapeHtml(memberName)}</h4>
+            <p>${escapeHtml(displayName)}</p>
+          </div>
+        </div>
+        <div class="teamRosterProfileEmpty">
+          <div class="teamRosterProfileEmptyTitle">No data</div>
+          <p>No Liquipedia profile is available for this ${escapeHtml(memberType || "member")} yet.</p>
+        </div>
+      </section>
+    `;
+  }
+
+  const profileRows = [
+    { label: "Name", value: escapeHtml(profile.fullName || profile.handle || memberName) },
+    { label: "Nationality", value: escapeHtml(profile.nationality || "Unknown") },
+    { label: "Born", value: escapeHtml(profile.born || "Unknown") },
+    { label: "Status", value: escapeHtml(profile.status || "Unknown") },
+    { label: "Role", value: escapeHtml(profile.role || rosterRecord?.lane || rosterRecord?.role || "Unknown") },
+    { label: "Team", value: escapeHtml(profile.team || displayName) }
+  ];
+
+  if (profile.approxTotalWinnings) {
+    profileRows.push({ label: "Winnings", value: escapeHtml(profile.approxTotalWinnings) });
+  }
+
+  const historyRows = Array.isArray(profile.history)
+    ? profile.history.slice(0, 8).map((entry) => ({
+        label: entry.dates || "History",
+        value: escapeHtml(entry.team || entry.org || "Unknown")
+      }))
+    : [];
+
+  const linkRows = [];
+  if (profile.source) {
+    linkRows.push({
+      label: "Liquipedia",
+      value: `<a class="teamRosterProfileLink" href="${escapeHtml(profile.source)}" target="_blank" rel="noopener noreferrer">Open source</a>`
+    });
+  }
+  if (profile.links && typeof profile.links === "object") {
+    for (const [label, href] of Object.entries(profile.links)) {
+      if (!href) continue;
+      linkRows.push({
+        label: toDisplayLabel(label),
+        value: `<a class="teamRosterProfileLink" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(href.replace(/^https?:\/\//, ""))}</a>`
+      });
+    }
+  }
+
+  return `
+    <section class="teamRosterProfileShell">
+      <div class="teamRosterProfileTopBar">
+        <button type="button" class="teamRosterBackButton" onclick="backToTeamRoster()" aria-label="Back to roster">&#8592;</button>
+        <div class="teamRosterProfileTitleBlock">
+          <h4>${escapeHtml(profile.handle || memberName)}</h4>
+          <p>${escapeHtml(displayName)}</p>
+        </div>
+      </div>
+      <div class="teamRosterProfileHero">
+        <div class="teamRosterProfileHeroCard">
+          <div class="teamRosterProfileHeroMedia">
+            ${picture ? `<img class="teamRosterProfilePortrait" src="${picture}" alt="${escapeHtml(profile.handle || memberName)}">` : `<div class="teamRosterProfilePortraitFallback">${escapeHtml((profile.handle || memberName).slice(0, 2).toUpperCase())}</div>`}
+          </div>
+          <div class="teamRosterProfileHeroMeta">
+            <div class="teamRosterProfileHandle">${escapeHtml(profile.handle || memberName)}</div>
+            <div class="teamRosterProfileTeam">
+              ${teamLogo ? `<img class="teamRosterProfileTeamLogo" src="${teamLogo}" alt="${escapeHtml(displayName)} logo">` : ""}
+              <span>${escapeHtml(profile.team || displayName)}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      ${renderTeamRosterProfileSection("Profile", profileRows)}
+      ${profile.summary ? `<section class="teamRosterProfileSection"><div class="teamRosterProfileSectionTitle">Summary</div><p class="teamRosterProfileSummary">${escapeHtml(profile.summary)}</p></section>` : ""}
+      ${renderTeamRosterProfileSection("History", historyRows)}
+      ${renderTeamRosterProfileSection("Links", linkRows)}
+    </section>
   `;
 }
 
 function renderTeamRosterModal() {
   const teamCode = String(teamRosterModalState.teamCode || "").trim();
   if (!teamCode) return "";
+  const memberName = String(teamRosterModalState.memberName || "").trim();
+  const memberType = String(teamRosterModalState.memberType || "").trim();
 
   const players = getTeamRosterPlayers(teamCode);
   const teamLogo = teamLogos[teamCode] || "";
@@ -997,27 +1330,32 @@ function renderTeamRosterModal() {
           </div>
           <button type="button" class="h2hModalClose" onclick="closeTeamRoster()">Close</button>
         </div>
-        <section class="teamRosterSection">
-          <div class="teamRosterSectionHead">
-            <h4>Players</h4>
-          </div>
-          <div class="teamRosterGrid">
-            ${players.length
-              ? players.map((player) => renderTeamRosterMemberCard(player)).join("")
-              : `<div class="h2hModalEmpty">No roster data for this team yet.</div>`
-            }
-          </div>
-        </section>
-        <section class="teamRosterSection">
-          <div class="teamRosterSectionHead">
-            <h4>Coaching Staff</h4>
-          </div>
-          <div class="teamRosterGrid teamRosterGrid--staff">
-            ${(teamStaff.length ? teamStaff : placeholderStaff)
-              .map((member) => renderTeamRosterMemberCard(member, { placeholder: !teamStaff.length }))
-              .join("")}
-          </div>
-        </section>
+        ${memberName
+          ? renderTeamRosterProfileView(teamCode, memberName, memberType)
+          : `
+            <section class="teamRosterSection">
+              <div class="teamRosterSectionHead">
+                <h4>Players</h4>
+              </div>
+              <div class="teamRosterGrid">
+                ${players.length
+                  ? players.map((player) => renderTeamRosterMemberCard(player, { teamCode, memberType: "player" })).join("")
+                  : `<div class="h2hModalEmpty">No roster data for this team yet.</div>`
+                }
+              </div>
+            </section>
+            <section class="teamRosterSection">
+              <div class="teamRosterSectionHead">
+                <h4>Coaching Staff</h4>
+              </div>
+              <div class="teamRosterGrid teamRosterGrid--staff">
+                ${(teamStaff.length ? teamStaff : placeholderStaff)
+                  .map((member) => renderTeamRosterMemberCard(member, { placeholder: !teamStaff.length, teamCode, memberType: "coach" }))
+                  .join("")}
+              </div>
+            </section>
+          `
+        }
       </div>
     </div>
   `;
@@ -1065,7 +1403,7 @@ function renderPlayerDetailsModal() {
 
   return `
     <div class="h2hModalBackdrop" onclick="closePlayerDetailsModal()">
-      <div class="playerDetailsModal h2hModalCard" onclick="event.stopPropagation()">
+      <div class="playerDetailsModal playerStatsModal h2hModalCard" onclick="event.stopPropagation()">
         <div class="h2hModalHead playerDetailsModalHead">
           <h3>${escapeHtml(player.name)}</h3>
           <button type="button" class="h2hModalClose" onclick="closePlayerDetailsModal()">Close</button>
@@ -1078,6 +1416,105 @@ function renderPlayerDetailsModal() {
             </div>
           `).join("")}
         </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPlayerProfileModal() {
+  const playerName = String(playerProfileModalState.playerName || "").trim();
+  if (!playerName) return "";
+
+  const player = getPlayerSummary(playerName);
+  if (!player) return "";
+
+  const profile = getTeamRosterProfile(playerName);
+  const teamCode = String(player.team || "").trim();
+  const displayName = teamCode ? teamLabel(teamCode) : "Unknown Team";
+  const teamLogo = teamCode ? (teamLogos[teamCode] || "") : "";
+  const picture = String(profile?.image || player.picture || "").trim();
+
+  if (!profile) {
+    return `
+      <div class="h2hModalBackdrop" onclick="closePlayerProfileModal()">
+        <div class="playerDetailsModal h2hModalCard" onclick="event.stopPropagation()">
+          <div class="h2hModalHead playerDetailsModalHead">
+            <h3>${escapeHtml(player.name)}</h3>
+            <button type="button" class="h2hModalClose" onclick="closePlayerProfileModal()">Close</button>
+          </div>
+          <div class="teamRosterProfileEmpty">
+            <div class="teamRosterProfileEmptyTitle">No data</div>
+            <p>No Liquipedia profile is available for this player yet.</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  const profileRows = [
+    { label: "Name", value: escapeHtml(profile.fullName || profile.handle || player.name) },
+    { label: "Nationality", value: escapeHtml(profile.nationality || "Unknown") },
+    { label: "Born", value: escapeHtml(profile.born || "Unknown") },
+    { label: "Status", value: escapeHtml(profile.status || "Unknown") },
+    { label: "Role", value: escapeHtml(profile.role || player.lane || "Unknown") },
+    { label: "Team", value: escapeHtml(profile.team || displayName) }
+  ];
+
+  if (profile.approxTotalWinnings) {
+    profileRows.push({ label: "Winnings", value: escapeHtml(profile.approxTotalWinnings) });
+  }
+
+  const historyRows = Array.isArray(profile.history)
+    ? profile.history.slice(0, 8).map((entry) => ({
+        label: entry.dates || "History",
+        value: escapeHtml(entry.team || entry.org || "Unknown")
+      }))
+    : [];
+
+  const linkRows = [];
+  if (profile.source) {
+    linkRows.push({
+      label: "Liquipedia",
+      value: `<a class="teamRosterProfileLink" href="${escapeHtml(profile.source)}" target="_blank" rel="noopener noreferrer">Open source</a>`
+    });
+  }
+  if (profile.links && typeof profile.links === "object") {
+    for (const [label, href] of Object.entries(profile.links)) {
+      if (!href) continue;
+      linkRows.push({
+        label: toDisplayLabel(label),
+        value: `<a class="teamRosterProfileLink" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(href.replace(/^https?:\/\//, ""))}</a>`
+      });
+    }
+  }
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closePlayerProfileModal()">
+      <div class="playerDetailsModal h2hModalCard" onclick="event.stopPropagation()">
+        <div class="h2hModalHead playerDetailsModalHead">
+          <h3>${escapeHtml(player.name)}</h3>
+          <button type="button" class="h2hModalClose" onclick="closePlayerProfileModal()">Close</button>
+        </div>
+        <section class="teamRosterProfileShell playerProfileModalContent">
+          <div class="teamRosterProfileHero">
+            <div class="teamRosterProfileHeroCard">
+              <div class="teamRosterProfileHeroMedia">
+                ${picture ? `<img class="teamRosterProfilePortrait" src="${picture}" alt="${escapeHtml(profile.handle || player.name)}">` : `<div class="teamRosterProfilePortraitFallback">${escapeHtml((profile.handle || player.name).slice(0, 2).toUpperCase())}</div>`}
+              </div>
+              <div class="teamRosterProfileHeroMeta">
+                <div class="teamRosterProfileHandle">${escapeHtml(profile.handle || player.name)}</div>
+                <div class="teamRosterProfileTeam">
+                  ${teamLogo ? `<img class="teamRosterProfileTeamLogo" src="${teamLogo}" alt="${escapeHtml(displayName)} logo">` : ""}
+                  <span>${escapeHtml(profile.team || displayName)}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          ${renderTeamRosterProfileSection("Profile", profileRows)}
+          ${profile.summary ? `<section class="teamRosterProfileSection"><div class="teamRosterProfileSectionTitle">Summary</div><p class="teamRosterProfileSummary">${escapeHtml(profile.summary)}</p></section>` : ""}
+          ${renderTeamRosterProfileSection("History", historyRows)}
+          ${renderTeamRosterProfileSection("Links", linkRows)}
+        </section>
       </div>
     </div>
   `;
@@ -1457,10 +1894,15 @@ ${topKills.map((pl, i) => `
 html += `
 <tr>
   <td>
-    <div class="teamCell">
+    <button
+      type="button"
+      class="teamCell playerProfileTrigger"
+      onclick="openPlayerProfileModal(decodeURIComponent('${encodeInlineString(ps.name)}'))"
+      aria-label="Open player profile for ${escapeHtml(ps.name)}"
+    >
       <img src="${ps.picture}" width="90" height="90" style="border-radius:50%;" alt="${ps.name}">
       <span>${ps.name}</span>
-    </div>
+    </button>
   </td>
 
 <td style="vertical-align:middle;">
@@ -1851,12 +2293,17 @@ function showHeroPool(keepSearchFocus = false) {
     html += `
       <tr>
         <td style="vertical-align:middle;">
-          <div style="display:flex; align-items:center; gap:10px; height:100%;">
+          <button
+            type="button"
+            class="playerProfileTrigger heroPoolPlayerTrigger"
+            onclick="openPlayerProfileModal(decodeURIComponent('${encodeInlineString(ps.name)}'))"
+            aria-label="Open player profile for ${escapeHtml(ps.name)}"
+          >
             <img src="${ps.picture}" width="55" height="55"
               alt="${ps.name}"
               style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
             <span>${ps.name}</span>
-          </div>
+          </button>
         </td>
 
 <td style="vertical-align:middle;">
@@ -2715,13 +3162,19 @@ export {
   showSchedule,
   refreshScheduleCountdowns,
   onScheduleTeamChange,
+  openScheduleTeamModal,
+  closeScheduleTeamModal,
   openScheduleScorecard,
   closeScheduleScorecard,
   selectScheduleScorecardGame,
   openTeamRoster,
   closeTeamRoster,
+  openTeamRosterProfile,
+  backToTeamRoster,
   openPlayerDetailsModal,
   closePlayerDetailsModal,
+  openPlayerProfileModal,
+  closePlayerProfileModal,
   openHeroDetailsModal,
   closeHeroDetailsModal,
   onTeamCompareChange,

@@ -4,13 +4,19 @@ import {
   refreshDataRefs,
   refreshScheduleCountdowns,
   onScheduleTeamChange,
+  openScheduleTeamModal,
+  closeScheduleTeamModal,
   openScheduleScorecard,
   closeScheduleScorecard,
   selectScheduleScorecardGame,
   openTeamRoster,
   closeTeamRoster,
+  openTeamRosterProfile,
+  backToTeamRoster,
   openPlayerDetailsModal,
   closePlayerDetailsModal,
+  openPlayerProfileModal,
+  closePlayerProfileModal,
   openHeroDetailsModal,
   closeHeroDetailsModal,
   onTeamCompareChange,
@@ -509,6 +515,10 @@ function updateSeasonMeta() {
   document.title = `${seasonLabel} Stats`;
   const heading = document.getElementById("seasonHeading");
   if (heading) heading.textContent = `${seasonLabel} STATISTICS`;
+  const seasonNote = document.getElementById("seasonNote");
+  if (seasonNote) {
+    seasonNote.hidden = appState.season !== "season16";
+  }
   syncNavHrefs();
   renderNextMatchCountdown();
 }
@@ -677,13 +687,19 @@ window.initApp = initApp;
 window.onSeasonChange = onSeasonChange;
 window.showSchedule = showScheduleView;
 window.onScheduleTeamChange = onScheduleTeamChange;
+window.openScheduleTeamModal = openScheduleTeamModal;
+window.closeScheduleTeamModal = closeScheduleTeamModal;
 window.openScheduleScorecard = openScheduleScorecard;
 window.closeScheduleScorecard = closeScheduleScorecard;
 window.selectScheduleScorecardGame = selectScheduleScorecardGame;
 window.openTeamRoster = openTeamRoster;
 window.closeTeamRoster = closeTeamRoster;
+window.openTeamRosterProfile = openTeamRosterProfile;
+window.backToTeamRoster = backToTeamRoster;
 window.openPlayerDetailsModal = openPlayerDetailsModal;
 window.closePlayerDetailsModal = closePlayerDetailsModal;
+window.openPlayerProfileModal = openPlayerProfileModal;
+window.closePlayerProfileModal = closePlayerProfileModal;
 window.openHeroDetailsModal = openHeroDetailsModal;
 window.closeHeroDetailsModal = closeHeroDetailsModal;
 window.showTeams = showTeamsView;
