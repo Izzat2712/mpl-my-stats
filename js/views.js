@@ -3,6 +3,8 @@ import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerPoolsStats, 
 import { getStaffList } from "./data-store.js";
 import { getSeasonProfilesMap } from "./data-store.js";
 
+import { getCurrentSeasonKey } from "./data-store.js";
+
 
 let roster = [];
 let staff = [];
@@ -1275,6 +1277,14 @@ function normalizeProfileKey(name) {
   return String(name || "").trim().toLowerCase();
 }
 
+function getMissingProfileMessage(memberType = "player") {
+  if (getCurrentSeasonKey() === "season16") {
+    return "No player profile for season 16.";
+  }
+
+  return `No Liquipedia profile is available for this ${escapeHtml(memberType || "member")} yet.`;
+}
+
 function getTeamRosterProfile(memberName) {
   return seasonProfiles[normalizeProfileKey(memberName)] || null;
 }
@@ -1351,7 +1361,7 @@ function renderTeamRosterProfileView(teamCode, memberName, memberType) {
         </div>
         <div class="teamRosterProfileEmpty">
           <div class="teamRosterProfileEmptyTitle">No data</div>
-          <p>No Liquipedia profile is available for this ${escapeHtml(memberType || "member")} yet.</p>
+          <p>${getMissingProfileMessage(memberType)}</p>
         </div>
       </section>
     `;
@@ -1565,7 +1575,7 @@ function renderPlayerProfileModal() {
           </div>
           <div class="teamRosterProfileEmpty">
             <div class="teamRosterProfileEmptyTitle">No data</div>
-            <p>No Liquipedia profile is available for this player yet.</p>
+            <p>${getMissingProfileMessage("player")}</p>
           </div>
         </div>
       </div>
