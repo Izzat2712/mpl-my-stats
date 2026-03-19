@@ -1,5 +1,5 @@
 ﻿import { getCurrentSeasonLabel, getHeroesMap, getMatches, getRosterList, getTeamDisplayName, getTeamLogosMap } from "./data-store.js";
-import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
+import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
 import { getStaffList } from "./data-store.js";
 import { getSeasonProfilesMap } from "./data-store.js";
 
@@ -716,6 +716,8 @@ let scheduleTeamModalState = { teamCode: "" };
 let teamRosterModalState = { teamCode: "", memberName: "", memberType: "" };
 let playerDetailsModalState = { playerName: "" };
 let playerProfileModalState = { playerName: "" };
+let heroPoolPlayerStatsModalState = { playerName: "", heroName: "" };
+let playerPoolHeroStatsModalState = { heroName: "", playerName: "" };
 let heroDetailsModalState = { heroName: "" };
 
 function getScheduleScorecardPositionStyle() {
@@ -883,6 +885,108 @@ function getPlayerSummary(name) {
     avgA: games ? assists / games : 0,
     kda: (kills + assists) / (deaths || 1),
     kp: games ? (kpTotal / games) * 100 : 0
+  };
+}
+
+function getHeroPoolPlayerStatsSummary(name) {
+  const normalizedName = String(name || "").trim().toLowerCase();
+  if (!normalizedName) return null;
+
+  const playerHeroStats = calculatePlayerHeroStats();
+  const entryName = Object.keys(playerHeroStats).find(
+    (playerName) => String(playerName || "").trim().toLowerCase() === normalizedName
+  ) || "";
+  const entry = entryName ? playerHeroStats[entryName] : null;
+  const record = getRosterPlayerRecord(entryName || name);
+
+  if (!entry && !record) return null;
+
+  const heroes = Object.keys(entry?.heroes || {})
+    .map((heroName) => {
+      const stats = entry.heroes[heroName] || {};
+      const games = Number(stats.games) || 0;
+      const wins = Number(stats.wins) || 0;
+      const kills = Number(stats.kills) || 0;
+      const deaths = Number(stats.deaths) || 0;
+      const assists = Number(stats.assists) || 0;
+      const kpTotal = Number(stats.kpTotal) || 0;
+
+      return {
+        hero: heroName,
+        img: String(constHero[heroName] || "").trim(),
+        games,
+        winRate: games ? (wins / games) * 100 : 0,
+        kills,
+        avgKills: games ? kills / games : 0,
+        deaths,
+        avgDeaths: games ? deaths / games : 0,
+        assists,
+        avgAssists: games ? assists / games : 0,
+        kda: (kills + assists) / (deaths || 1),
+        kp: games ? (kpTotal / games) * 100 : 0
+      };
+    })
+    .sort((a, b) => {
+      if (b.games !== a.games) return b.games - a.games;
+      return a.hero.localeCompare(b.hero);
+    });
+
+  return {
+    name: String(entry?.name || record?.name || entryName || name).trim() || "Unknown Player",
+    team: String(entry?.team || record?.team || "").trim(),
+    lane: String(entry?.lane || record?.lane || "Unknown").trim() || "Unknown",
+    picture: String(entry?.picture || record?.picture || "").trim(),
+    heroes
+  };
+}
+
+function getPlayerPoolHeroStatsSummary(name) {
+  const normalizedName = String(name || "").trim().toLowerCase();
+  if (!normalizedName) return null;
+
+  const playerPools = calculatePlayerPoolsStats();
+  const entryName = Object.keys(playerPools).find(
+    (heroName) => String(heroName || "").trim().toLowerCase() === normalizedName
+  ) || "";
+  const entry = entryName ? playerPools[entryName] : null;
+  if (!entry) return null;
+
+  const players = Object.keys(entry.players || {})
+    .map((playerName) => {
+      const stats = entry.players[playerName] || {};
+      const games = Number(stats.games) || 0;
+      const wins = Number(stats.wins) || 0;
+      const kills = Number(stats.kills) || 0;
+      const deaths = Number(stats.deaths) || 0;
+      const assists = Number(stats.assists) || 0;
+      const kpTotal = Number(stats.kpTotal) || 0;
+
+      return {
+        name: String(stats.name || playerName).trim() || "Unknown Player",
+        team: String(stats.team || "").trim(),
+        lane: String(stats.lane || "Unknown").trim() || "Unknown",
+        picture: String(stats.picture || "").trim(),
+        games,
+        winRate: games ? (wins / games) * 100 : 0,
+        kills,
+        averageKills: games ? kills / games : 0,
+        deaths,
+        averageDeaths: games ? deaths / games : 0,
+        assists,
+        averageAssists: games ? assists / games : 0,
+        kda: (kills + assists) / (deaths || 1),
+        kp: games ? (kpTotal / games) * 100 : 0
+      };
+    })
+    .sort((a, b) => {
+      if (b.games !== a.games) return b.games - a.games;
+      return a.name.localeCompare(b.name);
+    });
+
+  return {
+    hero: String(entry.hero || entryName || name).trim() || "Unknown Hero",
+    img: String(constHero[entryName] || "").trim(),
+    players
   };
 }
 
@@ -1177,6 +1281,32 @@ function mountPlayerProfileModal() {
   modalRoot.innerHTML = renderPlayerProfileModal();
 }
 
+function mountHeroPoolPlayerStatsModal() {
+  const modalId = "heroPoolPlayerStatsModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderHeroPoolPlayerStatsModal();
+}
+
+function mountPlayerPoolHeroStatsModal() {
+  const modalId = "playerPoolHeroStatsModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderPlayerPoolHeroStatsModal();
+}
+
 function mountHeroDetailsModal() {
   const modalId = "heroDetailsModalRoot";
   let modalRoot = document.getElementById(modalId);
@@ -1237,6 +1367,56 @@ function openPlayerProfileModal(playerName) {
 function closePlayerProfileModal() {
   playerProfileModalState = { playerName: "" };
   mountPlayerProfileModal();
+}
+
+function openHeroPoolPlayerStatsModal(playerName, heroName = "") {
+  const playerSummary = getHeroPoolPlayerStatsSummary(playerName);
+  const resolvedPlayerName = String(playerSummary?.name || playerName || "").trim();
+  const resolvedHeroName = String(heroName || playerSummary?.heroes?.[0]?.hero || "").trim();
+
+  heroPoolPlayerStatsModalState = {
+    playerName: resolvedPlayerName,
+    heroName: resolvedHeroName
+  };
+  mountHeroPoolPlayerStatsModal();
+}
+
+function selectHeroPoolPlayerStatsHero(playerName, heroName) {
+  heroPoolPlayerStatsModalState = {
+    playerName: String(playerName || heroPoolPlayerStatsModalState.playerName || "").trim(),
+    heroName: String(heroName || "").trim()
+  };
+  mountHeroPoolPlayerStatsModal();
+}
+
+function closeHeroPoolPlayerStatsModal() {
+  heroPoolPlayerStatsModalState = { playerName: "", heroName: "" };
+  mountHeroPoolPlayerStatsModal();
+}
+
+function openPlayerPoolHeroStatsModal(heroName, playerName = "") {
+  const heroSummary = getPlayerPoolHeroStatsSummary(heroName);
+  const resolvedHeroName = String(heroSummary?.hero || heroName || "").trim();
+  const resolvedPlayerName = String(playerName || heroSummary?.players?.[0]?.name || "").trim();
+
+  playerPoolHeroStatsModalState = {
+    heroName: resolvedHeroName,
+    playerName: resolvedPlayerName
+  };
+  mountPlayerPoolHeroStatsModal();
+}
+
+function selectPlayerPoolHeroStatsPlayer(heroName, playerName) {
+  playerPoolHeroStatsModalState = {
+    heroName: String(heroName || playerPoolHeroStatsModalState.heroName || "").trim(),
+    playerName: String(playerName || "").trim()
+  };
+  mountPlayerPoolHeroStatsModal();
+}
+
+function closePlayerPoolHeroStatsModal() {
+  playerPoolHeroStatsModalState = { heroName: "", playerName: "" };
+  mountPlayerPoolHeroStatsModal();
 }
 
 function openHeroDetailsModal(heroName) {
@@ -1523,11 +1703,11 @@ function renderPlayerDetailsModal() {
     { label: "GAMES", value: `${player.games}` },
     { label: "HERO POOL", value: `${player.heroPoolCount}` },
     { label: "KILLS", value: `${player.kills}` },
-    { label: "AVG KILLS", value: player.avgK.toFixed(2) },
+    { label: "AVERAGE KILLS", value: player.avgK.toFixed(2) },
     { label: "DEATHS", value: `${player.deaths}` },
-    { label: "AVG DEATHS", value: player.avgD.toFixed(2) },
+    { label: "AVERAGE DEATHS", value: player.avgD.toFixed(2) },
     { label: "ASSISTS", value: `${player.assists}` },
-    { label: "AVG ASSISTS", value: player.avgA.toFixed(2) },
+    { label: "AVERAGE ASSISTS", value: player.avgA.toFixed(2) },
     { label: "KDA", value: player.kda.toFixed(2) },
     { label: "KP%", value: `${player.kp.toFixed(1)}%` }
   ];
@@ -1646,6 +1826,262 @@ function renderPlayerProfileModal() {
           ${renderTeamRosterProfileSection("History", historyRows)}
           ${renderTeamRosterProfileSection("Links", linkRows)}
         </section>
+      </div>
+    </div>
+  `;
+}
+
+function renderHeroPoolPlayerStatsModal() {
+  const playerName = String(heroPoolPlayerStatsModalState.playerName || "").trim();
+  if (!playerName) return "";
+
+  const player = getHeroPoolPlayerStatsSummary(playerName);
+  if (!player) return "";
+
+  const teamCode = String(player.team || "").trim();
+  const teamLogo = teamCode ? (teamLogos[teamCode] || "") : "";
+  const selectedHeroName = player.heroes.some((hero) => hero.hero === heroPoolPlayerStatsModalState.heroName)
+    ? heroPoolPlayerStatsModalState.heroName
+    : String(player.heroes[0]?.hero || "").trim();
+  const selectedHero = player.heroes.find((hero) => hero.hero === selectedHeroName) || null;
+
+  if (!player.heroes.length) {
+    return `
+      <div class="h2hModalBackdrop" onclick="closeHeroPoolPlayerStatsModal()">
+        <div class="playerDetailsModal heroPoolPlayerStatsModal h2hModalCard" onclick="event.stopPropagation()">
+          <div class="h2hModalHead playerDetailsModalHead">
+            <h3>${escapeHtml(player.name)}</h3>
+            <button type="button" class="h2hModalClose" onclick="closeHeroPoolPlayerStatsModal()">Close</button>
+          </div>
+          <div class="heroPoolPlayerStatsModalBody">
+            <div class="heroPoolPlayerStatsSummary">
+              <div class="heroPoolPlayerStatsIdentity">
+                ${player.picture ? `<img class="heroPoolPlayerStatsPortrait" src="${player.picture}" alt="${escapeHtml(player.name)}">` : ""}
+                <div class="heroPoolPlayerStatsIdentityText">
+                  <div class="heroPoolPlayerStatsPlayerName">${escapeHtml(player.name)}</div>
+                  <div class="heroPoolPlayerStatsPlayerMeta">${escapeHtml(player.lane || "Unknown")}</div>
+                </div>
+              </div>
+              <div class="heroPoolPlayerStatsTeam">
+                ${teamLogo ? `<img class="heroPoolPlayerStatsTeamLogo" src="${teamLogo}" alt="${escapeHtml(teamLabel(teamCode))} logo">` : ""}
+                <span>${escapeHtml(teamCode ? teamLabel(teamCode) : "Unknown Team")}</span>
+              </div>
+            </div>
+            <div class="teamRosterProfileEmpty">
+              <div class="teamRosterProfileEmptyTitle">No hero data</div>
+              <p>This player has not played any heroes yet for ${escapeHtml(seasonLabel())}.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  const heroOptions = player.heroes.map((hero) => `
+    <button
+      type="button"
+      class="heroPoolPlayerStatsHeroOption ${hero.hero === selectedHeroName ? "is-active" : ""}"
+      onclick="selectHeroPoolPlayerStatsHero(decodeURIComponent('${encodeInlineString(player.name)}'), decodeURIComponent('${encodeInlineString(hero.hero)}'))"
+      aria-pressed="${hero.hero === selectedHeroName ? "true" : "false"}"
+    >
+      ${hero.img ? `<img class="heroPoolPlayerStatsHeroImg" src="${hero.img}" alt="${escapeHtml(hero.hero)}">` : ""}
+      <span class="heroPoolPlayerStatsHeroText">
+        <span class="heroPoolPlayerStatsHeroName">${escapeHtml(hero.hero)}</span>
+        <span class="heroPoolPlayerStatsHeroMeta">${hero.games} game${hero.games === 1 ? "" : "s"} • ${hero.winRate.toFixed(1)}%</span>
+      </span>
+    </button>
+  `).join("");
+
+  const statRows = selectedHero ? [
+    { label: "GAMES", value: `${selectedHero.games}` },
+    { label: "WINRATE %", value: `${selectedHero.winRate.toFixed(1)}%` },
+    { label: "KILLS", value: `${selectedHero.kills}` },
+    { label: "AVERAGE KILLS", value: selectedHero.avgKills.toFixed(2) },
+    { label: "DEATHS", value: `${selectedHero.deaths}` },
+    { label: "AVERAGE DEATHS", value: selectedHero.avgDeaths.toFixed(2) },
+    { label: "ASSISTS", value: `${selectedHero.assists}` },
+    { label: "AVERAGE ASSISTS", value: selectedHero.avgAssists.toFixed(2) },
+    { label: "KDA", value: selectedHero.kda.toFixed(2) },
+    { label: "KP %", value: `${selectedHero.kp.toFixed(1)}%` }
+  ] : [];
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closeHeroPoolPlayerStatsModal()">
+      <div class="playerDetailsModal heroPoolPlayerStatsModal h2hModalCard" onclick="event.stopPropagation()">
+        <div class="h2hModalHead playerDetailsModalHead">
+          <h3>${escapeHtml(player.name)}</h3>
+          <button type="button" class="h2hModalClose" onclick="closeHeroPoolPlayerStatsModal()">Close</button>
+        </div>
+        <div class="heroPoolPlayerStatsModalBody">
+          <div class="heroPoolPlayerStatsSummary">
+            <div class="heroPoolPlayerStatsIdentity">
+              ${player.picture ? `<img class="heroPoolPlayerStatsPortrait" src="${player.picture}" alt="${escapeHtml(player.name)}">` : ""}
+              <div class="heroPoolPlayerStatsIdentityText">
+                <div class="heroPoolPlayerStatsPlayerName">${escapeHtml(player.name)}</div>
+                <div class="heroPoolPlayerStatsPlayerMeta">${escapeHtml(player.lane || "Unknown")}</div>
+              </div>
+            </div>
+            <div class="heroPoolPlayerStatsTeam">
+              ${teamLogo ? `<img class="heroPoolPlayerStatsTeamLogo" src="${teamLogo}" alt="${escapeHtml(teamLabel(teamCode))} logo">` : ""}
+              <span>${escapeHtml(teamCode ? teamLabel(teamCode) : "Unknown Team")}</span>
+            </div>
+          </div>
+
+          <section class="heroPoolPlayerStatsSection">
+            <div class="heroPoolPlayerStatsSectionTitle">Heroes Used</div>
+            <div class="heroPoolPlayerStatsHeroList">
+              ${heroOptions}
+            </div>
+          </section>
+
+          <section class="heroPoolPlayerStatsSection">
+            <div class="heroPoolPlayerStatsSectionTitle">Hero Stats</div>
+            ${selectedHero ? `
+              <div class="heroPoolPlayerStatsCurrentHero">
+                ${selectedHero.img ? `<img class="heroPoolPlayerStatsCurrentHeroImg" src="${selectedHero.img}" alt="${escapeHtml(selectedHero.hero)}">` : ""}
+                <div>
+                  <div class="heroPoolPlayerStatsCurrentHeroName">${escapeHtml(selectedHero.hero)}</div>
+                  <div class="heroPoolPlayerStatsCurrentHeroMeta">${selectedHero.games} game${selectedHero.games === 1 ? "" : "s"} played</div>
+                </div>
+              </div>
+            ` : ""}
+            <div class="playerDetailsCard heroPoolPlayerStatsCard">
+              ${statRows.map((row) => `
+                <div class="playerDetailsRow">
+                  <div class="playerDetailsLabel">${row.label}</div>
+                  <div class="playerDetailsValue">${row.value}</div>
+                </div>
+              `).join("")}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPlayerPoolHeroStatsModal() {
+  const heroName = String(playerPoolHeroStatsModalState.heroName || "").trim();
+  if (!heroName) return "";
+
+  const hero = getPlayerPoolHeroStatsSummary(heroName);
+  if (!hero) return "";
+
+  const selectedPlayerName = hero.players.some((player) => player.name === playerPoolHeroStatsModalState.playerName)
+    ? playerPoolHeroStatsModalState.playerName
+    : String(hero.players[0]?.name || "").trim();
+  const selectedPlayer = hero.players.find((player) => player.name === selectedPlayerName) || null;
+  const selectedTeamCode = String(selectedPlayer?.team || "").trim();
+  const selectedTeamLogo = selectedTeamCode ? (teamLogos[selectedTeamCode] || "") : "";
+
+  if (!hero.players.length) {
+    return `
+      <div class="h2hModalBackdrop" onclick="closePlayerPoolHeroStatsModal()">
+        <div class="playerDetailsModal playerPoolHeroStatsModal h2hModalCard" onclick="event.stopPropagation()">
+          <div class="h2hModalHead playerDetailsModalHead">
+            <h3>${escapeHtml(hero.hero)}</h3>
+            <button type="button" class="h2hModalClose" onclick="closePlayerPoolHeroStatsModal()">Close</button>
+          </div>
+          <div class="playerPoolHeroStatsModalBody">
+            <div class="playerPoolHeroStatsSummary">
+              <div class="playerPoolHeroStatsIdentity">
+                ${hero.img ? `<img class="playerPoolHeroStatsPortrait" src="${hero.img}" alt="${escapeHtml(hero.hero)}">` : ""}
+                <div class="playerPoolHeroStatsIdentityText">
+                  <div class="playerPoolHeroStatsHeroName">${escapeHtml(hero.hero)}</div>
+                  <div class="playerPoolHeroStatsHeroMeta">No player data yet</div>
+                </div>
+              </div>
+            </div>
+            <div class="teamRosterProfileEmpty">
+              <div class="teamRosterProfileEmptyTitle">No player data</div>
+              <p>No players have used this hero yet for ${escapeHtml(seasonLabel())}.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  const playerOptions = hero.players.map((player) => `
+    <button
+      type="button"
+      class="playerPoolHeroStatsPlayerOption ${player.name === selectedPlayerName ? "is-active" : ""}"
+      onclick="selectPlayerPoolHeroStatsPlayer(decodeURIComponent('${encodeInlineString(hero.hero)}'), decodeURIComponent('${encodeInlineString(player.name)}'))"
+      aria-pressed="${player.name === selectedPlayerName ? "true" : "false"}"
+    >
+      ${player.picture ? `<img class="playerPoolHeroStatsPlayerImg" src="${player.picture}" alt="${escapeHtml(player.name)}">` : ""}
+      <span class="playerPoolHeroStatsPlayerText">
+        <span class="playerPoolHeroStatsPlayerName">${escapeHtml(player.name)}</span>
+        <span class="playerPoolHeroStatsPlayerMeta">${escapeHtml(player.team ? `${teamLabel(player.team)} • ${player.lane}` : player.lane)} • ${player.games} game${player.games === 1 ? "" : "s"} • ${player.winRate.toFixed(1)}%</span>
+      </span>
+    </button>
+  `).join("");
+
+  const statRows = selectedPlayer ? [
+    { label: "GAMES", value: `${selectedPlayer.games}` },
+    { label: "WINRATE %", value: `${selectedPlayer.winRate.toFixed(1)}%` },
+    { label: "KILLS", value: `${selectedPlayer.kills}` },
+    { label: "AVERAGE KILLS", value: selectedPlayer.averageKills.toFixed(2) },
+    { label: "DEATHS", value: `${selectedPlayer.deaths}` },
+    { label: "AVERAGE DEATHS", value: selectedPlayer.averageDeaths.toFixed(2) },
+    { label: "ASSISTS", value: `${selectedPlayer.assists}` },
+    { label: "AVERAGE ASSISTS", value: selectedPlayer.averageAssists.toFixed(2) },
+    { label: "KDA", value: selectedPlayer.kda.toFixed(2) },
+    { label: "KP %", value: `${selectedPlayer.kp.toFixed(1)}%` }
+  ] : [];
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closePlayerPoolHeroStatsModal()">
+      <div class="playerDetailsModal playerPoolHeroStatsModal h2hModalCard" onclick="event.stopPropagation()">
+        <div class="h2hModalHead playerDetailsModalHead">
+          <h3>${escapeHtml(hero.hero)}</h3>
+          <button type="button" class="h2hModalClose" onclick="closePlayerPoolHeroStatsModal()">Close</button>
+        </div>
+        <div class="playerPoolHeroStatsModalBody">
+          <div class="playerPoolHeroStatsSummary">
+            <div class="playerPoolHeroStatsIdentity">
+              ${hero.img ? `<img class="playerPoolHeroStatsPortrait" src="${hero.img}" alt="${escapeHtml(hero.hero)}">` : ""}
+              <div class="playerPoolHeroStatsIdentityText">
+                <div class="playerPoolHeroStatsHeroName">${escapeHtml(hero.hero)}</div>
+                <div class="playerPoolHeroStatsHeroMeta">${hero.players.length} player${hero.players.length === 1 ? "" : "s"} used this hero</div>
+              </div>
+            </div>
+          </div>
+
+          <section class="playerPoolHeroStatsSection">
+            <div class="playerPoolHeroStatsSectionTitle">Players Used</div>
+            <div class="playerPoolHeroStatsPlayerList">
+              ${playerOptions}
+            </div>
+          </section>
+
+          <section class="playerPoolHeroStatsSection">
+            <div class="playerPoolHeroStatsSectionTitle">Player Stats</div>
+            ${selectedPlayer ? `
+              <div class="playerPoolHeroStatsCurrentPlayer">
+                <div class="playerPoolHeroStatsCurrentPlayerIdentity">
+                  ${selectedPlayer.picture ? `<img class="playerPoolHeroStatsCurrentPlayerImg" src="${selectedPlayer.picture}" alt="${escapeHtml(selectedPlayer.name)}">` : ""}
+                  <div>
+                    <div class="playerPoolHeroStatsCurrentPlayerName">${escapeHtml(selectedPlayer.name)}</div>
+                    <div class="playerPoolHeroStatsCurrentPlayerMeta">${escapeHtml(selectedPlayer.lane || "Unknown")}</div>
+                  </div>
+                </div>
+                <div class="playerPoolHeroStatsCurrentPlayerTeam">
+                  ${selectedTeamLogo ? `<img class="playerPoolHeroStatsCurrentPlayerTeamLogo" src="${selectedTeamLogo}" alt="${escapeHtml(teamLabel(selectedTeamCode))} logo">` : ""}
+                  <span>${escapeHtml(selectedTeamCode ? teamLabel(selectedTeamCode) : "Unknown Team")}</span>
+                </div>
+              </div>
+            ` : ""}
+            <div class="playerDetailsCard playerPoolHeroStatsCard">
+              ${statRows.map((row) => `
+                <div class="playerDetailsRow">
+                  <div class="playerDetailsLabel">${row.label}</div>
+                  <div class="playerDetailsValue">${row.value}</div>
+                </div>
+              `).join("")}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   `;
@@ -2011,11 +2447,11 @@ ${topKills.map((pl, i) => `
     <th aria-sort="${playerSort.key === 'lane' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('lane')">ROLE${arrow('lane')}</th>
     <th aria-sort="${playerSort.key === 'games' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('games')">GAMES${arrow('games')}</th>
     <th aria-sort="${playerSort.key === 'kills' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('kills')">KILLS${arrow('kills')}</th>
-    <th aria-sort="${playerSort.key === 'avgK' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('avgK')">AVG KILLS${arrow('avgK')}</th>
+    <th aria-sort="${playerSort.key === 'avgK' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('avgK')">AVERAGE KILLS${arrow('avgK')}</th>
     <th aria-sort="${playerSort.key === 'deaths' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('deaths')">DEATHS${arrow('deaths')}</th>
-    <th aria-sort="${playerSort.key === 'avgD' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('avgD')">AVG DEATHS${arrow('avgD')}</th>
+    <th aria-sort="${playerSort.key === 'avgD' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('avgD')">AVERAGE DEATHS${arrow('avgD')}</th>
     <th aria-sort="${playerSort.key === 'assists' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('assists')">ASSISTS${arrow('assists')}</th>
-    <th aria-sort="${playerSort.key === 'avgA' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('avgA')">AVG ASSISTS${arrow('avgA')}</th>
+    <th aria-sort="${playerSort.key === 'avgA' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('avgA')">AVERAGE ASSISTS${arrow('avgA')}</th>
     <th aria-sort="${playerSort.key === 'kda' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('kda')">KDA${arrow('kda')}</th>
     <th aria-sort="${playerSort.key === 'kp' ? (playerSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortPlayers('kp')">KP%${arrow('kp')}</th>
   </tr>
@@ -2427,8 +2863,8 @@ function showHeroPool(keepSearchFocus = false) {
           <button
             type="button"
             class="playerProfileTrigger heroPoolPlayerTrigger"
-            onclick="openPlayerProfileModal(decodeURIComponent('${encodeInlineString(ps.name)}'))"
-            aria-label="Open player profile for ${escapeHtml(ps.name)}"
+            onclick="openHeroPoolPlayerStatsModal(decodeURIComponent('${encodeInlineString(ps.name)}'))"
+            aria-label="Open hero stats for ${escapeHtml(ps.name)}"
           >
             <img src="${ps.picture}" width="55" height="55"
               alt="${ps.name}"
@@ -2652,12 +3088,17 @@ function showPlayerPools(keepSearchFocus = false) {
     html += `
       <tr>
         <td style="vertical-align:middle;">
-          <div style="display:flex; align-items:center; gap:10px; height:100%;">
+          <button
+            type="button"
+            class="playerProfileTrigger playerPoolHeroTrigger"
+            onclick="openPlayerPoolHeroStatsModal(decodeURIComponent('${encodeInlineString(h.hero)}'))"
+            aria-label="Open player stats for ${escapeHtml(h.hero)}"
+          >
             <img src="${h.img}" width="55" height="55"
               alt="${h.hero}"
               style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
             <span>${h.hero}</span>
-          </div>
+          </button>
         </td>
         <td>${h.totalPlayers}</td>
         <td style="text-align:left; max-width:700px;">${playersHTML}</td>
@@ -2783,11 +3224,11 @@ function renderPlayerH2HCompare() {
     { key: "games", label: "GAMES", format: v => `${v}` },
     { key: "heroPoolCount", label: "HERO POOL", format: v => `${v}` },
     { key: "kills", label: "KILLS", format: v => `${v}` },
-    { key: "avgK", label: "AVG KILLS", format: v => v.toFixed(2) },
+    { key: "avgK", label: "AVERAGE KILLS", format: v => v.toFixed(2) },
     { key: "deaths", label: "DEATHS", format: v => `${v}` },
-    { key: "avgD", label: "AVG DEATHS", format: v => v.toFixed(2) },
+    { key: "avgD", label: "AVERAGE DEATHS", format: v => v.toFixed(2) },
     { key: "assists", label: "ASSISTS", format: v => `${v}` },
-    { key: "avgA", label: "AVG ASSISTS", format: v => v.toFixed(2) },
+    { key: "avgA", label: "AVERAGE ASSISTS", format: v => v.toFixed(2) },
     { key: "kda", label: "KDA", format: v => v.toFixed(2) },
     { key: "kp", label: "KP%", format: v => `${v.toFixed(1)}%` }
   ];
@@ -3307,6 +3748,12 @@ export {
   closePlayerDetailsModal,
   openPlayerProfileModal,
   closePlayerProfileModal,
+  openHeroPoolPlayerStatsModal,
+  selectHeroPoolPlayerStatsHero,
+  closeHeroPoolPlayerStatsModal,
+  openPlayerPoolHeroStatsModal,
+  selectPlayerPoolHeroStatsPlayer,
+  closePlayerPoolHeroStatsModal,
   openHeroDetailsModal,
   closeHeroDetailsModal,
   onTeamCompareChange,

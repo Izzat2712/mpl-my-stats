@@ -295,6 +295,88 @@ export function calculateHeroPoolStats() {
   return memoized("calculateHeroPoolStats", calculateHeroPoolStatsImpl);
 }
 
+function calculatePlayerHeroStatsImpl() {
+  const playerHeroStats = {};
+
+  for (const r of (getRosterList() || [])) {
+    playerHeroStats[r.name] = {
+      name: r.name,
+      team: r.team,
+      lane: r.lane,
+      picture: r.picture,
+      heroes: {}
+    };
+  }
+
+  for (const match of getMatches()) {
+    const games = Array.isArray(match.games) ? match.games : [];
+    if (!games.length) continue;
+
+    for (const game of games) {
+      const teamKills = {};
+
+      for (const player of (game.players || [])) {
+        const info = getRoster(player.name);
+        const teamCode = info.team;
+        if (!teamKills[teamCode]) teamKills[teamCode] = 0;
+        teamKills[teamCode] += Number(player.kills) || 0;
+      }
+
+      for (const player of (game.players || [])) {
+        const info = getRoster(player.name);
+        const playerName = player.name;
+        const heroName = String(player.hero || "").trim();
+
+        if (!playerHeroStats[playerName]) {
+          playerHeroStats[playerName] = {
+            name: playerName,
+            team: info.team,
+            lane: info.lane,
+            picture: info.picture,
+            heroes: {}
+          };
+        }
+
+        const summary = playerHeroStats[playerName];
+        summary.team = info.team;
+        summary.lane = info.lane;
+        summary.picture = info.picture;
+
+        if (!heroName) continue;
+        if (!summary.heroes[heroName]) {
+          summary.heroes[heroName] = {
+            games: 0,
+            wins: 0,
+            kills: 0,
+            deaths: 0,
+            assists: 0,
+            kpTotal: 0
+          };
+        }
+
+        const heroStats = summary.heroes[heroName];
+        heroStats.games++;
+        heroStats.kills += Number(player.kills) || 0;
+        heroStats.deaths += Number(player.deaths) || 0;
+        heroStats.assists += Number(player.assists) || 0;
+
+        if (info.team === game.winner) heroStats.wins++;
+
+        const denom = teamKills[info.team] || 0;
+        if (denom > 0) {
+          heroStats.kpTotal += ((Number(player.kills) || 0) + (Number(player.assists) || 0)) / denom;
+        }
+      }
+    }
+  }
+
+  return playerHeroStats;
+}
+
+export function calculatePlayerHeroStats() {
+  return memoized("calculatePlayerHeroStats", calculatePlayerHeroStatsImpl);
+}
+
 function calculatePlayerPoolsStatsImpl() {
   let pools = {};
 
@@ -306,6 +388,15 @@ function calculatePlayerPoolsStatsImpl() {
   // Add match data
   for (let match of getMatches()) {
     for (let game of (match.games || [])) {
+      const teamKills = {};
+
+      for (const player of (game.players || [])) {
+        const info = getRoster(player.name);
+        const teamCode = info.team;
+        if (!teamKills[teamCode]) teamKills[teamCode] = 0;
+        teamKills[teamCode] += Number(player.kills) || 0;
+      }
+
       for (let player of (game.players || [])) {
         const heroName = player.hero;
         const info = getRoster(player.name);
@@ -321,12 +412,25 @@ function calculatePlayerPoolsStatsImpl() {
             lane: info.lane,
             picture: info.picture,
             games: 0,
-            wins: 0
+            wins: 0,
+            kills: 0,
+            deaths: 0,
+            assists: 0,
+            kpTotal: 0
           };
         }
 
-        pools[heroName].players[player.name].games++;
-        if (info.team === game.winner) pools[heroName].players[player.name].wins++;
+        const playerStats = pools[heroName].players[player.name];
+        playerStats.games++;
+        if (info.team === game.winner) playerStats.wins++;
+        playerStats.kills += Number(player.kills) || 0;
+        playerStats.deaths += Number(player.deaths) || 0;
+        playerStats.assists += Number(player.assists) || 0;
+
+        const denom = teamKills[info.team] || 0;
+        if (denom > 0) {
+          playerStats.kpTotal += ((Number(player.kills) || 0) + (Number(player.assists) || 0)) / denom;
+        }
       }
     }
   }

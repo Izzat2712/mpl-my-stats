@@ -18,6 +18,12 @@ import {
   closePlayerDetailsModal,
   openPlayerProfileModal,
   closePlayerProfileModal,
+  openHeroPoolPlayerStatsModal,
+  selectHeroPoolPlayerStatsHero,
+  closeHeroPoolPlayerStatsModal,
+  openPlayerPoolHeroStatsModal,
+  selectPlayerPoolHeroStatsPlayer,
+  closePlayerPoolHeroStatsModal,
   openHeroDetailsModal,
   closeHeroDetailsModal,
   onTeamCompareChange,
@@ -704,6 +710,12 @@ window.openPlayerDetailsModal = openPlayerDetailsModal;
 window.closePlayerDetailsModal = closePlayerDetailsModal;
 window.openPlayerProfileModal = openPlayerProfileModal;
 window.closePlayerProfileModal = closePlayerProfileModal;
+window.openHeroPoolPlayerStatsModal = openHeroPoolPlayerStatsModal;
+window.selectHeroPoolPlayerStatsHero = selectHeroPoolPlayerStatsHero;
+window.closeHeroPoolPlayerStatsModal = closeHeroPoolPlayerStatsModal;
+window.openPlayerPoolHeroStatsModal = openPlayerPoolHeroStatsModal;
+window.selectPlayerPoolHeroStatsPlayer = selectPlayerPoolHeroStatsPlayer;
+window.closePlayerPoolHeroStatsModal = closePlayerPoolHeroStatsModal;
 window.openHeroDetailsModal = openHeroDetailsModal;
 window.closeHeroDetailsModal = closeHeroDetailsModal;
 window.showTeams = showTeamsView;
