@@ -1,62 +1,97 @@
-# MPL MY S16 Statistics Dashboard
+# MPL MY Statistics Dashboard
 
-A web-based statistics dashboard for MPL MY Season 16, featuring comprehensive analytics for teams, players, heroes, hero pools, and player pools.
+A multi-season MPL MY statistics website built with vanilla HTML, CSS, and JavaScript. The app currently supports MPL MY Season 16 and Season 17, with Season 17 as the default experience.
 
-## 🌐 Live Demo
-(https://mpl-my-s16-stats.vercel.app/)
+## Live App
 
----
+Deployed on Vercel with route rewrites for direct links such as `/schedule`, `/players`, `/hero-pool`, `/player-pool`, and `/h2h/*`.
 
-## 📊 Features
+## Current Features
 
-### 🏆 Teams
-- Team performance statistics
-- Win rates and match breakdown
+### Season Support
 
-### 👤 Players
-- Kills, deaths, assists
-- KDA, KP%
-- Per-game averages
-- Search, filter (Team & Role), sortable columns
-- Top 5 Kills / Assists / KDA highlights
+- Season switcher for MPL MY Season 16 and Season 17
+- Season-aware routing and direct-link support
+- Shared hero data with season-specific roster, match, logo, and team-name datasets
 
-### 🦸 Heroes
-- Pick rate (by game)
-- Ban rate
-- Win rate
-- Top 5 Pick / Ban / Winrate
-- Includes unused heroes
-- Search & sortable stats
+### Schedule
 
-### 🧠 Hero Pool
-- Player-based hero usage
-- Games played per hero
-- Individual hero win rates
-- Displays unused players (subs)
+- Match schedule view
+- Next-match countdown card
+- Week navigation
+- Stage and team filters
+- Match scorecards with per-game player rows, bans, and objectives
 
-### 🎯 Player Pool
-- Hero-based player usage
-- Shows all heroes (including unused)
+### Teams
+
+- Team standings and core team stats
+- Match wins, game wins, and objective totals
+- Team roster modal
+- Coaching staff support
+- Season 17 player and coach profile modal data sourced from Liquipedia
+
+### Players
+
+- Searchable and sortable player table
+- Team and role filtering
+- Kills, deaths, assists, KDA, KP%, and per-game averages
+- Top leader highlights
+- Player stats modal
+- Player profile modal
+
+### Heroes
+
+- Pick rate, ban rate, and win rate
+- Hero stats modal
+- Includes heroes with zero usage
+- Search and sorting support
+
+### Hero Pool
+
+- Player-based hero usage view
+- Shows heroes used by each player with games and win rate
+- Clicking a player opens a hero selector popup
+- Popup displays hero-specific stats for that player:
+  games, winrate %, kills, average kills, deaths, average deaths, assists, average assists, kda, kp %
+
+### Player Pool
+
+- Hero-based player usage view
+- Shows players who used each hero with games and win rate
 - Toggle to exclude unused heroes
-- Filter by Team / Role
-- Hero search with continuous typing
+- Team and role filtering
+- Clicking a hero opens a player selector popup
+- Popup displays player-specific stats for that hero:
+  games, winrate %, kills, average kills, deaths, average deaths, assists, average assists, kda, kp %
 
----
+### H2H
 
-## 🛠 Tech Stack
+- Team head-to-head comparison
+- Player head-to-head comparison
+- Hero head-to-head comparison
+- Shared comparison popups for quick selection
+
+## Data Sources
+
+- Official MPL MY website for team and player assets
+- Liquipedia for player and coach profile information
+
+## Tech Stack
 
 - HTML
 - CSS
-- Vanilla JavaScript (No frameworks)
-- GitHub Pages (Deployment)
+- Vanilla JavaScript
+- JSON data files
+- Vercel for deployment
 
----
+## Project Structure
 
-## 📁 Project Structure
+```text
 index.html
 style.css
 README.md
 LICENSE
+vercel.json
 js/
   app.js
   data-store.js
@@ -66,22 +101,23 @@ data/
   heroes.json
   season16/
   season17/
+scripts/
+```
 
+## Local Development
 
----
+There is no build step. You can run the project with any simple static server.
 
+Example:
 
-## 📌 Purpose
+```bash
+python -m http.server 8000
+```
 
-This project was built to:
+Then open `http://localhost:8000`.
 
-- Practice structured data modeling
-- Implement advanced filtering & sorting logic
-- Build dynamic dashboards using vanilla JavaScript
-- Simulate real esports analytics systems
+## License
 
----
+This project is licensed under the GNU Affero General Public License v3.0.
 
-## 📜 License
-
-This project is licensed under the MIT License.
+If you run a modified version of this project over a network, AGPL-3.0 requires you to make the corresponding source code available to users of that running service.
