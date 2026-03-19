@@ -2,10 +2,6 @@
 
 A multi-season MPL MY statistics website built with vanilla HTML, CSS, and JavaScript. The app currently supports MPL MY Season 16 and Season 17, with Season 17 as the default experience.
 
-## Live App
-
-Deployed on Vercel with route rewrites for direct links such as `/schedule`, `/players`, `/hero-pool`, `/player-pool`, and `/h2h/*`.
-
 ## Current Features
 
 ### Season Support
@@ -104,17 +100,6 @@ data/
 scripts/
 ```
 
-## Local Development
-
-There is no build step. You can run the project with any simple static server.
-
-Example:
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000`.
 
 ## License
 
