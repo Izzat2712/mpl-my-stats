@@ -2553,15 +2553,12 @@ function showHeroes(keepSearchFocus = false) {
   const topPick = [...arr].sort((a, b) => b.pick - a.pick).slice(0, 5);
   const topBan  = [...arr].sort((a, b) => b.ban - a.ban).slice(0, 5);
 
-  // Top 5 Winrate (min 5 picks). Fallback to min 1 pick if none >= 5
-  let topWinCandidates = arr.filter(h => h.pick >= 5);
-  const hasMin5 = topWinCandidates.length > 0;
-  if (!hasMin5) topWinCandidates = arr.filter(h => h.pick > 0);
-  const topWin = [...topWinCandidates].sort((a, b) => b.winRate - a.winRate).slice(0, 5);
-
-  const winLabel = hasMin5
-    ? "TOP 5 WINRATE (MIN 5 GAMES):"
-    : "TOP 5 WINRATE (MIN 1 PICK):";
+  // Top 5 Winrate uses a strict minimum of 5 games across seasons.
+  const topWin = arr
+    .filter((h) => h.pick >= 5)
+    .sort((a, b) => b.winRate - a.winRate)
+    .slice(0, 5);
+  const winLabel = "TOP 5 WINRATE (MIN 5 GAMES):";
 
   // ===== SEARCH (HERO NAME ONLY) =====
   const searchEl = document.getElementById("heroSearch");
