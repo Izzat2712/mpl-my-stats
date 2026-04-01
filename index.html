@@ -68,7 +68,54 @@
 
 <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>
 <script>
-  sbBoW.draw("izzat27","R2l2ZSBTdXBwb3J0","position-bottom-right","#3B82F6","#FFFFFF")
+  (function () {
+    const supportUsername = "izzat27";
+    const supportButtonText = "R2l2ZSBTdXBwb3J0";
+    const supportButtonPosition = "position-bottom-right";
+    const supportButtonColor = "#3B82F6";
+    const supportButtonTextColor = "#FFFFFF";
+
+    function getSupportUrl() {
+      return `https://sociabuzz.com/${supportUsername}/bow?ref=${encodeURIComponent(window.location.href)}`;
+    }
+
+    function shouldOpenSupportDirectly() {
+      return window.matchMedia("(max-width: 700px)").matches;
+    }
+
+    function openSupportDirectly() {
+      const supportUrl = getSupportUrl();
+      const popup = window.open(supportUrl, "_blank", "noopener,noreferrer");
+      if (!popup) {
+        window.location.href = supportUrl;
+      }
+    }
+
+    function bindSupportButton() {
+      const supportButton = document.getElementById("btnModal");
+      if (!supportButton || supportButton.dataset.mobileSupportBound === "true") return;
+
+      supportButton.dataset.mobileSupportBound = "true";
+      supportButton.addEventListener("click", (event) => {
+        if (!shouldOpenSupportDirectly()) return;
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        openSupportDirectly();
+      }, true);
+    }
+
+    sbBoW.draw(
+      supportUsername,
+      supportButtonText,
+      supportButtonPosition,
+      supportButtonColor,
+      supportButtonTextColor
+    );
+
+    bindSupportButton();
+    window.addEventListener("resize", bindSupportButton);
+  })();
 </script>
 
 </body>
