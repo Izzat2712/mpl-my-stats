@@ -79,16 +79,23 @@
       return `https://sociabuzz.com/${supportUsername}/bow?ref=${encodeURIComponent(window.location.href)}`;
     }
 
+    function getMobileSupportUrl() {
+      return `https://sociabuzz.com/${supportUsername}/tribe`;
+    }
+
     function shouldOpenSupportDirectly() {
       return window.matchMedia("(max-width: 700px)").matches;
     }
 
     function openSupportDirectly() {
-      const supportUrl = getSupportUrl();
-      const popup = window.open(supportUrl, "_blank", "noopener,noreferrer");
-      if (!popup) {
-        window.location.href = supportUrl;
-      }
+      const supportUrl = shouldOpenSupportDirectly()
+        ? getMobileSupportUrl()
+        : getSupportUrl();
+      const supportLink = document.createElement("a");
+      supportLink.href = supportUrl;
+      supportLink.target = "_blank";
+      supportLink.rel = "noopener noreferrer";
+      supportLink.click();
     }
 
     function bindSupportButton() {
