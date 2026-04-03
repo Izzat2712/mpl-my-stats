@@ -107,6 +107,107 @@
             "VMS": 8
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "bans": [
+          "Kalea",
+          "Sora",
+          "Marcel",
+          "Hilda",
+          "Gloo",
+          "Harith",
+          "Chou",
+          "Fanny",
+          "Freya",
+          "Zhuxin"
+        ],
+        "players": [
+          {
+            "name": "Innocent",
+            "hero": "Karrie",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "name": "Unii",
+            "hero": "Leomord",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "name": "Stormie",
+            "hero": "Pharsa",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "name": "Kramm",
+            "hero": "Uranus",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "name": "Yums",
+            "hero": "Guinevere",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 12
+          },
+          {
+            "name": "Natco",
+            "hero": "YSS",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "name": "Error 404",
+            "hero": "Suyou",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 2
+          },
+          {
+            "name": "Claw kun",
+            "hero": "Valentina",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "name": "Zeno",
+            "hero": "Phoveus",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 3
+          },
+          {
+            "name": "Zqeef",
+            "hero": "Gatotkaca",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 1,
+            "VMS": 0
+          },
+          "turtle": {
+            "SRG": 1,
+            "VMS": 2
+          },
+          "tower": {
+            "SRG": 7,
+            "VMS": 3
+          }
+        }
       }
             ]
                 
