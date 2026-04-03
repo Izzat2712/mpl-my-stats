@@ -221,7 +221,7 @@
         "dayMatch": 2,
         "date": "2026-04-3",
         "startTime": "8:15 PM",
-        "games":  [ 
+        "games":  [  
       {
         "winner": "RRQ",
         "bans": [
@@ -319,6 +319,107 @@
           },
           "tower": {
             "RRQ": 7,
+            "TR": 2
+          }
+        }
+      },
+      {
+        "winner": "",
+        "bans": [
+          "Baxia",
+          "Guinevere",
+          "Fanny",
+          "Masha",
+          "Yuzhong",
+          "Freya",
+          "Marcel",
+          "Zhuxin",
+          "Gloo",
+          "Karrie"
+        ],
+        "players": [
+          {
+            "name": "Rough",
+            "hero": "Granger",
+            "kills": 11,
+            "deaths": 0,
+            "assists": 1
+          },
+          {
+            "name": "Garyy",
+            "hero": "Suyou",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "name": "Kyym",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "name": "Dyrennn",
+            "hero": "Sora",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "name": "superyoshi",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 12
+          },
+          {
+            "name": "loleal",
+            "hero": "YSS",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "name": "Just Garrr",
+            "hero": "Fredrinn",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 5
+          },
+          {
+            "name": "Martzy",
+            "hero": "Kimmy",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "name": "Sizkaa",
+            "hero": "Benedetta",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "name": "Ivann",
+            "hero": "Hilda",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 2,
+            "TR": 0
+          },
+          "turtle": {
+            "RRQ": 2,
+            "TR": 1
+          },
+          "tower": {
+            "RRQ": 9,
             "TR": 2
           }
         }
