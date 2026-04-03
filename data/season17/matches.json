@@ -7,6 +7,107 @@
         "date": "2026-04-3",
         "startTime": "5:00 PM",
         "games":  [
+      {
+        "winner": "SRG",
+        "bans": [
+          "Baxia",
+          "Valentina",
+          "Kalea",
+          "Suyou",
+          "Harley",
+          "Claude",
+          "Gloo",
+          "Fanny",
+          "Marcel",
+          "Freya"
+        ],
+        "players": [
+          {
+            "name": "Innocent",
+            "hero": "Granger",
+            "kills": 16,
+            "deaths": 0,
+            "assists": 2
+          },
+          {
+            "name": "Unii",
+            "hero": "Guinevere",
+            "kills": 5,
+            "deaths": 4,
+            "assists": 14
+          },
+          {
+            "name": "Stormie",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 20
+          },
+          {
+            "name": "Kramm",
+            "hero": "Sora",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 10
+          },
+          {
+            "name": "Yums",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 19
+          },
+          {
+            "name": "Natco",
+            "hero": "Harith",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "name": "Error 404",
+            "hero": "Leomord",
+            "kills": 5,
+            "deaths": 5,
+            "assists": 4
+          },
+          {
+            "name": "Claw kun",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "name": "Zeno",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 6
+          },
+          {
+            "name": "Zqeef",
+            "hero": "Khaleed",
+            "kills": 1,
+            "deaths": 8,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 1,
+            "VMS": 3
+          },
+          "turtle": {
+            "SRG": 2,
+            "VMS": 1
+          },
+          "tower": {
+            "SRG": 7,
+            "VMS": 8
+          }
+        }
+      }
             ]
                 
 },
