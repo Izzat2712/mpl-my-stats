@@ -1,5 +1,7 @@
 ﻿import { getDataVersion, getHeroesMap, getMatches, getRoster, getRosterList } from "./data-store.js";
 
+import { getCompletedMatchWinner } from "./match-utils.js";
+
 const cache = new Map();
 
 function memoized(name, impl) {
@@ -51,7 +53,8 @@ function calculateTeamStatsImpl() {
         };
       }
 
-      if (game.winner === match.teamA) teamAGameWins++; else teamBGameWins++;
+      if (game.winner === match.teamA) teamAGameWins++;
+      else if (game.winner === match.teamB) teamBGameWins++;
 
 for (let player of (game.players || [])) {
   const info = getRoster(player.name);
@@ -97,8 +100,9 @@ for (let player of (game.players || [])) {
     teamStats[match.teamA].matchesPlayed++;
     teamStats[match.teamB].matchesPlayed++;
 
-    if (teamAGameWins > teamBGameWins) teamStats[match.teamA].matchWins++;
-    else teamStats[match.teamB].matchWins++;
+    const completedMatchWinner = getCompletedMatchWinner(match);
+    if (completedMatchWinner === match.teamA) teamStats[match.teamA].matchWins++;
+    else if (completedMatchWinner === match.teamB) teamStats[match.teamB].matchWins++;
   }
   return teamStats;
 }

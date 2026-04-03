@@ -2,6 +2,7 @@
 import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
 import { getStaffList } from "./data-store.js";
 import { getSeasonProfilesMap } from "./data-store.js";
+import { getMatchScore } from "./match-utils.js";
 
 import { getCurrentSeasonKey } from "./data-store.js";
 
@@ -102,6 +103,16 @@ function parseScheduleMatchDateTime(dateValue, startTimeValue) {
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
 
+function formatScheduleDateDisplay(dateValue) {
+  const match = String(dateValue || "").trim().match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/);
+  if (!match) return String(dateValue || "").trim();
+
+  const day = String(Number(match[3])).padStart(2, "0");
+  const month = String(Number(match[2])).padStart(2, "0");
+  const year = match[1];
+  return `${day}/${month}/${year}`;
+}
+
 function compareScheduleEntries(a, b) {
   const aStart = parseScheduleMatchDateTime(a.meta.date, a.meta.startTime)?.getTime() ?? Number.POSITIVE_INFINITY;
   const bStart = parseScheduleMatchDateTime(b.meta.date, b.meta.startTime)?.getTime() ?? Number.POSITIVE_INFINITY;
@@ -183,7 +194,7 @@ function formatScheduleCountdown(diffMs) {
 
 function getScheduleStatusMeta(match, meta, selectedTeam = "") {
   const score = getMatchScore(match);
-  if (score.played) {
+  if (score.finished) {
     const normalizedSelectedTeam = normalizeScheduleTeamCode(selectedTeam);
     let stateClass = "is-finished";
 
@@ -199,6 +210,14 @@ function getScheduleStatusMeta(match, meta, selectedTeam = "") {
       label: "Finished",
       detail: "",
       stateClass
+    };
+  }
+
+  if (score.started) {
+    return {
+      label: "Ongoing",
+      detail: `${score.teamAScore} - ${score.teamBScore}`,
+      stateClass: "is-upcoming"
     };
   }
 
@@ -253,22 +272,6 @@ function toDisplayLabel(value) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-function getMatchScore(match) {
-  let teamAScore = 0;
-  let teamBScore = 0;
-
-  for (const game of (match.games || [])) {
-    if (game?.winner === match.teamA) teamAScore += 1;
-    if (game?.winner === match.teamB) teamBScore += 1;
-  }
-
-  return {
-    teamAScore,
-    teamBScore,
-    played: teamAScore > 0 || teamBScore > 0
-  };
-}
-
 function hasScorecardPlayers(game) {
   return Array.isArray(game?.players) && game.players.length > 0;
 }
@@ -301,7 +304,7 @@ function renderScheduleMatchCard(match, index) {
     <article class="scheduleMatchCard">
       <div class="scheduleMatchMeta">
         <span>Match ${index + 1}</span>
-        <span>${meta.date || "TBD date"}</span>
+        <span>${formatScheduleDateDisplay(meta.date) || "TBD date"}</span>
         <span>${meta.startTime || "TBD time"}</span>
       </div>
       <div class="scheduleTeams">
@@ -390,7 +393,7 @@ function renderScheduleTeamSegmentSection(segmentLabel, entries, selectedTeam = 
               <span class="scheduleTeamMatchNo">Match ${index + 1}</span>
               <span class="scheduleTeamDateTime">
                 <span>${meta.dayLabel}</span>
-                <span>${meta.date || "TBD date"}</span>
+                <span>${formatScheduleDateDisplay(meta.date) || "TBD date"}</span>
                 <span>${meta.startTime || "TBD time"}</span>
               </span>
               <span class="scheduleTeamMatchup">
