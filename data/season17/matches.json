@@ -221,7 +221,108 @@
         "dayMatch": 2,
         "date": "2026-04-3",
         "startTime": "8:15 PM",
-        "games":  [    
+        "games":  [ 
+      {
+        "winner": "RRQ",
+        "bans": [
+          "Baxia",
+          "Fanny",
+          "Guinevere",
+          "Zetian",
+          "Kimmy",
+          "Freya",
+          "Marcel",
+          "Zhuxin",
+          "Hylos",
+          "Grock"
+        ],
+        "players": [
+          {
+            "name": "Rough",
+            "hero": "Karrie",
+            "kills": 9,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "name": "Garyy",
+            "hero": "Suyou",
+            "kills": 6,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "name": "Kyym",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 14
+          },
+          {
+            "name": "Dyrennn",
+            "hero": "Sora",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 7
+          },
+          {
+            "name": "superyoshi",
+            "hero": "Gloo",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 15
+          },
+          {
+            "name": "loleal",
+            "hero": "YSS",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "name": "Just Garrr",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "name": "Martzy",
+            "hero": "Pharsa",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "name": "Sizkaa",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 2
+          },
+          {
+            "name": "Ivann",
+            "hero": "Hilda",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 2,
+            "TR": 0
+          },
+          "turtle": {
+            "RRQ": 3,
+            "TR": 0
+          },
+          "tower": {
+            "RRQ": 7,
+            "TR": 2
+          }
+        }
+      }
             ]
                 
 },
