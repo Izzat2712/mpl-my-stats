@@ -272,7 +272,7 @@
     {
         "name":  "RAZIN",
         "team":  "TF",
-        "lane":  "Jungler",
+        "lane":  "Roamer",
         "picture":  "https://i.imgur.com/m4OvkOd.png"
     },
     {
@@ -290,7 +290,7 @@
     {
         "name":  "HADESS",
         "team":  "TF",
-        "lane":  "Roamer",
+        "lane":  "Jungler",
         "picture":  "https://i.imgur.com/pu2W9PH.png"
     },
     {
