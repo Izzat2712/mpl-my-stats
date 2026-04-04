@@ -967,7 +967,7 @@
         "dayMatch": 3,
         "date": "2026-04-4",
         "startTime": "8:15 PM",
-        "games":  [  
+        "games":  [
       {
         "winner": "TR",
         "bans": [
@@ -1068,7 +1068,108 @@
             "SRG": 7
           }
         }
-      }
+      },
+      {
+        "winner": "",
+        "bans": [
+          "Baxia",
+          "Fredrinn",
+          "Marcel",
+          "Karrie",
+          "Masha",
+          "Freya",
+          "Zhuxin",
+          "Sora",
+          "Harith",
+          "Gloo"
+        ],
+        "players": [
+          {
+            "name": "loleal",
+            "hero": "Moskov",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "name": "Just Garrr",
+            "hero": "Akai",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "name": "Martzy",
+            "hero": "Pharsa",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "name": "Sizkaa",
+            "hero": "Benedetta",
+            "kills": 3,
+            "deaths": 5,
+            "assists": 3
+          },
+          {
+            "name": "Ivann",
+            "hero": "Kalea",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "name": "Innocent",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "name": "Sekyss",
+            "hero": "Fanny",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "name": "Stormie",
+            "hero": "Zetian",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 12
+          },
+          {
+            "name": "Kramm",
+            "hero": "Uranus",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "name": "Yums",
+            "hero": "Guinevere",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 0,
+            "SRG": 2
+          },
+          "turtle": {
+            "TR": 0,
+            "SRG": 3
+          },
+          "tower": {
+            "TR": 9,
+            "SRG": 2
+          }
+        }
+      }                
             ]
                 
 },
