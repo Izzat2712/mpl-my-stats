@@ -1169,6 +1169,107 @@
             "SRG": 2
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "bans": [
+          "Fanny",
+          "Sora",
+          "Gloo",
+          "Phoveus",
+          "Yuzhong",
+          "Freya",
+          "Zhuxin",
+          "Marcel",
+          "Masha",
+          "Benedetta"
+        ],
+        "players": [
+          {
+            "name": "loleal",
+            "hero": "Obsidia",
+            "kills": 10,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "name": "Just Garrr",
+            "hero": "Baxia",
+            "kills": 3,
+            "deaths": 8,
+            "assists": 11
+          },
+          {
+            "name": "Martzy",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 6,
+            "assists": 13
+          },
+          {
+            "name": "Sizkaa",
+            "hero": "Esmeralda",
+            "kills": 6,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "name": "Ivann",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 12
+          },
+          {
+            "name": "Innocent",
+            "hero": "Karrie",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 14
+          },
+          {
+            "name": "Sekyss",
+            "hero": "Suyou",
+            "kills": 9,
+            "deaths": 5,
+            "assists": 8
+          },
+          {
+            "name": "Stormie",
+            "hero": "Yve",
+            "kills": 7,
+            "deaths": 4,
+            "assists": 16
+          },
+          {
+            "name": "Kramm",
+            "hero": "Lapu",
+            "kills": 4,
+            "deaths": 4,
+            "assists": 14
+          },
+          {
+            "name": "Yums",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 7,
+            "assists": 14
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 1,
+            "SRG": 2
+          },
+          "turtle": {
+            "TR": 2,
+            "SRG": 0
+          },
+          "tower": {
+            "TR": 6,
+            "SRG": 7
+          }
+        }
       }                
             ]
                 
