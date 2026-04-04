@@ -651,7 +651,7 @@
         "dayMatch": 2,
         "date": "2026-04-4",
         "startTime": "5:00 PM",
-        "games":  [   
+        "games":  [  
       {
         "winner": "AC",
         "bans": [
@@ -853,7 +853,108 @@
             "TF": 9
           }
         }
-      }
+      },
+      {
+        "winner": "TF",
+        "bans": [
+          "Marcel",
+          "Phoveus",
+          "Guinevere",
+          "Harley",
+          "Uranus",
+          "Zhuxin",
+          "Freya",
+          "Sora",
+          "Hilda",
+          "Khaleed"
+        ],
+        "players": [
+          {
+            "name": "Kusey",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "name": "eyymal",
+            "hero": "Leomord",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "name": "izanami",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "name": "momo",
+            "hero": "Lapu",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "name": "widy",
+            "hero": "Gloo",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 9
+          },
+          {
+            "name": "skyzed",
+            "hero": "Moskov",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "name": "Hadess",
+            "hero": "Baxia",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 10
+          },
+          {
+            "name": "kurttzy",
+            "hero": "Yve",
+            "kills": 6,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "name": "diablo",
+            "hero": "Benedetta",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 3
+          },
+          {
+            "name": "razin",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 7
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 2,
+            "TF": 2
+          },
+          "turtle": {
+            "AC": 2,
+            "TF": 1
+          },
+          "tower": {
+            "AC": 6,
+            "TF": 9
+          }
+        }
+      }    
             ]
                 
 },
