@@ -651,7 +651,108 @@
         "dayMatch": 2,
         "date": "2026-04-4",
         "startTime": "5:00 PM",
-        "games":  [    
+        "games":  [   
+      {
+        "winner": "AC",
+        "bans": [
+          "Marcel",
+          "Phoveus",
+          "Moskov",
+          "Hayabusa",
+          "Leomord",
+          "Freya",
+          "Grock",
+          "Fanny",
+          "Hilda",
+          "Gloo"
+        ],
+        "players": [
+          {
+            "name": "Kusey",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 13
+          },
+          {
+            "name": "eyymal",
+            "hero": "Nolan",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "name": "izanami",
+            "hero": "Zhuxin",
+            "kills": 8,
+            "deaths": 0,
+            "assists": 11
+          },
+          {
+            "name": "momo",
+            "hero": "Yuzhong",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 12
+          },
+          {
+            "name": "widy",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 17
+          },
+          {
+            "name": "skyzed",
+            "hero": "Harith",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "name": "Hadess",
+            "hero": "Harley",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "name": "kurttzy",
+            "hero": "Valentina",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "name": "diablo",
+            "hero": "Sora",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "name": "razin",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 2,
+            "TF": 0
+          },
+          "turtle": {
+            "AC": 3,
+            "TF": 0
+          },
+          "tower": {
+            "AC": 8,
+            "TF": 0
+          }
+        }
+      }
             ]
                 
 },
