@@ -752,6 +752,107 @@
             "TF": 0
           }
         }
+      },
+      {
+        "winner": "TF",
+        "bans": [
+          "Grock",
+          "Kalea",
+          "Phoveus",
+          "Hilda",
+          "Hylos",
+          "Freya",
+          "Zhuxin",
+          "Marcel",
+          "Fredrinn",
+          "Leomord"
+        ],
+        "players": [
+          {
+            "name": "Kusey",
+            "hero": "Harith",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "name": "eyymal",
+            "hero": "Fanny",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "name": "izanami",
+            "hero": "Kimmy",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "name": "momo",
+            "hero": "Yuzhong",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "name": "widy",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "name": "skyzed",
+            "hero": "Moskov",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 2
+          },
+          {
+            "name": "Hadess",
+            "hero": "Guinevere",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "name": "kurttzy",
+            "hero": "Valentina",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "name": "diablo",
+            "hero": "Sora",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "name": "razin",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 0,
+            "TF": 4
+          },
+          "turtle": {
+            "AC": 0,
+            "TF": 3
+          },
+          "tower": {
+            "AC": 1,
+            "TF": 9
+          }
+        }
       }
             ]
                 
