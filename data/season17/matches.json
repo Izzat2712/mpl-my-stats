@@ -436,7 +436,7 @@
         "dayMatch": 1,
         "date": "2026-04-4",
         "startTime": "2:30 PM",
-        "games":  [   
+        "games":  [ 
       {
         "winner": "IG",
         "bans": [
@@ -535,6 +535,107 @@
           "tower": {
             "IG": 9,
             "BTR": 5
+          }
+        }
+      },   
+      {
+        "winner": "IG",
+        "bans": [
+          "Fanny",
+          "Valentina",
+          "Phoveus",
+          "Selena",
+          "Lylia",
+          "Freya",
+          "Marcel",
+          "Zhuxin",
+          "Hilda",
+          "Hylos"
+        ],
+        "players": [
+          {
+            "name": "Melqt",
+            "hero": "Harith",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "name": "Hazle",
+            "hero": "YSS",
+            "kills": 6,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "name": "Spencer",
+            "hero": "Lunox",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "name": "Gojes",
+            "hero": "Gatotkaca",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "name": "Novaxcobar",
+            "hero": "Kalea",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 12
+          },
+          {
+            "name": "cikugais",
+            "hero": "Granger",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "name": "anavel",
+            "hero": "Leomord",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "name": "fakez",
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "name": "smooth",
+            "hero": "Sora",
+            "kills": 2,
+            "deaths": 6,
+            "assists": 1
+          },
+          {
+            "name": "rasy",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 2,
+            "BTR": 0
+          },
+          "turtle": {
+            "IG": 1,
+            "BTR": 1
+          },
+          "tower": {
+            "IG": 9,
+            "BTR": 2
           }
         }
       }
