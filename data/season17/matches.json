@@ -967,7 +967,108 @@
         "dayMatch": 3,
         "date": "2026-04-4",
         "startTime": "8:15 PM",
-        "games":  [    
+        "games":  [  
+      {
+        "winner": "TR",
+        "bans": [
+          "Fanny",
+          "Sora",
+          "Gloo",
+          "Harley",
+          "Khaleed",
+          "Freya",
+          "Zhuxin",
+          "Baxia",
+          "Suyou",
+          "Masha"
+        ],
+        "players": [
+          {
+            "name": "loleal",
+            "hero": "Claude",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "name": "Just Garrr",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 12
+          },
+          {
+            "name": "Martzy",
+            "hero": "Kimmy",
+            "kills": 6,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "name": "Sizkaa",
+            "hero": "Lapu",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "name": "Ivann",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 14
+          },
+          {
+            "name": "Innocent",
+            "hero": "Lunox",
+            "kills": 9,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "name": "Sekyss",
+            "hero": "YSS",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "name": "Stormie",
+            "hero": "Valentina",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 11
+          },
+          {
+            "name": "Kramm",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 12
+          },
+          {
+            "name": "Yums",
+            "hero": "Kalea",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 12
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 1,
+            "SRG": 1
+          },
+          "turtle": {
+            "TR": 2,
+            "SRG": 1
+          },
+          "tower": {
+            "TR": 6,
+            "SRG": 7
+          }
+        }
+      }
             ]
                 
 },
