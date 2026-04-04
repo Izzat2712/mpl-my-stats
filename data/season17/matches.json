@@ -436,7 +436,108 @@
         "dayMatch": 1,
         "date": "2026-04-4",
         "startTime": "2:30 PM",
-        "games":  [    
+        "games":  [   
+      {
+        "winner": "IG",
+        "bans": [
+          "Baxia",
+          "Uranus",
+          "Marcel",
+          "Kalea",
+          "Harley",
+          "Freya",
+          "Zhuxin",
+          "Fanny",
+          "Alice",
+          "Karrie"
+        ],
+        "players": [
+          {
+            "name": "Melqt",
+            "hero": "Harith",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "name": "Hazle",
+            "hero": "YSS",
+            "kills": 8,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "name": "Spencer",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "name": "Gojes",
+            "hero": "Sora",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "name": "Novaxcobar",
+            "hero": "Hylos",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 13
+          },
+          {
+            "name": "cikugais",
+            "hero": "Claude",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "name": "anavel",
+            "hero": "Joy",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "name": "fakez",
+            "hero": "Gord",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "name": "smooth",
+            "hero": "Phoveus",
+            "kills": 3,
+            "deaths": 5,
+            "assists": 7
+          },
+          {
+            "name": "rasy",
+            "hero": "Guinevere",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 10
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 3,
+            "BTR": 1
+          },
+          "turtle": {
+            "IG": 1,
+            "BTR": 2
+          },
+          "tower": {
+            "IG": 9,
+            "BTR": 5
+          }
+        }
+      }
             ]
                 
 },
