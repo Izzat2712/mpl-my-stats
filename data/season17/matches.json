@@ -1600,7 +1600,7 @@
         "dayMatch": 2,
         "date": "2026-04-4",
         "startTime": "5:00 PM",
-        "games":  [    
+        "games":  [
       {
         "winner": "RRQ",
         "bans": [
@@ -1701,7 +1701,110 @@
             "TF": 4
           }
         }
+      }, 
+      {
+        "winner": "RRQ",
+        "bans": [
+          "Marcel",
+          "Grock",
+          "Sora",
+          "Harith",
+          "Nolan",
+          "Freya",
+          "Zhuxin",
+          "Guinevere",
+          "Kalea",
+          "Baxia"
+        ],
+        "players": [
+          {
+            "name": "Rough",
+            "hero": "Karrie",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "name": "Garyy",
+            "hero": "Leomord",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "name": "Kyym",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 13
+          },
+          {
+            "name": "Dyrennn",
+            "hero": "Lapu",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "name": "superyoshi",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 14
+          },
+          {
+            "name": "skyzed",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "name": "Hadess",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "name": "kurttzy",
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "name": "diablo",
+            "hero": "Phoveus",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "name": "razin",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 1,
+            "TF": 0
+          },
+          "turtle": {
+            "RRQ": 3,
+            "TF": 0
+          },
+          "tower": {
+            "RRQ": 7,
+            "TF": 0
+          }
+        }
       }
+
+    
             ]
                 
 },
