@@ -1283,7 +1283,108 @@
         "dayMatch": 1,
         "date": "2026-04-5",
         "startTime": "2:30 PM",
-        "games":  [    
+        "games":  [   
+      {
+        "winner": "BTR",
+        "bans": [
+          "Kalea",
+          "Chou",
+          "Moskov",
+          "Fredrinn",
+          "Guinevere",
+          "Freya",
+          "Zhuxin",
+          "Marcel",
+          "Yve",
+          "Phoveus"
+        ],
+        "players": [
+          {
+            "name": "Kusey",
+            "hero": "Cici",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "name": "eyymal",
+            "hero": "Lancelot",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "name": "izanami",
+            "hero": "Valentina",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 8
+          },
+          {
+            "name": "momo",
+            "hero": "Sora",
+            "kills": 4,
+            "deaths": 5,
+            "assists": 5
+          },
+          {
+            "name": "widy",
+            "hero": "Grock",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 9
+          },
+          {
+            "name": "cikugais",
+            "hero": "YSS",
+            "kills": 6,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "name": "anavel",
+            "hero": "Fanny",
+            "kills": 12,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "name": "fakez",
+            "hero": "Zetian",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 16
+          },
+          {
+            "name": "smooth",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 13
+          },
+          {
+            "name": "rasy",
+            "hero": "Hilda",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 12
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 0,
+            "BTR": 2
+          },
+          "turtle": {
+            "AC": 1,
+            "BTR": 1
+          },
+          "tower": {
+            "AC": 2,
+            "BTR": 9
+          }
+        }
+      }
             ]
                 
 },
