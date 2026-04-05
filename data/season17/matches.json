@@ -1485,7 +1485,109 @@
             "BTR": 7
           }
         }
-      }  
+      },
+      {
+        "winner": "AC",
+        "bans": [
+          "Marcel",
+          "Gloo",
+          "Phoveus",
+          "Kalea",
+          "Kaja",
+          "Zhuxin",
+          "Fanny",
+          "Guinevere",
+          "YSS",
+          "Harley"
+        ],
+        "players": [
+          {
+            "name": "Kusey",
+            "hero": "Freya",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 5
+          },
+          {
+            "name": "eyymal",
+            "hero": "Nolan",
+            "kills": 6,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "name": "izanami",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "name": "momo",
+            "hero": "Sora",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "name": "widy",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "name": "cikugais",
+            "hero": "Karrie",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "name": "anavel",
+            "hero": "Baxia",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "name": "fakez",
+            "hero": "Kimmy",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "name": "smooth",
+            "hero": "Benedetta",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "name": "rasy",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 4
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 2,
+            "BTR": 1
+          },
+          "turtle": {
+            "AC": 2,
+            "BTR": 1
+          },
+          "tower": {
+            "AC": 9,
+            "BTR": 2
+          }
+        }
+      }
+  
             ]
                 
 },
