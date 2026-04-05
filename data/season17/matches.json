@@ -1601,6 +1601,107 @@
         "date": "2026-04-4",
         "startTime": "5:00 PM",
         "games":  [    
+      {
+        "winner": "RRQ",
+        "bans": [
+          "Baxia",
+          "Guinevere",
+          "Valentina",
+          "Kalea",
+          "Zetian",
+          "Freya",
+          "Zhuxin",
+          "Marcel",
+          "Leomord",
+          "Suyou"
+        ],
+        "players": [
+          {
+            "name": "Rough",
+            "hero": "Harith",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "name": "Garyy",
+            "hero": "Nolan",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "name": "Kyym",
+            "hero": "Yve",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "name": "Dyrennn",
+            "hero": "Sora",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "name": "superyoshi",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "name": "skyzed",
+            "hero": "Karrie",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "name": "Hadess",
+            "hero": "Fredrinn",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "name": "kurttzy",
+            "hero": "Pharsa",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "name": "diablo",
+            "hero": "Benedetta",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "name": "razin",
+            "hero": "Badang",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 2
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 2,
+            "TF": 1
+          },
+          "turtle": {
+            "RRQ": 2,
+            "TF": 1
+          },
+          "tower": {
+            "RRQ": 8,
+            "TF": 4
+          }
+        }
+      }
             ]
                 
 },
