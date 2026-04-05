@@ -58,7 +58,7 @@ const appState = {
   season: "season17",
   view: "schedule",
   sort: {
-    teams: { key: "matchWins", asc: false },
+    teams: { key: "points", asc: false },
     players: { key: "kda", asc: false },
     heroes: { key: "pickRate", asc: false },
     heroPool: { key: "totalHeroes", asc: false },

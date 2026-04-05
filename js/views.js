@@ -623,6 +623,11 @@ function getEmptyTeamSummary(teamCode) {
   return {
     team: teamCode,
     matchWins: 0,
+    matchLosses: 0,
+    gameWins: 0,
+    gameLosses: 0,
+    gameDiff: 0,
+    points: 0,
     kills: 0,
     deaths: 0,
     assists: 0,
@@ -642,6 +647,11 @@ function getTeamSummary(teamCode) {
     label: teamLabel(normalizedTeamCode || teamCode),
     logo: getScheduleTeamLogo(normalizedTeamCode || teamCode),
     matchWins: Number(summary?.matchWins) || 0,
+    matchLosses: Number(summary?.matchLosses) || 0,
+    gameWins: Number(summary?.gameWins) || 0,
+    gameLosses: Number(summary?.gameLosses) || 0,
+    gameDiff: Number(summary?.gameDiff) || 0,
+    points: Number(summary?.points) || 0,
     kills: Number(summary?.kills) || 0,
     deaths: Number(summary?.deaths) || 0,
     assists: Number(summary?.assists) || 0,
@@ -708,7 +718,7 @@ export function refreshDataRefs() {
   seasonProfiles = getSeasonProfilesMap();
 }
 
-let teamSort = {key: "matchWins", asc: false }; // false = DESC (highest matchWins first)
+let teamSort = { key: "points", asc: false };
 let playerSort = { key: "kda", asc: false };
 let heroSort = { key: "pickRate", asc: false };
 let heroPoolSort = { key: "totalHeroes", asc: false };
@@ -2139,8 +2149,143 @@ function renderHeroDetailsModal() {
   `;
 }
 
+function buildHeadToHeadStats(teamCodes) {
+  const uniqueTeamCodes = [...new Set((teamCodes || []).filter(Boolean))];
+  const trackedTeams = new Set(uniqueTeamCodes);
+  const summary = Object.fromEntries(
+    uniqueTeamCodes.map((teamCode) => [teamCode, {
+      seriesWins: 0,
+      seriesLosses: 0,
+      gameWins: 0,
+      gameLosses: 0
+    }])
+  );
+
+  if (trackedTeams.size < 2) return summary;
+
+  for (const match of getMatches()) {
+    const teamA = match?.teamA;
+    const teamB = match?.teamB;
+    if (!trackedTeams.has(teamA) || !trackedTeams.has(teamB)) continue;
+
+    const score = getMatchScore(match);
+    summary[teamA].gameWins += Number(score.teamAScore) || 0;
+    summary[teamA].gameLosses += Number(score.teamBScore) || 0;
+    summary[teamB].gameWins += Number(score.teamBScore) || 0;
+    summary[teamB].gameLosses += Number(score.teamAScore) || 0;
+
+    if (!score.finished) continue;
+    if (score.teamAScore > score.teamBScore) {
+      summary[teamA].seriesWins += 1;
+      summary[teamB].seriesLosses += 1;
+    } else if (score.teamBScore > score.teamAScore) {
+      summary[teamB].seriesWins += 1;
+      summary[teamA].seriesLosses += 1;
+    }
+  }
+
+  return summary;
+}
+
 
 function showTeams() {
+  function formatRecord(wins, losses) {
+    return `${Number(wins) || 0}-${Number(losses) || 0}`;
+  }
+
+  function formatSigned(value) {
+    const num = Number(value) || 0;
+    return `${num >= 0 ? "+" : ""}${num}`;
+  }
+
+  function compareNumber(a, b, key, asc = false) {
+    const valA = Number(a?.[key]) || 0;
+    const valB = Number(b?.[key]) || 0;
+    return asc ? valA - valB : valB - valA;
+  }
+
+  function compareRecord(winsA, lossesA, winsB, lossesB, asc = false) {
+    if (winsA !== winsB) return asc ? winsA - winsB : winsB - winsA;
+    if (lossesA !== lossesB) return asc ? lossesB - lossesA : lossesA - lossesB;
+    return 0;
+  }
+
+  function groupAndResolve(items, compareFn, equalFn, resolveGroup) {
+    const sorted = [...items].sort(compareFn);
+    const resolved = [];
+
+    for (let index = 0; index < sorted.length; ) {
+      const group = [sorted[index]];
+      index += 1;
+
+      while (index < sorted.length && equalFn(group[0], sorted[index])) {
+        group.push(sorted[index]);
+        index += 1;
+      }
+
+      if (group.length === 1) {
+        resolved.push(group[0]);
+      } else {
+        resolved.push(...resolveGroup(group));
+      }
+    }
+
+    return resolved;
+  }
+
+  function sortStandingsWithTiebreakers(items, asc = false) {
+    const alphabetical = (a, b) => teamLabel(a.team).localeCompare(teamLabel(b.team));
+
+    function resolveByH2HGames(group) {
+      const h2h = buildHeadToHeadStats(group.map((item) => item.team));
+      return [...group].sort((a, b) => {
+        const recordCmp = compareRecord(
+          Number(h2h[a.team]?.gameWins) || 0,
+          Number(h2h[a.team]?.gameLosses) || 0,
+          Number(h2h[b.team]?.gameWins) || 0,
+          Number(h2h[b.team]?.gameLosses) || 0,
+          asc
+        );
+        if (recordCmp !== 0) return recordCmp;
+        return alphabetical(a, b);
+      });
+    }
+
+    function resolveByH2HSeries(group) {
+      const h2h = buildHeadToHeadStats(group.map((item) => item.team));
+      return groupAndResolve(
+        group,
+        (a, b) => compareRecord(
+          Number(h2h[a.team]?.seriesWins) || 0,
+          Number(h2h[a.team]?.seriesLosses) || 0,
+          Number(h2h[b.team]?.seriesWins) || 0,
+          Number(h2h[b.team]?.seriesLosses) || 0,
+          asc
+        ),
+        (a, b) =>
+          (Number(h2h[a.team]?.seriesWins) || 0) === (Number(h2h[b.team]?.seriesWins) || 0) &&
+          (Number(h2h[a.team]?.seriesLosses) || 0) === (Number(h2h[b.team]?.seriesLosses) || 0),
+        resolveByH2HGames
+      );
+    }
+
+    function resolveByDiff(group) {
+      return groupAndResolve(
+        group,
+        (a, b) => compareNumber(a, b, "gameDiff", asc),
+        (a, b) => (Number(a?.gameDiff) || 0) === (Number(b?.gameDiff) || 0),
+        resolveByH2HSeries
+      );
+    }
+
+    return groupAndResolve(
+      items,
+      (a, b) => compareNumber(a, b, "points", asc),
+      (a, b) => (Number(a?.points) || 0) === (Number(b?.points) || 0),
+      resolveByDiff
+    );
+  }
+
   let t = calculateTeamStats();
 
   let arr = Object.keys(t).map(team => ({
@@ -2149,21 +2294,25 @@ function showTeams() {
   }));
 
   if (teamSort.key) {
-    arr.sort((a, b) => {
-      let valA = a[teamSort.key];
-      let valB = b[teamSort.key];
+    if (teamSort.key === "points") {
+      arr = sortStandingsWithTiebreakers(arr, teamSort.asc);
+    } else {
+      arr.sort((a, b) => {
+        let valA = a[teamSort.key];
+        let valB = b[teamSort.key];
 
-      if (typeof valA === "string") {
-        const labelA = teamLabel(valA);
-        const labelB = teamLabel(valB);
-        const cmp = teamSort.asc ? labelA.localeCompare(labelB) : labelB.localeCompare(labelA);
+        if (typeof valA === "string") {
+          const labelA = teamLabel(valA);
+          const labelB = teamLabel(valB);
+          const cmp = teamSort.asc ? labelA.localeCompare(labelB) : labelB.localeCompare(labelA);
+          if (cmp !== 0) return cmp;
+          return teamLabel(a.team).localeCompare(teamLabel(b.team));
+        }
+        const cmp = teamSort.asc ? valA - valB : valB - valA;
         if (cmp !== 0) return cmp;
         return teamLabel(a.team).localeCompare(teamLabel(b.team));
-      }
-      const cmp = teamSort.asc ? valA - valB : valB - valA;
-      if (cmp !== 0) return cmp;
-      return teamLabel(a.team).localeCompare(teamLabel(b.team));
-    });
+      });
+    }
   }
 
   function arrow(key) {
@@ -2179,7 +2328,10 @@ function showTeams() {
     <table class="teamsTable">
       <tr>
         <th aria-sort="${teamSort.key === 'team' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('team')">TEAM${arrow('team')}</th>
-        <th aria-sort="${teamSort.key === 'matchWins' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('matchWins')">MATCHES WON${arrow('matchWins')}</th>
+        <th aria-sort="${teamSort.key === 'matchWins' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('matchWins')">MATCH W-L${arrow('matchWins')}</th>
+        <th aria-sort="${teamSort.key === 'gameWins' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('gameWins')">GAME W-L${arrow('gameWins')}</th>
+        <th aria-sort="${teamSort.key === 'gameDiff' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('gameDiff')">GAME DIFF${arrow('gameDiff')}</th>
+        <th aria-sort="${teamSort.key === 'points' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('points')">PTS${arrow('points')}</th>
         <th aria-sort="${teamSort.key === 'kills' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('kills')">KILLS${arrow('kills')}</th>
         <th aria-sort="${teamSort.key === 'deaths' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('deaths')">DEATHS${arrow('deaths')}</th>
         <th aria-sort="${teamSort.key === 'assists' ? (teamSort.asc ? 'ascending' : 'descending') : 'none'}" onclick="sortTeams('assists')">ASSISTS${arrow('assists')}</th>
@@ -2201,7 +2353,10 @@ function showTeams() {
     <button type="button" class="teamRosterTrigger" onclick="openTeamRoster('${ts.team}')">${teamLabel(ts.team)}</button>
   </div>
 </td>
-        <td>${ts.matchWins}</td>
+        <td>${formatRecord(ts.matchWins, ts.matchLosses)}</td>
+        <td>${formatRecord(ts.gameWins, ts.gameLosses)}</td>
+        <td>${formatSigned(ts.gameDiff)}</td>
+        <td>${ts.points || 0}</td>
         <td>${ts.kills}</td>
         <td>${ts.deaths}</td>
         <td>${ts.assists}</td>

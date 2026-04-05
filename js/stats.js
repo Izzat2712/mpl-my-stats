@@ -16,17 +16,31 @@ export function invalidateStatsCache() {
   cache.clear();
 }
 
+function createEmptyTeamStats() {
+  return {
+    kills: 0,
+    deaths: 0,
+    assists: 0,
+    gamesPlayed: 0,
+    gameWins: 0,
+    gameLosses: 0,
+    gameDiff: 0,
+    matchesPlayed: 0,
+    matchWins: 0,
+    matchLosses: 0,
+    points: 0,
+    lord: 0,
+    turtle: 0,
+    tower: 0
+  };
+}
+
 function calculateTeamStatsImpl() {
   let teamStats = {};
 
   for (const r of (getRosterList() || [])) {
     if (!teamStats[r.team]) {
-      teamStats[r.team] = {
-        kills:0,deaths:0,assists:0,
-        gamesPlayed:0,gameWins:0,
-        matchesPlayed:0,matchWins:0,
-        lord:0,turtle:0,tower:0
-      };
+      teamStats[r.team] = createEmptyTeamStats();
     }
   }
 
@@ -37,20 +51,10 @@ function calculateTeamStatsImpl() {
 
     for (let game of games) {
       if (!teamStats[match.teamA]) {
-        teamStats[match.teamA] = {
-          kills:0,deaths:0,assists:0,
-          gamesPlayed:0,gameWins:0,
-          matchesPlayed:0,matchWins:0,
-          lord:0,turtle:0,tower:0
-        };
+        teamStats[match.teamA] = createEmptyTeamStats();
       }
       if (!teamStats[match.teamB]) {
-        teamStats[match.teamB] = {
-          kills:0,deaths:0,assists:0,
-          gamesPlayed:0,gameWins:0,
-          matchesPlayed:0,matchWins:0,
-          lord:0,turtle:0,tower:0
-        };
+        teamStats[match.teamB] = createEmptyTeamStats();
       }
 
       if (game.winner === match.teamA) teamAGameWins++;
@@ -61,12 +65,7 @@ for (let player of (game.players || [])) {
   const t = info.team;
 
   if (!teamStats[t]) {
-    teamStats[t] = {
-      kills:0,deaths:0,assists:0,
-      gamesPlayed:0,gameWins:0,
-      matchesPlayed:0,matchWins:0,
-      lord:0,turtle:0,tower:0
-    };
+    teamStats[t] = createEmptyTeamStats();
   }
 
   teamStats[t].kills += player.kills;
@@ -97,13 +96,27 @@ for (let player of (game.players || [])) {
     teamStats[match.teamA].gameWins += teamAGameWins;
     teamStats[match.teamB].gameWins += teamBGameWins;
 
-    teamStats[match.teamA].matchesPlayed++;
-    teamStats[match.teamB].matchesPlayed++;
-
     const completedMatchWinner = getCompletedMatchWinner(match);
-    if (completedMatchWinner === match.teamA) teamStats[match.teamA].matchWins++;
-    else if (completedMatchWinner === match.teamB) teamStats[match.teamB].matchWins++;
+    if (completedMatchWinner === match.teamA || completedMatchWinner === match.teamB) {
+      teamStats[match.teamA].matchesPlayed++;
+      teamStats[match.teamB].matchesPlayed++;
+
+      if (completedMatchWinner === match.teamA) {
+        teamStats[match.teamA].matchWins++;
+      } else if (completedMatchWinner === match.teamB) {
+        teamStats[match.teamB].matchWins++;
+      }
+    }
   }
+
+  for (const teamCode of Object.keys(teamStats)) {
+    const summary = teamStats[teamCode];
+    summary.gameLosses = Math.max(0, (Number(summary.gamesPlayed) || 0) - (Number(summary.gameWins) || 0));
+    summary.gameDiff = (Number(summary.gameWins) || 0) - summary.gameLosses;
+    summary.matchLosses = Math.max(0, (Number(summary.matchesPlayed) || 0) - (Number(summary.matchWins) || 0));
+    summary.points = Number(summary.matchWins) || 0;
+  }
+
   return teamStats;
 }
 
