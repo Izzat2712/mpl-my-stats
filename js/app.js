@@ -10,6 +10,8 @@ import {
   openScheduleScorecard,
   closeScheduleScorecard,
   selectScheduleScorecardGame,
+  openScheduleScorecardPlayerModal,
+  closeScheduleScorecardPlayerModal,
   openTeamRoster,
   closeTeamRoster,
   openTeamRosterProfile,
@@ -702,6 +704,8 @@ window.closeScheduleTeamModal = closeScheduleTeamModal;
 window.openScheduleScorecard = openScheduleScorecard;
 window.closeScheduleScorecard = closeScheduleScorecard;
 window.selectScheduleScorecardGame = selectScheduleScorecardGame;
+window.openScheduleScorecardPlayerModal = openScheduleScorecardPlayerModal;
+window.closeScheduleScorecardPlayerModal = closeScheduleScorecardPlayerModal;
 window.openTeamRoster = openTeamRoster;
 window.closeTeamRoster = closeTeamRoster;
 window.openTeamRosterProfile = openTeamRosterProfile;

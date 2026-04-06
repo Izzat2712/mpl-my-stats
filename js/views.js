@@ -574,6 +574,7 @@ function showSchedule(week = null) {
 
   document.getElementById("output").innerHTML = html;
   mountScheduleScorecardModal();
+  mountScheduleScorecardPlayerModal();
   mountScheduleTeamModal();
   refreshScheduleCountdowns();
 }
@@ -589,6 +590,19 @@ function mountScheduleScorecardModal() {
   }
 
   modalRoot.innerHTML = renderScheduleScorecardModal();
+}
+
+function mountScheduleScorecardPlayerModal() {
+  const modalId = "scheduleScorecardPlayerModalRoot";
+  let modalRoot = document.getElementById(modalId);
+
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+
+  modalRoot.innerHTML = renderScheduleScorecardPlayerModal();
 }
 
 function mountScheduleTeamModal() {
@@ -725,6 +739,7 @@ let heroPoolSort = { key: "totalHeroes", asc: false };
 let playerPoolsSort = { key: "totalPlayers", asc: false };
 let h2hSubTab = "team";
 let scheduleScorecardState = { matchIndex: null, gameIndex: 0 };
+let scheduleScorecardPlayerModalState = { matchIndex: null, gameIndex: 0, playerName: "" };
 let scheduleTeamModalState = { teamCode: "" };
 let teamRosterModalState = { teamCode: "", memberName: "", memberType: "" };
 let playerDetailsModalState = { playerName: "" };
@@ -831,11 +846,13 @@ function openScheduleScorecard(matchIndex, gameIndex = 0) {
     matchIndex,
     gameIndex: Math.min(Math.max(Number(gameIndex) || 0, 0), availableGames.length - 1)
   };
+  scheduleScorecardPlayerModalState = { matchIndex: null, gameIndex: 0, playerName: "" };
   showSchedule(window.appState?.scheduleWeek ?? null);
 }
 
 function closeScheduleScorecard() {
   scheduleScorecardState = { matchIndex: null, gameIndex: 0 };
+  scheduleScorecardPlayerModalState = { matchIndex: null, gameIndex: 0, playerName: "" };
   showSchedule(window.appState?.scheduleWeek ?? null);
 }
 
@@ -845,7 +862,22 @@ function selectScheduleScorecardGame(gameIndex) {
     ...scheduleScorecardState,
     gameIndex: Math.max(0, Number(gameIndex) || 0)
   };
+  scheduleScorecardPlayerModalState = { matchIndex: null, gameIndex: 0, playerName: "" };
   showSchedule(window.appState?.scheduleWeek ?? null);
+}
+
+function openScheduleScorecardPlayerModal(matchIndex, gameIndex, playerName) {
+  scheduleScorecardPlayerModalState = {
+    matchIndex: Number(matchIndex),
+    gameIndex: Number(gameIndex),
+    playerName: String(playerName || "").trim()
+  };
+  mountScheduleScorecardPlayerModal();
+}
+
+function closeScheduleScorecardPlayerModal() {
+  scheduleScorecardPlayerModalState = { matchIndex: null, gameIndex: 0, playerName: "" };
+  mountScheduleScorecardPlayerModal();
 }
 
 function getRosterTeamForPlayer(name) {
@@ -1072,15 +1104,25 @@ function partitionScorecardPlayers(match, game) {
   return grouped;
 }
 
-function renderScorecardPlayerRow(player, isMvp = false) {
+function hasScorecardPlayerPerformance(player) {
+  return Boolean(player?.performance && typeof player.performance === "object");
+}
+
+function renderScorecardPlayerRow(player, isMvp = false, matchIndex = -1, gameIndex = 0) {
   const heroName = String(player?.hero || "").trim();
   const heroImg = constHero[heroName] || "";
   const playerRecord = getRosterPlayerRecord(player?.name);
   const playerPicture = playerRecord?.picture || "";
   const kda = `${Number(player?.kills) || 0}/${Number(player?.deaths) || 0}/${Number(player?.assists) || 0}`;
+  const canOpen = hasScorecardPlayerPerformance(player);
+  const tagName = canOpen ? "button" : "div";
+  const encodedPlayerName = encodeInlineString(player?.name || "");
+  const interactionAttrs = canOpen
+    ? `type="button" onclick="openScheduleScorecardPlayerModal(${matchIndex}, ${gameIndex}, decodeURIComponent('${encodedPlayerName}'))" aria-label="Open ${escapeHtml(player?.name || "player")} match details"`
+    : "";
 
   return `
-    <div class="scheduleScorecardPlayer ${isMvp ? "is-mvp topMVP" : ""}">
+    <${tagName} class="scheduleScorecardPlayer ${isMvp ? "is-mvp topMVP" : ""} ${canOpen ? "is-clickable" : ""}" ${interactionAttrs}>
       ${isMvp ? `<div class="scheduleScorecardMvpBadge">MVP</div>` : ""}
       <div class="scheduleScorecardPlayerMain">
         <span class="scheduleScorecardPlayerFaceWrap">
@@ -1093,11 +1135,11 @@ function renderScorecardPlayerRow(player, isMvp = false) {
         <span>${heroName || "TBD Hero"}</span>
       </div>
       <div class="scheduleScorecardKda">${kda}</div>
-    </div>
+    </${tagName}>
   `;
 }
 
-function renderScorecardTeamCard(teamCode, players) {
+function renderScorecardTeamCard(teamCode, players, gameIndex = 0) {
   const teamLogo = teamLogos[teamCode] || "";
   const activeMatch = getMatches()[scheduleScorecardState.matchIndex];
   const availableGames = activeMatch ? getAvailableScorecardGames(activeMatch) : [];
@@ -1115,11 +1157,132 @@ function renderScorecardTeamCard(teamCode, players) {
       </div>
       <div class="scheduleScorecardPlayerList">
         ${players.length
-          ? players.map((player) => renderScorecardPlayerRow(player, String(player?.name || "").trim().toLowerCase() === mvpName)).join("")
+          ? players.map((player) => renderScorecardPlayerRow(
+              player,
+              String(player?.name || "").trim().toLowerCase() === mvpName,
+              scheduleScorecardState.matchIndex,
+              gameIndex
+            )).join("")
           : `<div class="scheduleScorecardEmpty">No player data for this team yet.</div>`
         }
       </div>
     </section>
+  `;
+}
+
+function getScheduleScorecardPlayerData(matchIndex, gameIndex, playerName) {
+  const match = getMatches()[Number(matchIndex)];
+  const game = match?.games?.[Number(gameIndex)];
+  const normalizedPlayerName = String(playerName || "").trim().toLowerCase();
+  if (!match || !game || !normalizedPlayerName) return null;
+
+  const player = (game.players || []).find(
+    (entry) => String(entry?.name || "").trim().toLowerCase() === normalizedPlayerName
+  );
+  if (!player?.performance) return null;
+
+  const rosterRecord = getRosterPlayerRecord(player.name);
+  const teamCode = String(player.team || getRosterTeamForPlayer(player.name) || "").trim();
+  const teamLogo = teamCode ? (teamLogos[teamCode] || "") : "";
+
+  return {
+    match,
+    game,
+    player,
+    performance: player.performance || {},
+    rosterRecord,
+    teamCode,
+    teamLogo
+  };
+}
+
+function formatCompactStat(value) {
+  return (Number(value) || 0).toLocaleString("en-US");
+}
+
+function renderScheduleScorecardPlayerModal() {
+  const modalPlayerName = String(scheduleScorecardPlayerModalState.playerName || "").trim();
+  if (!modalPlayerName) return "";
+
+  const payload = getScheduleScorecardPlayerData(
+    scheduleScorecardPlayerModalState.matchIndex,
+    scheduleScorecardPlayerModalState.gameIndex,
+    modalPlayerName
+  );
+  if (!payload) return "";
+
+  const { player, performance, rosterRecord, teamCode, teamLogo } = payload;
+  const portraitUrl = String(rosterRecord?.picture || performance.portraitUrl || "").trim();
+  const heroName = String(player?.hero || "").trim();
+  const heroImageUrl = String(constHero[heroName] || performance.heroImageUrl || "").trim();
+  const emblemUrl = String(performance.emblemUrl || "").trim();
+  const runeUrls = Array.isArray(performance.runeUrls) ? performance.runeUrls.filter(Boolean).slice(0, 3) : [];
+  const itemUrls = Array.isArray(performance.itemUrls) ? performance.itemUrls.filter(Boolean).slice(0, 6) : [];
+  const stats = performance.stats || {};
+  const kda = `${Number(player?.kills) || 0}/${Number(player?.deaths) || 0}/${Number(player?.assists) || 0}`;
+  const statRows = [
+    { label: "Tower Damage", value: formatCompactStat(stats.towerDamage) },
+    { label: "Damage Taken", value: formatCompactStat(stats.damageTaken) },
+    { label: "Hero Damage", value: formatCompactStat(stats.heroDamage) },
+    { label: "Total Gold", value: formatCompactStat(stats.totalGold) }
+  ];
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closeScheduleScorecardPlayerModal()">
+      <div class="schedulePlayerDetailModal h2hModalCard" onclick="event.stopPropagation()">
+        <div class="h2hModalHead schedulePlayerDetailHead">
+          <div class="schedulePlayerDetailIdentity">
+            <div class="schedulePlayerDetailPortraitWrap">
+              ${portraitUrl ? `<img class="schedulePlayerDetailPortrait" src="${portraitUrl}" alt="${escapeHtml(player?.name || "Player")}">` : `<div class="schedulePlayerDetailPortraitFallback">?</div>`}
+            </div>
+            <div class="schedulePlayerDetailMeta">
+              <div class="schedulePlayerDetailTeamRow">
+                ${teamLogo ? `<img class="schedulePlayerDetailTeamLogo" src="${teamLogo}" alt="${escapeHtml(teamLabel(teamCode))} logo">` : ""}
+                <span>${escapeHtml(teamCode ? teamLabel(teamCode) : "Unknown Team")}</span>
+              </div>
+              <h3>${escapeHtml(player?.name || "Player")}</h3>
+              <div class="schedulePlayerDetailHeroRow">
+                ${heroImageUrl ? `<img class="schedulePlayerDetailHeroImg" src="${heroImageUrl}" alt="${escapeHtml(heroName)}">` : ""}
+                <span>${escapeHtml(heroName || "Unknown Hero")}</span>
+              </div>
+              <div class="schedulePlayerDetailMetaBottom">
+                <div class="schedulePlayerDetailRuneRow">
+                  ${emblemUrl ? `<img class="schedulePlayerDetailRuneImg is-emblem" src="${emblemUrl}" alt="Emblem">` : ""}
+                  ${runeUrls.map((url, index) => `<img class="schedulePlayerDetailRuneImg" src="${url}" alt="Rune ${index + 1}">`).join("")}
+                </div>
+                <div class="schedulePlayerDetailKdaCard is-inline">
+                  <span>KDA</span>
+                  <strong>${kda}</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="h2hModalClose schedulePlayerDetailClose" onclick="closeScheduleScorecardPlayerModal()">Close</button>
+        </div>
+        <div class="schedulePlayerDetailBody">
+          <section class="schedulePlayerDetailBuildCard">
+            <div class="schedulePlayerDetailSectionTitle">Final Build</div>
+            <div class="schedulePlayerDetailItems">
+              ${itemUrls.length
+                ? itemUrls.map((url, index) => `<img class="schedulePlayerDetailItemImg" src="${url}" alt="Item ${index + 1}">`).join("")
+                : `<div class="scheduleScorecardEmpty">No build data yet.</div>`
+              }
+            </div>
+          </section>
+          <section class="schedulePlayerDetailStatsCard">
+            <div class="schedulePlayerDetailSectionTitle">Match Stats</div>
+            <div class="schedulePlayerDetailStatsList">
+              ${statRows.map((row) => `
+                <div class="schedulePlayerDetailStatRow">
+                  <span>${escapeHtml(row.label)}</span>
+                  <strong>${escapeHtml(row.value)}</strong>
+                </div>
+              `).join("")}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
   `;
 }
 
@@ -1247,8 +1410,8 @@ function renderScheduleScorecardModal() {
         ${renderScorecardObjectives(match, activeGame)}
         ${renderScorecardBans(activeGame)}
         <div class="scheduleScorecardGrid">
-          ${renderScorecardTeamCard(match.teamA, playersByTeam[match.teamA] || [])}
-          ${renderScorecardTeamCard(match.teamB, playersByTeam[match.teamB] || [])}
+          ${renderScorecardTeamCard(match.teamA, playersByTeam[match.teamA] || [], activeEntry.index)}
+          ${renderScorecardTeamCard(match.teamB, playersByTeam[match.teamB] || [], activeEntry.index)}
         </div>
       </div>
     </div>
@@ -3895,6 +4058,8 @@ export {
   openScheduleScorecard,
   closeScheduleScorecard,
   selectScheduleScorecardGame,
+  openScheduleScorecardPlayerModal,
+  closeScheduleScorecardPlayerModal,
   openTeamRoster,
   closeTeamRoster,
   openTeamRosterProfile,

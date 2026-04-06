@@ -1081,6 +1081,22 @@ h1::after{
   min-height:56px;
 }
 
+.scheduleScorecardPlayer.is-clickable{
+  width:100%;
+  color:inherit;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+  transition:transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.scheduleScorecardPlayer.is-clickable:hover{
+  transform:translateY(-1px);
+  border-color:rgba(96,165,250,0.46);
+  box-shadow:0 14px 28px rgba(0,0,0,0.22), 0 0 14px rgba(59,130,246,0.1);
+  background:rgba(10, 22, 50, 0.86);
+}
+
 .scheduleScorecardPlayer.is-mvp{
   border-color:rgba(251,191,36,0.6);
   box-shadow:0 14px 26px rgba(0,0,0,0.28), 0 0 18px rgba(251,191,36,0.14);
@@ -1203,6 +1219,250 @@ h1::after{
   text-align:center;
   color:#9db8df;
   background:rgba(255,255,255,0.04);
+}
+
+.schedulePlayerDetailModal{
+  width:min(820px, calc(100vw - 28px));
+  display:grid;
+  gap:18px;
+}
+
+.schedulePlayerDetailHead{
+  position:relative;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  padding-top:4px;
+}
+
+.schedulePlayerDetailIdentity{
+  display:grid;
+  grid-template-columns:180px minmax(0, 1fr);
+  gap:18px;
+  width:100%;
+  min-width:0;
+}
+
+.schedulePlayerDetailPortraitWrap{
+  min-height:220px;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.1);
+  background:
+    radial-gradient(circle at top, rgba(59,130,246,0.24), transparent 44%),
+    linear-gradient(180deg, rgba(7,16,46,0.95), rgba(5,11,30,0.95));
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.schedulePlayerDetailPortrait{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.schedulePlayerDetailPortraitFallback{
+  width:100%;
+  min-height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Orbitron","Rajdhani",sans-serif;
+  font-size:3rem;
+  font-weight:900;
+  color:#dce8ff;
+}
+
+.schedulePlayerDetailMeta{
+  display:grid;
+  align-content:center;
+  gap:12px;
+  min-width:0;
+  padding-right:92px;
+}
+
+.schedulePlayerDetailMeta h3{
+  margin:0;
+  width:auto;
+  max-width:none;
+  padding:0;
+  border:0;
+  background:none;
+  box-shadow:none;
+  backdrop-filter:none;
+  text-align:left;
+}
+
+.schedulePlayerDetailMeta h3::before,
+.schedulePlayerDetailMeta h3::after{
+  content:none;
+}
+
+.schedulePlayerDetailTeamRow,
+.schedulePlayerDetailHeroRow,
+.schedulePlayerDetailRuneRow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  min-width:0;
+}
+
+.schedulePlayerDetailMetaBottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.schedulePlayerDetailTeamRow{
+  color:#9db8df;
+  font-weight:800;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+
+.schedulePlayerDetailTeamLogo{
+  width:38px;
+  height:38px;
+  object-fit:contain;
+}
+
+.schedulePlayerDetailHeroRow{
+  font-family:"Orbitron","Rajdhani",sans-serif;
+  font-size:1.15rem;
+  font-weight:800;
+}
+
+.schedulePlayerDetailHeroImg{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,0.18);
+}
+
+.schedulePlayerDetailRuneImg{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.06);
+}
+
+.schedulePlayerDetailRuneImg.is-emblem{
+  width:40px;
+  height:40px;
+  border-color:rgba(251,191,36,0.45);
+}
+
+.schedulePlayerDetailBody{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+}
+
+.schedulePlayerDetailBuildCard,
+.schedulePlayerDetailStatsCard{
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:18px;
+  padding:16px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+    rgba(3,10,31,0.72);
+}
+
+.schedulePlayerDetailSectionTitle{
+  margin-bottom:14px;
+  color:#9db8df;
+  font-family:"Orbitron","Rajdhani",sans-serif;
+  font-size:0.82rem;
+  font-weight:800;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+.schedulePlayerDetailItems{
+  display:grid;
+  grid-template-columns:repeat(6, minmax(0, 1fr));
+  gap:10px;
+}
+
+.schedulePlayerDetailItemImg{
+  width:100%;
+  aspect-ratio:1;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.05);
+  object-fit:cover;
+}
+
+.schedulePlayerDetailKdaCard{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  border-radius:16px;
+  background:linear-gradient(135deg, rgba(14,165,233,0.16), rgba(59,130,246,0.28));
+  border:1px solid rgba(96,165,250,0.32);
+  margin-bottom:12px;
+}
+
+.schedulePlayerDetailKdaCard.is-inline{
+  margin-bottom:0;
+  min-width:220px;
+  flex:0 0 auto;
+}
+
+.schedulePlayerDetailKdaCard span{
+  font-family:"Orbitron","Rajdhani",sans-serif;
+  font-size:0.82rem;
+  font-weight:800;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:#9db8df;
+}
+
+.schedulePlayerDetailKdaCard strong{
+  font-family:"Rajdhani","Segoe UI",Arial,sans-serif;
+  font-size:2rem;
+  line-height:1;
+}
+
+.schedulePlayerDetailStatsList{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px;
+}
+
+.schedulePlayerDetailStatRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.schedulePlayerDetailStatRow span{
+  color:#9db8df;
+  font-weight:700;
+}
+
+.schedulePlayerDetailStatRow strong{
+  font-family:"Rajdhani","Segoe UI",Arial,sans-serif;
+  font-size:1.12rem;
+  font-weight:800;
+}
+
+.schedulePlayerDetailClose{
+  position:absolute;
+  top:-8px;
+  right:0;
 }
 
 .scheduleEmpty{
@@ -3924,6 +4184,187 @@ select option:hover{
     width:100%;
     text-align:left;
     line-height:1.4;
+  }
+
+  .schedulePlayerDetailModal{
+    width:min(calc(100vw - 16px), 540px);
+    gap:14px;
+  }
+
+  .schedulePlayerDetailHead{
+    align-items:flex-start;
+    padding-top:0;
+  }
+
+  .schedulePlayerDetailIdentity{
+    grid-template-columns:minmax(108px, 120px) minmax(0, 1fr);
+    gap:12px;
+    align-items:start;
+  }
+
+  .schedulePlayerDetailBody{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .schedulePlayerDetailMeta{
+    align-content:start;
+    gap:10px;
+    padding-right:84px;
+  }
+
+  .schedulePlayerDetailMeta h3{
+    font-size:1.65rem;
+    line-height:0.98;
+  }
+
+  .schedulePlayerDetailPortraitWrap{
+    min-height:150px;
+    border-radius:18px;
+  }
+
+  .schedulePlayerDetailTeamRow{
+    gap:8px;
+    font-size:0.76rem;
+  }
+
+  .schedulePlayerDetailTeamLogo{
+    width:30px;
+    height:30px;
+  }
+
+  .schedulePlayerDetailHeroRow{
+    gap:8px;
+    font-size:0.98rem;
+  }
+
+  .schedulePlayerDetailHeroImg{
+    width:40px;
+    height:40px;
+  }
+
+  .schedulePlayerDetailMetaBottom{
+    align-items:flex-start;
+    gap:12px;
+    flex-direction:column;
+  }
+
+  .schedulePlayerDetailRuneRow{
+    gap:8px;
+  }
+
+  .schedulePlayerDetailRuneImg{
+    width:30px;
+    height:30px;
+  }
+
+  .schedulePlayerDetailRuneImg.is-emblem{
+    width:36px;
+    height:36px;
+  }
+
+  .schedulePlayerDetailKdaCard.is-inline{
+    width:100%;
+    min-width:0;
+    max-width:220px;
+    padding:12px 14px;
+  }
+
+  .schedulePlayerDetailKdaCard strong{
+    font-size:1.75rem;
+  }
+
+  .schedulePlayerDetailBuildCard,
+  .schedulePlayerDetailStatsCard{
+    padding:14px;
+    border-radius:16px;
+  }
+
+  .schedulePlayerDetailSectionTitle{
+    margin-bottom:12px;
+    font-size:0.78rem;
+  }
+
+  .schedulePlayerDetailItems{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:8px;
+  }
+
+  .schedulePlayerDetailItemImg{
+    border-radius:14px;
+  }
+
+  .schedulePlayerDetailStatsList{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .schedulePlayerDetailStatRow{
+    padding:10px 12px;
+  }
+
+  .schedulePlayerDetailStatRow span{
+    font-size:0.92rem;
+  }
+
+  .schedulePlayerDetailStatRow strong{
+    font-size:1.02rem;
+  }
+
+  .schedulePlayerDetailClose{
+    position:absolute;
+    top:-2px;
+    right:0;
+  }
+}
+
+@media (max-width: 420px){
+  .schedulePlayerDetailModal{
+    width:calc(100vw - 12px);
+  }
+
+  .schedulePlayerDetailIdentity{
+    grid-template-columns:102px minmax(0, 1fr);
+    gap:10px;
+  }
+
+  .schedulePlayerDetailPortraitWrap{
+    min-height:136px;
+  }
+
+  .schedulePlayerDetailMeta{
+    padding-right:78px;
+  }
+
+  .schedulePlayerDetailMeta h3{
+    font-size:1.45rem;
+  }
+
+  .schedulePlayerDetailHeroRow{
+    font-size:0.92rem;
+  }
+
+  .schedulePlayerDetailHeroImg{
+    width:38px;
+    height:38px;
+  }
+
+  .schedulePlayerDetailKdaCard.is-inline{
+    max-width:190px;
+    padding:10px 12px;
+  }
+
+  .schedulePlayerDetailKdaCard span{
+    font-size:0.76rem;
+  }
+
+  .schedulePlayerDetailKdaCard strong{
+    font-size:1.55rem;
+  }
+
+  .schedulePlayerDetailBuildCard,
+  .schedulePlayerDetailStatsCard{
+    padding:12px;
   }
 }
 
