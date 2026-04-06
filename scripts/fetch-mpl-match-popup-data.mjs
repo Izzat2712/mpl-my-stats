@@ -43,6 +43,22 @@ function parseNumericText(value) {
   return digits ? Number.parseInt(digits, 10) : 0;
 }
 
+function remapMplStats(rawStats) {
+  const towerDamage = Number(rawStats?.towerDamage) || 0;
+  const damageTaken = Number(rawStats?.damageTaken) || 0;
+  const heroDamage = Number(rawStats?.heroDamage) || 0;
+  const totalGold = Number(rawStats?.totalGold) || 0;
+
+  // MPL MY labels appear to differ from the post-match analysis labels.
+  // We remap them here so the popup matches the in-game analytics view.
+  return {
+    towerDamage: heroDamage,
+    damageTaken: totalGold,
+    heroDamage: towerDamage,
+    totalGold: damageTaken
+  };
+}
+
 async function fetchText(url) {
   const response = await fetch(url, {
     headers: {
@@ -132,12 +148,7 @@ function parsePlayerChunk(chunk, teamCode, stats) {
       emblemUrl,
       runeUrls,
       itemUrls,
-      stats: {
-        towerDamage: stats.towerDamage,
-        damageTaken: stats.damageTaken,
-        heroDamage: stats.heroDamage,
-        totalGold: stats.totalGold
-      }
+      stats: remapMplStats(stats)
     },
     scrapedKda: {
       kills: kdaParts[0] || 0,
@@ -148,25 +159,41 @@ function parsePlayerChunk(chunk, teamCode, stats) {
 }
 
 function parseStatColumns(midChunk) {
-  const values = [...midChunk.matchAll(/<div class="kda-content">([^<]+)<\/div>/g)].map((match) => parseNumericText(match[1]));
-  if (values.length < 8) {
+  const statBlocks = [...midChunk.matchAll(
+    /<div class="text-start stats(?: mb-1)?">[\s\S]*?<div class="kda-content">([^<]+)<\/div>[\s\S]*?<div class="kda-text">([^<]+)<\/div>[\s\S]*?<div class="kda-content">([^<]+)<\/div>[\s\S]*?<\/div>\s*<\/div>/g
+  )];
+  if (statBlocks.length < 4) {
     throw new Error("Unable to parse player stat columns");
   }
 
-  return {
-    left: {
-      towerDamage: values[0],
-      damageTaken: values[2],
-      heroDamage: values[4],
-      totalGold: values[6]
-    },
-    right: {
-      towerDamage: values[1],
-      damageTaken: values[3],
-      heroDamage: values[5],
-      totalGold: values[7]
-    }
+  const left = {
+    towerDamage: 0,
+    damageTaken: 0,
+    heroDamage: 0,
+    totalGold: 0
   };
+  const right = {
+    towerDamage: 0,
+    damageTaken: 0,
+    heroDamage: 0,
+    totalGold: 0
+  };
+  const statKeyMap = {
+    "tower damage": "towerDamage",
+    "damage taken": "damageTaken",
+    "hero damage": "heroDamage",
+    "total gold": "totalGold"
+  };
+
+  for (const [, leftValue, rawLabel, rightValue] of statBlocks) {
+    const label = String(rawLabel || "").trim().toLowerCase();
+    const statKey = statKeyMap[label];
+    if (!statKey) continue;
+    left[statKey] = parseNumericText(leftValue);
+    right[statKey] = parseNumericText(rightValue);
+  }
+
+  return { left, right };
 }
 
 function parseGameRows(gameHtml, teams) {
