@@ -355,7 +355,8 @@
             "SRG": 7,
             "VMS": 8
           }
-        }
+        },
+        "mvp": "Innocent"
       },
       {
         "winner": "SRG",
@@ -698,11 +699,12 @@
             "SRG": 7,
             "VMS": 3
           }
-        }
+        },
+        "mvp": "Yums"
       }
     ],
     "mpl": {
-      "slug": "W1D2SRGVSVMS",
+      "slug": "W1D1SRGVSVMS",
       "matchId": 214
     }
   },
@@ -1060,7 +1062,8 @@
             "RRQ": 7,
             "TR": 2
           }
-        }
+        },
+        "mvp": "superyoshi"
       },
       {
         "winner": "RRQ",
@@ -1406,7 +1409,8 @@
             "RRQ": 9,
             "TR": 2
           }
-        }
+        },
+        "mvp": "Rough"
       }
     ],
     "mpl": {
@@ -1771,7 +1775,8 @@
             "IG": 9,
             "BTR": 5
           }
-        }
+        },
+        "mvp": "Hazle"
       },
       {
         "winner": "IG",
@@ -2117,7 +2122,8 @@
             "IG": 9,
             "BTR": 2
           }
-        }
+        },
+        "mvp": "Hazle"
       }
     ],
     "mpl": {
@@ -2477,7 +2483,8 @@
             "AC": 8,
             "TF": 0
           }
-        }
+        },
+        "mvp": "izanami"
       },
       {
         "winner": "TF",
@@ -2826,7 +2833,8 @@
             "AC": 1,
             "TF": 9
           }
-        }
+        },
+        "mvp": "Hadess"
       },
       {
         "winner": "TF",
@@ -3177,7 +3185,8 @@
             "AC": 6,
             "TF": 9
           }
-        }
+        },
+        "mvp": "kurttzy"
       }
     ],
     "mpl": {
@@ -3541,7 +3550,8 @@
             "TR": 6,
             "SRG": 7
           }
-        }
+        },
+        "mvp": "loleal"
       },
       {
         "winner": "SRG",
@@ -3891,7 +3901,8 @@
             "TR": 9,
             "SRG": 2
           }
-        }
+        },
+        "mvp": "Kramm"
       },
       {
         "winner": "SRG",
@@ -4242,7 +4253,8 @@
             "TR": 6,
             "SRG": 7
           }
-        }
+        },
+        "mvp": "Kramm"
       }
     ],
     "mpl": {
@@ -4608,7 +4620,8 @@
             "AC": 2,
             "BTR": 9
           }
-        }
+        },
+        "mvp": "anavel"
       },
       {
         "winner": "AC",
@@ -4709,7 +4722,8 @@
             "AC": 7,
             "BTR": 7
           }
-        }
+        },
+        "mvp": "izanami"
       },
       {
         "winner": "AC",
@@ -4810,7 +4824,8 @@
             "AC": 9,
             "BTR": 2
           }
-        }
+        },
+        "mvp": "izanami"
       }
     ],
     "mpl": {
@@ -5171,7 +5186,8 @@
             "RRQ": 8,
             "TF": 4
           }
-        }
+        },
+        "mvp": "superyoshi"
       },
       {
         "winner": "RRQ",
@@ -5510,7 +5526,8 @@
             "RRQ": 7,
             "TF": 0
           }
-        }
+        },
+        "mvp": "Dyrennn"
       }
     ],
     "mpl": {
@@ -5526,7 +5543,10 @@
     "dayMatch": 1,
     "date": "2026-04-10",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W2D1IGVSRRQ"
+    }
   },
   {
     "teamA": "SRG",
@@ -5536,7 +5556,10 @@
     "dayMatch": 2,
     "date": "2026-04-10",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W2D1SRGVSBTRM"
+    }
   },
   {
     "teamA": "TR",
@@ -5546,7 +5569,10 @@
     "dayMatch": 1,
     "date": "2026-04-11",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W2D2TRVSFL"
+    }
   },
   {
     "teamA": "IG",
@@ -5556,7 +5582,10 @@
     "dayMatch": 2,
     "date": "2026-04-11",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W2D2IGVSVMS"
+    }
   },
   {
     "teamA": "RRQ",
@@ -5566,7 +5595,10 @@
     "dayMatch": 3,
     "date": "2026-04-11",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W2D2RRQVSAC"
+    }
   },
   {
     "teamA": "SRG",
@@ -5576,7 +5608,10 @@
     "dayMatch": 1,
     "date": "2026-04-12",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W2D3SRGVSFL"
+    }
   },
   {
     "teamA": "AC",
@@ -5586,7 +5621,10 @@
     "dayMatch": 2,
     "date": "2026-04-12",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W2D3ACVSVMS"
+    }
   },
   {
     "teamA": "TF",
@@ -5596,7 +5634,10 @@
     "dayMatch": 1,
     "date": "2026-04-17",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W3D1FLVSBTRM"
+    }
   },
   {
     "teamA": "VMS",
@@ -5606,7 +5647,10 @@
     "dayMatch": 2,
     "date": "2026-04-17",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W3D1VMSVSRRQ"
+    }
   },
   {
     "teamA": "BTR",
@@ -5616,7 +5660,10 @@
     "dayMatch": 1,
     "date": "2026-04-18",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W3D2BTRMVSTR"
+    }
   },
   {
     "teamA": "AC",
@@ -5626,7 +5673,10 @@
     "dayMatch": 2,
     "date": "2026-04-18",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W3D2ACVSIG"
+    }
   },
   {
     "teamA": "RRQ",
@@ -5636,7 +5686,10 @@
     "dayMatch": 3,
     "date": "2026-04-18",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W3D2RRQVSSRG"
+    }
   },
   {
     "teamA": "TR",
@@ -5646,7 +5699,10 @@
     "dayMatch": 1,
     "date": "2026-04-19",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W3D3TRVSIG"
+    }
   },
   {
     "teamA": "TF",
@@ -5656,7 +5712,10 @@
     "dayMatch": 2,
     "date": "2026-04-19",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W3D3FLVSVMS"
+    }
   },
   {
     "teamA": "BTR",
@@ -5666,7 +5725,10 @@
     "dayMatch": 1,
     "date": "2026-04-24",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W4D1BTRMVSVMS"
+    }
   },
   {
     "teamA": "SRG",
@@ -5676,7 +5738,10 @@
     "dayMatch": 2,
     "date": "2026-04-24",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W4D1SRGVSAC"
+    }
   },
   {
     "teamA": "IG",
@@ -5686,7 +5751,10 @@
     "dayMatch": 1,
     "date": "2026-04-25",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W4D2IGVSSRG"
+    }
   },
   {
     "teamA": "VMS",
@@ -5696,7 +5764,10 @@
     "dayMatch": 2,
     "date": "2026-04-25",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W4D2VMSVSTR"
+    }
   },
   {
     "teamA": "BTR",
@@ -5706,7 +5777,10 @@
     "dayMatch": 3,
     "date": "2026-04-25",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W4D2BTRMVSRRQ"
+    }
   },
   {
     "teamA": "TR",
@@ -5716,7 +5790,10 @@
     "dayMatch": 1,
     "date": "2026-04-26",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W4D3TRVSAC"
+    }
   },
   {
     "teamA": "TF",
@@ -5726,7 +5803,10 @@
     "dayMatch": 2,
     "date": "2026-04-26",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W4D3FLVSIG"
+    }
   },
   {
     "teamA": "TF",
@@ -5736,7 +5816,10 @@
     "dayMatch": 1,
     "date": "2026-05-1",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W5D1FLVSAC"
+    }
   },
   {
     "teamA": "VMS",
@@ -5746,7 +5829,10 @@
     "dayMatch": 2,
     "date": "2026-05-1",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W5D1VMSVSIG"
+    }
   },
   {
     "teamA": "VMS",
@@ -5756,7 +5842,10 @@
     "dayMatch": 1,
     "date": "2026-05-2",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W5D2VMSVSBTRM"
+    }
   },
   {
     "teamA": "TF",
@@ -5766,7 +5855,10 @@
     "dayMatch": 2,
     "date": "2026-05-2",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W5D2FLVSTR"
+    }
   },
   {
     "teamA": "SRG",
@@ -5776,7 +5868,10 @@
     "dayMatch": 3,
     "date": "2026-05-2",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W5D2SRGVSRRQ"
+    }
   },
   {
     "teamA": "AC",
@@ -5786,7 +5881,10 @@
     "dayMatch": 1,
     "date": "2026-05-3",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W5D3ACVSTR"
+    }
   },
   {
     "teamA": "SRG",
@@ -5796,7 +5894,10 @@
     "dayMatch": 2,
     "date": "2026-05-3",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W5D3SRGVSIG"
+    }
   },
   {
     "teamA": "TR",
@@ -5806,7 +5907,10 @@
     "dayMatch": 1,
     "date": "2026-05-8",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W6D1TRVSVMS"
+    }
   },
   {
     "teamA": "RRQ",
@@ -5816,7 +5920,10 @@
     "dayMatch": 2,
     "date": "2026-05-8",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W6D1RRQVSBTRM"
+    }
   },
   {
     "teamA": "IG",
@@ -5826,7 +5933,10 @@
     "dayMatch": 1,
     "date": "2026-05-9",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W6D2IGVSFL"
+    }
   },
   {
     "teamA": "RRQ",
@@ -5836,7 +5946,10 @@
     "dayMatch": 2,
     "date": "2026-05-9",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W6D2RRQVSVMS"
+    }
   },
   {
     "teamA": "AC",
@@ -5846,7 +5959,10 @@
     "dayMatch": 3,
     "date": "2026-05-9",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W6D2ACVSSRG"
+    }
   },
   {
     "teamA": "IG",
@@ -5856,7 +5972,10 @@
     "dayMatch": 1,
     "date": "2026-05-10",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W6D3IGVSAC"
+    }
   },
   {
     "teamA": "BTR",
@@ -5866,7 +5985,10 @@
     "dayMatch": 2,
     "date": "2026-05-10",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W6D3BTRMVSSRG"
+    }
   },
   {
     "teamA": "TF",
@@ -5876,7 +5998,10 @@
     "dayMatch": 1,
     "date": "2026-05-15",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W7D1FLVSSRG"
+    }
   },
   {
     "teamA": "BTR",
@@ -5886,7 +6011,10 @@
     "dayMatch": 2,
     "date": "2026-05-15",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W7D1BTRMVSAC"
+    }
   },
   {
     "teamA": "IG",
@@ -5896,7 +6024,10 @@
     "dayMatch": 1,
     "date": "2026-05-16",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W7D2IGVSTR"
+    }
   },
   {
     "teamA": "TF",
@@ -5906,7 +6037,10 @@
     "dayMatch": 2,
     "date": "2026-05-16",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W7D2FLVSRRQ"
+    }
   },
   {
     "teamA": "VMS",
@@ -5916,7 +6050,10 @@
     "dayMatch": 3,
     "date": "2026-05-16",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W7D2VMSVSSRG"
+    }
   },
   {
     "teamA": "TR",
@@ -5926,7 +6063,10 @@
     "dayMatch": 1,
     "date": "2026-05-16",
     "startTime": "2:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W7D3TRVSBTRM"
+    }
   },
   {
     "teamA": "RRQ",
@@ -5936,7 +6076,10 @@
     "dayMatch": 2,
     "date": "2026-05-16",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W7D3RRQVSIG"
+    }
   },
   {
     "teamA": "BTR",
@@ -5946,7 +6089,10 @@
     "dayMatch": 1,
     "date": "2026-05-22",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W8D1BTRMVSFL"
+    }
   },
   {
     "teamA": "TR",
@@ -5956,7 +6102,10 @@
     "dayMatch": 2,
     "date": "2026-05-22",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W8D1TRVSRRQ"
+    }
   },
   {
     "teamA": "VMS",
@@ -5966,7 +6115,10 @@
     "dayMatch": 1,
     "date": "2026-05-23",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W8D2VMSVSAC"
+    }
   },
   {
     "teamA": "SRG",
@@ -5976,7 +6128,10 @@
     "dayMatch": 2,
     "date": "2026-05-23",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W8D2SRGVSTR"
+    }
   },
   {
     "teamA": "BTR",
@@ -5986,7 +6141,10 @@
     "dayMatch": 3,
     "date": "2026-05-23",
     "startTime": "8:15 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W8D2BTRMVSIG"
+    }
   },
   {
     "teamA": "VMS",
@@ -5996,7 +6154,10 @@
     "dayMatch": 1,
     "date": "2026-05-24",
     "startTime": "2:30 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W8D3VMSVSFL"
+    }
   },
   {
     "teamA": "AC",
@@ -6006,6 +6167,9 @@
     "dayMatch": 2,
     "date": "2026-05-24",
     "startTime": "5:00 PM",
-    "games": []
+    "games": [],
+    "mpl": {
+      "slug": "W8D3ACVSRRQ"
+    }
   }
 ]
