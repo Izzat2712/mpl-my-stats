@@ -6608,7 +6608,120 @@
     "dayMatch": 2,
     "date": "2026-04-10",
     "startTime": "8:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "SRG",
+        "mvp": "YUMS",
+        "bans": [
+          "Baxia",
+          "Sora",
+          "Gloo",
+          "Kimmy",
+          "Obsidia",
+          "Freya",
+          "Zhuxin",
+          "Yve",
+          "Hilda",
+          "Kalea"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Hanabi",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Fanny",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Pharsa",
+            "kills": 4,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Uranus",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Guinevere",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 13
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "ANAVEL",
+            "hero": "Fredrinn",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "FAKEZ",
+            "hero": "Lunox",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "SMOOTH",
+            "hero": "Phoveus",
+            "kills": 5,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 10
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 0,
+            "BTR": 0
+          },
+          "turtle": {
+            "SRG": 0,
+            "BTR": 0
+          },
+          "tower": {
+            "SRG": 0,
+            "BTR": 0
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W2D1SRGVSBTRM"
     }
