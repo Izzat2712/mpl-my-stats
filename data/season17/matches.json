@@ -5655,6 +5655,118 @@
           }
         },
         "mvp": "ROUGH"
+      },
+      {
+        "winner": "IG",
+        "mvp": "HAZLE",
+        "bans": [
+          "Fanny",
+          "Yi Sun-Shin",
+          "Kalea",
+          "Arlott",
+          "Phoveus",
+          "Freya",
+          "Zhuxin",
+          "Marcel",
+          "Suyou",
+          "Harley"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Guinevere",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Lunox",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khufra",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 11
+          },
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Harith",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Hayabusa",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 10
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Sora",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 6
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 7
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 3,
+            "RRQ": 0
+          },
+          "turtle": {
+            "IG": 2,
+            "RRQ": 1
+          },
+          "tower": {
+            "IG": 8,
+            "RRQ": 3
+          }
+        }
       }
     ],
     "mpl": {
