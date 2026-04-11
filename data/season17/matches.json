@@ -7311,7 +7311,120 @@
     "dayMatch": 1,
     "date": "2026-04-11",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TF",
+        "mvp": "DIABLO",
+        "bans": [
+          "Sora",
+          "GLOO",
+          "Fanny",
+          "Lylia",
+          "Zetian",
+          "Marcel",
+          "Freya",
+          "Zhuxin",
+          "Masha",
+          "Phoveus"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Granger",
+            "kills": 6,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Baxia",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 12
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 10
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Cici",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Khaleed",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Harith",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "TF",
+            "name": "HADESS",
+            "hero": "Guinevere",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 8
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Benedetta",
+            "kills": 7,
+            "deaths": 5,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "RAZINN",
+            "hero": "Chou",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 12
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 0,
+            "TF": 2
+          },
+          "turtle": {
+            "TR": 0,
+            "TF": 3
+          },
+          "tower": {
+            "TR": 3,
+            "TF": 7
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W2D2TRVSFL"
     }
