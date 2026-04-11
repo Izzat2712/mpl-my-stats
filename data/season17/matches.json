@@ -8951,6 +8951,118 @@
           }
         },
         "mvp": "GARYY"
+      },
+      {
+        "winner": "RRQ",
+        "mvp": "DYRENNN",
+        "bans": [
+          "Fanny",
+          "Gloo",
+          "Uranus",
+          "Phoveus",
+          "Yuzhong",
+          "Freya",
+          "Zhuxin",
+          "Sora",
+          "Kalea",
+          "Marcel"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Guinevere",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 12
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Kimmy",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 13
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Arlott",
+            "kills": 7,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Hylos",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 14
+          },
+          {
+            "team": "AC",
+            "name": "KUSEY",
+            "hero": "Harith",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "EYYMAL",
+            "hero": "Baxia",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Valentina",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Lapu-Lapu",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "AC",
+            "name": "WIDY",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 2
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 2,
+            "AC": 0
+          },
+          "turtle": {
+            "RRQ": 2,
+            "AC": 0
+          },
+          "tower": {
+            "RRQ": 9,
+            "AC": 0
+          }
+        }
       }
     ],
     "mpl": {
