@@ -77,7 +77,7 @@ const appState = {
   },
   scheduleStage: "regular",
   scheduleTeam: "",
-  scheduleWeek: 1
+  scheduleWeek: null
 };
 
 const ENABLED_SEASONS = new Set(["season16", "season17"]);
