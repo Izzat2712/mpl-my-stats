@@ -8727,7 +8727,120 @@
     "dayMatch": 3,
     "date": "2026-04-11",
     "startTime": "8:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "RRQ",
+        "bans": [
+          "Fanny",
+          "Gloo",
+          "Guinevere",
+          "Kalea",
+          "Claude",
+          "Freya",
+          "Zhuxin",
+          "Sora",
+          "Harley",
+          "Nolan"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Granger",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Leomord",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Zetian",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "AC",
+            "name": "KUSEY",
+            "hero": "Harith",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "EYYMAL",
+            "hero": "Suyou",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Valentina",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "AC",
+            "name": "WIDY",
+            "hero": "Hilda",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 0,
+            "AC": 3
+          },
+          "turtle": {
+            "RRQ": 2,
+            "AC": 1
+          },
+          "tower": {
+            "RRQ": 0,
+            "AC": 9
+          }
+        },
+        "mvp": "MOMO"
+      }
+    ],
     "mpl": {
       "slug": "W2D2RRQVSAC"
     }
