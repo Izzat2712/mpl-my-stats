@@ -1,4 +1,4 @@
-﻿import { getCurrentSeasonLabel, getHeroesMap, getMatches, getRosterList, getTeamDisplayName, getTeamLogosMap } from "./data-store.js";
+import { getCurrentSeasonLabel, getHeroesMap, getMatches, getRosterList, getTeamDisplayName, getTeamLogosMap } from "./data-store.js";
 import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
 import { getStaffList } from "./data-store.js";
 import { getSeasonProfilesMap } from "./data-store.js";
@@ -111,6 +111,59 @@ function formatScheduleDateDisplay(dateValue) {
   const month = String(Number(match[2])).padStart(2, "0");
   const year = match[1];
   return `${day}/${month}/${year}`;
+}
+
+function getScheduleWeekDisplayStart(dateValue) {
+  const match = String(dateValue || "").trim().match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/);
+  if (!match) return null;
+
+  const localDate = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  if (Number.isNaN(localDate.getTime())) return null;
+
+  localDate.setHours(0, 0, 0, 0);
+  const daysSinceWednesday = (localDate.getDay() + 7 - 3) % 7;
+  localDate.setDate(localDate.getDate() - daysSinceWednesday);
+  return localDate;
+}
+
+function getDefaultScheduleSegmentValue(stageData) {
+  const fallbackValue = stageData.segmentTabs[0]?.value || 1;
+  if (stageData.segmentKind !== "week") return fallbackValue;
+
+  const weekStartMap = new Map();
+  for (const entry of stageData.entries) {
+    const weekNumber = Number(entry.segmentNumber);
+    if (!Number.isFinite(weekNumber) || weekStartMap.has(weekNumber)) continue;
+
+    const displayStart = getScheduleWeekDisplayStart(entry.meta?.date);
+    if (displayStart) {
+      weekStartMap.set(weekNumber, displayStart);
+    }
+  }
+
+  const orderedWeeks = stageData.segmentTabs
+    .map((tab) => ({
+      value: tab.value,
+      start: weekStartMap.get(Number(tab.value))
+    }))
+    .filter((entry) => entry.start instanceof Date)
+    .sort((a, b) => a.value - b.value);
+
+  if (!orderedWeeks.length) return fallbackValue;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  let selectedWeek = orderedWeeks[0].value;
+  for (const week of orderedWeeks) {
+    if (today >= week.start) {
+      selectedWeek = week.value;
+    } else {
+      break;
+    }
+  }
+
+  return selectedWeek;
 }
 
 function compareScheduleEntries(a, b) {
@@ -513,7 +566,7 @@ function showSchedule(week = null) {
   const stageData = getStageSegmentData(matchEntries, selectedStage);
   const stageMatches = stageData.entries.map((entry) => entry.match);
   const availableTeams = getScheduleTeams(stageMatches);
-  const fallbackValue = stageData.segmentTabs[0]?.value || 1;
+  const fallbackValue = getDefaultScheduleSegmentValue(stageData);
   const activeSegment = Number(week ?? window.appState?.scheduleWeek ?? fallbackValue) || fallbackValue;
   const requestedTeam = normalizeScheduleTeamCode(window.appState?.scheduleTeam || "");
   const selectedTeam = availableTeams.includes(requestedTeam) ? requestedTeam : "";
@@ -628,9 +681,9 @@ function onScheduleTeamChange(teamCode) {
 function onScheduleStageChange(stage) {
   if (window.appState) {
     window.appState.scheduleStage = normalizeScheduleStage(stage);
-    window.appState.scheduleWeek = 1;
+    window.appState.scheduleWeek = null;
   }
-  showSchedule(1);
+  showSchedule();
 }
 
 function getEmptyTeamSummary(teamCode) {
