@@ -8839,6 +8839,118 @@
           }
         },
         "mvp": "MOMO"
+      },
+      {
+        "winner": "RRQ",
+        "bans": [
+          "Chou",
+          "Guinevere",
+          "Yve",
+          "Phoveus",
+          "Alice",
+          "Fanny",
+          "Freya",
+          "Zhuxin",
+          "Claude",
+          "Harith"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Yi Sun-Shin",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Nolan",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Pharsa",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Kalea",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "KUSEY",
+            "hero": "Karrie",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "EYYMAL",
+            "hero": "Suyou",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Sora",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "WIDY",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 5
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 0,
+            "AC": 0
+          },
+          "turtle": {
+            "RRQ": 0,
+            "AC": 0
+          },
+          "tower": {
+            "RRQ": 0,
+            "AC": 0
+          }
+        },
+        "mvp": "GARYY"
       }
     ],
     "mpl": {
