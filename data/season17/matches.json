@@ -8377,7 +8377,120 @@
     "dayMatch": 2,
     "date": "2026-04-11",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "NOVAXCOBAR",
+        "bans": [
+          "Baxia",
+          "Kalea",
+          "Guinevere",
+          "Alice",
+          "Esmeralda",
+          "Freya",
+          "Fanny",
+          "Yi Sun-Shin",
+          "Karrie",
+          "Harith"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Granger",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Leomord",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 6,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Phoveus",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Claude",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Joy",
+            "kills": 6,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "VMS",
+            "name": "ZENO",
+            "hero": "Uranus",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Khaleed",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 7
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 1,
+            "VMS": 3
+          },
+          "turtle": {
+            "IG": 0,
+            "VMS": 3
+          },
+          "tower": {
+            "IG": 8,
+            "VMS": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W2D2IGVSVMS"
     }
