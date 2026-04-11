@@ -8601,6 +8601,118 @@
             "VMS": 2
           }
         }
+      },
+      {
+        "winner": "IG",
+        "mvp": "SPENCER",
+        "bans": [
+          "Kalea",
+          "Guinevere",
+          "Claude",
+          "Phoveus",
+          "Uranus",
+          "Freya",
+          "Fanny",
+          "Yi Sun-Shin",
+          "Lancelot",
+          "Khaleed"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Harith",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Nolan",
+            "kills": 9,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 11
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Gatotkaca",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Chip",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 11
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Karrie",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Baxia",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "ZENO",
+            "hero": "Sora",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 5
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 3,
+            "VMS": 0
+          },
+          "turtle": {
+            "IG": 2,
+            "VMS": 1
+          },
+          "tower": {
+            "IG": 9,
+            "VMS": 2
+          }
+        }
       }
     ],
     "mpl": {
