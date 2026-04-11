@@ -7535,6 +7535,118 @@
             "TF": 7
           }
         }
+      },
+      {
+        "winner": "TR",
+        "mvp": "LOLEAL",
+        "bans": [
+          "Marcel",
+          "Hilda",
+          "Fanny",
+          "Granger",
+          "Karrie",
+          "Freya",
+          "Benedetta",
+          "Sora",
+          "Yuzhong",
+          "Uranus"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Obsidia",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Guinevere",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Yve",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Cici",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Gloo",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "HADESS",
+            "hero": "Yi Sun-Shin",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Alice",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "TF",
+            "name": "RAZINN",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 1,
+            "TF": 0
+          },
+          "turtle": {
+            "TR": 3,
+            "TF": 0
+          },
+          "tower": {
+            "TR": 9,
+            "TF": 6
+          }
+        }
       }
     ],
     "mpl": {
