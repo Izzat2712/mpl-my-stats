@@ -10509,7 +10509,120 @@
     "dayMatch": 1,
     "date": "2026-04-12",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "SRG",
+        "mvp": "YUMS",
+        "bans": [
+          "Benedetta",
+          "Guinevere",
+          "Baxia",
+          "Yi Sun-Shin",
+          "Harley",
+          "Zhuxin",
+          "Fanny",
+          "Freya",
+          "Granger",
+          "Obsidia"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Harith",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Suyou",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Pharsa",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Phoveus",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 12
+          },
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "HADESS",
+            "hero": "Leomord",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Sora",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "RAZINN",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 2
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 1,
+            "TF": 0
+          },
+          "turtle": {
+            "SRG": 2,
+            "TF": 1
+          },
+          "tower": {
+            "SRG": 8,
+            "TF": 1
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W2D3SRGVSFL"
     }
