@@ -10621,6 +10621,118 @@
             "TF": 1
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "YUMS",
+        "bans": [
+          "Fanny",
+          "Phoveus",
+          "Sora",
+          "Esmeralda",
+          "Uranus",
+          "Benedetta",
+          "Freya",
+          "Zhuxin",
+          "Zetian",
+          "Kimmy"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Granger",
+            "kills": 11,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Harley",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Pharsa",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Cici",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 11
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Guinevere",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 14
+          },
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Harith",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "HADESS",
+            "hero": "Baxia",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Martis",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Lapu-Lapu",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "RAZINN",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 4
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 1,
+            "TF": 0
+          },
+          "turtle": {
+            "SRG": 2,
+            "TF": 1
+          },
+          "tower": {
+            "SRG": 9,
+            "TF": 2
+          }
+        }
       }
     ],
     "mpl": {
