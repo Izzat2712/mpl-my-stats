@@ -54,6 +54,20 @@ import {
   getH2hSubTab,
   setSupportPos
 } from "./views.js";
+import {
+  addTierlistTier,
+  showTierlist,
+  downloadTierlistImage,
+  endTierlistPointerDrag,
+  onTierlistPointerMove,
+  onTierlistPointerUp,
+  removeTierlistTier,
+  renameTierlistTier,
+  setTierlistCategory,
+  startTierlistPointerDrag,
+  updateTierlistFilter,
+  updateTierlistTitle
+} from "./tierlist.js";
 
 const appState = {
   loaded: false,
@@ -86,6 +100,7 @@ const VIEW_ROUTES = {
   teams: "/teams",
   players: "/players",
   heroes: "/heroes",
+  tierlist: "/tierlist",
   "hero pool": "/hero-pool",
   "player pool": "/player-pool"
 };
@@ -596,6 +611,13 @@ function showHeroesView(...args) {
   return showHeroes(...args);
 }
 
+function showTierlistView(...args) {
+  appState.view = "tierlist";
+  updateUrlForView("tierlist");
+  setActiveNavByLabel("Tierlist");
+  return showTierlist(...args);
+}
+
 function showHeroPoolView(...args) {
   appState.view = "hero pool";
   updateUrlForView("hero pool");
@@ -621,6 +643,7 @@ function renderCurrentView() {
   if (appState.view === "schedule" && isViewAvailableForSeason("schedule")) return showScheduleView();
   if (appState.view === "players") return showPlayersView();
   if (appState.view === "heroes") return showHeroesView();
+  if (appState.view === "tierlist") return showTierlistView();
   if (appState.view === "hero pool") return showHeroPoolView();
   if (appState.view === "player pool") return showPlayerPoolsView();
   if (appState.view === "h2h") return showH2HView();
@@ -727,6 +750,7 @@ window.sortTeams = sortTeams;
 window.showPlayers = showPlayersView;
 window.sortPlayers = sortPlayers;
 window.showHeroes = showHeroesView;
+window.showTierlist = showTierlistView;
 window.sortHeroes = sortHeroes;
 window.showHeroPool = showHeroPoolView;
 window.sortHeroPool = sortHeroPool;
@@ -749,6 +773,17 @@ window.onHeroSearchInput = onHeroSearchInput;
 window.onHpPlayerSearchInput = onHpPlayerSearchInput;
 window.onPpHeroSearchInput = onPpHeroSearchInput;
 window.onPpExcludeUnusedToggle = onPpExcludeUnusedToggle;
+window.setTierlistCategory = setTierlistCategory;
+window.updateTierlistTitle = updateTierlistTitle;
+window.updateTierlistFilter = updateTierlistFilter;
+window.addTierlistTier = addTierlistTier;
+window.renameTierlistTier = renameTierlistTier;
+window.removeTierlistTier = removeTierlistTier;
+window.startTierlistPointerDrag = startTierlistPointerDrag;
+window.onTierlistPointerMove = onTierlistPointerMove;
+window.onTierlistPointerUp = onTierlistPointerUp;
+window.endTierlistPointerDrag = endTierlistPointerDrag;
+window.downloadTierlistImage = downloadTierlistImage;
 window.invalidateStatsCache = invalidateStatsCache;
 
 window.addEventListener("DOMContentLoaded", () => {
