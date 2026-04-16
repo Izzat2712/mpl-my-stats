@@ -87,6 +87,7 @@ function buildTierlistData() {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const players = roster
+    .filter((player) => player?.active !== false)
     .map((player) => ({
       id: `player:${player.name}`,
       name: player.name,

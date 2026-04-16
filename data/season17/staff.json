@@ -59,17 +59,18 @@
     "role": "Head Coach",
     "picture": "https://i.imgur.com/2zQk9FJ.png"
   },
-    {
+  {
+    "name": "KENJI",
+    "team": "BTR",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/ClJ8EMo.png"
+  },
+  {
     "name": "BARBOSSA",
     "team": "BTR",
     "role": "Head Coach",
-    "picture": "https://i.imgur.com/6oMpsQ1.png"
-  },
-    {
-    "name": "KENJI",
-    "team": "BTR",
-    "role": "Tactical Coach",
-    "picture": "https://i.imgur.com/ClJ8EMo.png"
+    "picture": "https://i.imgur.com/6oMpsQ1.png",
+    "active": false
   },
     {
     "name": "LOONG",

@@ -39,6 +39,7 @@ import {
   onPpHeroSearchInput,
   onPpExcludeUnusedToggle,
   showSchedule,
+  showTransfer,
   showTeams,
   sortTeams,
   showPlayers,
@@ -97,6 +98,7 @@ const appState = {
 const ENABLED_SEASONS = new Set(["season16", "season17"]);
 const VIEW_ROUTES = {
   schedule: "/schedule",
+  transfer: "/transfer",
   teams: "/teams",
   players: "/players",
   heroes: "/heroes",
@@ -590,6 +592,13 @@ function showScheduleView(...args) {
   return showSchedule(...args);
 }
 
+function showTransferView(...args) {
+  appState.view = "transfer";
+  updateUrlForView("transfer");
+  setActiveNavByLabel("Transfer");
+  return showTransfer(...args);
+}
+
 function showTeamsView(...args) {
   appState.view = "teams";
   updateUrlForView("teams");
@@ -641,6 +650,7 @@ function showH2HView(...args) {
 
 function renderCurrentView() {
   if (appState.view === "schedule" && isViewAvailableForSeason("schedule")) return showScheduleView();
+  if (appState.view === "transfer") return showTransferView();
   if (appState.view === "players") return showPlayersView();
   if (appState.view === "heroes") return showHeroesView();
   if (appState.view === "tierlist") return showTierlistView();
@@ -720,6 +730,7 @@ window.appState = appState;
 window.initApp = initApp;
 window.onSeasonChange = onSeasonChange;
 window.showSchedule = showScheduleView;
+window.showTransfer = showTransferView;
 window.onScheduleStageChange = onScheduleStageChange;
 window.onScheduleTeamChange = onScheduleTeamChange;
 window.openScheduleTeamModal = openScheduleTeamModal;

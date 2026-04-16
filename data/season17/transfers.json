@@ -1,0 +1,74 @@
+{
+  "window": {
+    "startWeek": 3,
+    "endWeek": 6
+  },
+  "entries": [
+      {
+      "week": 3,
+      "date": "",
+      "player": "ZIEYY",
+      "type": "Transfer In",
+      "fromTeam": "FREE AGENT",
+      "toTeam": "BTR",
+      "role": "Midlaner",
+      "picture": "https://i.imgur.com/Q19hnF1.png",
+      "note": "Moved into the active BTR roster during the transfer window."
+    },
+      {
+      "week": 3,
+      "date": "",
+      "player": "XORN",
+      "type": "Transfer In",
+      "fromTeam": "VMS",
+      "toTeam": "TF",
+      "role": "Roamer",
+      "picture": "https://i.imgur.com/T6GVJ6l.png",
+      "note": "Moved into the active TF roster during the transfer window."
+    },
+      {
+      "week": 3,
+      "date": "",
+      "player": "RIVAL",
+      "type": "Transfer In",
+      "fromTeam": "FREE AGENT",
+      "toTeam": "TF",
+      "role": "Jungler",
+      "picture": "https://i.imgur.com/kCfctEz.png",
+      "note": "Moved into the active TF roster during the transfer window."
+    },
+      {
+      "week": 3,
+      "date": "",
+      "player": "AERONSHIKII",
+      "type": "Transfer In",
+      "fromTeam": "TEAM LIQUID PH",
+      "toTeam": "AC",
+      "role": "Goldlaner",
+      "picture": "https://i.imgur.com/jyws2EY.png",
+      "note": "Moved into the active AC roster during the transfer window."
+    },
+    {
+      "week": 3,
+      "date": "",
+      "player": "FAKEZ",
+      "type": "Transfer Out",
+      "fromTeam": "BTR",
+      "toTeam": "FREE AGENT",
+      "role": "Midlaner",
+      "picture": "https://i.imgur.com/XVqjNNp.png",
+      "note": "Moved out of the active BTR roster during the transfer window."
+    },
+    {
+      "week": 3,
+      "date": "",
+      "player": "BARBOSSA",
+      "type": "Transfer Out",
+      "fromTeam": "BTR",
+      "toTeam": "FREE AGENT",
+      "role": "Head Coach",
+      "picture": "https://i.imgur.com/6oMpsQ1.png",
+      "note": "Moved out of the active BTR roster during the transfer window."
+    }
+  ]
+}

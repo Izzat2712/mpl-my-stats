@@ -113,12 +113,6 @@
         "lane":  "Jungler",
         "picture":  "https://i.imgur.com/wwYOowD.png"
     },
-        {
-        "name":  "XORN",
-        "team":  "VMS",
-        "lane":  "Roamer",
-        "picture":  "https://i.imgur.com/fLvlwLp.png"
-    },
     {
         "name":  "ROUGH",
         "team":  "RRQ",
@@ -189,7 +183,14 @@
         "name":  "FAKEZ",
         "team":  "BTR",
         "lane":  "Midlaner",
-        "picture":  "https://i.imgur.com/XVqjNNp.png"
+        "picture":  "https://i.imgur.com/XVqjNNp.png",
+        "active": false
+    },
+        {
+        "name":  "ZIEYY",
+        "team":  "BTR",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/Q19hnF1.png"
     },
     {
         "name":  "KUSEY",
@@ -226,6 +227,12 @@
         "team":  "AC",
         "lane":  "Roamer",
         "picture":  "https://i.imgur.com/XITM68u.png"
+    },
+        {
+        "name":  "AERONSHIKII",
+        "team":  "AC",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/jyws2EY.png"
     },
     {
         "name":  "MELQT",
@@ -299,10 +306,24 @@
         "lane":  "Jungler",
         "picture":  "https://i.imgur.com/34DofN2.png"
     },
-        {
+    {
         "name":  "BEARRR",
         "team":  "TF",
         "lane":  "Exp Laner",
         "picture":  "https://i.imgur.com/kKOMBc5.png"
+    },
+    {
+        "name":  "XORN",
+        "team":  "TF",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/T6GVJ6l.png"
+    },
+    {
+        "name":  "RIVAL",
+        "team":  "TF",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/kCfctEz.png"
     }
+    
+    
 ]

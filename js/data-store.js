@@ -12,6 +12,7 @@ const SEASON_DATA_FILES = {
     roster: "/data/season17/roster.json",
     staff: "/data/season17/staff.json",
     profiles: "/data/season17/profiles.json",
+    transfers: "/data/season17/transfers.json",
     heroes: "/data/heroes.json",
     matches: "/data/season17/matches.json",
     teamLogos: "/data/season17/teamLogos.json",
@@ -34,6 +35,7 @@ let teamLogos = {};
 let teamNames = {};
 let rosterMap = {};
 let seasonProfiles = {};
+let seasonTransfers = { entries: [], window: {} };
 let currentSeasonKey = "season16";
 
 function isNumber(value) {
@@ -45,6 +47,9 @@ function validateRoster(list) {
   for (const item of list) {
     if (!item || typeof item.name !== "string" || typeof item.team !== "string" || typeof item.lane !== "string") {
       throw new Error("roster.json contains invalid player records");
+    }
+    if (item.active != null && typeof item.active !== "boolean") {
+      throw new Error("roster.json player active flag must be a boolean");
     }
   }
 }
@@ -60,6 +65,9 @@ function validateStaff(list) {
   for (const item of list) {
     if (!item || typeof item.name !== "string" || typeof item.team !== "string" || typeof item.role !== "string") {
       throw new Error("staff.json contains invalid staff records");
+    }
+    if (item.active != null && typeof item.active !== "boolean") {
+      throw new Error("staff.json staff active flag must be a boolean");
     }
   }
 }
@@ -110,6 +118,44 @@ function validateProfiles(payload) {
   for (const [key, value] of Object.entries(profiles)) {
     if (!key || !value || typeof value !== "object" || Array.isArray(value)) {
       throw new Error("profiles.json contains invalid profile records");
+    }
+  }
+}
+
+function validateTransfers(payload) {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    throw new Error("transfers.json must be an object");
+  }
+
+  if (payload.window != null) {
+    if (typeof payload.window !== "object" || Array.isArray(payload.window)) {
+      throw new Error("transfers.json window must be an object");
+    }
+    if (payload.window.startWeek != null && !Number.isFinite(Number(payload.window.startWeek))) {
+      throw new Error("transfers.json window.startWeek must be numeric");
+    }
+    if (payload.window.endWeek != null && !Number.isFinite(Number(payload.window.endWeek))) {
+      throw new Error("transfers.json window.endWeek must be numeric");
+    }
+  }
+
+  if (payload.entries == null) return;
+  if (!Array.isArray(payload.entries)) {
+    throw new Error("transfers.json entries must be an array");
+  }
+
+  for (const entry of payload.entries) {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) {
+      throw new Error("transfers.json contains invalid transfer records");
+    }
+    if (entry.player != null && typeof entry.player !== "string") {
+      throw new Error("transfers.json player must be a string");
+    }
+    if (entry.type != null && typeof entry.type !== "string") {
+      throw new Error("transfers.json type must be a string");
+    }
+    if (entry.week != null && !Number.isFinite(Number(entry.week))) {
+      throw new Error("transfers.json week must be numeric");
     }
   }
 }
@@ -301,10 +347,11 @@ function getSeasonConfig(seasonKey) {
 
 export async function loadData(seasonKey = "season16") {
   const config = getSeasonConfig(seasonKey);
-  const [nextRoster, nextStaff, nextProfiles, nextHeroes, nextMatches, nextTeamLogos, nextTeamNames] = await Promise.all([
+  const [nextRoster, nextStaff, nextProfiles, nextTransfers, nextHeroes, nextMatches, nextTeamLogos, nextTeamNames] = await Promise.all([
     loadJson(config.roster),
     loadOptionalJson(config.staff, []),
     loadOptionalJson(config.profiles, { profiles: {} }),
+    loadOptionalJson(config.transfers, { window: {}, entries: [] }),
     loadJson(config.heroes),
     loadJson(config.matches),
     loadJson(config.teamLogos),
@@ -314,6 +361,7 @@ export async function loadData(seasonKey = "season16") {
   validateRoster(nextRoster);
   validateStaff(nextStaff);
   validateProfiles(nextProfiles);
+  validateTransfers(nextTransfers);
   const normalizedHeroes = normalizeHeroesMap(nextHeroes);
   const normalizedMatches = normalizeMatchesData(nextMatches, nextRoster, nextTeamNames, nextTeamLogos);
 
@@ -330,6 +378,7 @@ export async function loadData(seasonKey = "season16") {
   teamNames = nextTeamNames;
   rosterMap = Object.fromEntries(roster.map((p) => [normalizePlayerNameKey(p.name), p]));
   seasonProfiles = nextProfiles.profiles || {};
+  seasonTransfers = nextTransfers || { window: {}, entries: [] };
   currentSeasonKey = seasonKey in SEASON_DATA_FILES ? seasonKey : "season16";
 
   dataVersion += 1;
@@ -378,6 +427,10 @@ export function getTeamNamesMap() {
 
 export function getSeasonProfilesMap() {
   return seasonProfiles;
+}
+
+export function getSeasonTransfersData() {
+  return seasonTransfers;
 }
 
 export function getTeamDisplayName(teamCode) {

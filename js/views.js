@@ -2,6 +2,7 @@ import { getCurrentSeasonLabel, getHeroesMap, getMatches, getRosterList, getTeam
 import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
 import { getStaffList } from "./data-store.js";
 import { getSeasonProfilesMap } from "./data-store.js";
+import { getSeasonTransfersData } from "./data-store.js";
 import { getMatchScore } from "./match-utils.js";
 
 import { getCurrentSeasonKey } from "./data-store.js";
@@ -12,6 +13,7 @@ let staff = [];
 let constHero = {};
 let teamLogos = {};
 let seasonProfiles = {};
+let seasonTransfers = { window: {}, entries: [] };
 const OBJECTIVE_ICONS = {
   lord: "https://static.wikia.nocookie.net/mobile-legends/images/2/27/Elemental_Lord.jpg/revision/latest?cb=20220104081726",
   turtle: "https://static.wikia.nocookie.net/mobile-legends/images/5/58/Dragon_Turtle.jpg/revision/latest?cb=20220104065903",
@@ -783,6 +785,7 @@ export function refreshDataRefs() {
   constHero = getHeroesMap();
   teamLogos = getTeamLogosMap();
   seasonProfiles = getSeasonProfilesMap();
+  seasonTransfers = getSeasonTransfersData();
 }
 
 let teamSort = { key: "points", asc: false };
@@ -1668,7 +1671,7 @@ function getTeamRosterPlayers(teamCode) {
   };
 
   return (roster || [])
-    .filter((player) => String(player?.team || "").trim() === teamCode)
+    .filter((player) => String(player?.team || "").trim() === teamCode && player?.active !== false)
     .sort((a, b) => {
       const laneDiff = (roleOrder[a.lane] || 99) - (roleOrder[b.lane] || 99);
       if (laneDiff !== 0) return laneDiff;
@@ -1678,7 +1681,7 @@ function getTeamRosterPlayers(teamCode) {
 
 function getTeamStaff(teamCode) {
   return (staff || [])
-    .filter((member) => String(member?.team || "").trim() === teamCode)
+    .filter((member) => String(member?.team || "").trim() === teamCode && member?.active !== false)
     .sort((a, b) => String(a.role || "").localeCompare(String(b.role || "")) || String(a.name || "").localeCompare(String(b.name || "")));
 }
 
@@ -2586,6 +2589,141 @@ function showTeams() {
   html += `</table>`;
   document.getElementById("output").innerHTML = html;
   mountTeamRosterModal();
+}
+
+function getTransferWindowLabel() {
+  const transferWindow = seasonTransfers?.window && typeof seasonTransfers.window === "object"
+    ? seasonTransfers.window
+    : {};
+  const customLabel = String(transferWindow.label || "").trim();
+  if (customLabel) return customLabel;
+
+  const startWeek = Number(transferWindow.startWeek);
+  const endWeek = Number(transferWindow.endWeek);
+  if (Number.isFinite(startWeek) && Number.isFinite(endWeek)) {
+    return `Week ${startWeek} to Week ${endWeek}`;
+  }
+  if (Number.isFinite(startWeek)) {
+    return `From Week ${startWeek}`;
+  }
+  if (Number.isFinite(endWeek)) {
+    return `Until Week ${endWeek}`;
+  }
+  return "Transfer Window";
+}
+
+function showTransfer() {
+  const entries = Array.isArray(seasonTransfers?.entries) ? [...seasonTransfers.entries] : [];
+  const getTransferTypePriority = (value) => {
+    const normalized = String(value || "").trim().toLowerCase();
+    if (normalized.includes("transfer in")) return 1;
+    if (normalized.includes("transfer out")) return 2;
+    return 3;
+  };
+
+  const groupedEntries = new Map();
+  for (const entry of entries) {
+    const week = Number(entry?.week);
+    const weekKey = Number.isFinite(week) ? week : 0;
+    const group = groupedEntries.get(weekKey) || [];
+    group.push(entry);
+    groupedEntries.set(weekKey, group);
+  }
+
+  const orderedWeeks = Array.from(groupedEntries.keys()).sort((a, b) => a - b);
+
+  const html = `
+    <section class="transferPage">
+      <div class="transferHero">
+        <h2 class="panel-title">TRANSFER ${seasonLabel()}</h2>
+      </div>
+
+      ${entries.length ? `
+        <div class="transferList">
+          ${orderedWeeks.map((weekKey) => {
+            const weekEntries = [...(groupedEntries.get(weekKey) || [])].sort((a, b) => {
+              const typeDiff = getTransferTypePriority(a?.type) - getTransferTypePriority(b?.type);
+              if (typeDiff !== 0) return typeDiff;
+              return String(a?.player || "").localeCompare(String(b?.player || ""));
+            });
+
+            return `
+              <section class="transferWeekSection">
+                <h3 class="transferWeekHeader">${weekKey > 0 ? `Week ${weekKey}` : "Other Updates"}</h3>
+                ${weekEntries.map((entry) => {
+                  const player = String(entry?.player || "Unknown Player").trim() || "Unknown Player";
+                  const type = String(entry?.type || "transfer").trim() || "transfer";
+                  const normalizedType = type.toLowerCase();
+                  const transferTypeClass = normalizedType.includes("transfer in")
+                    ? "transferTypeBadge--in"
+                    : normalizedType.includes("transfer out")
+                      ? "transferTypeBadge--out"
+                      : "";
+                  const role = String(entry?.role || "").trim();
+                  const fromTeam = String(entry?.fromTeam || "").trim();
+                  const toTeam = String(entry?.toTeam || "").trim();
+                  const note = String(entry?.note || "").trim();
+                  const date = String(entry?.date || "").trim();
+                  const picture = String(entry?.picture || "").trim();
+                  const fromLogo = fromTeam ? (teamLogos[fromTeam] || "") : "";
+                  const toLogo = toTeam ? (teamLogos[toTeam] || "") : "";
+                  const metaItems = [role].filter(Boolean);
+
+                  return `
+                    <article class="transferCard">
+                      <div class="transferCardHead">
+                        <div class="transferPlayerIdentity">
+                          <div class="transferPlayerPortraitWrap">
+                            ${picture
+                              ? `<img class="transferPlayerPortrait" src="${escapeHtml(picture)}" alt="${escapeHtml(player)}">`
+                              : `<div class="transferPlayerPortraitFallback">${escapeHtml(player.slice(0, 2).toUpperCase())}</div>`
+                            }
+                          </div>
+                          <div>
+                            <div class="transferTypeBadge ${transferTypeClass}">${escapeHtml(type)}</div>
+                            <h3>${escapeHtml(player)}</h3>
+                            ${metaItems.length ? `<p>${escapeHtml(metaItems.join(" | "))}</p>` : ""}
+                          </div>
+                        </div>
+                        ${date ? `<div class="transferDate">${escapeHtml(date)}</div>` : ""}
+                      </div>
+
+                      <div class="transferRoute">
+                        <div class="transferTeamCard">
+                          <span class="transferTeamLabel">From</span>
+                          <div class="transferTeamValue">
+                            ${fromLogo ? `<img class="transferTeamLogo" src="${escapeHtml(fromLogo)}" alt="${escapeHtml(teamLabel(fromTeam))} logo">` : ""}
+                            <span>${escapeHtml(fromTeam ? teamLabel(fromTeam) : "-")}</span>
+                          </div>
+                        </div>
+                        <div class="transferArrow" aria-hidden="true">&#8594;</div>
+                        <div class="transferTeamCard">
+                          <span class="transferTeamLabel">To</span>
+                          <div class="transferTeamValue">
+                            ${toLogo ? `<img class="transferTeamLogo" src="${escapeHtml(toLogo)}" alt="${escapeHtml(teamLabel(toTeam))} logo">` : ""}
+                            <span>${escapeHtml(toTeam ? teamLabel(toTeam) : "-")}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      ${note ? `<p class="transferNote">${escapeHtml(note)}</p>` : ""}
+                    </article>
+                  `;
+                }).join("")}
+              </section>
+            `;
+          }).join("")}
+        </div>
+      ` : `
+        <div class="transferEmpty">
+          <h3>No transfer entries yet.</h3>
+          <p>Add records in <code>data/season17/transfers.json</code> and they will show up here automatically.</p>
+        </div>
+      `}
+    </section>
+  `;
+
+  document.getElementById("output").innerHTML = html;
 }
 
 function sortTeams(key) {
@@ -4140,6 +4278,7 @@ export {
   onPpHeroSearchInput,
   onPpExcludeUnusedToggle,
   showTeams,
+  showTransfer,
   sortTeams,
   showPlayers,
   sortPlayers,
