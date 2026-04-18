@@ -15233,6 +15233,118 @@
             "SRG": 9
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "YUMS",
+        "bans": [
+          "Sora",
+          "Chou",
+          "Kalea",
+          "Harith",
+          "Alice",
+          "Fanny",
+          "Freya",
+          "Uranus",
+          "Khaleed",
+          "Arlott"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Yi Sun-Shin",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Harley",
+            "kills": 6,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 8
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Gloo",
+            "kills": 4,
+            "deaths": 6,
+            "assists": 5
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Hilda",
+            "kills": 2,
+            "deaths": 7,
+            "assists": 5
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Claude",
+            "kills": 9,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Suyou",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Lylia",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 17
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Phoveus",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Guinevere",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 13
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 1,
+            "SRG": 3
+          },
+          "turtle": {
+            "RRQ": 1,
+            "SRG": 2
+          },
+          "tower": {
+            "RRQ": 7,
+            "SRG": 8
+          }
+        }
       }
     ],
     "mpl": {
