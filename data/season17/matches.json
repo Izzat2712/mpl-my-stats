@@ -14525,114 +14525,114 @@
         }
       },
       {
-        "winner": "",
-        "mvp": "",
+        "winner": "IG",
+        "mvp": "HAZLE",
         "bans": [
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
+          "Gloo",
+          "Valentina",
+          "Freya",
+          "Sora",
+          "Uranus",
+          "Marcel",
+          "Fanny",
+          "Yi Sun-Shin",
+          "Alice",
+          "Gatotkaca"
         ],
         "players": [
           {
             "team": "AC",
             "name": "AERONSHIKII",
-            "hero": "",
-            "kills": 0,
-            "deaths": 0,
-            "assists": 0
+            "hero": "Harith",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 1
           },
           {
             "team": "AC",
             "name": "EYYMAL",
-            "hero": "",
-            "kills": 0,
-            "deaths": 0,
-            "assists": 0
+            "hero": "Leomord",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
           },
           {
             "team": "AC",
             "name": "IZANAMI",
-            "hero": "",
-            "kills": 0,
-            "deaths": 0,
-            "assists": 0
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 3
           },
           {
             "team": "AC",
             "name": "MOMO",
-            "hero": "",
-            "kills": 0,
-            "deaths": 0,
-            "assists": 0
+            "hero": "Yuzhong",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 1
           },
           {
             "team": "AC",
             "name": "WIDY",
-            "hero": "",
+            "hero": "Hilda",
             "kills": 0,
-            "deaths": 0,
-            "assists": 0
+            "deaths": 6,
+            "assists": 2
           },
           {
             "team": "IG",
             "name": "MELQT",
-            "hero": "",
-            "kills": 0,
+            "hero": "Claude",
+            "kills": 6,
             "deaths": 0,
-            "assists": 0
+            "assists": 11
           },
           {
             "team": "IG",
             "name": "HAZLE",
-            "hero": "",
-            "kills": 0,
-            "deaths": 0,
-            "assists": 0
+            "hero": "Suyou",
+            "kills": 10,
+            "deaths": 1,
+            "assists": 4
           },
           {
             "team": "IG",
             "name": "SPENCER",
-            "hero": "",
-            "kills": 0,
+            "hero": "Zhuxin",
+            "kills": 1,
             "deaths": 0,
-            "assists": 0
+            "assists": 13
           },
           {
             "team": "IG",
             "name": "GOJES",
-            "hero": "",
-            "kills": 0,
-            "deaths": 0,
-            "assists": 0
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 9
           },
           {
             "team": "IG",
             "name": "NOVAXCOBAR",
-            "hero": "",
-            "kills": 0,
+            "hero": "Khaleed",
+            "kills": 1,
             "deaths": 0,
-            "assists": 0
+            "assists": 15
           }
         ],
         "objectives": {
           "lord": {
             "AC": 0,
-            "IG": 0
+            "IG": 2
           },
           "turtle": {
-            "AC": 0,
-            "IG": 0
+            "AC": 1,
+            "IG": 2
           },
           "tower": {
-            "AC": 0,
-            "IG": 0
+            "AC": 1,
+            "IG": 9
           }
         }
       }
