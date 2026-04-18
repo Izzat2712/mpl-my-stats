@@ -13938,7 +13938,120 @@
     "dayMatch": 2,
     "date": "2026-04-18",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "NOVAXCOBAR",
+        "bans": [
+          "Yi Sun-Shin",
+          "Guinevere",
+          "Fanny",
+          "Claude",
+          "Harith",
+          "Freya",
+          "Zhuxin",
+          "Gloo",
+          "Harley",
+          "Suyou"
+        ],
+        "players": [
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "EYYMAL",
+            "hero": "Nolan",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Yve",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "WIDY",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Granger",
+            "kills": 8,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Baxia",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Kimmy",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 12
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Alice",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 13
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 0,
+            "IG": 2
+          },
+          "turtle": {
+            "AC": 1,
+            "IG": 2
+          },
+          "tower": {
+            "AC": 4,
+            "IG": 9
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W3D2ACVSIG"
     }
