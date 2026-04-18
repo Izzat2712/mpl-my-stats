@@ -13700,7 +13700,120 @@
     "dayMatch": 1,
     "date": "2026-04-18",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TR",
+        "mvp": "SIZKAA",
+        "bans": [
+          "Guinevere",
+          "Fredrinn",
+          "Baxia",
+          "Marcel",
+          "Gloo",
+          "Freya",
+          "Fanny",
+          "Chip",
+          "Alice",
+          "Valentina"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Karrie",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "ANAVEL",
+            "hero": "Harley",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "SMOOTH",
+            "hero": "Lapu-Lapu",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Kalea",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Obsidia",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Uranus",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 12
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Yve",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 11
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Sora",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Khaleed",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 17
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 0,
+            "TR": 1
+          },
+          "turtle": {
+            "BTR": 0,
+            "TR": 3
+          },
+          "tower": {
+            "BTR": 1,
+            "TR": 9
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W3D2BTRMVSTR"
     }
