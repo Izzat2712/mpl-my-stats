@@ -153,44 +153,53 @@
         "name":  "AMZZIQ",
         "team":  "BTR",
         "lane":  "Gold Laner",
-        "picture":  "https://i.imgur.com/7IWR5NN.png"
+        "picture":  "https://i.imgur.com/7IWR5NN.png",
+        "starter": false
     },
     {
         "name":  "ANAVEL",
         "team":  "BTR",
         "lane":  "Jungler",
-        "picture":  "https://i.imgur.com/IxvMBiv.png"
+        "picture":  "https://i.imgur.com/IxvMBiv.png",
+        "starter": true
+
+
     },
     {
         "name":  "CIKUGAIS",
         "team":  "BTR",
         "lane":  "Gold Laner",
-        "picture":  "https://i.imgur.com/mDQOfu8.png"
+        "picture":  "https://i.imgur.com/mDQOfu8.png",
+        "starter": true
     },
     {
         "name":  "SMOOTH",
         "team":  "BTR",
         "lane":  "Exp Laner",
-        "picture":  "https://i.imgur.com/TUKDa7U.png"
+        "picture":  "https://i.imgur.com/TUKDa7U.png",
+        "starter": true
     },
     {
         "name":  "RASY",
         "team":  "BTR",
         "lane":  "Roamer",
-        "picture":  "https://i.imgur.com/c669Q5w.png"
+        "picture":  "https://i.imgur.com/c669Q5w.png",
+        "starter": true
     },
     {
         "name":  "FAKEZ",
         "team":  "BTR",
         "lane":  "Midlaner",
         "picture":  "https://i.imgur.com/XVqjNNp.png",
+        "starter": false,
         "active": false
     },
         {
         "name":  "ZIEYY",
         "team":  "BTR",
         "lane":  "Midlaner",
-        "picture":  "https://i.imgur.com/Q19hnF1.png"
+        "picture":  "https://i.imgur.com/Q19hnF1.png",
+        "starter": true
     },
     {
         "name":  "KUSEY",
@@ -274,7 +283,8 @@
         "name":  "SKYZED",
         "team":  "TF",
         "lane":  "Gold Laner",
-        "picture":  "https://i.imgur.com/pNwBwtW.png"
+        "picture":  "https://i.imgur.com/pNwBwtW.png",
+        "starter": true
     },
     {
         "name":  "RAZINN",
@@ -286,19 +296,22 @@
         "name":  "KURTTZY",
         "team":  "TF",
         "lane":  "Midlaner",
-        "picture":  "https://i.imgur.com/XfPxcFx.png"
+        "picture":  "https://i.imgur.com/XfPxcFx.png",
+        "starter": true
     },
     {
         "name":  "DIABLO",
         "team":  "TF",
         "lane":  "Exp Laner",
-        "picture":  "https://i.imgur.com/sT5c8hQ.png"
+        "picture":  "https://i.imgur.com/sT5c8hQ.png",
+        "starter": true
     },
     {
         "name":  "HADESS",
         "team":  "TF",
         "lane":  "Jungler",
-        "picture":  "https://i.imgur.com/pu2W9PH.png"
+        "picture":  "https://i.imgur.com/pu2W9PH.png",
+        "starter": true
     },
     {
         "name":  "RYZZ",
@@ -316,7 +329,8 @@
         "name":  "XORN",
         "team":  "TF",
         "lane":  "Roamer",
-        "picture":  "https://i.imgur.com/T6GVJ6l.png"
+        "picture":  "https://i.imgur.com/T6GVJ6l.png",
+        "starter": true
     },
     {
         "name":  "RIVAL",
