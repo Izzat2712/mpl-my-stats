@@ -13812,6 +13812,118 @@
             "TR": 9
           }
         }
+      },
+      {
+        "winner": "TR",
+        "mvp": "SIZKAA",
+        "bans": [
+          "Freya",
+          "Phoveus",
+          "Uranus",
+          "Zetian",
+          "Zhuxin",
+          "Guinevere",
+          "Baxia",
+          "Freya",
+          "Khaleed",
+          "Arlott"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Yi Sun-Shin",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "ANAVEL",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Luoyi",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "SMOOTH",
+            "hero": "Benedetta",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Fredrinn",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Valentina",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Masha",
+            "kills": 10,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Chip",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 14
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 2,
+            "TR": 3
+          },
+          "turtle": {
+            "BTR": 0,
+            "TR": 3
+          },
+          "tower": {
+            "BTR": 7,
+            "TR": 9
+          }
+        }
       }
     ],
     "mpl": {
