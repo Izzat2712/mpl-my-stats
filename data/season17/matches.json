@@ -16903,7 +16903,120 @@
     "dayMatch": 2,
     "date": "2026-04-19",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "VMS",
+        "mvp": "CLAWKUN",
+        "bans": [
+          "Fanny",
+          "Gloo",
+          "Freya",
+          "Marcel",
+          "Gatotkaca",
+          "Baxia",
+          "Benedetta",
+          "Harley",
+          "Phoveus",
+          "Karrie"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "HADESS",
+            "hero": "Leomord",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Zhuxin",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Alice",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Khaleed",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Moskov",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Guinevere",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Valentina",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "ZENO",
+            "hero": "Uranus",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Kalea",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 0,
+            "VMS": 1
+          },
+          "turtle": {
+            "TF": 1,
+            "VMS": 2
+          },
+          "tower": {
+            "TF": 2,
+            "VMS": 9
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W3D3FLVSVMS"
     }
