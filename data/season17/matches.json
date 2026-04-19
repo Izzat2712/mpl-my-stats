@@ -15838,7 +15838,232 @@
     "dayMatch": 1,
     "date": "2026-04-19",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "MELQT",
+        "bans": [
+          "Fanny",
+          "Harley",
+          "Valentina",
+          "Leomord",
+          "Alice",
+          "Freya",
+          "Chip",
+          "Baxia",
+          "Benedetta",
+          "Sora"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Harith",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Uranus",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 3
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Lylia",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Lapu-Lapu",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Granger",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Yi Sun-Shin",
+            "kills": 6,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Hilda",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 0,
+            "IG": 3
+          },
+          "turtle": {
+            "TR": 3,
+            "IG": 0
+          },
+          "tower": {
+            "TR": 3,
+            "IG": 9
+          }
+        }
+      },
+      {
+        "winner": "TR",
+        "mvp": "MARTZYYYY",
+        "bans": [
+          "Chip",
+          "Freya",
+          "Baxia",
+          "Arlott",
+          "Sora",
+          "Fanny",
+          "Marcel",
+          "Leomord",
+          "Alice",
+          "Uranus"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Obsidia",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Guinevere",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Phoveus",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Gloo",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Yi Sun-Shin",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 2
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 1,
+            "IG": 0
+          },
+          "turtle": {
+            "TR": 3,
+            "IG": 0
+          },
+          "tower": {
+            "TR": 7,
+            "IG": 1
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W3D3TRVSIG"
     }
