@@ -17015,6 +17015,118 @@
             "VMS": 9
           }
         }
+      },
+      {
+        "winner": "VMS",
+        "mvp": "ZENO",
+        "bans": [
+          "Baxia",
+          "Benedetta",
+          "Harley",
+          "Yve",
+          "Zetian",
+          "Freya",
+          "Fanny",
+          "Gloo",
+          "Gatotkaca",
+          "Khaleed"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "HADESS",
+            "hero": "Guinevere",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Lylia",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Karrie",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Suyou",
+            "kills": 6,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "VMS",
+            "name": "ZENO",
+            "hero": "Yuzhong",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 2
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Hilda",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 0,
+            "VMS": 1
+          },
+          "turtle": {
+            "TF": 0,
+            "VMS": 3
+          },
+          "tower": {
+            "TF": 1,
+            "VMS": 8
+          }
+        }
       }
     ],
     "mpl": {
