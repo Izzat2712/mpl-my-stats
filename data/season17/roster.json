@@ -9,7 +9,8 @@
         "name":  "SEKYSSS",
         "team":  "SRG",
         "lane":  "Jungler",
-        "picture":  "https://i.imgur.com/Sonw6UB.png"
+        "picture":  "https://i.imgur.com/Sonw6UB.png",
+        "starter": false
     },
     {
         "name":  "STORMIE",
@@ -234,7 +235,8 @@
         "name":  "WIDY",
         "team":  "AC",
         "lane":  "Roamer",
-        "picture":  "https://i.imgur.com/xlTa6ov.png"
+        "picture":  "https://i.imgur.com/xlTa6ov.png",
+        "starter": false
     },
     {
         "name":  "YEEPZ",
@@ -248,6 +250,13 @@
         "team":  "AC",
         "lane":  "Gold Laner",
         "picture":  "https://i.imgur.com/jyws2EY.png"
+    },
+    {
+        "name":  "VALENZ",
+        "team":  "AC",
+        "lane":  "Roamer",
+        "picture":  "",
+        "starter": true
     },
     {
         "name":  "MELQT",
@@ -312,7 +321,7 @@
         "team":  "TF",
         "lane":  "Exp Laner",
         "picture":  "https://i.imgur.com/sT5c8hQ.png",
-        "starter": true
+        "starter": false
     },
     {
         "name":  "HADESS",
@@ -326,7 +335,8 @@
         "team":  "TF",
         "lane":  "Jungler",
         "picture":  "https://i.imgur.com/34DofN2.png",
-        "starter": false
+        "starter": false,
+        "active": false
     },
     {
         "name":  "BEARRR",
@@ -348,6 +358,13 @@
         "lane":  "Jungler",
         "picture":  "https://i.imgur.com/kCfctEz.png",
         "starter": false
+    },
+    {
+        "name":  "ADAMMIR",
+        "team":  "TF",
+        "lane":  "Exp Laner",
+        "picture":  "",
+        "starter": true
     }
     
     

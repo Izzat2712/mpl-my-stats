@@ -106,6 +106,7 @@
     "name": "NOBODY",
     "team": "TF",
     "role": "ASSISTANT COACH",
-    "picture": "https://i.imgur.com/Bu47VJd.png"
+    "picture": "https://i.imgur.com/Bu47VJd.png",
+    "active": false
   }
 ]

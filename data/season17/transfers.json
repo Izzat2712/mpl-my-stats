@@ -69,6 +69,50 @@
       "role": "Head Coach",
       "picture": "https://i.imgur.com/6oMpsQ1.png",
       "note": "Moved out of the active BTR roster during the transfer window."
+    },
+        {
+      "week": 4,
+      "date": "",
+      "player": "ADAMMIR",
+      "type": "Transfer In",
+      "fromTeam": "FREE AGENT",
+      "toTeam": "FREE AGENT",
+      "role": "Exp Laner",
+      "picture": "",
+      "note": "Moved into the active TF roster during the transfer window."
+    },
+        {
+      "week": 4,
+      "date": "",
+      "player": "VALENZ",
+      "type": "Transfer In",
+      "fromTeam": "FREE AGENT",
+      "toTeam": "AC",
+      "role": "Roamer",
+      "picture": "",
+      "note": "Moved into the active AC roster during the transfer window."
+    },
+        {
+      "week": 4,
+      "date": "",
+      "player": "RYZZ",
+      "type": "Transfer Out",
+      "fromTeam": "TF",
+      "toTeam": "FREE AGENT",
+      "role": "Jungler",
+      "picture": "https://i.imgur.com/34DofN2.png",
+      "note": "Moved out of the active TF roster during the transfer window."
+    },
+        {
+      "week": 4,
+      "date": "",
+      "player": "NOBODY",
+      "type": "Transfer Out",
+      "fromTeam": "TF",
+      "toTeam": "FREE AGENT",
+      "role": "Head Coach",
+      "picture": "https://i.imgur.com/Bu47VJd.png",
+      "note": "Moved out of the active TF roster during the transfer window."
     }
   ]
 }
