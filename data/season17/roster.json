@@ -217,19 +217,22 @@
         "name":  "EYYMAL",
         "team":  "AC",
         "lane":  "Jungler",
-        "picture":  "https://i.imgur.com/65UBh9z.png"
+        "picture":  "https://i.imgur.com/65UBh9z.png",
+        "starter": true
     },
     {
         "name":  "IZANAMI",
         "team":  "AC",
         "lane":  "Midlaner",
-        "picture":  "https://i.imgur.com/iOrOOXX.png"
+        "picture":  "https://i.imgur.com/iOrOOXX.png",
+        "starter": true
     },
     {
         "name":  "MOMO",
         "team":  "AC",
         "lane":  "Exp Laner",
-        "picture":  "https://i.imgur.com/r4LhzTx.png"
+        "picture":  "https://i.imgur.com/r4LhzTx.png",
+        "starter": true
     },
     {
         "name":  "WIDY",
@@ -249,7 +252,8 @@
         "name":  "AERONSHIKII",
         "team":  "AC",
         "lane":  "Gold Laner",
-        "picture":  "https://i.imgur.com/jyws2EY.png"
+        "picture":  "https://i.imgur.com/jyws2EY.png",
+        "starter": true
     },
     {
         "name":  "VALENZ",
