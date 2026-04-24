@@ -17718,6 +17718,118 @@
             "VMS": 1
           }
         }
+      },
+      {
+        "winner": "VMS",
+        "mvp": "CLAWKUN",
+        "bans": [
+          "Guinevere",
+          "Kalea",
+          "Uranus",
+          "Terizla",
+          "Arlott",
+          "Freya",
+          "Fanny",
+          "Leomord",
+          "Phoveus",
+          "Hilda"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Yi Sun-Shin",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 3
+          },
+          {
+            "team": "BTR",
+            "name": "ANAVEL",
+            "hero": "Baxia",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Yve",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "SMOOTH",
+            "hero": "Benedetta",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Harith",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Lancelot",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Zhuxin",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "ZENO",
+            "hero": "Yuzhong",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "VMS": 2
+          },
+          "turtle": {
+            "BTR": 2,
+            "VMS": 1
+          },
+          "tower": {
+            "BTR": 4,
+            "VMS": 7
+          }
+        }
       }
     ],
     "mpl": {
