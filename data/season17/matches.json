@@ -17606,7 +17606,120 @@
     "dayMatch": 1,
     "date": "2026-04-24",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "BTR",
+        "mvp": "CIKUGAIS",
+        "bans": [
+          "Baxia",
+          "Uranus",
+          "Kalea",
+          "Yi Sun-Shin",
+          "Yuzhong",
+          "Freya",
+          "Fanny",
+          "Guinevere",
+          "Alice",
+          "Arlott"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Harith",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "ANAVEL",
+            "hero": "Leomord",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "SMOOTH",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Khaleed",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Suyou",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "ZENO",
+            "hero": "Terizla",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 5
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 3,
+            "VMS": 0
+          },
+          "turtle": {
+            "BTR": 3,
+            "VMS": 0
+          },
+          "tower": {
+            "BTR": 8,
+            "VMS": 1
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W4D1BTRMVSVMS"
     }
