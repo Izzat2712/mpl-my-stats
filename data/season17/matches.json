@@ -19321,7 +19321,120 @@
     "dayMatch": 1,
     "date": "2026-04-25",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "HAZLE",
+        "bans": [
+          "Guinevere",
+          "Fanny",
+          "Freya",
+          "Uranus",
+          "Terizla",
+          "Yi Sun-Shin",
+          "Marcel",
+          "Zhuxin",
+          "Zetian",
+          "Kalea"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Moskov",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Harley",
+            "kills": 10,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Phoveus",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Karrie",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Leomord",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Pharsa",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Alice",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Chou",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 9
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 0,
+            "SRG": 0
+          },
+          "turtle": {
+            "IG": 0,
+            "SRG": 0
+          },
+          "tower": {
+            "IG": 0,
+            "SRG": 0
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W4D2IGVSSRG"
     }
