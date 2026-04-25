@@ -19545,6 +19545,118 @@
             "SRG": 5
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "INNOCENT",
+        "bans": [
+          "Guinevere",
+          "Fanny",
+          "Freya",
+          "Terizla",
+          "Valentina",
+          "Yi Sun-Shin",
+          "Harley",
+          "Zhuxin",
+          "Granger",
+          "Claude"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Beatrix",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Baxia",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Kimmy",
+            "kills": 6,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Phoveus",
+            "kills": 3,
+            "deaths": 5,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Suyou",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Vexana",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Sora",
+            "kills": 5,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 2,
+            "SRG": 1
+          },
+          "turtle": {
+            "IG": 1,
+            "SRG": 2
+          },
+          "tower": {
+            "IG": 4,
+            "SRG": 9
+          }
+        }
       }
     ],
     "mpl": {
