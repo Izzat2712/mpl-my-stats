@@ -12482,7 +12482,7 @@
             "team": "BTR",
             "name": "ANAVEL",
             "hero": "Leomord",
-            "kills": 40,
+            "kills": 4,
             "deaths": 6,
             "assists": 8,
             "performance": {
@@ -21328,7 +21328,8 @@
       }
     ],
     "mpl": {
-      "slug": "W4D2BTRMVSRRQ"
+      "slug": "W4D2BTRMVSRRQ",
+      "matchId": 239
     }
   },
   {
