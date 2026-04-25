@@ -21213,6 +21213,118 @@
             "RRQ": 2
           }
         }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "RASY",
+        "bans": [
+          "Fanny",
+          "Baxia",
+          "Harith",
+          "Yi Sun-Shin",
+          "Claude",
+          "Freya",
+          "Chou",
+          "Guinevere",
+          "Alice",
+          "Arlott"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Irithel",
+            "kills": 6,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "BTR",
+            "name": "ANAVEL",
+            "hero": "Leomord",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Yve",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "SMOOTH",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 15
+          },
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Suyou",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Sora",
+            "kills": 2,
+            "deaths": 6,
+            "assists": 5
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 4
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 2,
+            "RRQ": 0
+          },
+          "turtle": {
+            "BTR": 2,
+            "RRQ": 1
+          },
+          "tower": {
+            "BTR": 8,
+            "RRQ": 4
+          }
+        }
       }
     ],
     "mpl": {
