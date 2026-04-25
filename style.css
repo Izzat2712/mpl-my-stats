@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    THEME TOKENS
 ========================================================= */
 :root{
@@ -1069,10 +1069,10 @@ h1::after{
 }
 
 .scheduleScorecardPlayer{
-  display:flex;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(104px, 0.72fr) 58px;
   align-items:center;
   gap:10px;
-  align-items:center;
   position:relative;
   padding:10px 12px;
   border-radius:12px;
@@ -1132,7 +1132,6 @@ h1::after{
   align-items:center;
   gap:10px;
   min-width:0;
-  flex:1.35 1 0;
 }
 
 .scheduleScorecardPlayerFaceWrap{
@@ -1178,6 +1177,9 @@ h1::after{
   font-weight:800;
   min-width:0;
   line-height:1.1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
 .scheduleScorecardHero{
@@ -1185,13 +1187,14 @@ h1::after{
   align-items:center;
   gap:8px;
   min-width:0;
-  flex:0.9 1 0;
-  margin-left:6px;
 }
 
 .scheduleScorecardHero span{
   min-width:0;
   line-height:1.1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
 .scheduleScorecardHeroImg{
@@ -4524,8 +4527,18 @@ select option:hover{
   }
 
   .scheduleScorecardPlayer{
-    grid-template-columns:1fr;
+    grid-template-columns:minmax(0, 1fr) auto;
     align-items:flex-start;
+  }
+
+  .scheduleScorecardHero{
+    grid-column:1 / -1;
+    padding-left:52px;
+  }
+
+  .scheduleScorecardKda{
+    grid-column:2;
+    grid-row:1;
   }
 
   .scheduleScorecardModalHead{
