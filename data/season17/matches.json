@@ -19783,6 +19783,118 @@
             "TR": 9
           }
         }
+      },
+      {
+        "winner": "TR",
+        "mvp": "JUST GARRR",
+        "bans": [
+          "Fanny",
+          "Phoveus",
+          "Harley",
+          "Nolan",
+          "Lancelot",
+          "Freya",
+          "Chip",
+          "Guinevere",
+          "Hilda",
+          "Arlott"
+        ],
+        "players": [
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Moskov",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Joy",
+            "kills": 8,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Lylia",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "ZENO",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 8
+          },
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Harith",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Baxia",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 12
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Zhuxin",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Benedetta",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Chou",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 13
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "VMS": 0,
+            "TR": 3
+          },
+          "turtle": {
+            "VMS": 0,
+            "TR": 3
+          },
+          "tower": {
+            "VMS": 1,
+            "TR": 9
+          }
+        }
       }
     ],
     "mpl": {
