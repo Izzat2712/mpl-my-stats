@@ -22042,6 +22042,118 @@
             "AC": 0
           }
         }
+      },
+      {
+        "winner": "TR",
+        "mvp": "IVANN",
+        "bans": [
+          "Fanny",
+          "Harley",
+          "Harith",
+          "Lapu-Lapu",
+          "Sora",
+          "Freya",
+          "Baxia",
+          "Guinevere",
+          "Obsidia",
+          "Benedetta"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 7,
+            "assists": 7
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Uranus",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Chou",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Moskov",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "AC",
+            "name": "EYYMAL",
+            "hero": "Nolan",
+            "kills": 6,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 14
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Alice",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 10
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Khaleed",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 10
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 2,
+            "AC": 2
+          },
+          "turtle": {
+            "TR": 1,
+            "AC": 1
+          },
+          "tower": {
+            "TR": 6,
+            "AC": 7
+          }
+        }
       }
     ],
     "mpl": {
