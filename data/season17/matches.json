@@ -22168,7 +22168,120 @@
     "dayMatch": 2,
     "date": "2026-04-26",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "HAZLE",
+        "bans": [
+          "Marcel",
+          "Fanny",
+          "Yi Sun-Shin",
+          "Terizla",
+          "Alice",
+          "Guinevere",
+          "Harley",
+          "Zhuxin",
+          "Chip",
+          "Baxia"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Karrie",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "HADESS",
+            "hero": "Nolan",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "ADAMMIR",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Kaja",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Moskov",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Suyou",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Yve",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 11
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 9
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 0,
+            "IG": 1
+          },
+          "turtle": {
+            "TF": 1,
+            "IG": 2
+          },
+          "tower": {
+            "TF": 0,
+            "IG": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W4D3FLVSIG"
     }
