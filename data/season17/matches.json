@@ -22280,6 +22280,118 @@
             "IG": 8
           }
         }
+      },
+      {
+        "winner": "IG",
+        "mvp": "NOVAXCOBAR",
+        "bans": [
+          "Guinevere",
+          "Baxia",
+          "Moskov",
+          "Lapu-Lapu",
+          "Chip",
+          "Marcel",
+          "Fanny",
+          "Harley",
+          "Phoveus",
+          "Gatotkaca"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Freya",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "HADESS",
+            "hero": "Suyou",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Yve",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "ADAMMIR",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Grock",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Harith",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Yi Sun-Shin",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "SPENCER",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Dyrroth",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 0,
+            "IG": 2
+          },
+          "turtle": {
+            "TF": 2,
+            "IG": 0
+          },
+          "tower": {
+            "TF": 3,
+            "IG": 6
+          }
+        }
       }
     ],
     "mpl": {
