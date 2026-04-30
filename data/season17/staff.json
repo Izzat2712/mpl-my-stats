@@ -72,6 +72,12 @@
     "picture": "https://i.imgur.com/6oMpsQ1.png",
     "active": false
   },
+  {
+    "name": "SOMNUSZEN",
+    "team": "BTR",
+    "role": "Assistant Coach",
+    "picture": "https://i.imgur.com/qfT9yF2.png"
+  },
     {
     "name": "LOONG",
     "team": "AC",
@@ -99,7 +105,7 @@
     {
     "name": "RANSEI",
     "team": "TF",
-    "role": "Head Coach",
+    "role": "Assistant Coach",
     "picture": "https://i.imgur.com/vekWRMe.png"
   },
     {
@@ -108,5 +114,11 @@
     "role": "ASSISTANT COACH",
     "picture": "https://i.imgur.com/Bu47VJd.png",
     "active": false
+  },
+  {
+    "name": "PABZ",
+    "team": "TF",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/XlUA1dT.png"
   }
 ]
