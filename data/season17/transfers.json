@@ -103,7 +103,7 @@
       "picture": "https://i.imgur.com/34DofN2.png",
       "note": "Moved out of the active TF roster during the transfer window."
     },
-        {
+    {
       "week": 4,
       "date": "",
       "player": "NOBODY",
@@ -113,6 +113,149 @@
       "role": "Head Coach",
       "picture": "https://i.imgur.com/Bu47VJd.png",
       "note": "Moved out of the active TF roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "FAVIANN",
+      "type": "Transfer In",
+      "fromTeam": "TEAM LIQUID ID",
+      "toTeam": "AC",
+      "role": "Jungler",
+      "picture": "https://i.imgur.com/y0DSbi2.png",
+      "note": "Moved into the active AC roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "PABZ",
+      "type": "Transfer In",
+      "fromTeam": "VMS",
+      "toTeam": "TF",
+      "role": "Head Coach",
+      "picture": "https://i.imgur.com/XlUA1dT.png",
+      "note": "Moved into the active TF roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "CHIBI",
+      "type": "Transfer In",
+      "fromTeam": "VMS",
+      "toTeam": "BTR",
+      "role": "Jungler",
+      "picture": "https://i.imgur.com/esOAf1h.png",
+      "note": "Moved into the active BTR roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "LYNCHH",
+      "type": "Transfer In",
+      "fromTeam": "BIGETRON ID BY VITALITY",
+      "toTeam": "BTR",
+      "role": "Exp Laner",
+      "picture": "https://i.imgur.com/aetjawl.png",
+      "note": "Moved into the active BTR roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "SOMNUSZEN",
+      "type": "Transfer In",
+      "fromTeam": "FREE AGENT",
+      "toTeam": "BTR",
+      "role": "Assistant Coach",
+      "picture": "https://i.imgur.com/qfT9yF2.png",
+      "note": "Moved into the active BTR roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "SEPAT",
+      "type": "Transfer In",
+      "fromTeam": "FREE AGENT",
+      "toTeam": "VMS",
+      "role": "Exp Laner",
+      "picture": "https://i.imgur.com/n9B2tja.png",
+      "note": "Moved into the active VMS roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "YE3",
+      "type": "Transfer In",
+      "fromTeam": "GEEK FAM ID",
+      "toTeam": "IG",
+      "role": "Exp Laner",
+      "picture": "https://i.imgur.com/jTcNXhW.png",
+      "note": "Moved into the active IG roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "DARMEW",
+      "type": "Transfer In",
+      "fromTeam": "ARCADE",
+      "toTeam": "IG",
+      "role": "Goldlaner",
+      "picture": "https://i.imgur.com/gfHQKRt.png",
+      "note": "Moved into the active IG roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "SWAYLOW",
+      "type": "Transfer In",
+      "fromTeam": "EVOS ID",
+      "toTeam": "IG",
+      "role": "Midlaner",
+      "picture": "https://i.imgur.com/IxGI2oi.png",
+      "note": "Moved into the active IG roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "WIDY",
+      "type": "Transfer In",
+      "fromTeam": "TEAM LIQUID ID",
+      "toTeam": "RRQ",
+      "role": "Roamer",
+      "picture": "https://i.imgur.com/kpBZj2N.png",
+      "note": "Moved into the active RRQ roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "KUSEY",
+      "type": "Transfer Out",
+      "fromTeam": "AC",
+      "toTeam": "FREE AGENT",
+      "role": "Goldlaner",
+      "picture": "https://i.imgur.com/iCfswhQ.png",
+      "note": "Moved out of the active AC roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "CAYDEN",
+      "type": "Transfer Out",
+      "fromTeam": "IG",
+      "toTeam": "FREE AGENT",
+      "role": "Roamer",
+      "picture": "https://i.imgur.com/OHPuXJo.png",
+      "note": "Moved out of the active IG roster during the transfer window."
+    },
+    {
+      "week": 5,
+      "date": "",
+      "player": "SPENCER",
+      "type": "Transfer Out",
+      "fromTeam": "IG",
+      "toTeam": "FREE AGENT",
+      "role": "Midlaner",
+      "picture": "https://i.imgur.com/kmljYAS.png",
+      "note": "Moved out of the active IG roster during the transfer window."
     }
   ]
 }
