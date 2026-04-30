@@ -115,7 +115,14 @@
         "team":  "VMS",
         "lane":  "Jungler",
         "picture":  "https://i.imgur.com/wwYOowD.png",
-        "starter": false
+        "starter": false,
+        "active": false
+    },
+    {
+        "name":  "SEPAT",
+        "team":  "VMS",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/n9B2tja.png"
     },
     {
         "name":  "ROUGH",
@@ -148,6 +155,12 @@
         "picture":  "https://i.imgur.com/CcQjqSK.png"
     },
     {
+        "name":  "WIDY",
+        "team":  "RRQ",
+        "lane":  "Roamer",
+        "picture":  "https://i.imgur.com/kpBZj2N.png"
+    },
+    {
         "name":  "AJ",
         "team":  "RRQ",
         "lane":  "Midlaner",
@@ -166,9 +179,14 @@
         "team":  "BTR",
         "lane":  "Jungler",
         "picture":  "https://i.imgur.com/IxvMBiv.png",
+        "starter": false
+    },
+    {
+        "name":  "CHIBI",
+        "team":  "BTR",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/esOAf1h.png",
         "starter": true
-
-
     },
     {
         "name":  "CIKUGAIS",
@@ -182,8 +200,16 @@
         "team":  "BTR",
         "lane":  "Exp Laner",
         "picture":  "https://i.imgur.com/TUKDa7U.png",
+        "starter": false
+    },
+    {
+        "name":  "LYNCHH",
+        "team":  "BTR",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/aetjawl.png",
         "starter": true
     },
+
     {
         "name":  "RASY",
         "team":  "BTR",
@@ -211,13 +237,21 @@
         "team":  "AC",
         "lane":  "Gold Laner",
         "picture":  "https://i.imgur.com/iCfswhQ.png",
-        "starter": false
+        "starter": false,
+        "active": false
     },
     {
         "name":  "EYYMAL",
         "team":  "AC",
         "lane":  "Jungler",
         "picture":  "https://i.imgur.com/65UBh9z.png",
+        "starter": false
+    },
+    {
+        "name":  "FAVIANN",
+        "team":  "AC",
+        "lane":  "Jungler",
+        "picture":  "https://i.imgur.com/y0DSbi2.png",
         "starter": true
     },
     {
@@ -239,7 +273,8 @@
         "team":  "AC",
         "lane":  "Roamer",
         "picture":  "https://i.imgur.com/xlTa6ov.png",
-        "starter": false
+        "starter": false,
+        "active": false
     },
     {
         "name":  "YEEPZ",
@@ -278,14 +313,39 @@
         "name":  "SPENCER",
         "team":  "IG",
         "lane":  "Midlaner",
-        "picture":  "https://i.imgur.com/kmljYAS.png"
+        "picture":  "https://i.imgur.com/kmljYAS.png",
+        "starter": false,
+        "active": false
+    },
+    {
+        "name":  "SWAYLOW",
+        "team":  "IG",
+        "lane":  "Midlaner",
+        "picture":  "https://i.imgur.com/IxGI2oi.png",
+        "starter": true
     },
     {
         "name":  "GOJES",
         "team":  "IG",
         "lane":  "Exp Laner",
-        "picture":  "https://i.imgur.com/YkqwreW.png"
+        "picture":  "https://i.imgur.com/YkqwreW.png",
+        "starter": false
     },
+    {
+        "name":  "YE3",
+        "team":  "IG",
+        "lane":  "Exp Laner",
+        "picture":  "https://i.imgur.com/jTcNXhW.png",
+        "starter": true
+    },
+    {
+        "name":  "DARMEW",
+        "team":  "IG",
+        "lane":  "Gold Laner",
+        "picture":  "https://i.imgur.com/gfHQKRt.png",
+        "starter": false
+    },
+    
     {
         "name":  "NOVAXCOBAR",
         "team":  "IG",
@@ -297,7 +357,8 @@
         "team":  "IG",
         "lane":  "Roamer",
         "picture":  "https://i.imgur.com/OHPuXJo.png",
-        "starter": false
+        "starter": false,
+        "active": false
     },
     {
         "name":  "SKYZED",
