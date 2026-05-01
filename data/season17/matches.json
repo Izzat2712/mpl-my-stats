@@ -24516,6 +24516,118 @@
             "IG": 2
           }
         }
+      },
+      {
+        "winner": "IG",
+        "mvp": "NOVAXCOBAR",
+        "bans": [
+          "Guinevere",
+          "Phoveus",
+          "Harith",
+          "Alice",
+          "Arlott",
+          "Fanny",
+          "Harley",
+          "Chip",
+          "Yve",
+          "Lylia"
+        ],
+        "players": [
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Melissa",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Suyou",
+            "kills": 2,
+            "deaths": 6,
+            "assists": 0
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "SEPAT",
+            "hero": "Yuzhong",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 2
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Gloo",
+            "kills": 2,
+            "deaths": 7,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Moskov",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Yi Sun-Shin",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 13
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Faramis",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 110
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Freya",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 16
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "VMS": 0,
+            "IG": 2
+          },
+          "turtle": {
+            "VMS": 0,
+            "IG": 3
+          },
+          "tower": {
+            "VMS": 1,
+            "IG": 9
+          }
+        }
       }
     ],
     "mpl": {
