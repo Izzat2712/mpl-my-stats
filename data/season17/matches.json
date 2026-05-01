@@ -24404,6 +24404,118 @@
             "IG": 9
           }
         }
+      },
+      {
+        "winner": "VMS",
+        "mvp": "ZQEEF",
+        "bans": [
+          "Guinevere",
+          "Phoveus",
+          "Freya",
+          "Baxia",
+          "Nolan",
+          "Fanny",
+          "Harley",
+          "Yi Sun-Shin",
+          "Lylia",
+          "Yve"
+        ],
+        "players": [
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Harith",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 11
+          },
+          {
+            "team": "VMS",
+            "name": "SEPAT",
+            "hero": "Arlott",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Gloo",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Moskov",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Suyou",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Zhask",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Lapu-Lapu",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "VMS": 2,
+            "IG": 0
+          },
+          "turtle": {
+            "VMS": 3,
+            "IG": 0
+          },
+          "tower": {
+            "VMS": 8,
+            "IG": 2
+          }
+        }
       }
     ],
     "mpl": {
