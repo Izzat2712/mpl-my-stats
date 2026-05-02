@@ -25591,7 +25591,120 @@
     "dayMatch": 2,
     "date": "2026-05-2",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TR",
+        "mvp": "ZAY LA NINA",
+        "bans": [
+          "Harley",
+          "Gloo",
+          "Harith",
+          "Karrie",
+          "Moskov",
+          "Fanny",
+          "Guinevere",
+          "Marcel",
+          "Chip",
+          "Alice"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Claude",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "RIVAL",
+            "hero": "Suyou",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Valentina",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "TF",
+            "name": "ADAMMIR",
+            "hero": "Phoveus",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Freya",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Baxia",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "TR",
+            "name": "ZAY LA NINA",
+            "hero": "Zhuxin",
+            "kills": 6,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Lapu-Lapu",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Helcurt",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 5
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 0,
+            "TR": 1
+          },
+          "turtle": {
+            "TF": 0,
+            "TR": 3
+          },
+          "tower": {
+            "TF": 0,
+            "TR": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W5D2FLVSTR"
     }
