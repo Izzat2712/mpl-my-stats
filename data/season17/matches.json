@@ -25465,6 +25465,118 @@
             "BTR": 8
           }
         }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "RASY",
+        "bans": [
+          "Baxia",
+          "Phoveus",
+          "Harith",
+          "Claude",
+          "Lylia",
+          "Fanny",
+          "Zhuxin",
+          "Freya",
+          "Karrie",
+          "Uranus"
+        ],
+        "players": [
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Granger",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Guinevere",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Valentina",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "VMS",
+            "name": "SEPAT",
+            "hero": "Lapu-Lapu",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Hilda",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Irithel",
+            "kills": 8,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBI",
+            "hero": "Leomord",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Pharsa",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 10
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCHH",
+            "hero": "Arlott",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 11
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "VMS": 1,
+            "BTR": 2
+          },
+          "turtle": {
+            "VMS": 2,
+            "BTR": 1
+          },
+          "tower": {
+            "VMS": 5,
+            "BTR": 9
+          }
+        }
       }
     ],
     "mpl": {
