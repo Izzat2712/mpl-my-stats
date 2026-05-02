@@ -111,14 +111,6 @@
         "picture":  "https://i.imgur.com/ZPzpLxy.png"
     },
     {
-        "name":  "CHIBII",
-        "team":  "VMS",
-        "lane":  "Jungler",
-        "picture":  "https://i.imgur.com/wwYOowD.png",
-        "starter": false,
-        "active": false
-    },
-    {
         "name":  "SEPAT",
         "team":  "VMS",
         "lane":  "Exp Laner",
