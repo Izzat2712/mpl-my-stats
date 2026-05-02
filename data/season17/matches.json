@@ -26878,6 +26878,118 @@
             "RRQ": 0
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "YUMS",
+        "bans": [
+          "Chou",
+          "Sora",
+          "Guinevere",
+          "Kalea",
+          "Gloo",
+          "Fanny",
+          "Freya",
+          "Zhuxin",
+          "Claude",
+          "Granger"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Moskov",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Suyou",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Valentina",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Badang",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Harith",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Kimmy",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Terizla",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Hylos",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 4
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 1,
+            "RRQ": 1
+          },
+          "turtle": {
+            "SRG": 1,
+            "RRQ": 2
+          },
+          "tower": {
+            "SRG": 7,
+            "RRQ": 5
+          }
+        }
       }
     ],
     "mpl": {
