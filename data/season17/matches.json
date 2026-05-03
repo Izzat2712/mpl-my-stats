@@ -27591,6 +27591,118 @@
             "TR": 9
           }
         }
+      },
+      {
+        "winner": "TR",
+        "mvp": "MARTZYYYY",
+        "bans": [
+          "Fanny",
+          "Harley",
+          "Phoveus",
+          "Badang",
+          "Hylos",
+          "Freya",
+          "Baxia",
+          "Khaleed",
+          "Masha",
+          "Benedetta"
+        ],
+        "players": [
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 5,
+            "deaths": 4,
+            "assists": 9
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Suyou",
+            "kills": 7,
+            "deaths": 4,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 14
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Arlott",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Guinevere",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 15
+          },
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Harith",
+            "kills": 9,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Fredrinn",
+            "kills": 3,
+            "deaths": 5,
+            "assists": 7
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Zetian",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 13
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Lapu-Lapu",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 12
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Chip",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 12
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 1,
+            "TR": 2
+          },
+          "turtle": {
+            "AC": 1,
+            "TR": 2
+          },
+          "tower": {
+            "AC": 6,
+            "TR": 7
+          }
+        }
       }
     ],
     "mpl": {
