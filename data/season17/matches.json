@@ -6946,16 +6946,16 @@
         ],
         "objectives": {
           "lord": {
-            "SRG": 0,
+            "SRG": 1,
             "BTR": 0
           },
           "turtle": {
             "SRG": 0,
-            "BTR": 0
+            "BTR": 3
           },
           "tower": {
-            "SRG": 0,
-            "BTR": 0
+            "SRG": 9,
+            "BTR": 1
           }
         }
       },
@@ -27101,16 +27101,16 @@
         ],
         "objectives": {
           "lord": {
-            "SRG": 0,
+            "SRG": 2,
             "RRQ": 0
           },
           "turtle": {
-            "SRG": 0,
+            "SRG": 3,
             "RRQ": 0
           },
           "tower": {
-            "SRG": 0,
-            "RRQ": 0
+            "SRG": 8,
+            "RRQ": 1
           }
         }
       },
