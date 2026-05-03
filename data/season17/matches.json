@@ -27580,15 +27580,15 @@
         "objectives": {
           "lord": {
             "AC": 0,
-            "TR": 0
+            "TR": 2
           },
           "turtle": {
             "AC": 0,
-            "TR": 0
+            "TR": 3
           },
           "tower": {
             "AC": 0,
-            "TR": 0
+            "TR": 9
           }
         }
       }
