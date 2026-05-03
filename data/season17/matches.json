@@ -27479,7 +27479,120 @@
     "dayMatch": 1,
     "date": "2026-05-3",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TR",
+        "mvp": "JUST GARRR",
+        "bans": [
+          "Baxia",
+          "Guinevere",
+          "Uranus",
+          "Obsidia",
+          "Harith",
+          "Fanny",
+          "Freya",
+          "Harley",
+          "Moskov",
+          "Granger"
+        ],
+        "players": [
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Irithel",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Suyou",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Terizla",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Claude",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Lancelot",
+            "kills": 6,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Faramis",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Phoveus",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Khaleed",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 10
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 0,
+            "TR": 0
+          },
+          "turtle": {
+            "AC": 0,
+            "TR": 0
+          },
+          "tower": {
+            "AC": 0,
+            "TR": 0
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W5D3ACVSTR"
     }
