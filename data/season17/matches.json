@@ -27830,6 +27830,118 @@
             "IG": 2
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "INNOCENT",
+        "bans": [
+          "Guinevere",
+          "Phoveus",
+          "Moskov",
+          "Esmeralda",
+          "Karrie",
+          "Yi Sun-Shin",
+          "Harley",
+          "Fanny",
+          "Kimmy",
+          "Zetian"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Harith",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Suyou",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 12
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Terizla",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Kalea",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 12
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Leomord",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Freya",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 1,
+            "IG": 1
+          },
+          "turtle": {
+            "SRG": 1,
+            "IG": 2
+          },
+          "tower": {
+            "SRG": 7,
+            "IG": 3
+          }
+        }
       }
     ],
     "mpl": {
