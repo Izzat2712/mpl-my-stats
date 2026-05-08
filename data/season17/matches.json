@@ -29249,6 +29249,118 @@
             "BTR": 8
           }
         }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "ZIEYY",
+        "bans": [
+          "Baxia",
+          "Harith",
+          "Marcel",
+          "Uranus",
+          "Gloo",
+          "Freya",
+          "Zhuxin",
+          "Guinevere",
+          "Chip",
+          "Gatotkaca"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Karrie",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Suyou",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "WIDY",
+            "hero": "Atlas",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Leomord",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Yve",
+            "kills": 8,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Kalea",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 10
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 0,
+            "BTR": 1
+          },
+          "turtle": {
+            "RRQ": 0,
+            "BTR": 3
+          },
+          "tower": {
+            "RRQ": 0,
+            "BTR": 7
+          }
+        }
       }
     ],
     "mpl": {
