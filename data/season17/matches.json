@@ -28454,7 +28454,31 @@
             "hero": "Granger",
             "kills": 4,
             "deaths": 1,
-            "assists": 0
+            "assists": 0,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/loleal.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b7ac2b2c004649962f090fedafee851e6f76bd1aadf1616dab749adb005f55d1",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/79.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2014.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3012.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3013.png"
+              ],
+              "stats": {
+                "towerDamage": 3440,
+                "damageTaken": 24704,
+                "heroDamage": 39679,
+                "totalGold": 10383
+              }
+            }
           },
           {
             "team": "TR",
@@ -28462,7 +28486,31 @@
             "hero": "Baxia",
             "kills": 2,
             "deaths": 5,
-            "assists": 3
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/Just%20Garr.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=85b9a02f36f614da61096fb84b62a0866f395646aafd6c4358efdef2eb9bbb69",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/87.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3423.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 129318,
+                "heroDamage": 21295,
+                "totalGold": 6739
+              }
+            }
           },
           {
             "team": "TR",
@@ -28470,7 +28518,30 @@
             "hero": "Zhuxin",
             "kills": 0,
             "deaths": 1,
-            "assists": 4
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/Martzy.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=d30944850eb0dda5473753236bf7aa381e6c2c2a18e8d0ffa78ffb5fdb480773",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614081359683.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20001.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3108.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3104.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 62905,
+                "heroDamage": 27679,
+                "totalGold": 8004
+              }
+            }
           },
           {
             "team": "TR",
@@ -28478,7 +28549,31 @@
             "hero": "Lapu-Lapu",
             "kills": 0,
             "deaths": 4,
-            "assists": 3
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/Sizkaa.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a33609f358019df4bc6cc9a9e8593940debe54e83af313725721da1dfb74dd5f",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/37.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2004.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 33,
+                "damageTaken": 78456,
+                "heroDamage": 25712,
+                "totalGold": 6898
+              }
+            }
           },
           {
             "team": "TR",
@@ -28486,7 +28581,29 @@
             "hero": "Badang",
             "kills": 0,
             "deaths": 2,
-            "assists": 5
+            "assists": 5,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/Ivann.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=2e091d65dd0581c94cdfb05a05694c226137bf1cb66a08f5f6b8e33940011917",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/77.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20008.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3521.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 76102,
+                "heroDamage": 15853,
+                "totalGold": 7253
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28494,7 +28611,31 @@
             "hero": "Harith",
             "kills": 6,
             "deaths": 0,
-            "assists": 6
+            "assists": 6,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Vamos/v2/natco.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T105153Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=4c51f71aba52082cfd9be159974ff2b037776709cfed24d8f48c046730f9ab03",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/73.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3102.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2108.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2303.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3106.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3103.png"
+              ],
+              "stats": {
+                "towerDamage": 22781,
+                "damageTaken": 46874,
+                "heroDamage": 83595,
+                "totalGold": 13599
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28502,7 +28643,31 @@
             "hero": "Nolan",
             "kills": 3,
             "deaths": 1,
-            "assists": 5
+            "assists": 5,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Vamos/v2/Error404.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T105153Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f4bb248bf919e6ca0758b2b56dd3affba680354495a8de46e9cd112992547598",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/122.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3431.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png"
+              ],
+              "stats": {
+                "towerDamage": 12409,
+                "damageTaken": 22908,
+                "heroDamage": 43465,
+                "totalGold": 12183
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28510,7 +28675,31 @@
             "hero": "Lylia",
             "kills": 3,
             "deaths": 0,
-            "assists": 8
+            "assists": 8,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Vamos/v2/clawkun.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T105153Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=d1d7c2d60d898f91549f021f166fab4941e1b0925ba1d932fc98caed3ef45fcd",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/86.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20001.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2106.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3104.png"
+              ],
+              "stats": {
+                "towerDamage": 1771,
+                "damageTaken": 34332,
+                "heroDamage": 53015,
+                "totalGold": 9357
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28518,7 +28707,29 @@
             "hero": "Phoveus",
             "kills": 1,
             "deaths": 3,
-            "assists": 4
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://my.mpl.mobilelegends.com/images/logo/logo-large.png",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614154958540.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 87536,
+                "heroDamage": 23644,
+                "totalGold": 7398
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28526,7 +28737,31 @@
             "hero": "Kalea",
             "kills": 0,
             "deaths": 2,
-            "assists": 12
+            "assists": 12,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Vamos/v2/zqeef.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T105153Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=d70f3e6c156d83ae0d19c78c06a2189549a04493682fb690e9a2b66461927166",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/253/3015102929805.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20008.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3522.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3109.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 486,
+                "damageTaken": 62193,
+                "heroDamage": 8537,
+                "totalGold": 8072
+              }
+            }
           }
         ],
         "objectives": {
@@ -28566,7 +28801,30 @@
             "hero": "Claude",
             "kills": 0,
             "deaths": 4,
-            "assists": 4
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/loleal.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b7ac2b2c004649962f090fedafee851e6f76bd1aadf1616dab749adb005f55d1",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/65.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2004.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png"
+              ],
+              "stats": {
+                "towerDamage": 453,
+                "damageTaken": 59488,
+                "heroDamage": 39047,
+                "totalGold": 7934
+              }
+            }
           },
           {
             "team": "TR",
@@ -28574,7 +28832,30 @@
             "hero": "Leomord",
             "kills": 3,
             "deaths": 4,
-            "assists": 0
+            "assists": 0,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/Just%20Garr.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=85b9a02f36f614da61096fb84b62a0866f395646aafd6c4358efdef2eb9bbb69",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/67.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/122.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2004.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3422.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1005.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3208.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 50776,
+                "heroDamage": 32073,
+                "totalGold": 8007
+              }
+            }
           },
           {
             "team": "TR",
@@ -28582,7 +28863,30 @@
             "hero": "Zhuxin",
             "kills": 0,
             "deaths": 2,
-            "assists": 3
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/Martzy.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=d30944850eb0dda5473753236bf7aa381e6c2c2a18e8d0ffa78ffb5fdb480773",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614081359683.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3108.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 44416,
+                "heroDamage": 44689,
+                "totalGold": 6226
+              }
+            }
           },
           {
             "team": "TR",
@@ -28590,7 +28894,31 @@
             "hero": "Uranus",
             "kills": 1,
             "deaths": 5,
-            "assists": 2
+            "assists": 2,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/Sizkaa.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a33609f358019df4bc6cc9a9e8593940debe54e83af313725721da1dfb74dd5f",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/59.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 1028,
+                "damageTaken": 128815,
+                "heroDamage": 20456,
+                "totalGold": 6190
+              }
+            }
           },
           {
             "team": "TR",
@@ -28598,7 +28926,29 @@
             "hero": "Chou",
             "kills": 0,
             "deaths": 6,
-            "assists": 3
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Rey/Ivann.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T120424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=2e091d65dd0581c94cdfb05a05694c226137bf1cb66a08f5f6b8e33940011917",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/26.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2206.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3521.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3206.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 77782,
+                "heroDamage": 8246,
+                "totalGold": 5907
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28606,7 +28956,31 @@
             "hero": "Karrie",
             "kills": 6,
             "deaths": 0,
-            "assists": 8
+            "assists": 8,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Vamos/v2/natco.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T105153Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=4c51f71aba52082cfd9be159974ff2b037776709cfed24d8f48c046730f9ab03",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/40.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2005.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png"
+              ],
+              "stats": {
+                "towerDamage": 22965,
+                "damageTaken": 36222,
+                "heroDamage": 54821,
+                "totalGold": 10551
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28614,7 +28988,30 @@
             "hero": "Guinevere",
             "kills": 5,
             "deaths": 0,
-            "assists": 10
+            "assists": 10,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Vamos/v2/Error404.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T105153Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f4bb248bf919e6ca0758b2b56dd3affba680354495a8de46e9cd112992547598",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/80.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/122.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3431.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2206.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2208.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2107.png"
+              ],
+              "stats": {
+                "towerDamage": 1931,
+                "damageTaken": 42776,
+                "heroDamage": 34283,
+                "totalGold": 8991
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28622,7 +29019,30 @@
             "hero": "Valentina",
             "kills": 1,
             "deaths": 1,
-            "assists": 15
+            "assists": 15,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Vamos/v2/clawkun.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T105153Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=d1d7c2d60d898f91549f021f166fab4941e1b0925ba1d932fc98caed3ef45fcd",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/110.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3110.png"
+              ],
+              "stats": {
+                "towerDamage": 3137,
+                "damageTaken": 36613,
+                "heroDamage": 57701,
+                "totalGold": 8225
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28630,7 +29050,31 @@
             "hero": "Arlott",
             "kills": 8,
             "deaths": 2,
-            "assists": 6
+            "assists": 6,
+            "performance": {
+              "portraitUrl": "https://my.mpl.mobilelegends.com/images/logo/logo-large.png",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/120.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2004.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3012.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png"
+              ],
+              "stats": {
+                "towerDamage": 2498,
+                "damageTaken": 65020,
+                "heroDamage": 48104,
+                "totalGold": 8903
+              }
+            }
           },
           {
             "team": "VMS",
@@ -28638,7 +29082,30 @@
             "hero": "Kalea",
             "kills": 1,
             "deaths": 1,
-            "assists": 17
+            "assists": 17,
+            "performance": {
+              "portraitUrl": "https://cdn5.vistek.id/season17/player/Team%20Vamos/v2/zqeef.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260508%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260508T105153Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=d70f3e6c156d83ae0d19c78c06a2189549a04493682fb690e9a2b66461927166",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/253/3015102929805.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3522.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3109.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 2537,
+                "damageTaken": 58331,
+                "heroDamage": 15698,
+                "totalGold": 7782
+              }
+            }
           }
         ],
         "objectives": {
@@ -28658,7 +29125,8 @@
       }
     ],
     "mpl": {
-      "slug": "W6D1TRVSVMS"
+      "slug": "W6D1TRVSVMS",
+      "matchId": 249
     }
   },
   {
@@ -28669,7 +29137,120 @@
     "dayMatch": 2,
     "date": "2026-05-8",
     "startTime": "8:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "BTR",
+        "mvp": "ZIEYY",
+        "bans": [
+          "Baxia",
+          "Harith",
+          "Marcel",
+          "Gatotkaca",
+          "Kalea",
+          "Freya",
+          "Zhuxin",
+          "Fanny",
+          "Pharsa",
+          "Hylos"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Guinevere",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "KYYM",
+            "hero": "Kimmy",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Arlott",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "WIDY",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Irithel",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Leomord",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Chou",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 7
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 1,
+            "BTR": 1
+          },
+          "turtle": {
+            "RRQ": 0,
+            "BTR": 3
+          },
+          "tower": {
+            "RRQ": 4,
+            "BTR": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W6D1RRQVSBTRM"
     }
