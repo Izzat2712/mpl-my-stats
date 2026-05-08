@@ -28543,6 +28543,118 @@
             "VMS": 9
           }
         }
+      },
+      {
+        "winner": "VMS",
+        "mvp": "SEPAT",
+        "bans": [
+          "Chip",
+          "Marcel",
+          "Phoveus",
+          "Obsidia",
+          "Moskov",
+          "Fanny",
+          "Freya",
+          "Harith",
+          "Zetian",
+          "Yve"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Claude",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Zhuxin",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Karrie",
+            "kills": 6,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Guinevere",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Valentina",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 15
+          },
+          {
+            "team": "VMS",
+            "name": "SEPAT",
+            "hero": "Arlott",
+            "kills": 8,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Kalea",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 17
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 0,
+            "VMS": 0
+          },
+          "turtle": {
+            "TR": 0,
+            "VMS": 0
+          },
+          "tower": {
+            "TR": 0,
+            "VMS": 0
+          }
+        }
       }
     ],
     "mpl": {
