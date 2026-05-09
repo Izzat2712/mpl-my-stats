@@ -31732,6 +31732,118 @@
             "SRG": 6
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "UNII",
+        "bans": [
+          "Guinevere",
+          "Marcel",
+          "Yve",
+          "Gloo",
+          "Grock",
+          "Fanny",
+          "Harley",
+          "Kalea",
+          "Moskov",
+          "Harith"
+        ],
+        "players": [
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Suyou",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zetian",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Freya",
+            "kills": 4,
+            "deaths": 6,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 8,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Bruno",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Leomord",
+            "kills": 8,
+            "deaths": 2,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 17
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Phoveus",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 15
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Chou",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 14
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 0,
+            "SRG": 2
+          },
+          "turtle": {
+            "AC": 2,
+            "SRG": 1
+          },
+          "tower": {
+            "AC": 1,
+            "SRG": 8
+          }
+        }
       }
     ],
     "mpl": {
