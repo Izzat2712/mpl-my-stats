@@ -30547,6 +30547,118 @@
             "TF": 3
           }
         }
+      },
+      {
+        "winner": "IG",
+        "mvp": "HAZLE",
+        "bans": [
+          "Guinevere",
+          "Baxia",
+          "Benedetta",
+          "Nolan",
+          "Suyou",
+          "Fanny",
+          "Harley",
+          "Zhuxin",
+          "Gloo",
+          "Hylos"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Granger",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Yi Sun-Shin",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Freya",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Gatotkaca",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Harith",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "RIVAL",
+            "hero": "Leomord",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Minsitthar",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 5
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 2,
+            "TF": 0
+          },
+          "turtle": {
+            "IG": 2,
+            "TF": 1
+          },
+          "tower": {
+            "IG": 8,
+            "TF": 0
+          }
+        }
       }
     ],
     "mpl": {
