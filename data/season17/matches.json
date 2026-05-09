@@ -31620,7 +31620,120 @@
     "dayMatch": 3,
     "date": "2026-05-9",
     "startTime": "8:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "AC",
+        "mvp": "IZANAMI",
+        "bans": [
+          "Fanny",
+          "Suyou",
+          "Harith",
+          "Guinevere",
+          "Nolan",
+          "Zhuxin",
+          "Freya",
+          "Harley",
+          "Phoveus",
+          "Zetian"
+        ],
+        "players": [
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 9
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Leomord",
+            "kills": 11,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Pharsa",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 14
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Alice",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 18
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 23
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Moskov",
+            "kills": 6,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Yi Sun-Shin",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 6,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Terizla",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Kalea",
+            "kills": 1,
+            "deaths": 7,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 2,
+            "SRG": 2
+          },
+          "turtle": {
+            "AC": 2,
+            "SRG": 1
+          },
+          "tower": {
+            "AC": 9,
+            "SRG": 6
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W6D2ACVSSRG"
     }
