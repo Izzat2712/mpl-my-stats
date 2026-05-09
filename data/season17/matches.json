@@ -30323,7 +30323,120 @@
     "dayMatch": 1,
     "date": "2026-05-9",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TF",
+        "mvp": "XORN",
+        "bans": [
+          "Guinevere",
+          "Baxia",
+          "Benedetta",
+          "Moskov",
+          "Leomord",
+          "Fanny",
+          "Freya",
+          "Harley",
+          "Valentina",
+          "Yve"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Harith",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Suyou",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Zhask",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Phoveus",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Granger",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "TF",
+            "name": "RIVAL",
+            "hero": "Nolan",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Minsitthar",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Khaleed",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 7
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 0,
+            "TF": 2
+          },
+          "turtle": {
+            "IG": 1,
+            "TF": 2
+          },
+          "tower": {
+            "IG": 3,
+            "TF": 9
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W6D2IGVSFL"
     }
