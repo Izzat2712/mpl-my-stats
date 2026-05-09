@@ -31844,6 +31844,118 @@
             "SRG": 8
           }
         }
+      },
+      {
+        "winner": "AC",
+        "mvp": "MOMO",
+        "bans": [
+          "Fanny",
+          "Suyou",
+          "Phoveus",
+          "Moskov",
+          "Harith",
+          "Zhuxin",
+          "Freya",
+          "Marcel",
+          "Terizla",
+          "Sora"
+        ],
+        "players": [
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Harley",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zetian",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Dyrroth",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 9
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Clint",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Leomord",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Lylia",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Kalea",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "AC": 4,
+            "SRG": 0
+          },
+          "turtle": {
+            "AC": 3,
+            "SRG": 0
+          },
+          "tower": {
+            "AC": 9,
+            "SRG": 2
+          }
+        }
       }
     ],
     "mpl": {
