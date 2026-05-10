@@ -33508,6 +33508,118 @@
             "SRG": 7
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "YUMS",
+        "bans": [
+          "Guinevere",
+          "Harith",
+          "Freya",
+          "Hilda",
+          "Arlott",
+          "Fanny",
+          "Zhuxin",
+          "Harley",
+          "Selena",
+          "Pharsa"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Irithel",
+            "kills": 4,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Leomord",
+            "kills": 6,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Yve",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 12
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 12
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Kalea",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 12
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Suyou",
+            "kills": 5,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Kimmy",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Terizla",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 3
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Marcel",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 10
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "SRG": 2
+          },
+          "turtle": {
+            "BTR": 1,
+            "SRG": 2
+          },
+          "tower": {
+            "BTR": 7,
+            "SRG": 6
+          }
+        }
       }
     ],
     "mpl": {
