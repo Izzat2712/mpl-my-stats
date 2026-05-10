@@ -33396,7 +33396,120 @@
     "dayMatch": 2,
     "date": "2026-05-10",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "BTR",
+        "mvp": "CIKUGAIS",
+        "bans": [
+          "Fanny",
+          "Phoveus",
+          "Harley",
+          "Badang",
+          "Hylos",
+          "Marcel",
+          "Freya",
+          "Zhuxin",
+          "Chip",
+          "Uranus"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Harith",
+            "kills": 7,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Leomord",
+            "kills": 4,
+            "deaths": 8,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Zetian",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 13
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Arlott",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Gatotkaca",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 11
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Moskov",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Suyou",
+            "kills": 7,
+            "deaths": 4,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 12
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Sora",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Gloo",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 13
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "SRG": 2
+          },
+          "turtle": {
+            "BTR": 1,
+            "SRG": 2
+          },
+          "tower": {
+            "BTR": 8,
+            "SRG": 7
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W6D3BTRMVSSRG"
     }
