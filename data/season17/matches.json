@@ -33270,6 +33270,118 @@
             "AC": 0
           }
         }
+      },
+      {
+        "winner": "IG",
+        "mvp": "HAZLE",
+        "bans": [
+          "Yi Sun-Shin",
+          "Fanny",
+          "Freya",
+          "Moskov",
+          "Khaleed",
+          "Guinevere",
+          "Marcel",
+          "Chou",
+          "Hilda",
+          "Terizla"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Harith",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Saber",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Uranus",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Gatotkaca",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 12
+          },
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Harley",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zetian",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Dyrroth",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Kalea",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 2
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 1,
+            "AC": 0
+          },
+          "turtle": {
+            "IG": 2,
+            "AC": 1
+          },
+          "tower": {
+            "IG": 9,
+            "AC": 1
+          }
+        }
       }
     ],
     "mpl": {
