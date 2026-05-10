@@ -33158,7 +33158,120 @@
     "dayMatch": 1,
     "date": "2026-05-10",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "MELQT",
+        "bans": [
+          "Guinevere",
+          "Marcel",
+          "Zhuxin",
+          "Chou",
+          "Kaja",
+          "Yi Sun-Shin",
+          "Fanny",
+          "Harley",
+          "Harith",
+          "Chip"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Moskov",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Suyou",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Valir",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Freya",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 13
+          },
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Karrie",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Leomord",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zetian",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Phoveus",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 1,
+            "AC": 0
+          },
+          "turtle": {
+            "IG": 3,
+            "AC": 0
+          },
+          "tower": {
+            "IG": 8,
+            "AC": 0
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W6D3IGVSAC"
     }
