@@ -35029,6 +35029,118 @@
             "SRG": 7
           }
         }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "STORMIE",
+        "bans": [
+          "Benedetta",
+          "Guinevere",
+          "Baxia",
+          "Suyou",
+          "Valentina",
+          "Freya",
+          "Fanny",
+          "Zhuxin",
+          "Kimmy",
+          "Zetian"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "RIVAL",
+            "hero": "Lancelot",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Gord",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Sora",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Hilda",
+            "kills": 2,
+            "deaths": 9,
+            "assists": 3
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 11
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Harley",
+            "kills": 12,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Lylia",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 13
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Terizla",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Hylos",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 17
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 0,
+            "SRG": 1
+          },
+          "turtle": {
+            "TF": 1,
+            "SRG": 2
+          },
+          "tower": {
+            "TF": 2,
+            "SRG": 8
+          }
+        }
       }
     ],
     "mpl": {
