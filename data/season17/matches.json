@@ -35379,6 +35379,118 @@
             "AC": 0
           }
         }
+      },
+      {
+        "winner": "AC",
+        "mvp": "IZANAMI",
+        "bans": [
+          "Fanny",
+          "Chou",
+          "Phoveus",
+          "Uranus",
+          "Terizla",
+          "Leomord",
+          "Guinevere",
+          "Suyou",
+          "Fredrinn",
+          "Saber"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Harith",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Baxia",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 3
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Freya",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Harley",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zhuxin",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 10
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Sora",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Kalea",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 11
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "AC": 1
+          },
+          "turtle": {
+            "BTR": 0,
+            "AC": 3
+          },
+          "tower": {
+            "BTR": 3,
+            "AC": 8
+          }
+        }
       }
     ],
     "mpl": {
