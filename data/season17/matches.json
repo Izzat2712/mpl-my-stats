@@ -35155,7 +35155,120 @@
     "dayMatch": 2,
     "date": "2026-05-15",
     "startTime": "8:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "AC",
+        "mvp": "AERONSHIKII",
+        "bans": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Harith",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Suyou",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 10
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Zetian",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Hylos",
+            "kills": 2,
+            "deaths": 7,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Hilda",
+            "kills": 2,
+            "deaths": 7,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 7,
+            "deaths": 0,
+            "assists": 14
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Hayabusa",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 14
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zhuxin",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 16
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Phoveus",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 15
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 14
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 0,
+            "AC": 2
+          },
+          "turtle": {
+            "BTR": 2,
+            "AC": 1
+          },
+          "tower": {
+            "BTR": 0,
+            "AC": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W7D1BTRMVSAC"
     }
