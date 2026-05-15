@@ -35160,16 +35160,16 @@
         "winner": "AC",
         "mvp": "AERONSHIKII",
         "bans": [
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
+          "Fanny",
+          "Harley",
+          "Freya",
+          "Joy",
+          "Nolan",
+          "Leomord",
+          "Guinevere",
+          "Marcel",
+          "Yve",
+          "Uranus"
         ],
         "players": [
           {
@@ -35265,6 +35265,118 @@
           "tower": {
             "BTR": 0,
             "AC": 8
+          }
+        }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "RASY",
+        "bans": [
+          "Leomord",
+          "Guinevere",
+          "Uranus",
+          "Harith",
+          "Irithel",
+          "Fanny",
+          "Freya",
+          "Chou",
+          "Alice",
+          "Yve"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Clint",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Suyou",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Harley",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zhuxin",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Terizla",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "AC": 0
+          },
+          "turtle": {
+            "BTR": 3,
+            "AC": 0
+          },
+          "tower": {
+            "BTR": 7,
+            "AC": 0
           }
         }
       }
