@@ -36791,6 +36791,118 @@
             "TR": 5
           }
         }
+      },
+      {
+        "winner": "IG",
+        "mvp": "MELQT",
+        "bans": [
+          "Fanny",
+          "Marcel",
+          "Zhuxin",
+          "Uranus",
+          "Alice",
+          "Guinevere",
+          "Chip",
+          "Baxia",
+          "Claude",
+          "Obsidia"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Clint",
+            "kills": 9,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Yi Sun-Shin",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Valir",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Freya",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Gloo",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Moskov",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Harley",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Phoveus",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 3,
+            "TR": 0
+          },
+          "turtle": {
+            "IG": 3,
+            "TR": 0
+          },
+          "tower": {
+            "IG": 8,
+            "TR": 2
+          }
+        }
       }
     ],
     "mpl": {
