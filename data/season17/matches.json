@@ -37029,6 +37029,118 @@
             "RRQ": 9
           }
         }
+      },
+      {
+        "winner": "RRQ",
+        "mvp": "ROUGH",
+        "bans": [
+          "Phoveus",
+          "Sora",
+          "Arlott",
+          "Valentina",
+          "Gloo",
+          "Freya",
+          "Harley",
+          "Fanny",
+          "Benedetta",
+          "Minsitthar"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "TF",
+            "name": "RIVAL",
+            "hero": "Leomord",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Paquito",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Harith",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Suyou",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "AJ",
+            "hero": "Zetian",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Esmeralda",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 12
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 0,
+            "RRQ": 3
+          },
+          "turtle": {
+            "TF": 0,
+            "RRQ": 1
+          },
+          "tower": {
+            "TF": 1,
+            "RRQ": 7
+          }
+        }
       }
     ],
     "mpl": {
