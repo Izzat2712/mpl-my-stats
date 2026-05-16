@@ -37267,6 +37267,118 @@
             "SRG": 9
           }
         }
+      },
+      {
+        "winner": "VMS",
+        "mvp": "ZQEEF",
+        "bans": [
+          "Guinevere",
+          "Harith",
+          "Phoveus",
+          "Arlott",
+          "Suyou",
+          "Freya",
+          "Marcel",
+          "Fanny",
+          "Khaleed",
+          "Kalea"
+        ],
+        "players": [
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Moskov",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Valentina",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "VMS",
+            "name": "SEPAT",
+            "hero": "Hilda",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Gloo",
+            "kills": 3,
+            "deaths": 6,
+            "assists": 11
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Claude",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Harley",
+            "kills": 3,
+            "deaths": 5,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "UNII",
+            "hero": "Ruby",
+            "kills": 4,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 12
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "VMS": 2,
+            "SRG": 1
+          },
+          "turtle": {
+            "VMS": 2,
+            "SRG": 0
+          },
+          "tower": {
+            "VMS": 8,
+            "SRG": 5
+          }
+        }
       }
     ],
     "mpl": {
