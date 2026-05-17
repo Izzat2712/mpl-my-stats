@@ -38823,7 +38823,120 @@
     "dayMatch": 1,
     "date": "2026-05-17",
     "startTime": "2:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TR",
+        "mvp": "SIZKAA",
+        "bans": [
+          "Phoveus",
+          "Marcel",
+          "Leomord",
+          "Gloo",
+          "Arlott",
+          "Freya",
+          "Chip",
+          "Baxia",
+          "Obsidia",
+          "Lapu-Lapu"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Guinevere",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Yve",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Benedetta",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 12
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Harith",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Suyou",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Zhuxin",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 0
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 2,
+            "BTR": 0
+          },
+          "turtle": {
+            "TR": 3,
+            "BTR": 0
+          },
+          "tower": {
+            "TR": 9,
+            "BTR": 0
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W7D3TRVSBTRM"
     }
