@@ -38935,6 +38935,118 @@
             "BTR": 0
           }
         }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "CIKUGAIS",
+        "bans": [
+          "Chip",
+          "Baxia",
+          "Phoveus",
+          "Sora",
+          "Benedetta",
+          "Leomord",
+          "Guinevere",
+          "Freya",
+          "Alice",
+          "Arlott"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Claude",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Harley",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "team": "TR",
+            "name": "MARTZYYYY",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Hilda",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 1
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Clint",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Suyou",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Gord",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Terizla",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 11
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 0,
+            "BTR": 2
+          },
+          "turtle": {
+            "TR": 2,
+            "BTR": 1
+          },
+          "tower": {
+            "TR": 2,
+            "BTR": 8
+          }
+        }
       }
     ],
     "mpl": {
