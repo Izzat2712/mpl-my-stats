@@ -39173,7 +39173,120 @@
     "dayMatch": 2,
     "date": "2026-05-17",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "HAZLE",
+        "bans": [
+          "Fanny",
+          "Harley",
+          "Phoveus",
+          "Gord",
+          "Selena",
+          "Guinevere",
+          "Harith",
+          "Freya",
+          "Suyou",
+          "Dyrroth"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Leomord",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "AJ",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Sora",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Moskov",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Yi Sun-Shin",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 11
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 0,
+            "IG": 1
+          },
+          "turtle": {
+            "RRQ": 3,
+            "IG": 0
+          },
+          "tower": {
+            "RRQ": 1,
+            "IG": 7
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W7D3RRQVSIG"
     }
