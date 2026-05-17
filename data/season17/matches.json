@@ -39047,6 +39047,118 @@
             "BTR": 8
           }
         }
+      },
+      {
+        "winner": "TR",
+        "mvp": "SIZKAA",
+        "bans": [
+          "Phoveus",
+          "Marcel",
+          "Leomord",
+          "Arlott",
+          "Sora",
+          "Freya",
+          "Chip",
+          "Benedetta",
+          "Clint",
+          "Lapu-Lapu"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "LOLEAL",
+            "hero": "Obsidia",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "JUST GARRR",
+            "hero": "Guinevere",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "ZAY LA NINA",
+            "hero": "Gord",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "SIZKAA",
+            "hero": "Terizla",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "TR",
+            "name": "IVANN",
+            "hero": "Hylos",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Suyou",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Zetian",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Valentina",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 2,
+            "BTR": 1
+          },
+          "turtle": {
+            "TR": 2,
+            "BTR": 1
+          },
+          "tower": {
+            "TR": 5,
+            "BTR": 8
+          }
+        }
       }
     ],
     "mpl": {
