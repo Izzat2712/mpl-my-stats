@@ -39285,6 +39285,118 @@
             "IG": 7
           }
         }
+      },
+      {
+        "winner": "IG",
+        "mvp": "NOVAXCOBAR",
+        "bans": [
+          "Guinevere",
+          "Harith",
+          "Chou",
+          "Hilda",
+          "Hylos",
+          "Fanny",
+          "Freya",
+          "Harley",
+          "Marcel",
+          "Kalea"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "ROUGH",
+            "hero": "Claude",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "GARYY",
+            "hero": "Suyou",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "AJ",
+            "hero": "Yve",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "DYRENNN",
+            "hero": "Alice",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERYOSHI",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Moskov",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Yi Sun-Shin",
+            "kills": 12,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 15
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Gatotkaca",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 14
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 0,
+            "IG": 2
+          },
+          "turtle": {
+            "RRQ": 3,
+            "IG": 0
+          },
+          "tower": {
+            "RRQ": 1,
+            "IG": 9
+          }
+        }
       }
     ],
     "mpl": {
