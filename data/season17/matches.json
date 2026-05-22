@@ -40587,7 +40587,232 @@
     "dayMatch": 1,
     "date": "2026-05-22",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "BTR",
+        "mvp": "ZIEYY",
+        "bans": [
+          "Benedetta",
+          "Kalea",
+          "Freya",
+          "Chou",
+          "Atlas",
+          "Marcel",
+          "Guinevere",
+          "Leomord",
+          "Baxia",
+          "Fredrinn"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Harley",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Gord",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Arlott",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Gloo",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Harith",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "TF",
+            "name": "RIVAL",
+            "hero": "Suyou",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Zhuxin",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Phoveus",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Khaleed",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 2
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "TF": 0
+          },
+          "turtle": {
+            "BTR": 3,
+            "TF": 0
+          },
+          "tower": {
+            "BTR": 8,
+            "TF": 0
+          }
+        }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "CHIBII",
+        "bans": [
+          "Benedetta",
+          "Freya",
+          "Kalea",
+          "Chou",
+          "Minsitthar",
+          "Marcel",
+          "Guinevere",
+          "Gloo",
+          "Gatotkaca",
+          "Hylos"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Clint",
+            "kills": 6,
+            "deaths": 2,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Suyou",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valentina",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 11
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Arlott",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 13
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Atlas",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 18
+          },
+          {
+            "team": "TF",
+            "name": "SKYZED",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "RIVAL",
+            "hero": "Harley",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "KURTTZY",
+            "hero": "Gord",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "DIABLO",
+            "hero": "Yuzhong",
+            "kills": 3,
+            "deaths": 9,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Baxia",
+            "kills": 0,
+            "deaths": 10,
+            "assists": 7
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 2,
+            "TF": 0
+          },
+          "turtle": {
+            "BTR": 3,
+            "TF": 0
+          },
+          "tower": {
+            "BTR": 8,
+            "TF": 3
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W8D1BTRMVSFL"
     }
