@@ -42236,6 +42236,118 @@
             "AC": 7
           }
         }
+      },
+      {
+        "winner": "VMS",
+        "mvp": "NATCO",
+        "bans": [
+          "Marcel",
+          "Phoveus",
+          "Fanny",
+          "Suyou",
+          "Harley",
+          "Guinevere",
+          "Freya",
+          "Harith",
+          "Moskov",
+          "Karrie"
+        ],
+        "players": [
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Obsidia",
+            "kills": 11,
+            "deaths": 0,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Leomord",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Zetian",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 19
+          },
+          {
+            "team": "VMS",
+            "name": "SEPAT",
+            "hero": "Arlott",
+            "kills": 8,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Gatotkaca",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 15
+          },
+          {
+            "team": "AC",
+            "name": "AERONSHIKII",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "FAVIANN",
+            "hero": "Nolan",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Uranus",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "AC",
+            "name": "VALENZ",
+            "hero": "Kalea",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "VMS": 1,
+            "AC": 1
+          },
+          "turtle": {
+            "VMS": 1,
+            "AC": 2
+          },
+          "tower": {
+            "VMS": 8,
+            "AC": 3
+          }
+        }
       }
     ],
     "mpl": {
