@@ -43527,6 +43527,118 @@
             "IG": 1
           }
         }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "AMZZIQ",
+        "bans": [
+          "Guinevere",
+          "Gloo",
+          "Marcel",
+          "Gord",
+          "Lunox",
+          "Fanny",
+          "Yi Sun-Shin",
+          "Valir",
+          "Saber",
+          "Baxia"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "AMZZIQ",
+            "hero": "Harith",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 10
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Harley",
+            "kills": 9,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valentina",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 14
+          },
+          {
+            "team": "BTR",
+            "name": "SMOOTH",
+            "hero": "Phoveus",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Kalea",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 15
+          },
+          {
+            "team": "IG",
+            "name": "DARMEW",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Suyou",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 7
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Zhuxin",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Freya",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "GOJES",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "IG": 0
+          },
+          "turtle": {
+            "BTR": 2,
+            "IG": 1
+          },
+          "tower": {
+            "BTR": 9,
+            "IG": 3
+          }
+        }
       }
     ],
     "mpl": {
