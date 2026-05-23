@@ -43415,7 +43415,120 @@
     "dayMatch": 3,
     "date": "2026-05-23",
     "startTime": "8:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "BTR",
+        "mvp": "CIKUGAIS",
+        "bans": [
+          "Fanny",
+          "Yi Sun-Shin",
+          "Valir",
+          "Saber",
+          "Uranus",
+          "Guinevere",
+          "Arlott",
+          "Gord",
+          "Yve",
+          "Valentina"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Irithel",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Harley",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Lylia",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Phoveus",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Gloo",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 11
+          },
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Lancelot",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Freya",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 2,
+            "IG": 0
+          },
+          "turtle": {
+            "BTR": 2,
+            "IG": 1
+          },
+          "tower": {
+            "BTR": 8,
+            "IG": 1
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W8D2BTRMVSIG"
     }
