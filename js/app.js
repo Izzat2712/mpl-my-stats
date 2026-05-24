@@ -90,9 +90,11 @@ const appState = {
   filters: {
     ppExcludeUnused: false
   },
-  scheduleStage: "regular",
+  scheduleStage: null,
+  scheduleStageManual: false,
   scheduleTeam: "",
-  scheduleWeek: null
+  scheduleWeek: null,
+  scheduleWeekManual: false
 };
 
 const ENABLED_SEASONS = new Set(["season16", "season17"]);
@@ -127,6 +129,8 @@ let suppressRouteSync = false;
 let countdownIntervalId = null;
 let countdownDataRefreshId = null;
 let countdownDataPromise = null;
+let scheduleAutoRefreshId = null;
+let scheduleAutoRefreshDayKey = "";
 const countdownData = {
   matches: [],
   teamLogos: {},
@@ -535,6 +539,39 @@ function startCountdownTicker() {
   countdownDataRefreshId = window.setInterval(() => {
     refreshCountdownData().catch(() => {});
   }, COUNTDOWN_DATA_REFRESH_MS);
+
+  startScheduleAutoRefresh();
+}
+
+function getLocalDayKey(date = new Date()) {
+  return [
+    date.getFullYear(),
+    String(date.getMonth() + 1).padStart(2, "0"),
+    String(date.getDate()).padStart(2, "0")
+  ].join("-");
+}
+
+function startScheduleAutoRefresh() {
+  scheduleAutoRefreshDayKey = getLocalDayKey();
+  if (scheduleAutoRefreshId) {
+    clearInterval(scheduleAutoRefreshId);
+  }
+
+  scheduleAutoRefreshId = window.setInterval(() => {
+    const nextDayKey = getLocalDayKey();
+    if (nextDayKey === scheduleAutoRefreshDayKey) return;
+
+    scheduleAutoRefreshDayKey = nextDayKey;
+    if (appState.view !== "schedule") return;
+
+    if (!appState.scheduleStageManual) {
+      appState.scheduleStage = null;
+    }
+    if (!appState.scheduleWeekManual) {
+      appState.scheduleWeek = null;
+    }
+    renderCurrentView();
+  }, 30000);
 }
 
 function updateSeasonMeta() {

@@ -36,6 +36,11 @@ const SCHEDULE_DAYS = [
   { key: "saturday", label: "Saturday", slots: 3 },
   { key: "sunday", label: "Sunday", slots: 2 }
 ];
+const SCHEDULE_DAY_OPTIONS = [
+  { key: "wednesday", label: "Wednesday" },
+  { key: "thursday", label: "Thursday" },
+  ...SCHEDULE_DAYS
+];
 const SCHEDULE_STAGES = [
   { key: "regular", label: "Regular Season" },
   { key: "playoff", label: "Playoff" }
@@ -76,7 +81,7 @@ function getMatchScheduleMeta(match, index) {
   const fallback = getDefaultScheduleMeta(index);
   const schedule = match.schedule && typeof match.schedule === "object" ? match.schedule : {};
   const dayValue = String(schedule.day || match.day || fallback.day).trim().toLowerCase();
-  const dayConfig = SCHEDULE_DAYS.find((entry) => entry.key === dayValue) || SCHEDULE_DAYS[0];
+  const dayConfig = SCHEDULE_DAY_OPTIONS.find((entry) => entry.key === dayValue) || SCHEDULE_DAYS[0];
 
   return {
     week: Number(schedule.week ?? match.week) || fallback.week,
@@ -119,18 +124,67 @@ function getScheduleWeekDisplayStart(dateValue) {
   const match = String(dateValue || "").trim().match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/);
   if (!match) return null;
 
-  const localDate = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  const localDate = parseScheduleDateLocal(dateValue);
   if (Number.isNaN(localDate.getTime())) return null;
 
-  localDate.setHours(0, 0, 0, 0);
   const daysSinceWednesday = (localDate.getDay() + 7 - 3) % 7;
   localDate.setDate(localDate.getDate() - daysSinceWednesday);
   return localDate;
 }
 
+function parseScheduleDateLocal(dateValue) {
+  const match = String(dateValue || "").trim().match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/);
+  if (!match) return null;
+
+  const localDate = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  if (Number.isNaN(localDate.getTime())) return null;
+
+  localDate.setHours(0, 0, 0, 0);
+  return localDate;
+}
+
+function getTodayLocalMidnight() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return today;
+}
+
+function getDefaultScheduleStage(matchEntries) {
+  const playoffStarts = matchEntries
+    .filter((entry) => getMatchStage(entry.match) === "playoff")
+    .map((entry) => parseScheduleDateLocal(getMatchScheduleMeta(entry.match, entry.index).date))
+    .filter((date) => date instanceof Date)
+    .sort((a, b) => a - b);
+
+  if (!playoffStarts.length) return "regular";
+  return getTodayLocalMidnight() >= playoffStarts[0] ? "playoff" : "regular";
+}
+
 function getDefaultScheduleSegmentValue(stageData) {
   const fallbackValue = stageData.segmentTabs[0]?.value || 1;
-  if (stageData.segmentKind !== "week") return fallbackValue;
+  if (stageData.segmentKind !== "week") {
+    const orderedSegments = stageData.segmentTabs
+      .map((tab) => ({
+        value: tab.value,
+        start: parseScheduleDateLocal(tab.key)
+      }))
+      .filter((entry) => entry.start instanceof Date)
+      .sort((a, b) => a.start - b.start);
+
+    if (!orderedSegments.length) return fallbackValue;
+
+    const today = getTodayLocalMidnight();
+    let selectedSegment = orderedSegments[0].value;
+    for (const segment of orderedSegments) {
+      if (today >= segment.start) {
+        selectedSegment = segment.value;
+      } else {
+        break;
+      }
+    }
+
+    return selectedSegment;
+  }
 
   const weekStartMap = new Map();
   for (const entry of stageData.entries) {
@@ -153,8 +207,7 @@ function getDefaultScheduleSegmentValue(stageData) {
 
   if (!orderedWeeks.length) return fallbackValue;
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const today = getTodayLocalMidnight();
 
   let selectedWeek = orderedWeeks[0].value;
   for (const week of orderedWeeks) {
@@ -563,18 +616,23 @@ function renderScheduleTeamView(matchEntries, selectedTeam = "", activeSegment =
 
 function showSchedule(week = null) {
   const matches = getMatches();
-  const selectedStage = normalizeScheduleStage(window.appState?.scheduleStage || "regular");
   const matchEntries = matches.map((match, index) => ({ match, index }));
+  const selectedStage = window.appState?.scheduleStageManual
+    ? normalizeScheduleStage(window.appState?.scheduleStage)
+    : normalizeScheduleStage(window.appState?.scheduleStage || getDefaultScheduleStage(matchEntries));
   const stageData = getStageSegmentData(matchEntries, selectedStage);
   const stageMatches = stageData.entries.map((entry) => entry.match);
   const availableTeams = getScheduleTeams(stageMatches);
   const fallbackValue = getDefaultScheduleSegmentValue(stageData);
-  const activeSegment = Number(week ?? window.appState?.scheduleWeek ?? fallbackValue) || fallbackValue;
+  const weekWasSelected = week !== null && week !== undefined;
+  const storedSegment = window.appState?.scheduleWeekManual ? window.appState?.scheduleWeek : null;
+  const activeSegment = Number(weekWasSelected ? week : (storedSegment ?? fallbackValue)) || fallbackValue;
   const requestedTeam = normalizeScheduleTeamCode(window.appState?.scheduleTeam || "");
   const selectedTeam = availableTeams.includes(requestedTeam) ? requestedTeam : "";
 
   if (window.appState) {
     window.appState.scheduleWeek = stageData.segmentTabs.some((tab) => tab.value === activeSegment) ? activeSegment : fallbackValue;
+    window.appState.scheduleWeekManual = weekWasSelected || Boolean(window.appState.scheduleWeekManual && storedSegment);
     window.appState.scheduleTeam = selectedTeam;
     window.appState.scheduleStage = selectedStage;
   }
@@ -677,13 +735,15 @@ function onScheduleTeamChange(teamCode) {
   if (window.appState) {
     window.appState.scheduleTeam = normalizeScheduleTeamCode(teamCode);
   }
-  showSchedule(window.appState?.scheduleWeek ?? null);
+  showSchedule();
 }
 
 function onScheduleStageChange(stage) {
   if (window.appState) {
     window.appState.scheduleStage = normalizeScheduleStage(stage);
+    window.appState.scheduleStageManual = true;
     window.appState.scheduleWeek = null;
+    window.appState.scheduleWeekManual = false;
   }
   showSchedule();
 }
