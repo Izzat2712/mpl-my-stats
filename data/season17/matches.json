@@ -45767,7 +45767,104 @@
       }
     ],
     "mpl": {
-      "slug": "W8D3ACVSRRQ"
+      "slug": "W8D3ACVSRRQ",
+      "matchId": 269
     }
+  },
+  {
+    "teamA": "VMS",
+    "teamB": "RRQ",
+    "week": "",
+    "day": "wednesday",
+    "dayMatch": 1,
+    "date": "2026-06-03",
+    "startTime": "3:00 PM",
+    "games": [],
+    "stage": "playoff",
+    "bestOf": 5
+  },
+  {
+    "teamA": "TR",
+    "teamB": "BTR",
+    "week": "",
+    "day": "wednesday",
+    "dayMatch": 2,
+    "date": "2026-06-03",
+    "startTime": "7:00 PM",
+    "games": [],
+    "stage": "playoff",
+    "bestOf": 5
+  },
+  {
+    "teamA": "IG",
+    "teamB": "",
+    "week": "",
+    "day": "thursday",
+    "dayMatch": 1,
+    "date": "2026-06-04",
+    "startTime": "3:00 PM",
+    "games": [],
+    "stage": "playoff",
+    "bestOf": 5
+  },
+  {
+    "teamA": "SRG",
+    "teamB": "",
+    "week": "",
+    "day": "thursday",
+    "dayMatch": 2,
+    "date": "2026-06-04",
+    "startTime": "7:00 PM",
+    "games": [],
+    "stage": "playoff",
+    "bestOf": 5
+  },
+  {
+    "teamA": "",
+    "teamB": "",
+    "week": "",
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-06-05",
+    "startTime": "3:00 PM",
+    "games": [],
+    "bestOf": 5,
+    "stage": "playoff"
+  },
+  {
+    "teamA": "",
+    "teamB": "",
+    "week": "",
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-06-05",
+    "startTime": "7:00 PM",
+    "games": [],
+    "stage": "playoff",
+    "bestOf": 5
+  },
+  {
+    "teamA": "",
+    "teamB": "",
+    "week": "",
+    "day": "saturday",
+    "dayMatch": 1,
+    "date": "2026-06-06",
+    "startTime": "5:30 PM",
+    "games": [],
+    "stage": "playoff",
+    "bestOf": 7
+  },
+  {
+    "teamA": "",
+    "teamB": "",
+    "week": "",
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-06-07",
+    "startTime": "5:30 PM",
+    "games": [],
+    "stage": "playoff",
+    "bestOf": 7
   }
 ]
