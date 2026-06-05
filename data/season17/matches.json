@@ -48084,13 +48084,462 @@
     "dayMatch": 2,
     "date": "2026-06-05",
     "startTime": "7:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "NOVAXCOBAR",
+        "bans": [
+          "Yi Sun-Shin",
+          "Phoveus",
+          "Harley",
+          "Valentina",
+          "Yve",
+          "Freya",
+          "Fanny",
+          "Paquito",
+          "Lapu-Lapu",
+          "Atlas"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Claude",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Baxia",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Zhuxin",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 13
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Benedetta",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 13
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Harith",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Suyou",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Lylia",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Hilda",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 1
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 2,
+            "SRG": 0
+          },
+          "turtle": {
+            "IG": 1,
+            "SRG": 2
+          },
+          "tower": {
+            "IG": 9,
+            "SRG": 2
+          }
+        }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "KRAMM",
+        "bans": [
+          "Phoveus",
+          "Harley",
+          "Guinevere",
+          "Gloo",
+          "Atlas",
+          "Yi Sun-Shin",
+          "Fanny",
+          "Marcel",
+          "Moskov",
+          "Chip"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Baxia",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Freya",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Harith",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Suyou",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 13
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Paquito",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Kalea",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 0,
+            "SRG": 3
+          },
+          "turtle": {
+            "IG": 2,
+            "SRG": 1
+          },
+          "tower": {
+            "IG": 2,
+            "SRG": 9
+          }
+        }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "KRAMM",
+        "bans": [
+          "Yi Sun-Shin",
+          "Marcel",
+          "Harith",
+          "Guinevere",
+          "Gloo",
+          "Freya",
+          "Fanny",
+          "Paquito",
+          "Kalea",
+          "Atlas"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "MELQT",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Hayabusa",
+            "kills": 5,
+            "deaths": 5,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Yve",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Khaleed",
+            "kills": 2,
+            "deaths": 6,
+            "assists": 13
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Moskov",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Harley",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 12
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Zhuxin",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Yuzhong",
+            "kills": 8,
+            "deaths": 5,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 15
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 2,
+            "SRG": 0
+          },
+          "turtle": {
+            "IG": 1,
+            "SRG": 1
+          },
+          "tower": {
+            "IG": 6,
+            "SRG": 4
+          }
+        }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "KRAMM",
+        "bans": [
+          "Yi Sun-Shin",
+          "Marcel",
+          "Harith",
+          "Khaleed",
+          "Atlas",
+          "Freya",
+          "Fanny",
+          "Paquito",
+          "Kalea",
+          "Gloo"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "DARMEW",
+            "hero": "Moskov",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "HAZLE",
+            "hero": "Hayabusa",
+            "kills": 9,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "SWAYLOW",
+            "hero": "Zhuxin",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Phoveus",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "NOVAXCOBAR",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Harley",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 9
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Lapu-Lapu",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Hilda",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 12
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 0,
+            "SRG": 1
+          },
+          "turtle": {
+            "IG": 0,
+            "SRG": 3
+          },
+          "tower": {
+            "IG": 4,
+            "SRG": 7
+          }
+        }
+      }
+    ],
     "stage": "playoff",
     "bestOf": 5
   },
   {
-    "teamA": "",
-    "teamB": "",
+    "teamA": "VMS",
+    "teamB": "IG",
     "week": "",
     "day": "saturday",
     "dayMatch": 1,
@@ -48101,7 +48550,7 @@
     "bestOf": 7
   },
   {
-    "teamA": "",
+    "teamA": "SRG",
     "teamB": "",
     "week": "",
     "day": "sunday",
