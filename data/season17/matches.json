@@ -47623,7 +47623,232 @@
     "dayMatch": 1,
     "date": "2026-06-05",
     "startTime": "3:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "VMS",
+        "mvp": "ERROR 404",
+        "bans": [
+          "Fanny",
+          "Harith",
+          "Phoveus",
+          "Atlas",
+          "Kalea",
+          "Marcel",
+          "Fredrinn",
+          "Guinevere",
+          "Moskov",
+          "Karrie"
+        ],
+        "players": [
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Claude",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Suyou",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "VMS",
+            "name": "SEPAT",
+            "hero": "Freya",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Gatotkaca",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 10
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Clint",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Leomord",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Yve",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Paquito",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Gloo",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 2
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "VMS": 3,
+            "BTR": 0
+          },
+          "turtle": {
+            "VMS": 2,
+            "BTR": 0
+          },
+          "tower": {
+            "VMS": 9,
+            "BTR": 2
+          }
+        }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "RASY",
+        "bans": [
+          "Fanny",
+          "Harith",
+          "Freya",
+          "Gatotkaca",
+          "Atlas",
+          "Marcel",
+          "Fredrinn",
+          "Claude",
+          "Kalea",
+          "Valentina"
+        ],
+        "players": [
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Obsidia",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Leomord",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Yve",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 5
+          },
+          {
+            "team": "VMS",
+            "name": "SEPAT",
+            "hero": "Phoveus",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 2
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Chou",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Karrie",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Guinevere",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Lylia",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "BTR",
+            "name": "LYNCH",
+            "hero": "Arlott",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "RASY",
+            "hero": "Gloo",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "VMS": 0,
+            "BTR": 3
+          },
+          "turtle": {
+            "VMS": 2,
+            "BTR": 1
+          },
+          "tower": {
+            "VMS": 2,
+            "BTR": 8
+          }
+        }
+      }
+    ],
     "bestOf": 5,
     "stage": "playoff"
   },
