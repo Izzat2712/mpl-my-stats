@@ -2824,7 +2824,7 @@ function showPlayers(keepSearchFocus = false) {
 
   let topKills = [...arr].sort((a,b) => b.kills - a.kills).slice(0,5);
   let topAssists = [...arr].sort((a,b) => b.assists - a.assists).slice(0,5);
-  let topKDA = [...arr].sort((a,b) => b.kda - a.kda).slice(0,5);
+  let topKDA = [...arr].filter((pl) => pl.games >= 5).sort((a,b) => b.kda - a.kda).slice(0,5);
 
 
   // ===== BUILD FILTER OPTIONS =====
@@ -2946,7 +2946,7 @@ ${topKills.map((pl, i) => `
 </div>
 
 <div class="topRow">
-  <strong>TOP 5 KDA:</strong>
+  <strong>TOP 5 KDA (MIN 5 GAMES):</strong>
   <div class="topItems">
     ${topKDA.map((pl, i) => `
       <button
