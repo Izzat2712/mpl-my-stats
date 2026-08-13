@@ -1,6 +1,14 @@
 # MPL MY Statistics Dashboard
 
-A multi-season MPL MY statistics website built with vanilla HTML, CSS, and JavaScript. The app currently supports MPL MY Season 16 and Season 17, with Season 17 as the default experience.
+A multi-season MPL MY statistics website built with vanilla HTML, CSS, and JavaScript. The app currently supports MPL MY Season 16, Season 17, and Season 18 (in prep), with Season 18 as the default experience.
+
+## Season Prep (Admin)
+
+The admin panel (`admin.html`) includes season-prep tabs besides the match editor:
+
+- **Teams (Roster)** — edit team names/logos, and build the season's `roster.json` (players + coaching staff in one file, no separate `staff.json`). Player names can be picked from a pool of previously available players, and every member gets an imgur picture link.
+- **Transfers** — manage the transfer window and roster moves in `transfers.json`.
+- **Heroes** — add/edit/remove heroes in the shared `data/heroes.json`.
 
 ## Current Features
 

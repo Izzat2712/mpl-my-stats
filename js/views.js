@@ -36,6 +36,7 @@ const SCHEDULE_DAYS = [
   { key: "saturday", label: "Saturday", slots: 3 },
   { key: "sunday", label: "Sunday", slots: 2 }
 ];
+const SCHEDULE_DAY_ORDER = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
 const SCHEDULE_DAY_OPTIONS = [
   { key: "wednesday", label: "Wednesday" },
   { key: "thursday", label: "Thursday" },
@@ -75,6 +76,11 @@ function getDefaultScheduleMeta(index) {
   }
 
   return { week, day: "friday", dayLabel: "Friday", dayMatch: 1 };
+}
+
+function getScheduleBoardDays(matches) {
+  const present = [...new Set(matches.map((entry) => String(entry?.meta?.day || "").trim()).filter(Boolean))];
+  return present.sort((a, b) => SCHEDULE_DAY_ORDER.indexOf(a) - SCHEDULE_DAY_ORDER.indexOf(b));
 }
 
 function getMatchScheduleMeta(match, index) {
@@ -657,15 +663,16 @@ function showSchedule(week = null) {
 
         ${selectedStage === "playoff" ? renderPlayoffBoard(matchesForSegment) : `
           <div class="scheduleBoard">
-            ${SCHEDULE_DAYS.map((day) => {
+            ${getScheduleBoardDays(matchesForSegment).map((dayKey) => {
+              const dayLabel = (SCHEDULE_DAY_OPTIONS.find((entry) => entry.key === dayKey) || {}).label || dayKey;
               const dayMatches = matchesForSegment
-                .filter((entry) => entry.meta.day === day.key)
+                .filter((entry) => entry.meta.day === dayKey)
                 .sort((a, b) => a.meta.dayMatch - b.meta.dayMatch);
 
               return `
                 <section class="scheduleDayColumn">
                   <div class="scheduleDayHeader">
-                    <h3>${day.label}</h3>
+                    <h3>${dayLabel}</h3>
                   </div>
                   <div class="scheduleDayBody">
                     ${dayMatches.length
@@ -2824,7 +2831,7 @@ function showPlayers(keepSearchFocus = false) {
 
   let topKills = [...arr].sort((a,b) => b.kills - a.kills).slice(0,5);
   let topAssists = [...arr].sort((a,b) => b.assists - a.assists).slice(0,5);
-  let topKDA = [...arr].sort((a,b) => b.kda - a.kda).slice(0,5);
+  let topKDA = [...arr].filter((pl) => pl.games >= 5).sort((a,b) => b.kda - a.kda).slice(0,5);
 
 
   // ===== BUILD FILTER OPTIONS =====
@@ -2946,7 +2953,7 @@ ${topKills.map((pl, i) => `
 </div>
 
 <div class="topRow">
-  <strong>TOP 5 KDA:</strong>
+  <strong>TOP 5 KDA (MIN 5 GAMES):</strong>
   <div class="topItems">
     ${topKDA.map((pl, i) => `
       <button

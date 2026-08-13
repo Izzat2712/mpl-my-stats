@@ -1,0 +1,516 @@
+[
+  {
+    "name": "IZANAMI",
+    "team": "AC",
+    "type": "player",
+    "lane": "Midlaner",
+    "starter": true,
+    "picture": "https://i.imgur.com/zayGy74.png"
+  },
+  {
+    "name": "MARTZYY",
+    "team": "AC",
+    "type": "player",
+    "lane": "Midlaner",
+    "picture": "https://i.imgur.com/UaBM7em.png"
+  },
+  {
+    "name": "MOMO",
+    "team": "AC",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/BUEXMRe.png"
+  },
+  {
+    "name": "NETS",
+    "team": "AC",
+    "type": "player",
+    "lane": "Gold Laner",
+    "picture": "https://i.imgur.com/OcbsXcW.png",
+    "starter": true
+  },
+  {
+    "name": "REYZAR",
+    "team": "AC",
+    "type": "player",
+    "lane": "Roamer",
+    "starter": true,
+    "picture": "https://i.imgur.com/OQG737C.png"
+  },
+  {
+    "name": "ZAHYED",
+    "team": "AC",
+    "type": "player",
+    "lane": "Jungler",
+    "picture": "https://i.imgur.com/ovucGtF.png",
+    "starter": true
+  },
+  {
+    "name": "COACH SORA",
+    "team": "AC",
+    "type": "staff",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/JgbrOxl.png"
+  },
+  {
+    "name": "PAUUU",
+    "team": "AC",
+    "type": "staff",
+    "role": "Assistant Coach",
+    "picture": "https://i.imgur.com/uJyy5YZ.png"
+  },
+  {
+    "name": "WASABI",
+    "team": "AC",
+    "type": "staff",
+    "role": "Analyst",
+    "picture": "https://i.imgur.com/kd9AX2B.png"
+  },
+  {
+    "name": "AMZZIQ",
+    "team": "BTR",
+    "type": "player",
+    "lane": "Gold Laner",
+    "picture": "https://i.imgur.com/q9v4ZLr.png"
+  },
+  {
+    "name": "CHIBII",
+    "team": "BTR",
+    "type": "player",
+    "lane": "Jungler",
+    "starter": true,
+    "picture": "https://i.imgur.com/krwyS4C.png"
+  },
+  {
+    "name": "CIKUGAIS",
+    "team": "BTR",
+    "type": "player",
+    "lane": "Gold Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/tqBkU12.png"
+  },
+  {
+    "name": "GRBOY",
+    "team": "BTR",
+    "type": "player",
+    "lane": "Roamer",
+    "picture": "https://i.imgur.com/PWkra7P.png",
+    "starter": true
+  },
+  {
+    "name": "JEYMZ",
+    "team": "BTR",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/sNpJbBU.png"
+  },
+  {
+    "name": "KENJI",
+    "team": "BTR",
+    "type": "staff",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/Nskv1TM.png"
+  },
+  {
+    "name": "SOMNUS",
+    "team": "BTR",
+    "type": "staff",
+    "role": "Analyst",
+    "picture": "https://i.imgur.com/MmFF489.png"
+  },
+  {
+    "name": "COACH CODY BANKS",
+    "team": "BTR",
+    "type": "staff",
+    "role": "Assistant Coach"
+  },
+  {
+    "name": "3MAR",
+    "team": "TF",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/L55IuQA.png"
+  },
+  {
+    "name": "GARYY",
+    "team": "TF",
+    "type": "player",
+    "lane": "Jungler",
+    "starter": true,
+    "picture": "https://i.imgur.com/t6Iu4Fe.png"
+  },
+  {
+    "name": "OSKER",
+    "team": "TF",
+    "type": "player",
+    "lane": "Roamer",
+    "picture": "https://i.imgur.com/8SOcuZy.png"
+  },
+  {
+    "name": "PABZ",
+    "team": "TF",
+    "type": "staff",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/lmu6Shj.png"
+  },
+  {
+    "name": "UK1R",
+    "team": "TF",
+    "type": "player",
+    "lane": "Midlaner",
+    "starter": true,
+    "picture": "https://i.imgur.com/SGp69kx.png"
+  },
+  {
+    "name": "VANIX",
+    "team": "TF",
+    "type": "player",
+    "lane": "Gold Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/EvVwjWi.png"
+  },
+  {
+    "name": "XORN",
+    "team": "TF",
+    "type": "player",
+    "lane": "Roamer",
+    "starter": true,
+    "picture": "https://i.imgur.com/NPGV85z.png"
+  },
+  {
+    "name": "COACH BAM",
+    "team": "IG",
+    "type": "staff",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/3FHLQXP.png"
+  },
+  {
+    "name": "COACH JES",
+    "team": "IG",
+    "type": "staff",
+    "role": "Assistant Coach",
+    "picture": "https://i.imgur.com/kwejRH1.png"
+  },
+  {
+    "name": "ATANNN",
+    "team": "IG",
+    "type": "player",
+    "lane": "Roamer",
+    "starter": true,
+    "picture": "https://i.imgur.com/nVjprUG.png"
+  },
+  {
+    "name": "LUNNN",
+    "team": "IG",
+    "type": "player",
+    "lane": "Jungler",
+    "starter": true,
+    "picture": "https://i.imgur.com/MYoj9Xz.png"
+  },
+  {
+    "name": "ROKJI",
+    "team": "IG",
+    "type": "player",
+    "lane": "Gold Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/Rgb1epR.png"
+  },
+  {
+    "name": "REZZA",
+    "team": "IG",
+    "type": "player",
+    "lane": "Exp Laner",
+    "picture": "https://i.imgur.com/i08PlfP.png"
+  },
+  {
+    "name": "TREACKY",
+    "team": "IG",
+    "type": "player",
+    "lane": "Midlaner",
+    "starter": true,
+    "picture": "https://i.imgur.com/rNE8swE.png"
+  },
+  {
+    "name": "YE3",
+    "team": "IG",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/v3Fcpia.png"
+  },
+  {
+    "name": "AJ",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Midlaner",
+    "picture": "https://i.imgur.com/n3Qg5de.png"
+  },
+  {
+    "name": "HARU",
+    "team": "RRQ",
+    "type": "staff",
+    "role": "Assistant Coach",
+    "picture": "https://i.imgur.com/1o0JyfO.png"
+  },
+  {
+    "name": "SASA",
+    "team": "RRQ",
+    "type": "staff",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/BF9qnc9.png"
+  },
+  {
+    "name": "IZZSHIKI",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Gold Laner",
+    "picture": "https://i.imgur.com/ErblV06.png"
+  },
+  {
+    "name": "LEHTZY",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/1sgaBbu.png"
+  },
+  {
+    "name": "LOLEAL",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Gold Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/dhKfrYa.png"
+  },
+  {
+    "name": "SUPERKENN",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Jungler",
+    "starter": true,
+    "picture": "https://i.imgur.com/l12aXi5.png"
+  },
+  {
+    "name": "YEHEZKIEL",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Midlaner",
+    "starter": true,
+    "picture": "https://i.imgur.com/YA0RuEv.png"
+  },
+  {
+    "name": "ADDBOYY",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Roamer",
+    "starter": true,
+    "picture": "https://i.imgur.com/E8IbjCa.png"
+  },
+  {
+    "name": "COACH ARCADIA",
+    "team": "SRG",
+    "type": "staff",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/V3WbqnI.png"
+  },
+  {
+    "name": "INNOCENT",
+    "team": "SRG",
+    "type": "player",
+    "lane": "Gold Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/TWUa8B9.png"
+  },
+  {
+    "name": "KRAMM",
+    "team": "SRG",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/WolfOGr.png"
+  },
+  {
+    "name": "OZORAVEKI",
+    "team": "SRG",
+    "type": "staff",
+    "role": "Assistant Coach",
+    "picture": "https://i.imgur.com/Gr7B4mA.png"
+  },
+  {
+    "name": "SEKYSSS",
+    "team": "SRG",
+    "type": "player",
+    "lane": "Jungler",
+    "picture": "https://i.imgur.com/6D8zzKi.png"
+  },
+  {
+    "name": "STORMIE",
+    "team": "SRG",
+    "type": "player",
+    "lane": "Midlaner",
+    "starter": true,
+    "picture": "https://i.imgur.com/nRwlv4r.png"
+  },
+  {
+    "name": "UNII",
+    "team": "SRG",
+    "type": "player",
+    "lane": "Jungler",
+    "starter": true,
+    "picture": "https://i.imgur.com/DfWYPMh.png"
+  },
+  {
+    "name": "WINTER",
+    "team": "SRG",
+    "type": "staff",
+    "role": "Analyst",
+    "picture": "https://i.imgur.com/U0EMvcK.png"
+  },
+  {
+    "name": "YUMS",
+    "team": "SRG",
+    "type": "player",
+    "lane": "Roamer",
+    "starter": true,
+    "picture": "https://i.imgur.com/17uoCl2.png"
+  },
+  {
+    "name": "CLIVEEE",
+    "team": "TR",
+    "type": "player",
+    "lane": "Gold Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/6F6F5Fp.png"
+  },
+  {
+    "name": "DOLYNN",
+    "team": "TR",
+    "type": "player",
+    "lane": "Jungler",
+    "starter": true,
+    "picture": "https://i.imgur.com/R8EHVZr.png"
+  },
+  {
+    "name": "JIFDEGAMING",
+    "team": "TR",
+    "type": "staff",
+    "role": "Analyst",
+    "picture": "https://i.imgur.com/hEtQvhr.png"
+  },
+  {
+    "name": "JWEN",
+    "team": "TR",
+    "type": "player",
+    "lane": "Exp Laner",
+    "picture": "https://i.imgur.com/UVBdo2F.png"
+  },
+  {
+    "name": "KYYM",
+    "team": "TR",
+    "type": "player",
+    "lane": "Midlaner",
+    "starter": true,
+    "picture": "https://i.imgur.com/j0tZQUD.png"
+  },
+  {
+    "name": "NOVAXCOBAR",
+    "team": "TR",
+    "type": "player",
+    "lane": "Roamer",
+    "starter": true,
+    "picture": "https://i.imgur.com/8FaL5dC.png"
+  },
+  {
+    "name": "SAINTDELUCAZ",
+    "team": "TR",
+    "type": "staff",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/jaSbbrI.png"
+  },
+  {
+    "name": "SMOOTH",
+    "team": "TR",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/aPevmRO.png"
+  },
+  {
+    "name": "XINHAN",
+    "team": "TR",
+    "type": "staff",
+    "role": "Assistant Coach",
+    "picture": "https://i.imgur.com/BQ08rBv.png"
+  },
+  {
+    "name": "EYYMAL",
+    "team": "VMS",
+    "type": "player",
+    "lane": "Jungler",
+    "picture": "https://i.imgur.com/V4m4XOO.png"
+  },
+  {
+    "name": "ZQEEF",
+    "team": "VMS",
+    "type": "player",
+    "lane": "Roamer",
+    "starter": true,
+    "picture": "https://i.imgur.com/2KdBkrI.png"
+  },
+  {
+    "name": "CLAWKUN",
+    "team": "VMS",
+    "type": "player",
+    "lane": "Midlaner",
+    "starter": true,
+    "picture": "https://i.imgur.com/XHsFolv.png"
+  },
+  {
+    "name": "ERROR 404",
+    "team": "VMS",
+    "type": "player",
+    "lane": "Jungler",
+    "starter": true,
+    "picture": "https://i.imgur.com/EgpCOIR.png"
+  },
+  {
+    "name": "NATCO",
+    "team": "VMS",
+    "type": "player",
+    "lane": "Gold Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/42Jjrnv.png"
+  },
+  {
+    "name": "P4K BET",
+    "team": "VMS",
+    "type": "staff",
+    "role": "Assistant Coach",
+    "picture": "https://i.imgur.com/UQAWw4l.png"
+  },
+  {
+    "name": "SEPAT",
+    "team": "VMS",
+    "type": "player",
+    "lane": "Exp Laner",
+    "picture": "https://i.imgur.com/yLUHTrL.png"
+  },
+  {
+    "name": "SIZKAA",
+    "team": "VMS",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/u7Xbh0j.png"
+  },
+  {
+    "name": "VALDO",
+    "team": "VMS",
+    "type": "staff",
+    "role": "Head Coach",
+    "picture": "https://i.imgur.com/bycYKoS.png"
+  }
+]

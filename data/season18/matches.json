@@ -1,0 +1,842 @@
+[
+  {
+    "teamA": "AC",
+    "teamB": "BTR",
+    "week": 1,
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-08-14",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W1D1ACvsBTRM",
+      "matchId": 278
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "VMS",
+    "teamB": "TF",
+    "week": 1,
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-08-14",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W1D1VMSvsFL",
+      "matchId": 279
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TF",
+    "teamB": "BTR",
+    "week": 1,
+    "day": "saturday",
+    "dayMatch": 1,
+    "date": "2026-08-15",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W1D2FLvsBTRM",
+      "matchId": 280
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "RRQ",
+    "teamB": "TR",
+    "week": 1,
+    "day": "saturday",
+    "dayMatch": 2,
+    "date": "2026-08-15",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W1D2RRQvsTR",
+      "matchId": 281
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "SRG",
+    "teamB": "IG",
+    "week": 1,
+    "day": "saturday",
+    "dayMatch": 3,
+    "date": "2026-08-15",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W1D2SRGvsIG",
+      "matchId": 282
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "IG",
+    "teamB": "RRQ",
+    "week": 1,
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-08-16",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W1D3IGvsRRQ",
+      "matchId": 283
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TR",
+    "teamB": "SRG",
+    "week": 1,
+    "day": "sunday",
+    "dayMatch": 2,
+    "date": "2026-08-16",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W1D3TRvsSRG",
+      "matchId": 284
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "IG",
+    "teamB": "VMS",
+    "week": 2,
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-08-21",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W2D1IGvsVMS",
+      "matchId": 285
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "BTR",
+    "teamB": "SRG",
+    "week": 2,
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-08-21",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W2D1BTRMvsSRG",
+      "matchId": 286
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TR",
+    "teamB": "VMS",
+    "week": 2,
+    "day": "saturday",
+    "dayMatch": 1,
+    "date": "2026-08-22",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W2D2TRvsVMS",
+      "matchId": 287
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "AC",
+    "teamB": "IG",
+    "week": 2,
+    "day": "saturday",
+    "dayMatch": 2,
+    "date": "2026-08-22",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W2D2ACvsIG",
+      "matchId": 288
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "BTR",
+    "teamB": "RRQ",
+    "week": 2,
+    "day": "saturday",
+    "dayMatch": 3,
+    "date": "2026-08-22",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W2D2BTRMvsRRQ",
+      "matchId": 289
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TR",
+    "teamB": "AC",
+    "week": 2,
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-08-23",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W2D3TRvsAC",
+      "matchId": 290
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TF",
+    "teamB": "SRG",
+    "week": 2,
+    "day": "sunday",
+    "dayMatch": 2,
+    "date": "2026-08-23",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W2D3FLvsSRG",
+      "matchId": 291
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "BTR",
+    "teamB": "TR",
+    "week": 3,
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-08-28",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W3D1BTRMvsTR",
+      "matchId": 292
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "VMS",
+    "teamB": "RRQ",
+    "week": 3,
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-08-28",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W3D1VMSvsRRQ",
+      "matchId": 293
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TF",
+    "teamB": "TR",
+    "week": 3,
+    "day": "saturday",
+    "dayMatch": 1,
+    "date": "2026-08-29",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W3D2FLvsTR",
+      "matchId": 294
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "BTR",
+    "teamB": "VMS",
+    "week": 3,
+    "day": "saturday",
+    "dayMatch": 2,
+    "date": "2026-08-29",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W3D2BTRMvsVMS",
+      "matchId": 295
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "SRG",
+    "teamB": "AC",
+    "week": 3,
+    "day": "saturday",
+    "dayMatch": 3,
+    "date": "2026-08-29",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W3D2SRGvsAC",
+      "matchId": 296
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "IG",
+    "teamB": "TF",
+    "week": 3,
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-08-30",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W3D3IGvsFL",
+      "matchId": 297
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "RRQ",
+    "teamB": "AC",
+    "week": 3,
+    "day": "sunday",
+    "dayMatch": 2,
+    "date": "2026-08-30",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W3D3RRQvsAC",
+      "matchId": 298
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "AC",
+    "teamB": "TF",
+    "week": 4,
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-09-4",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W4D1ACvsFL",
+      "matchId": 299
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "RRQ",
+    "teamB": "SRG",
+    "week": 4,
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-09-4",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W4D1RRQvsSRG",
+      "matchId": 300
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TF",
+    "teamB": "RRQ",
+    "week": 4,
+    "day": "saturday",
+    "dayMatch": 1,
+    "date": "2026-09-5",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W4D2FLvsRRQ",
+      "matchId": 301
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TR",
+    "teamB": "IG",
+    "week": 4,
+    "day": "saturday",
+    "dayMatch": 2,
+    "date": "2026-09-5",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W4D2TRvsIG",
+      "matchId": 302
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "SRG",
+    "teamB": "VMS",
+    "week": 4,
+    "day": "saturday",
+    "dayMatch": 3,
+    "date": "2026-09-5",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W4D2SRGvsVMS",
+      "matchId": 303
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "IG",
+    "teamB": "BTR",
+    "week": 4,
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-09-6",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W4D3IGvsBTRM",
+      "matchId": 304
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "VMS",
+    "teamB": "AC",
+    "week": 4,
+    "day": "sunday",
+    "dayMatch": 2,
+    "date": "2026-09-6",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W4D3VMSvsAC",
+      "matchId": 305
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "IG",
+    "teamB": "TR",
+    "week": 5,
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-09-11",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W5D1IGvsTR",
+      "matchId": 306
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "SRG",
+    "teamB": "BTR",
+    "week": 5,
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-09-11",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W5D1SRGvsBTRM",
+      "matchId": 307
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TF",
+    "teamB": "AC",
+    "week": 5,
+    "day": "saturday",
+    "dayMatch": 1,
+    "date": "2026-09-12",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W5D2FLvsAC",
+      "matchId": 308
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "VMS",
+    "teamB": "TR",
+    "week": 5,
+    "day": "saturday",
+    "dayMatch": 2,
+    "date": "2026-09-12",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W5D2VMSvsTR",
+      "matchId": 309
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "SRG",
+    "teamB": "RRQ",
+    "week": 5,
+    "day": "saturday",
+    "dayMatch": 3,
+    "date": "2026-09-12",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W5D2SRGvsRRQ",
+      "matchId": 310
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "BTR",
+    "teamB": "AC",
+    "week": 5,
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-09-13",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W5D3BTRMvsAC",
+      "matchId": 311
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "RRQ",
+    "teamB": "TF",
+    "week": 5,
+    "day": "sunday",
+    "dayMatch": 2,
+    "date": "2026-09-13",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W5D3RRQvsFL",
+      "matchId": 312
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TR",
+    "teamB": "TF",
+    "week": 6,
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-09-18",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W6D1TRvsFL",
+      "matchId": 313
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "RRQ",
+    "teamB": "VMS",
+    "week": 6,
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-09-18",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W6D1RRQvsVMS",
+      "matchId": 314
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "VMS",
+    "teamB": "BTR",
+    "week": 6,
+    "day": "saturday",
+    "dayMatch": 1,
+    "date": "2026-09-19",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W6D2VMSvsBTRM",
+      "matchId": 315
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "RRQ",
+    "teamB": "IG",
+    "week": 6,
+    "day": "saturday",
+    "dayMatch": 2,
+    "date": "2026-09-19",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W6D2RRQvsIG",
+      "matchId": 316
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "AC",
+    "teamB": "SRG",
+    "week": 6,
+    "day": "saturday",
+    "dayMatch": 3,
+    "date": "2026-09-19",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W6D2ACvsSRG",
+      "matchId": 317
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "BTR",
+    "teamB": "IG",
+    "week": 6,
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-09-20",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W6D3BTRMvsIG",
+      "matchId": 318
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "SRG",
+    "teamB": "TR",
+    "week": 6,
+    "day": "sunday",
+    "dayMatch": 2,
+    "date": "2026-09-20",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W6D3SRGvsTR",
+      "matchId": 319
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TR",
+    "teamB": "BTR",
+    "week": 7,
+    "day": "thursday",
+    "dayMatch": 1,
+    "date": "2026-10-8",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W7D1TRvsBTRM",
+      "matchId": 320
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "SRG",
+    "teamB": "TF",
+    "week": 7,
+    "day": "thursday",
+    "dayMatch": 2,
+    "date": "2026-10-8",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W7D1SRGvsFL",
+      "matchId": 321
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "VMS",
+    "teamB": "IG",
+    "week": 7,
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-10-9",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W7D2VMSvsIG",
+      "matchId": 322
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "AC",
+    "teamB": "RRQ",
+    "week": 7,
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-10-9",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W7D2ACvsRRQ",
+      "matchId": 323
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TF",
+    "teamB": "VMS",
+    "week": 7,
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-10-11",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W7D3FLvsVMS",
+      "matchId": 324
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "IG",
+    "teamB": "AC",
+    "week": 7,
+    "day": "sunday",
+    "dayMatch": 2,
+    "date": "2026-10-11",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W7D3IGvsAC",
+      "matchId": 325
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TR",
+    "teamB": "RRQ",
+    "week": 7,
+    "day": "sunday",
+    "dayMatch": 3,
+    "date": "2026-10-11",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W7D3TRvsRRQ",
+      "matchId": 326
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "TF",
+    "teamB": "IG",
+    "week": 8,
+    "day": "friday",
+    "dayMatch": 1,
+    "date": "2026-10-16",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W8D1FLvsIG",
+      "matchId": 327
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "VMS",
+    "teamB": "SRG",
+    "week": 8,
+    "day": "friday",
+    "dayMatch": 2,
+    "date": "2026-10-16",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W8D1VMSvsSRG",
+      "matchId": 328
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "BTR",
+    "teamB": "TF",
+    "week": 8,
+    "day": "saturday",
+    "dayMatch": 1,
+    "date": "2026-10-17",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W8D2BTRMvsFL",
+      "matchId": 329
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "AC",
+    "teamB": "TR",
+    "week": 8,
+    "day": "saturday",
+    "dayMatch": 2,
+    "date": "2026-10-17",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W8D2ACvsTR",
+      "matchId": 330
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "IG",
+    "teamB": "SRG",
+    "week": 8,
+    "day": "saturday",
+    "dayMatch": 3,
+    "date": "2026-10-17",
+    "startTime": "8:15 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W8D2IGvsSRG",
+      "matchId": 331
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "AC",
+    "teamB": "VMS",
+    "week": 8,
+    "day": "sunday",
+    "dayMatch": 1,
+    "date": "2026-10-18",
+    "startTime": "2:30 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W8D3ACvsVMS",
+      "matchId": 332
+    },
+    "stage": "regular"
+  },
+  {
+    "teamA": "RRQ",
+    "teamB": "BTR",
+    "week": 8,
+    "day": "sunday",
+    "dayMatch": 2,
+    "date": "2026-10-18",
+    "startTime": "5:00 PM",
+    "games": [],
+    "mpl": {
+      "slug": "W8D3RRQvsBTRM",
+      "matchId": 333
+    },
+    "stage": "regular"
+  }
+]

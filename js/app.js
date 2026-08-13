@@ -72,7 +72,7 @@ import {
 
 const appState = {
   loaded: false,
-  season: "season17",
+  season: "season18",
   view: "schedule",
   sort: {
     teams: { key: "points", asc: false },
@@ -97,7 +97,7 @@ const appState = {
   scheduleWeekManual: false
 };
 
-const ENABLED_SEASONS = new Set(["season16", "season17"]);
+const ENABLED_SEASONS = new Set(["season16", "season17", "season18"]);
 const VIEW_ROUTES = {
   schedule: "/schedule",
   transfer: "/transfer",
@@ -129,6 +129,7 @@ let suppressRouteSync = false;
 let countdownIntervalId = null;
 let countdownDataRefreshId = null;
 let countdownDataPromise = null;
+let countdownDataSeason = "";
 let scheduleAutoRefreshId = null;
 let scheduleAutoRefreshDayKey = "";
 const countdownData = {
@@ -152,7 +153,7 @@ function normalizeSeasonKey(seasonKey) {
 }
 
 function getDefaultViewForSeason(seasonKey = appState.season) {
-  return seasonKey === "season17" ? "schedule" : "teams";
+  return seasonKey === "season17" || seasonKey === "season18" ? "schedule" : "teams";
 }
 
 function isViewAvailableForSeason(view, seasonKey = appState.season) {
@@ -381,17 +382,20 @@ async function fetchJson(path) {
 }
 
 async function ensureCountdownDataLoaded() {
-  if (countdownDataPromise) return countdownDataPromise;
+  const season = normalizeSeasonKey(appState.season) || appState.season;
+  if (countdownDataPromise && countdownDataSeason === season) return countdownDataPromise;
+  countdownDataSeason = season;
   countdownDataPromise = Promise.all([
-    fetchJson("/data/season17/matches.json"),
-    fetchJson("/data/season17/teamLogos.json"),
-    fetchJson("/data/season17/teamNames.json")
+    fetchJson(`/data/${season}/matches.json`),
+    fetchJson(`/data/${season}/teamLogos.json`),
+    fetchJson(`/data/${season}/teamNames.json`)
   ]).then(([matches, teamLogos, teamNames]) => {
     countdownData.matches = Array.isArray(matches) ? matches : [];
     countdownData.teamLogos = teamLogos && typeof teamLogos === "object" ? teamLogos : {};
     countdownData.teamNames = teamNames && typeof teamNames === "object" ? teamNames : {};
   }).catch((err) => {
     countdownDataPromise = null;
+    countdownDataSeason = "";
     throw err;
   });
   return countdownDataPromise;
@@ -399,6 +403,7 @@ async function ensureCountdownDataLoaded() {
 
 async function refreshCountdownData() {
   countdownDataPromise = null;
+  countdownDataSeason = "";
   await ensureCountdownDataLoaded();
   renderNextMatchCountdown();
 }
@@ -518,7 +523,8 @@ function renderNextMatchCountdown() {
     logoBEl.removeAttribute("src");
     logoBEl.alt = "";
   }
-  metaEl.textContent = `Season 17 | Week ${match.week} | ${formatMatchMeta(startAt)}`;
+  const seasonNumber = String(appState.season || "").replace(/\D+/g, "");
+  metaEl.textContent = `Season ${seasonNumber || "?"} | Week ${match.week} | ${formatMatchMeta(startAt)}`;
   timerEl.textContent = formatCountdown(startAt.getTime() - Date.now());
 }
 

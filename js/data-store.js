@@ -17,6 +17,15 @@ const SEASON_DATA_FILES = {
     matches: "/data/season17/matches.json",
     teamLogos: "/data/season17/teamLogos.json",
     teamNames: "/data/season17/teamNames.json"
+  },
+  season18: {
+    label: "MPL MY SEASON 18",
+    roster: "/data/season18/roster.json",
+    transfers: "/data/season18/transfers.json",
+    heroes: "/data/heroes.json",
+    matches: "/data/season18/matches.json",
+    teamLogos: "/data/season18/teamLogos.json",
+    teamNames: "/data/season18/teamNames.json"
   }
 };
 
@@ -45,13 +54,35 @@ function isNumber(value) {
 function validateRoster(list) {
   if (!Array.isArray(list)) throw new Error("roster.json must be an array");
   for (const item of list) {
-    if (!item || typeof item.name !== "string" || typeof item.team !== "string" || typeof item.lane !== "string") {
-      throw new Error("roster.json contains invalid player records");
+    if (!item || typeof item.name !== "string" || typeof item.team !== "string") {
+      throw new Error("roster.json contains invalid records");
+    }
+    if (item.lane != null && typeof item.lane !== "string") {
+      throw new Error("roster.json player lane must be a string");
+    }
+    if (item.role != null && typeof item.role !== "string") {
+      throw new Error("roster.json staff role must be a string");
     }
     if (item.active != null && typeof item.active !== "boolean") {
-      throw new Error("roster.json player active flag must be a boolean");
+      throw new Error("roster.json active flag must be a boolean");
+    }
+    if (item.starter != null && typeof item.starter !== "boolean") {
+      throw new Error("roster.json starter flag must be a boolean");
     }
   }
+}
+
+function splitSeasonRoster(list) {
+  const players = [];
+  const staff = [];
+  for (const item of (list || [])) {
+    if (String(item?.type || "").trim().toLowerCase() === "staff") {
+      staff.push(item);
+    } else {
+      players.push(item);
+    }
+  }
+  return { players, staff };
 }
 
 function validateHeroes(map) {
@@ -363,15 +394,18 @@ export async function loadData(seasonKey = "season16") {
   validateProfiles(nextProfiles);
   validateTransfers(nextTransfers);
   const normalizedHeroes = normalizeHeroesMap(nextHeroes);
-  const normalizedMatches = normalizeMatchesData(nextMatches, nextRoster, nextTeamNames, nextTeamLogos);
+  const splitRoster = splitSeasonRoster(nextRoster);
+  const activeRoster = splitRoster.players;
+  const activeStaff = splitRoster.staff.length ? splitRoster.staff : nextStaff;
+  const normalizedMatches = normalizeMatchesData(nextMatches, activeRoster, nextTeamNames, nextTeamLogos);
 
   validateHeroes(normalizedHeroes);
   validateMatches(normalizedMatches);
   validateTeamLogos(nextTeamLogos);
   validateTeamNames(nextTeamNames);
 
-  roster = nextRoster;
-  staff = nextStaff;
+  roster = activeRoster;
+  staff = activeStaff;
   heroes = normalizedHeroes;
   matches = normalizedMatches;
   teamLogos = nextTeamLogos;
