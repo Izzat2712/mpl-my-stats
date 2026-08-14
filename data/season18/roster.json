@@ -4,7 +4,6 @@
     "team": "AC",
     "type": "player",
     "lane": "Midlaner",
-    "starter": true,
     "picture": "https://i.imgur.com/zayGy74.png"
   },
   {
@@ -12,7 +11,8 @@
     "team": "AC",
     "type": "player",
     "lane": "Midlaner",
-    "picture": "https://i.imgur.com/UaBM7em.png"
+    "picture": "https://i.imgur.com/UaBM7em.png",
+    "starter": true
   },
   {
     "name": "MOMO",
@@ -512,5 +512,13 @@
     "type": "staff",
     "role": "Head Coach",
     "picture": "https://i.imgur.com/bycYKoS.png"
+  },
+  {
+    "name": "ZIEYY",
+    "team": "BTR",
+    "type": "player",
+    "lane": "Midlaner",
+    "starter": true,
+    "picture": "https://i.imgur.com/5yE729Y.png"
   }
 ]
