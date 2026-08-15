@@ -711,7 +711,120 @@
     "dayMatch": 1,
     "date": "2026-08-15",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TF",
+        "mvp": "GARYY",
+        "bans": [
+          "Uranus",
+          "Atlas",
+          "Hirara",
+          "Novaria",
+          "Eudora",
+          "Freya",
+          "Marcel",
+          "Belerick",
+          "Chou",
+          "Alice"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "VANIX",
+            "hero": "Melissa",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "TF",
+            "name": "GARYY",
+            "hero": "Nolan",
+            "kills": 9,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "UK1R",
+            "hero": "Selena",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 11
+          },
+          {
+            "team": "TF",
+            "name": "3MAR",
+            "hero": "Esmeralda",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 13
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 14
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Paquito",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Barats",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Gloo",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 3,
+            "BTR": 0
+          },
+          "turtle": {
+            "TF": 3,
+            "BTR": 0
+          },
+          "tower": {
+            "TF": 9,
+            "BTR": 4
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W1D2FLvsBTRM",
       "matchId": 280
