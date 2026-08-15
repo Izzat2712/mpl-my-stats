@@ -1303,7 +1303,232 @@
     "dayMatch": 3,
     "date": "2026-08-15",
     "startTime": "8:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "SRG",
+        "mvp": "INNOCENT",
+        "bans": [
+          "Atlas",
+          "Marcel",
+          "Barats",
+          "Gloo",
+          "Mathilda",
+          "Melissa",
+          "Freya",
+          "Fanny",
+          "Zhuxin",
+          "Brody"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Clint",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Paquito",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Rafaela",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Ruby",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Belerick",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "ROKJI",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "LUNNN",
+            "hero": "Hirara",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "IG",
+            "name": "TREACKY",
+            "hero": "Selena",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "ATANNN",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 0
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 1,
+            "IG": 0
+          },
+          "turtle": {
+            "SRG": 3,
+            "IG": 0
+          },
+          "tower": {
+            "SRG": 8,
+            "IG": 2
+          }
+        }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "STORMIE",
+        "bans": [
+          "Atlas",
+          "Belerick",
+          "Barats",
+          "Khufra",
+          "Selena",
+          "Freya",
+          "Marcel",
+          "Paquito",
+          "Eudora",
+          "Zhuxin"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Melissa",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Hirara",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 11
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Badang",
+            "kills": 5,
+            "deaths": 5,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "ROKJI",
+            "hero": "Brody",
+            "kills": 4,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "LUNNN",
+            "hero": "Fanny",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "TREACKY",
+            "hero": "Pharsa",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Esmeralda",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "ATANNN",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 7
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 1,
+            "IG": 0
+          },
+          "turtle": {
+            "SRG": 3,
+            "IG": 0
+          },
+          "tower": {
+            "SRG": 8,
+            "IG": 2
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W1D2SRGvsIG",
       "matchId": 282
