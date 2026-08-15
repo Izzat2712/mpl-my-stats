@@ -1063,7 +1063,232 @@
     "dayMatch": 2,
     "date": "2026-08-15",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TR",
+        "mvp": "DOLYNN",
+        "bans": [
+          "Marcel",
+          "Fanny",
+          "Atlas",
+          "Mathilda",
+          "Brody",
+          "Freya",
+          "Hirara",
+          "Uranus",
+          "Guinevere",
+          "Harley"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Melissa",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Yi Sun-Shin",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Rafaela",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Esmeralda",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "ADDBOYY",
+            "hero": "Gloo",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "TR",
+            "name": "CLIVEEE",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "DOLYNN",
+            "hero": "Paquito",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "KYYM",
+            "hero": "Novaria",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "TR",
+            "name": "SMOOTH",
+            "hero": "Barats",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "TR",
+            "name": "NOVAXCOBAR",
+            "hero": "Belerick",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 9
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 0,
+            "TR": 2
+          },
+          "turtle": {
+            "RRQ": 1,
+            "TR": 2
+          },
+          "tower": {
+            "RRQ": 0,
+            "TR": 8
+          }
+        }
+      },
+      {
+        "winner": "TR",
+        "mvp": "DOLYNN",
+        "bans": [
+          "Uranus",
+          "Atlas",
+          "Melissa",
+          "Harley",
+          "Rafaela",
+          "Freya",
+          "Fanny",
+          "Marcel",
+          "Selena",
+          "Eudora"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Clint",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Paquito",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Novaria",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Esmeralda",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "ADDBOYY",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "TR",
+            "name": "CLIVEEE",
+            "hero": "Brody",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "DOLYNN",
+            "hero": "Hirara",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 2
+          },
+          {
+            "team": "TR",
+            "name": "KYYM",
+            "hero": "Valentina",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "TR",
+            "name": "SMOOTH",
+            "hero": "Barats",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "NOVAXCOBAR",
+            "hero": "Mathilda",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 1,
+            "TR": 1
+          },
+          "turtle": {
+            "RRQ": 0,
+            "TR": 3
+          },
+          "tower": {
+            "RRQ": 1,
+            "TR": 6
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W1D2RRQvsTR",
       "matchId": 281
