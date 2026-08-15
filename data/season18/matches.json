@@ -823,6 +823,118 @@
             "BTR": 4
           }
         }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "ZIEYY",
+        "bans": [
+          "Uranus",
+          "Hirara",
+          "Atlas",
+          "Mathilda",
+          "Brody",
+          "Freya",
+          "Selena",
+          "Marcel",
+          "Nolan",
+          "Esmeralda"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "VANIX",
+            "hero": "Melissa",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "GARYY",
+            "hero": "Yi Sun-Shin",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "UK1R",
+            "hero": "Rafaela",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "TF",
+            "name": "3MAR",
+            "hero": "Carmilla",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Belerick",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Ixia",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Paquito",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Novaria",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Barats",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Gatotkaca",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 2,
+            "BTR": 1
+          },
+          "turtle": {
+            "TF": 1,
+            "BTR": 2
+          },
+          "tower": {
+            "TF": 6,
+            "BTR": 8
+          }
+        }
       }
     ],
     "mpl": {
