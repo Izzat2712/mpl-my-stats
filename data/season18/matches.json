@@ -1543,7 +1543,232 @@
     "dayMatch": 1,
     "date": "2026-08-16",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "ATANNN",
+        "bans": [
+          "Atlas",
+          "Uranus",
+          "Esmeralda",
+          "Brody",
+          "Alice",
+          "Freya",
+          "Fanny",
+          "Barats",
+          "Lylia",
+          "Selena"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "ROKJI",
+            "hero": "Melissa",
+            "kills": 6,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "LUNNN",
+            "hero": "Paquito",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "IG",
+            "name": "TREACKY",
+            "hero": "Rafaela",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 14
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Hilda",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "IG",
+            "name": "ATANNN",
+            "hero": "Belerick",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Hirara",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Eudora",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Phoveus",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "ADDBOYY",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 2
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 3,
+            "RRQ": 0
+          },
+          "turtle": {
+            "IG": 2,
+            "RRQ": 1
+          },
+          "tower": {
+            "IG": 9,
+            "RRQ": 1
+          }
+        }
+      },
+      {
+        "winner": "IG",
+        "mvp": "LUNNN",
+        "bans": [
+          "Atlas",
+          "Fanny",
+          "Uranus",
+          "Brody",
+          "Eudora",
+          "Freya",
+          "Hirara",
+          "Melissa",
+          "Mathilda",
+          "Marcel"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "ROKJI",
+            "hero": "Esmeralda",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "IG",
+            "name": "LUNNN",
+            "hero": "Nolan",
+            "kills": 9,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "IG",
+            "name": "TREACKY",
+            "hero": "Zhuxin",
+            "kills": 9,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Sora",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 13
+          },
+          {
+            "team": "IG",
+            "name": "ATANNN",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 13
+          },
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 5,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Paquito",
+            "kills": 3,
+            "deaths": 5,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Novaria",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Dyrroth",
+            "kills": 4,
+            "deaths": 5,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "ADDBOYY",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 4,
+            "RRQ": 0
+          },
+          "turtle": {
+            "IG": 1,
+            "RRQ": 2
+          },
+          "tower": {
+            "IG": 9,
+            "RRQ": 2
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W1D3IGvsRRQ",
       "matchId": 283
