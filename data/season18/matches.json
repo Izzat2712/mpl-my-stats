@@ -1783,7 +1783,232 @@
     "dayMatch": 2,
     "date": "2026-08-16",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "SRG",
+        "mvp": "YUMS",
+        "bans": [
+          "Atlas",
+          "Paquito",
+          "Melissa",
+          "Harley",
+          "Nolan",
+          "Freya",
+          "Marcel",
+          "Uranus",
+          "Mathilda",
+          "Gloo"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "CLIVEEE",
+            "hero": "Claude",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "TR",
+            "name": "DOLYNN",
+            "hero": "Hirara",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "TR",
+            "name": "KYYM",
+            "hero": "Eudora",
+            "kills": 1,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "TR",
+            "name": "SMOOTH",
+            "hero": "Esmeralda",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "TR",
+            "name": "NOVAXCOBAR",
+            "hero": "Badang",
+            "kills": 0,
+            "deaths": 7,
+            "assists": 2
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Clint",
+            "kills": 7,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Leomord",
+            "kills": 8,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Rafaela",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 12
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Barats",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Belerick",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 13
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 0,
+            "SRG": 1
+          },
+          "turtle": {
+            "TR": 0,
+            "SRG": 3
+          },
+          "tower": {
+            "TR": 0,
+            "SRG": 8
+          }
+        }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "KRAMM",
+        "bans": [
+          "Atlas",
+          "Marcel",
+          "Barats",
+          "Esmeralda",
+          "Brody",
+          "Freya",
+          "Hirara",
+          "Melissa",
+          "Khufra",
+          "Badang"
+        ],
+        "players": [
+          {
+            "team": "TR",
+            "name": "CLIVEEE",
+            "hero": "Claude",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "TR",
+            "name": "DOLYNN",
+            "hero": "Fanny",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "KYYM",
+            "hero": "Valentina",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "SMOOTH",
+            "hero": "Sora",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 5
+          },
+          {
+            "team": "TR",
+            "name": "NOVAXCOBAR",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 7,
+            "assists": 5
+          },
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Obsidia",
+            "kills": 10,
+            "deaths": 2,
+            "assists": 5
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Paquito",
+            "kills": 6,
+            "deaths": 3,
+            "assists": 9
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Rafaela",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 16
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Uranus",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Ruby",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 13
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TR": 0,
+            "SRG": 1
+          },
+          "turtle": {
+            "TR": 0,
+            "SRG": 3
+          },
+          "tower": {
+            "TR": 2,
+            "SRG": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W1D3TRvsSRG",
       "matchId": 284
