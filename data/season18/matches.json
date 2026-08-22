@@ -3319,7 +3319,232 @@
     "dayMatch": 3,
     "date": "2026-08-22",
     "startTime": "8:15 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "BTR",
+        "mvp": "CIKUGAIS",
+        "bans": [
+          "Melissa",
+          "Rafaela",
+          "Marcel",
+          "Novaria",
+          "Lylia",
+          "Paquito",
+          "Freya",
+          "Atlas",
+          "Brody",
+          "Valentina"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Obsidia",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Hirara",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Eudora",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Barats",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Mathilda",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 12
+          },
+          {
+            "team": "RRQ",
+            "name": "IZZSHIKI",
+            "hero": "Claude",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Harley",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Zhuxin",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "ADDBOYY",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 0
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 2,
+            "RRQ": 0
+          },
+          "turtle": {
+            "BTR": 2,
+            "RRQ": 1
+          },
+          "tower": {
+            "BTR": 8,
+            "RRQ": 1
+          }
+        }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "CIKUGAIS",
+        "bans": [
+          "Atlas",
+          "Paquito",
+          "Barats",
+          "Brody",
+          "Badang",
+          "Freya",
+          "Marcel",
+          "Rafaela",
+          "Lunox",
+          "Selena"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Moskov",
+            "kills": 4,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Hirara",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 4
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Eudora",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 5
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Kalea",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "RRQ",
+            "name": "IZZSHIKI",
+            "hero": "Melissa",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Fanny",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Lylia",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Esmeralda",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "ADDBOYY",
+            "hero": "Chou",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 3
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 2,
+            "RRQ": 0
+          },
+          "turtle": {
+            "BTR": 3,
+            "RRQ": 0
+          },
+          "tower": {
+            "BTR": 7,
+            "RRQ": 2
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W2D2BTRMvsRRQ",
       "matchId": 289
