@@ -4,5 +4,49 @@
     "endWeek": 6,
     "label": ""
   },
-  "entries": []
+  "entries": [
+    {
+      "player": "JinZhao",
+      "type": "Transfer In",
+      "week": 3,
+      "fromTeam": "FREE AGENT",
+      "toTeam": "RRQ",
+      "role": "Roamer"
+    },
+    {
+      "player": "Subway",
+      "type": "Transfer In",
+      "week": 3,
+      "fromTeam": "FREE AGENT",
+      "toTeam": "RRQ",
+      "role": "Analyst"
+    },
+    {
+      "player": "SEPAT",
+      "type": "Transfer In",
+      "week": 3,
+      "fromTeam": "VMS",
+      "toTeam": "TR",
+      "role": "Exp Laner",
+      "picture": "https://i.imgur.com/n9B2tja.png"
+    },
+    {
+      "player": "SMOOTH",
+      "type": "Transfer In",
+      "week": 3,
+      "fromTeam": "TR",
+      "toTeam": "FREE AGENT",
+      "role": "Exp Laner",
+      "picture": "https://i.imgur.com/TUKDa7U.png"
+    },
+    {
+      "player": "RANSEI",
+      "type": "Transfer In",
+      "week": 3,
+      "fromTeam": "IGNITE GAMING",
+      "toTeam": "TF",
+      "role": "Assistant Coach",
+      "picture": "https://i.imgur.com/vekWRMe.png"
+    }
+  ]
 }
