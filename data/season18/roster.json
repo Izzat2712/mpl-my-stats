@@ -532,5 +532,13 @@
     "team": "RRQ",
     "type": "staff",
     "role": "Analyst"
+  },
+  {
+    "name": "SMOOTH",
+    "team": "TR",
+    "type": "player",
+    "lane": "Exp Laner",
+    "picture": "https://i.imgur.com/aPevmRO.png",
+    "active": false
   }
 ]
