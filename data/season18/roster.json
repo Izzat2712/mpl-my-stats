@@ -306,7 +306,6 @@
     "team": "RRQ",
     "type": "player",
     "lane": "Roamer",
-    "starter": true,
     "picture": "https://i.imgur.com/E8IbjCa.png"
   },
   {
@@ -431,14 +430,6 @@
     "picture": "https://i.imgur.com/jaSbbrI.png"
   },
   {
-    "name": "SMOOTH",
-    "team": "TR",
-    "type": "player",
-    "lane": "Exp Laner",
-    "starter": true,
-    "picture": "https://i.imgur.com/aPevmRO.png"
-  },
-  {
     "name": "XINHAN",
     "team": "TR",
     "type": "staff",
@@ -492,13 +483,6 @@
     "picture": "https://i.imgur.com/UQAWw4l.png"
   },
   {
-    "name": "SEPAT",
-    "team": "VMS",
-    "type": "player",
-    "lane": "Exp Laner",
-    "picture": "https://i.imgur.com/yLUHTrL.png"
-  },
-  {
     "name": "SIZKAA",
     "team": "VMS",
     "type": "player",
@@ -520,5 +504,33 @@
     "lane": "Midlaner",
     "starter": true,
     "picture": "https://i.imgur.com/5yE729Y.png"
+  },
+  {
+    "name": "SEPAT",
+    "team": "TR",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/yLUHTrL.png"
+  },
+  {
+    "name": "COACH RANSEI",
+    "team": "TF",
+    "type": "staff",
+    "role": "Assistant Coach",
+    "picture": "https://i.imgur.com/vekWRMe.png"
+  },
+  {
+    "name": "JinZhao",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Roamer",
+    "starter": true
+  },
+  {
+    "name": "Subway",
+    "team": "RRQ",
+    "type": "staff",
+    "role": "Analyst"
   }
 ]
