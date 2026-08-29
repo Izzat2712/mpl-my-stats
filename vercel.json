@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
       "source": "/season16",
       "destination": "/index.html"
     },
@@ -17,7 +21,23 @@
       "destination": "/index.html"
     },
     {
+      "source": "/season18",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/season18/:path*",
+      "destination": "/index.html"
+    },
+    {
       "source": "/schedule",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/teams",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/transfer",
       "destination": "/index.html"
     },
     {
@@ -26,6 +46,10 @@
     },
     {
       "source": "/heroes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tierlist",
       "destination": "/index.html"
     },
     {
@@ -50,6 +74,14 @@
     },
     {
       "source": "/h2h/hero",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/trends",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/compare",
       "destination": "/index.html"
     }
   ]
