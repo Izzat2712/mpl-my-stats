@@ -4533,7 +4533,344 @@
     "dayMatch": 2,
     "date": "2026-08-29",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "BTR",
+        "mvp": "CIKUGAIS",
+        "bans": [
+          "Fanny",
+          "Melissa",
+          "Atlas",
+          "Harley",
+          "Gloo",
+          "Paquito",
+          "Freya",
+          "Rafaela",
+          "Mathilda",
+          "Marcel"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Miya",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Hirara",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Selena",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 9
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Hylos",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 8
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Brody",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Nolan",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Novaria",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "SIZKAA",
+            "hero": "Ruby",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Belerick",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 5
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 4,
+            "VMS": 0
+          },
+          "turtle": {
+            "BTR": 3,
+            "VMS": 0
+          },
+          "tower": {
+            "BTR": 9,
+            "VMS": 3
+          }
+        }
+      },
+      {
+        "winner": "VMS",
+        "mvp": "ERROR 404",
+        "bans": [
+          "Rafaela",
+          "Barats",
+          "Atlas",
+          "Ruby",
+          "Mathilda",
+          "Fanny",
+          "Freya",
+          "Melissa",
+          "Gloo",
+          "Gatotkaca"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Clint",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Hirara",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Selena",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Esmeralda",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Brody",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Paquito",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 1
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Zhuxin",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "VMS",
+            "name": "SIZKAA",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Marcel",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 5
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 0,
+            "VMS": 2
+          },
+          "turtle": {
+            "BTR": 0,
+            "VMS": 3
+          },
+          "tower": {
+            "BTR": 1,
+            "VMS": 8
+          }
+        }
+      },
+      {
+        "winner": "VMS",
+        "mvp": "NATCO",
+        "bans": [
+          "Fanny",
+          "Melissa",
+          "Atlas",
+          "Carmilla",
+          "Terizla",
+          "Paquito",
+          "Freya",
+          "Uranus",
+          "Suyou",
+          "Zhuxin"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "CIKUGAIS",
+            "hero": "Brody",
+            "kills": 7,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Rafaela",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 7
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Barats",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 8
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Gloo",
+            "kills": 2,
+            "deaths": 6,
+            "assists": 9
+          },
+          {
+            "team": "VMS",
+            "name": "NATCO",
+            "hero": "Ixia",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "VMS",
+            "name": "ERROR 404",
+            "hero": "Hirara",
+            "kills": 13,
+            "deaths": 3,
+            "assists": 4
+          },
+          {
+            "team": "VMS",
+            "name": "CLAWKUN",
+            "hero": "Selena",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 12
+          },
+          {
+            "team": "VMS",
+            "name": "SIZKAA",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 18
+          },
+          {
+            "team": "VMS",
+            "name": "ZQEEF",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 13
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 0,
+            "VMS": 2
+          },
+          "turtle": {
+            "BTR": 1,
+            "VMS": 2
+          },
+          "tower": {
+            "BTR": 2,
+            "VMS": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W3D2BTRMvsVMS",
       "matchId": 295
