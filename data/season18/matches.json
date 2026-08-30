@@ -3559,232 +3559,7 @@
     "dayMatch": 1,
     "date": "2026-08-23",
     "startTime": "2:30 PM",
-    "games": [
-      {
-        "winner": "TR",
-        "mvp": "DOLYNN",
-        "bans": [
-          "Atlas",
-          "Uranus",
-          "Belerick",
-          "Harley",
-          "Yi Sun-Shin",
-          "Freya",
-          "Melissa",
-          "Marcel",
-          "Eudora",
-          "Selena"
-        ],
-        "players": [
-          {
-            "team": "TR",
-            "name": "CLIVEEE",
-            "hero": "Brody",
-            "kills": 9,
-            "deaths": 3,
-            "assists": 0
-          },
-          {
-            "team": "TR",
-            "name": "DOLYNN",
-            "hero": "Hirara",
-            "kills": 2,
-            "deaths": 1,
-            "assists": 9
-          },
-          {
-            "team": "TR",
-            "name": "KYYM",
-            "hero": "Valentina",
-            "kills": 0,
-            "deaths": 1,
-            "assists": 9
-          },
-          {
-            "team": "TR",
-            "name": "SMOOTH",
-            "hero": "Barats",
-            "kills": 1,
-            "deaths": 2,
-            "assists": 6
-          },
-          {
-            "team": "TR",
-            "name": "NOVAXCOBAR",
-            "hero": "Mathilda",
-            "kills": 2,
-            "deaths": 1,
-            "assists": 12
-          },
-          {
-            "team": "AC",
-            "name": "NETS",
-            "hero": "Paquito",
-            "kills": 1,
-            "deaths": 2,
-            "assists": 3
-          },
-          {
-            "team": "AC",
-            "name": "ZAHYED",
-            "hero": "Ling",
-            "kills": 5,
-            "deaths": 1,
-            "assists": 3
-          },
-          {
-            "team": "AC",
-            "name": "MARTZYY",
-            "hero": "Rafaela",
-            "kills": 1,
-            "deaths": 4,
-            "assists": 4
-          },
-          {
-            "team": "AC",
-            "name": "MOMO",
-            "hero": "Esmeralda",
-            "kills": 1,
-            "deaths": 3,
-            "assists": 3
-          },
-          {
-            "team": "AC",
-            "name": "REYZAR",
-            "hero": "Gatotkaca",
-            "kills": 0,
-            "deaths": 4,
-            "assists": 5
-          }
-        ],
-        "objectives": {
-          "lord": {
-            "TR": 2,
-            "AC": 2
-          },
-          "turtle": {
-            "TR": 2,
-            "AC": 1
-          },
-          "tower": {
-            "TR": 8,
-            "AC": 5
-          }
-        }
-      },
-      {
-        "winner": "TR",
-        "mvp": "DOLYNN",
-        "bans": [
-          "Paquito",
-          "Marcel",
-          "Fanny",
-          "Ixia",
-          "Valentina",
-          "Freya",
-          "Atlas",
-          "Melissa",
-          "Belerick",
-          "Harley"
-        ],
-        "players": [
-          {
-            "team": "TR",
-            "name": "CLIVEEE",
-            "hero": "Claude",
-            "kills": 1,
-            "deaths": 0,
-            "assists": 7
-          },
-          {
-            "team": "TR",
-            "name": "DOLYNN",
-            "hero": "Suyou",
-            "kills": 10,
-            "deaths": 1,
-            "assists": 2
-          },
-          {
-            "team": "TR",
-            "name": "KYYM",
-            "hero": "Vexana",
-            "kills": 0,
-            "deaths": 0,
-            "assists": 10
-          },
-          {
-            "team": "TR",
-            "name": "JWEN",
-            "hero": "Barats",
-            "kills": 2,
-            "deaths": 0,
-            "assists": 6
-          },
-          {
-            "team": "TR",
-            "name": "NOVAXCOBAR",
-            "hero": "Mathilda",
-            "kills": 0,
-            "deaths": 0,
-            "assists": 12
-          },
-          {
-            "team": "AC",
-            "name": "NETS",
-            "hero": "Brody",
-            "kills": 0,
-            "deaths": 1,
-            "assists": 0
-          },
-          {
-            "team": "AC",
-            "name": "ZAHYED",
-            "hero": "Nolan",
-            "kills": 0,
-            "deaths": 2,
-            "assists": 1
-          },
-          {
-            "team": "AC",
-            "name": "MARTZYY",
-            "hero": "Rafaela",
-            "kills": 0,
-            "deaths": 3,
-            "assists": 0
-          },
-          {
-            "team": "AC",
-            "name": "MOMO",
-            "hero": "Uranus",
-            "kills": 0,
-            "deaths": 4,
-            "assists": 1
-          },
-          {
-            "team": "AC",
-            "name": "REYZAR",
-            "hero": "Minotaur",
-            "kills": 1,
-            "deaths": 3,
-            "assists": 0
-          }
-        ],
-        "objectives": {
-          "lord": {
-            "TR": 2,
-            "AC": 0
-          },
-          "turtle": {
-            "TR": 2,
-            "AC": 1
-          },
-          "tower": {
-            "TR": 9,
-            "AC": 1
-          }
-        }
-      }
-    ],
+    "games": [],
     "mpl": {
       "slug": "W2D3TRvsAC",
       "matchId": 290
@@ -3799,232 +3574,7 @@
     "dayMatch": 2,
     "date": "2026-08-23",
     "startTime": "5:00 PM",
-    "games": [
-      {
-        "winner": "SRG",
-        "mvp": "STORMIE",
-        "bans": [
-          "Rafaela",
-          "Atlas",
-          "Moskov",
-          "Zhuxin",
-          "Selena",
-          "Freya",
-          "Paquito",
-          "Marcel",
-          "Mathilda",
-          "Brody"
-        ],
-        "players": [
-          {
-            "team": "TF",
-            "name": "VANIX",
-            "hero": "Obsidia",
-            "kills": 0,
-            "deaths": 2,
-            "assists": 6
-          },
-          {
-            "team": "TF",
-            "name": "GARYY",
-            "hero": "Harley",
-            "kills": 2,
-            "deaths": 5,
-            "assists": 5
-          },
-          {
-            "team": "TF",
-            "name": "UK1R",
-            "hero": "Novaria",
-            "kills": 4,
-            "deaths": 0,
-            "assists": 4
-          },
-          {
-            "team": "TF",
-            "name": "3MAR",
-            "hero": "Barats",
-            "kills": 3,
-            "deaths": 5,
-            "assists": 1
-          },
-          {
-            "team": "TF",
-            "name": "XORN",
-            "hero": "Khufra",
-            "kills": 2,
-            "deaths": 4,
-            "assists": 5
-          },
-          {
-            "team": "SRG",
-            "name": "INNOCENT",
-            "hero": "Melissa",
-            "kills": 6,
-            "deaths": 1,
-            "assists": 5
-          },
-          {
-            "team": "SRG",
-            "name": "SEKYSSS",
-            "hero": "Hirara",
-            "kills": 3,
-            "deaths": 3,
-            "assists": 9
-          },
-          {
-            "team": "SRG",
-            "name": "STORMIE",
-            "hero": "Valentina",
-            "kills": 7,
-            "deaths": 3,
-            "assists": 5
-          },
-          {
-            "team": "SRG",
-            "name": "KRAMM",
-            "hero": "Uranus",
-            "kills": 0,
-            "deaths": 2,
-            "assists": 7
-          },
-          {
-            "team": "SRG",
-            "name": "YUMS",
-            "hero": "Belerick",
-            "kills": 0,
-            "deaths": 2,
-            "assists": 9
-          }
-        ],
-        "objectives": {
-          "lord": {
-            "TF": 0,
-            "SRG": 2
-          },
-          "turtle": {
-            "TF": 2,
-            "SRG": 1
-          },
-          "tower": {
-            "TF": 2,
-            "SRG": 9
-          }
-        }
-      },
-      {
-        "winner": "SRG",
-        "mvp": "KRAMM",
-        "bans": [
-          "Atlas",
-          "Selena",
-          "Marcel",
-          "Valentina",
-          "Carmilla",
-          "Freya",
-          "Melissa",
-          "Paquito",
-          "Hanabi",
-          "Obsidia"
-        ],
-        "players": [
-          {
-            "team": "TF",
-            "name": "VANIX",
-            "hero": "Moskov",
-            "kills": 3,
-            "deaths": 3,
-            "assists": 7
-          },
-          {
-            "team": "TF",
-            "name": "GARYY",
-            "hero": "Hirara",
-            "kills": 5,
-            "deaths": 4,
-            "assists": 10
-          },
-          {
-            "team": "TF",
-            "name": "UK1R",
-            "hero": "Aurora",
-            "kills": 5,
-            "deaths": 4,
-            "assists": 8
-          },
-          {
-            "team": "TF",
-            "name": "3MAR",
-            "hero": "Barats",
-            "kills": 3,
-            "deaths": 3,
-            "assists": 9
-          },
-          {
-            "team": "TF",
-            "name": "XORN",
-            "hero": "Kaja",
-            "kills": 1,
-            "deaths": 4,
-            "assists": 10
-          },
-          {
-            "team": "SRG",
-            "name": "INNOCENT",
-            "hero": "Claude",
-            "kills": 2,
-            "deaths": 2,
-            "assists": 10
-          },
-          {
-            "team": "SRG",
-            "name": "SEKYSSS",
-            "hero": "Leomord",
-            "kills": 2,
-            "deaths": 5,
-            "assists": 9
-          },
-          {
-            "team": "SRG",
-            "name": "STORMIE",
-            "hero": "Rafaela",
-            "kills": 6,
-            "deaths": 4,
-            "assists": 9
-          },
-          {
-            "team": "SRG",
-            "name": "KRAMM",
-            "hero": "Uranus",
-            "kills": 6,
-            "deaths": 2,
-            "assists": 8
-          },
-          {
-            "team": "SRG",
-            "name": "YUMS",
-            "hero": "Belerick",
-            "kills": 2,
-            "deaths": 4,
-            "assists": 10
-          }
-        ],
-        "objectives": {
-          "lord": {
-            "TF": 0,
-            "SRG": 4
-          },
-          "turtle": {
-            "TF": 1,
-            "SRG": 2
-          },
-          "tower": {
-            "TF": 4,
-            "SRG": 9
-          }
-        }
-      }
-    ],
+    "games": [],
     "mpl": {
       "slug": "W2D3FLvsSRG",
       "matchId": 291
@@ -5575,7 +5125,232 @@
     "dayMatch": 1,
     "date": "2026-08-30",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TF",
+        "mvp": "XORN",
+        "bans": [
+          "Esmeralda",
+          "Selena",
+          "Novaria",
+          "Moskov",
+          "Obsidia",
+          "Freya",
+          "Melissa",
+          "Rafaela",
+          "Belerick",
+          "Gatotkaca"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "ROKJI",
+            "hero": "Harith",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "IG",
+            "name": "LUNNN",
+            "hero": "Hirara",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "TREACKY",
+            "hero": "Valentina",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "ATANNN",
+            "hero": "Angela",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "TF",
+            "name": "VANIX",
+            "hero": "Claude",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "GARYY",
+            "hero": "Nolan",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "UK1R",
+            "hero": "Valir",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 8
+          },
+          {
+            "team": "TF",
+            "name": "3MAR",
+            "hero": "Barats",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 10
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 0,
+            "TF": 2
+          },
+          "turtle": {
+            "IG": 0,
+            "TF": 3
+          },
+          "tower": {
+            "IG": 2,
+            "TF": 9
+          }
+        }
+      },
+      {
+        "winner": "TF",
+        "mvp": "GARYY",
+        "bans": [
+          "Atlas",
+          "Mathilda",
+          "Marcel",
+          "Zhuxin",
+          "Novaria",
+          "Freya",
+          "Melissa",
+          "Selena",
+          "Moskov",
+          "Brody"
+        ],
+        "players": [
+          {
+            "team": "IG",
+            "name": "ROKJI",
+            "hero": "Obsidia",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "IG",
+            "name": "LUNNN",
+            "hero": "Fanny",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "IG",
+            "name": "TREACKY",
+            "hero": "Kagura",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "YE3",
+            "hero": "Esmeralda",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          },
+          {
+            "team": "IG",
+            "name": "ATANNN",
+            "hero": "Belerick",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "VANIX",
+            "hero": "Claude",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "TF",
+            "name": "GARYY",
+            "hero": "Paquito",
+            "kills": 7,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "UK1R",
+            "hero": "Rafaela",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "3MAR",
+            "hero": "Uranus",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Gatotkaca",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 5
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "IG": 0,
+            "TF": 2
+          },
+          "turtle": {
+            "IG": 0,
+            "TF": 3
+          },
+          "tower": {
+            "IG": 2,
+            "TF": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W3D3IGvsFL",
       "matchId": 297
