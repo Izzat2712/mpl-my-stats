@@ -5365,7 +5365,344 @@
     "dayMatch": 2,
     "date": "2026-08-30",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "RRQ",
+        "mvp": "LOLEAL",
+        "bans": [
+          "Atlas",
+          "Fanny",
+          "Uranus",
+          "Brody",
+          "Esmeralda",
+          "Freya",
+          "Paquito",
+          "Melissa",
+          "Lylia",
+          "Miya"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Hanabi",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 8
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Hirara",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Novaria",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 10
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Barats",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 6
+          },
+          {
+            "team": "RRQ",
+            "name": "JINZHAO",
+            "hero": "Mathilda",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 12
+          },
+          {
+            "team": "AC",
+            "name": "NETS",
+            "hero": "Harith",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "ZAHYED",
+            "hero": "Leomord",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Rafaela",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 8
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Terizla",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "REYZAR",
+            "hero": "Belerick",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 9
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 2,
+            "AC": 2
+          },
+          "turtle": {
+            "RRQ": 1,
+            "AC": 2
+          },
+          "tower": {
+            "RRQ": 9,
+            "AC": 7
+          }
+        }
+      },
+      {
+        "winner": "AC",
+        "mvp": "IZANAMI",
+        "bans": [
+          "Atlas",
+          "Rafaela",
+          "Mathilda",
+          "Miya",
+          "Paquito",
+          "Freya",
+          "Melissa",
+          "Fanny",
+          "Lylia",
+          "Carmilla"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Brody",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Nolan",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Eudora",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "JINZHAO",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "AC",
+            "name": "NETS",
+            "hero": "Clint",
+            "kills": 5,
+            "deaths": 1,
+            "assists": 2
+          },
+          {
+            "team": "AC",
+            "name": "ZAHYED",
+            "hero": "Hirara",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Angela",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Esmeralda",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "AC",
+            "name": "REYZAR",
+            "hero": "Gloo",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 7
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 0,
+            "AC": 1
+          },
+          "turtle": {
+            "RRQ": 0,
+            "AC": 3
+          },
+          "tower": {
+            "RRQ": 1,
+            "AC": 7
+          }
+        }
+      },
+      {
+        "winner": "AC",
+        "mvp": "ZAHYED",
+        "bans": [
+          "Fanny",
+          "Angela",
+          "Uranus",
+          "Brody",
+          "Leomord",
+          "Freya",
+          "Melissa",
+          "Hirara",
+          "Miya",
+          "Carmilla"
+        ],
+        "players": [
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Obsidia",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Paquito",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Novaria",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "team": "RRQ",
+            "name": "LEHTZY",
+            "hero": "Barats",
+            "kills": 0,
+            "deaths": 7,
+            "assists": 2
+          },
+          {
+            "team": "RRQ",
+            "name": "JINZHAO",
+            "hero": "Marcel",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "NETS",
+            "hero": "Karrie",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "ZAHYED",
+            "hero": "Ling",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 2
+          },
+          {
+            "team": "AC",
+            "name": "IZANAMI",
+            "hero": "Rafaela",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 9
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Esmeralda",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "REYZAR",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 10
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "RRQ": 0,
+            "AC": 4
+          },
+          "turtle": {
+            "RRQ": 1,
+            "AC": 2
+          },
+          "tower": {
+            "RRQ": 2,
+            "AC": 9
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W3D3RRQvsAC",
       "matchId": 298
