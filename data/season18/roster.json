@@ -511,27 +511,29 @@
     "type": "player",
     "lane": "Exp Laner",
     "starter": true,
-    "picture": "https://i.imgur.com/yLUHTrL.png"
+    "picture": "https://i.imgur.com/q0gv4Mo.png"
   },
   {
     "name": "COACH RANSEI",
     "team": "TF",
     "type": "staff",
     "role": "Assistant Coach",
-    "picture": "https://i.imgur.com/vekWRMe.png"
+    "picture": "https://i.imgur.com/ecac24B.png"
   },
   {
     "name": "JINZHAO",
     "team": "RRQ",
     "type": "player",
     "lane": "Roamer",
-    "starter": true
+    "starter": true,
+    "picture": "https://i.imgur.com/uASo3qn.png"
   },
   {
     "name": "SUBWAY",
     "team": "RRQ",
     "type": "staff",
-    "role": "Analyst"
+    "role": "Analyst",
+    "picture": "https://i.imgur.com/cRxFjEz.png"
   },
   {
     "name": "SMOOTH",
