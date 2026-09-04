@@ -11,7 +11,8 @@
       "week": 3,
       "fromTeam": "FREE AGENT",
       "toTeam": "RRQ",
-      "role": "Roamer"
+      "role": "Roamer",
+      "picture": "https://i.imgur.com/uASo3qn.png"
     },
     {
       "player": "Subway",
@@ -19,7 +20,8 @@
       "week": 3,
       "fromTeam": "FREE AGENT",
       "toTeam": "RRQ",
-      "role": "Analyst"
+      "role": "Analyst",
+      "picture": "https://i.imgur.com/cRxFjEz.png"
     },
     {
       "player": "SEPAT",
@@ -28,7 +30,7 @@
       "fromTeam": "VMS",
       "toTeam": "TR",
       "role": "Exp Laner",
-      "picture": "https://i.imgur.com/n9B2tja.png"
+      "picture": "https://i.imgur.com/q0gv4Mo.png"
     },
     {
       "player": "SMOOTH",
@@ -46,7 +48,16 @@
       "fromTeam": "IGNITE GAMING",
       "toTeam": "TF",
       "role": "Assistant Coach",
-      "picture": "https://i.imgur.com/vekWRMe.png"
+      "picture": "https://i.imgur.com/ecac24B.png"
+    },
+    {
+      "player": "SMOOTH",
+      "type": "Transfer In",
+      "week": 4,
+      "fromTeam": "FREE AGENT",
+      "toTeam": "RRQ",
+      "role": "Exp Laner",
+      "picture": "https://i.imgur.com/fUUaAzk.png"
     }
   ]
 }

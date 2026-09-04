@@ -4,15 +4,15 @@
     "team": "AC",
     "type": "player",
     "lane": "Midlaner",
-    "picture": "https://i.imgur.com/zayGy74.png"
+    "picture": "https://i.imgur.com/zayGy74.png",
+    "starter": true
   },
   {
     "name": "MARTZYY",
     "team": "AC",
     "type": "player",
     "lane": "Midlaner",
-    "picture": "https://i.imgur.com/UaBM7em.png",
-    "starter": true
+    "picture": "https://i.imgur.com/UaBM7em.png"
   },
   {
     "name": "MOMO",
@@ -274,7 +274,6 @@
     "team": "RRQ",
     "type": "player",
     "lane": "Exp Laner",
-    "starter": true,
     "picture": "https://i.imgur.com/1sgaBbu.png"
   },
   {
@@ -343,7 +342,8 @@
     "team": "SRG",
     "type": "player",
     "lane": "Jungler",
-    "picture": "https://i.imgur.com/6D8zzKi.png"
+    "picture": "https://i.imgur.com/6D8zzKi.png",
+    "starter": true
   },
   {
     "name": "STORMIE",
@@ -358,7 +358,6 @@
     "team": "SRG",
     "type": "player",
     "lane": "Jungler",
-    "starter": true,
     "picture": "https://i.imgur.com/DfWYPMh.png"
   },
   {
@@ -533,7 +532,8 @@
     "team": "RRQ",
     "type": "staff",
     "role": "Analyst",
-    "picture": "https://i.imgur.com/cRxFjEz.png"
+    "picture": "https://i.imgur.com/cRxFjEz.png",
+    "lane": "Analyst"
   },
   {
     "name": "SMOOTH",
@@ -542,5 +542,25 @@
     "lane": "Exp Laner",
     "picture": "https://i.imgur.com/aPevmRO.png",
     "active": false
+  },
+  {
+    "name": "SMOOTH",
+    "team": "RRQ",
+    "type": "player",
+    "lane": "Exp Laner",
+    "starter": true,
+    "picture": "https://i.imgur.com/fUUaAzk.png"
+  },
+  {
+    "name": "SMOOTH",
+    "team": "RRQ",
+    "lane": "Exp Laner",
+    "picture": "https://i.imgur.com/fUUaAzk.png"
+  },
+  {
+    "name": "RANSEI",
+    "team": "TF",
+    "lane": "Assistant Coach",
+    "picture": "https://i.imgur.com/ecac24B.png"
   }
 ]
