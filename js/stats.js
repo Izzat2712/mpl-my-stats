@@ -459,4 +459,125 @@ export function calculatePlayerPoolsStats() {
   return memoized("calculatePlayerPoolsStats", calculatePlayerPoolsStatsImpl);
 }
 
+/* ==========================================================
+   PLAYER AGGRREGATES (leaderboards / TOTW)
+========================================================= */
+
+function getMatchStageName(match) {
+  const raw = String(match?.schedule?.stage || match?.stage || "").trim().toLowerCase();
+  return raw === "playoff" || raw === "playoffs" ? "playoff" : "regular";
+}
+
+function createPlayerAggregate(record) {
+  return {
+    name: String(record?.name || "").trim(),
+    team: String(record?.team || "").trim(),
+    lane: String(record?.lane || "").trim(),
+    picture: String(record?.picture || "").trim(),
+    games: 0,
+    wins: 0,
+    kills: 0,
+    deaths: 0,
+    assists: 0,
+    heroDamage: 0,
+    damageTaken: 0,
+    towerDamage: 0,
+    gold: 0,
+    gamesWithPerf: 0,
+    kda: 0,
+    matchDetails: []
+  };
+}
+
+function calculatePlayerAggregatesImpl({ week = null, stage = null } = {}) {
+  const map = {};
+  const segmentWeek = week != null && Number.isFinite(Number(week)) ? Number(week) : null;
+  const segmentStage = stage ? String(stage).toLowerCase() : null;
+
+  for (const record of (getRosterList() || [])) {
+    map[record.name] = createPlayerAggregate(record);
+  }
+
+  for (const match of getMatches()) {
+    const matchWeek = Number(match?.week);
+    if (segmentWeek != null && !Number.isFinite(matchWeek)) continue;
+    if (segmentWeek != null && matchWeek !== segmentWeek) continue;
+    const matchStage = getMatchStageName(match);
+    if (segmentStage && matchStage !== segmentStage) continue;
+
+    const games = Array.isArray(match?.games) ? match.games : [];
+    if (!games.length) continue;
+
+    for (const game of games) {
+      const winner = String(game?.winner || "").trim();
+      for (const player of (game?.players || [])) {
+        const info = getRoster(player?.name);
+        const playerName = String(player?.name || "").trim();
+        if (!playerName) continue;
+        const rosterTeam = String(info?.team || "").trim();
+        const matchTeam = String(player?.team || "").trim();
+        const teamCode = (rosterTeam && rosterTeam !== "Unknown" ? rosterTeam : matchTeam).trim();
+
+        let record = map[playerName];
+        if (!record) {
+          record = createPlayerAggregate({ name: playerName, team: teamCode, lane: info.lane, picture: info.picture });
+          map[playerName] = record;
+        }
+        record.team = teamCode || record.team;
+        record.lane = info.lane || record.lane;
+        record.picture = info.picture || record.picture;
+
+        record.games += 1;
+        if (teamCode && winner === teamCode) record.wins += 1;
+        record.kills += Number(player?.kills) || 0;
+        record.deaths += Number(player?.deaths) || 0;
+        record.assists += Number(player?.assists) || 0;
+
+        const perfStats = player?.performance?.stats;
+        if (perfStats && typeof perfStats === "object") {
+          record.gamesWithPerf += 1;
+          record.heroDamage += Number(perfStats.heroDamage) || 0;
+          record.damageTaken += Number(perfStats.damageTaken) || 0;
+          record.towerDamage += Number(perfStats.towerDamage) || 0;
+          record.gold += Number(perfStats.totalGold) || 0;
+        }
+
+        record.matchDetails.push({
+          week: Number.isFinite(matchWeek) ? matchWeek : null,
+          date: String(match?.date || "").trim(),
+          team: teamCode,
+          opponent: teamCode === match?.teamA ? match?.teamB : teamCode === match?.teamB ? match?.teamA : "",
+          hero: String(player?.hero || "").trim(),
+          kills: Number(player?.kills) || 0,
+          deaths: Number(player?.deaths) || 0,
+          assists: Number(player?.assists) || 0,
+          win: Boolean(teamCode && winner === teamCode),
+          stats: perfStats && typeof perfStats === "object" ? perfStats : null
+        });
+      }
+    }
+  }
+
+  for (const key of Object.keys(map)) {
+    const record = map[key];
+    record.kda = (record.kills + record.assists) / (record.deaths || 1);
+  }
+
+  return map;
+}
+
+function getPlayerAggregatesCacheKey({ week, stage } = {}) {
+  const weekPart = week != null ? `week:${week}` : "all";
+  const stagePart = stage ? `stage:${stage}` : "all";
+  return `playerAggregates:${getDataVersion()}:${weekPart}:${stagePart}`;
+}
+
+export function calculatePlayerAggregates({ week = null, stage = null } = {}) {
+  const key = getPlayerAggregatesCacheKey({ week, stage });
+  if (cache.has(key)) return cache.get(key);
+  const value = calculatePlayerAggregatesImpl({ week, stage });
+  cache.set(key, value);
+  return value;
+}
+
 

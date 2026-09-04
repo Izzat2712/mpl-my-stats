@@ -1,5 +1,5 @@
 import { getCurrentSeasonLabel, getHeroesMap, getMatches, getRosterList, getTeamDisplayName, getTeamLogosMap } from "./data-store.js";
-import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
+import { calculateHeroPoolStats, calculateHeroStats, calculatePlayerAggregates, calculatePlayerHeroStats, calculatePlayerPoolsStats, calculatePlayerStats, calculateTeamStats } from "./stats.js";
 import { getStaffList } from "./data-store.js";
 import { getSeasonProfilesMap } from "./data-store.js";
 import { getSeasonTransfersData } from "./data-store.js";
@@ -2731,7 +2731,8 @@ function showTransfer() {
                   const toTeam = String(entry?.toTeam || "").trim();
                   const note = String(entry?.note || "").trim();
                   const date = String(entry?.date || "").trim();
-                  const picture = String(entry?.picture || "").trim();
+                  const rosterTransferRecord = getRosterPlayerRecord(player);
+                  const picture = String(entry?.picture || rosterTransferRecord?.picture || "").trim();
                   const fromLogo = fromTeam ? (teamLogos[fromTeam] || "") : "";
                   const toLogo = toTeam ? (teamLogos[toTeam] || "") : "";
                   const metaItems = [role].filter(Boolean);
@@ -4265,6 +4266,694 @@ function showH2H(focus = null) {
   }
 }
 
+// ===== TOTW (Team of the Week) =====
+
+const TOTW_MAP_IMAGE = "https://i.imgur.com/4c63aWT.png";
+const TOTW_MARKETING_LINE = "Blue = Team of the Week (best KDA) &middot; Red = Team of the Weak (worst KDA &mdash; only players who played)";
+const TOTW_ROLE_ICONS = {
+  "Exp Laner": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/EXP_Lane.png/revision/latest?cb=20241001154041",
+  "Gold Laner": "https://static.wikia.nocookie.net/mobile-legends/images/9/9f/Gold_Lane.png/revision/latest?cb=20241001154048",
+  "Midlaner": "https://static.wikia.nocookie.net/mobile-legends/images/4/4f/Mid_Lane.png/revision/latest?cb=20241001154044",
+  "Jungler": "https://static.wikia.nocookie.net/mobile-legends/images/0/07/Jungling.png/revision/latest?cb=20241001154047",
+  "Roamer": "https://static.wikia.nocookie.net/mobile-legends/images/d/d2/Roaming.png/revision/latest?cb=20241001154051"
+};
+const TOTW_LANES = ["Exp Laner", "Jungler", "Midlaner", "Gold Laner", "Roamer"];
+// h2h: both players anchor at the SAME spot; the blue card extends left and the red card
+// extends right from that spot (see .totwMarker.is-h2h-*), so they sit side-by-side.
+// free: each side anchors separately (used for junglers at their own buff).
+const TOTW_POSITIONS = {
+  "Exp Laner": { mode: "h2h", anchor: { left: 44, top: 16 } },
+  "Jungler": { mode: "free", blue: { left: 16, top: 44 }, red: { left: 84, top: 44 } },
+  "Midlaner": { mode: "h2h", anchor: { left: 46, top: 38 } },
+  "Gold Laner": { mode: "h2h", anchor: { left: 56, top: 82 } },
+  "Roamer": { mode: "h2h", anchor: { left: 54, top: 60 } }
+};
+// Default per-side layout (baked from the position config arranged via the
+// Arrange Positions tool). Use .totwMarker.is-h2h-* to control card placement;
+// these are the shared anchor points per role.
+const TOTW_POSITION_DEFAULTS = {
+  "Exp Laner": {
+    blue: { left: 30.533334350585935, top: 28.656650504310853 },
+    red: { left: 25.955557250976565, top: 13.997340318155246 }
+  },
+  "Jungler": {
+    blue: { left: 49.44444274902344, top: 65.86876303501279 },
+    red: { left: 68.19999694824219, top: 51.370532561330585 }
+  },
+  "Midlaner": {
+    blue: { left: 52.66667175292969, top: 49.759619293284544 },
+    red: { left: 51.82221984863281, top: 35.58358142835257 }
+  },
+  "Gold Laner": {
+    blue: { left: 77.64444274902344, top: 80.5280732211684 },
+    red: { left: 75.4666717529297, top: 66.0298482781201 }
+  },
+  "Roamer": {
+    blue: { left: 48.488888549804685, top: 34.29484970778896 },
+    red: { left: 48.88888854980469, top: 20.11880631222309 }
+  }
+};
+
+let totwWeek = null;
+let totwPlayerModalState = { playerName: "", week: null };
+
+function getTotwPosition(lane, side) {
+  const baked = TOTW_POSITION_DEFAULTS[lane]?.[side];
+  if (baked && Number.isFinite(baked.left) && Number.isFinite(baked.top)) {
+    return { left: baked.left, top: baked.top };
+  }
+  const def = TOTW_POSITIONS[lane] || TOTW_POSITIONS.Midlaner;
+  const pos = def.mode === "h2h" ? def.anchor : (side === "blue" ? def.blue : def.red);
+  return { left: pos.left, top: pos.top };
+}
+
+function getTotwCompletedWeeks() {
+  const weeksMap = new Map();
+  for (const match of getMatches()) {
+    const weekNum = Number(match?.week);
+    if (!Number.isFinite(weekNum)) continue;
+    const list = weeksMap.get(weekNum) || [];
+    list.push(match);
+    weeksMap.set(weekNum, list);
+  }
+
+  const completed = [];
+  for (const [weekNum, matches] of weeksMap) {
+    const allComplete = matches.every((match) => {
+      const score = getMatchScore(match);
+      if (!score.finished) return false;
+      const games = Array.isArray(match?.games) ? match.games : [];
+      return games.some((game) => Array.isArray(game?.players) && game.players.length > 0);
+    });
+    if (allComplete) completed.push({ week: weekNum, label: `Week ${weekNum}` });
+  }
+
+  return completed.sort((a, b) => b.week - a.week);
+}
+
+function formatTotwDate(dateValue) {
+  const match = String(dateValue || "").trim().match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/);
+  if (!match) return String(dateValue || "");
+  return `${String(Number(match[3])).padStart(2, "0")}/${String(Number(match[2])).padStart(2, "0")}/${match[1]}`;
+}
+
+function renderTotwMarker({ lane, side, player, position, week, mode = "free" }) {
+  const canOpen = Boolean(player);
+  const picture = String(player?.picture || "").trim();
+  const teamCode = String(player?.team || "").trim();
+  const teamLogo = teamCode ? (teamLogos[teamCode] || "") : "";
+  const kda = player ? `${player.kills}/${player.deaths}/${player.assists}` : "—";
+  const kdaRate = player ? `(${player.kda.toFixed(2)})` : "";
+  const name = player ? String(player.name).trim() : "TBD";
+  const inner = `
+    <span class="totwRoleBadgeWrap">
+      <img class="totwRoleBadge" src="${TOTW_ROLE_ICONS[lane]}" alt="${escapeHtml(lane)} icon">
+    </span>
+    <span class="totwMarkerPortraitWrap">
+      ${picture
+        ? `<img class="totwMarkerPortrait" src="${escapeHtml(picture)}" alt="${escapeHtml(name)}">`
+        : `<span class="totwMarkerPortraitFallback">${escapeHtml(name.slice(0, 2).toUpperCase())}</span>`}
+    </span>
+    <span class="totwMarkerInfo">
+      <span class="totwMarkerName">${escapeHtml(name)}</span>
+      ${teamLogo ? `<span class="totwMarkerTeam"><img class="totwMarkerTeamLogo" src="${escapeHtml(teamLogo)}" alt="">${escapeHtml(teamCode)}</span>` : ""}
+      <span class="totwMarkerKda">${kda} <em>${kdaRate}</em></span>
+    </span>
+  `;
+
+  const clickAttrs = canOpen
+    ? `type="button" onclick="openTotwPlayerModal(decodeURIComponent('${encodeInlineString(player.name)}'), ${week})" aria-label="Open ${escapeHtml(name)} weekly stats"`
+    : "";
+
+  const modeClass = mode === "h2h" ? ` is-h2h-${side}` : "";
+  const dragAttrs = `data-lane="${escapeHtml(lane)}" data-side="${side}" data-mode="${mode}"`;
+
+  return `
+    <div class="totwMarker is-${side}${modeClass}" style="left:${position.left}%; top:${position.top}%" ${dragAttrs}>
+      ${canOpen
+        ? `<button class="totwMarkerCard totwMarkerCard--open" ${clickAttrs}>${inner}</button>`
+        : `<div class="totwMarkerCard">${inner}</div>`}
+    </div>
+  `;
+}
+
+function getTotwLanePicks(aggregates, lane) {
+  const candidates = Object.values(aggregates).filter((record) => {
+    if (record.games <= 0) return false;
+    return String(record.lane || "").trim() === lane;
+  });
+
+  if (!candidates.length) return { best: null, worst: null };
+
+  const sorted = [...candidates].sort((a, b) => b.kda - a.kda);
+  const best = sorted[0];
+  const worst = sorted.length > 1 ? sorted[sorted.length - 1] : null;
+  return { best, worst };
+}
+
+function showTotw(week = null) {
+  const completedWeeks = getTotwCompletedWeeks();
+  const requestedWeek = week != null ? Number(week) : null;
+  const selectedWeek = requestedWeek != null && completedWeeks.some((entry) => entry.week === requestedWeek)
+    ? requestedWeek
+    : (completedWeeks[0]?.week ?? null);
+  totwWeek = selectedWeek;
+
+  const weekOptions = completedWeeks.map((entry) => `
+    <option value="${entry.week}" ${entry.week === selectedWeek ? "selected" : ""}>${entry.label}</option>
+  `).join("");
+
+  const html = `
+    <h2 class="panel-title">TOTW ${seasonLabel()}</h2>
+
+    <div class="totwToolbar">
+      <div class="totwWeekSelector">
+        <label for="totwWeekSelect">Week</label>
+        <select id="totwWeekSelect" onchange="showTotw(this.value)">
+          ${weekOptions || `<option value="">No completed week</option>`}
+        </select>
+      </div>
+      ${selectedWeek != null ? `
+        <button type="button" id="totwSaveBtn" class="totwToolBtn" onclick="downloadTotwImage()">Save Photo</button>
+      ` : ""}
+      <div class="totwHint">TOTW unlocks once every match of the week is complete.</div>
+    </div>
+
+    ${selectedWeek == null ? `
+      <div class="totwEmpty">
+        <h3>No completed week yet.</h3>
+        <p>TOTW appears automatically after the last match data of a week is entered and every match is finished.</p>
+      </div>
+    ` : (() => {
+      const aggregates = calculatePlayerAggregates({ week: selectedWeek, stage: "regular" });
+      return `
+        <div class="totwMapWrap">
+          <div class="totwMap" id="totwMapEl">
+            <img class="totwMapImg" src="${TOTW_MAP_IMAGE}" alt="MLBB Map" loading="lazy">
+            <div class="totwSideBadge is-blue"><span>TEAM OF<br>THE WEEK</span><span class="totwSideSub">Best KDA</span></div>
+            <div class="totwSideBadge is-red"><span>TEAM OF<br>THE WEAK</span><span class="totwSideSub">Worst KDA</span></div>
+            ${TOTW_LANES.map((lane) => {
+              const { best, worst } = getTotwLanePicks(aggregates, lane);
+              const lanePos = TOTW_POSITIONS[lane] || TOTW_POSITIONS.Midlaner;
+              const bluePos = getTotwPosition(lane, "blue");
+              const redPos = getTotwPosition(lane, "red");
+              return `
+                ${renderTotwMarker({ lane, side: "blue", player: best, position: bluePos, week: selectedWeek, mode: lanePos.mode })}
+                ${renderTotwMarker({ lane, side: "red", player: worst, position: redPos, week: selectedWeek, mode: lanePos.mode })}
+              `;
+            }).join("")}
+          </div>
+        </div>
+        <p class="totwMarketing">${TOTW_MARKETING_LINE}</p>
+      `;
+    })()}
+  `;
+
+  document.getElementById("output").innerHTML = html;
+  mountTotwPlayerModal();
+}
+
+let totwHtml2CanvasPromise = null;
+
+async function ensureTotwHtml2Canvas() {
+  if (window.html2canvas) return window.html2canvas;
+  if (totwHtml2CanvasPromise) return totwHtml2CanvasPromise;
+
+  totwHtml2CanvasPromise = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js";
+    script.onload = () => resolve(window.html2canvas);
+    script.onerror = () => reject(new Error("Unable to load the image export library."));
+    document.head.appendChild(script);
+  });
+
+  return totwHtml2CanvasPromise;
+}
+
+async function downloadTotwImage() {
+  const surface = document.getElementById("totwMapEl");
+  if (!surface) return;
+
+  const button = document.getElementById("totwSaveBtn");
+  const week = Number(totwWeek);
+  const fileTitle = `totw-week-${Number.isFinite(week) ? week : "all"}-${String(seasonLabel()).replace(/[^a-z0-9]+/gi, "-").toLowerCase() || "season"}`;
+
+  if (button) {
+    button.disabled = true;
+    button.textContent = "Preparing...";
+  }
+
+  const previousInlineWidth = surface.style.width;
+  const previousInlineMaxWidth = surface.style.maxWidth;
+
+  try {
+    const html2canvas = await ensureTotwHtml2Canvas();
+    const mapImg = surface.querySelector(".totwMapImg");
+    if (mapImg && mapImg.src) {
+      mapImg.crossOrigin = "anonymous";
+      if (!mapImg.complete || mapImg.naturalWidth === 0) {
+        await new Promise((resolve, reject) => {
+          mapImg.onload = resolve;
+          mapImg.onerror = () => reject(new Error("Could not load the map image for export."));
+        });
+      }
+    }
+    surface.classList.add("is-capturing");
+    surface.style.width = "1280px";
+    surface.style.maxWidth = "1280px";
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+
+    const canvas = await html2canvas(surface, {
+      backgroundColor: null,
+      useCORS: true,
+      scale: Math.max(2, Math.min(window.devicePixelRatio || 1, 3)),
+      width: surface.scrollWidth,
+      windowWidth: 1440
+    });
+
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = `${fileTitle}.png`;
+    link.click();
+  } catch (error) {
+    window.alert(String(error?.message || error || "Failed to save the TOTW image."));
+  } finally {
+    surface.classList.remove("is-capturing");
+    surface.style.width = previousInlineWidth;
+    surface.style.maxWidth = previousInlineMaxWidth;
+    if (button) {
+      button.disabled = false;
+      button.textContent = "Save Photo";
+    }
+  }
+}
+
+function mountTotwPlayerModal() {
+  const modalId = "totwPlayerModalRoot";
+  let modalRoot = document.getElementById(modalId);
+  if (!modalRoot) {
+    modalRoot = document.createElement("div");
+    modalRoot.id = modalId;
+    document.body.appendChild(modalRoot);
+  }
+  modalRoot.innerHTML = renderTotwPlayerModal();
+}
+
+function openTotwPlayerModal(playerName, week) {
+  totwPlayerModalState = {
+    playerName: String(playerName || "").trim(),
+    week: Number(week)
+  };
+  mountTotwPlayerModal();
+}
+
+function closeTotwPlayerModal() {
+  totwPlayerModalState = { playerName: "", week: null };
+  mountTotwPlayerModal();
+}
+
+function renderTotwPlayerModal() {
+  const playerName = String(totwPlayerModalState.playerName || "").trim();
+  const week = Number(totwPlayerModalState.week);
+  if (!playerName || !Number.isFinite(week)) return "";
+
+  const aggregates = calculatePlayerAggregates({ week, stage: "regular" });
+  const player = aggregates[playerName];
+  if (!player) return "";
+
+  const teamCode = String(player?.team || "").trim();
+  const teamLogo = teamCode ? (teamLogos[teamCode] || "") : "";
+  const picture = String(player?.picture || "").trim();
+  const details = Array.isArray(player?.matchDetails) ? player.matchDetails : [];
+  const games = Number(player?.games) || 0;
+  const kda = `${player.kills}/${player.deaths}/${player.assists}`;
+  const kdaRate = Number(player?.kda) || 0;
+
+  const statCards = [
+    { label: "GAMES", value: `${games}`, sub: `${Number(player?.wins) || 0} win${Number(player?.wins) === 1 ? "" : "s"}` },
+    { label: "KDA", value: kda, sub: `${kdaRate.toFixed(2)} rate` },
+    { label: "DAMAGE DEALT", value: formatCompactStat(player?.heroDamage), sub: `avg ${games ? Math.round(player.heroDamage / games).toLocaleString("en-US") : 0}/game` },
+    { label: "DAMAGE TAKEN", value: formatCompactStat(player?.damageTaken), sub: `avg ${games ? Math.round(player.damageTaken / games).toLocaleString("en-US") : 0}/game` },
+    { label: "TOWER DAMAGE", value: formatCompactStat(player?.towerDamage), sub: `avg ${games ? Math.round(player.towerDamage / games).toLocaleString("en-US") : 0}/game` },
+    { label: "TOTAL GOLD", value: formatCompactStat(player?.gold), sub: `avg ${games ? Math.round(player.gold / games).toLocaleString("en-US") : 0}/game` }
+  ];
+
+  const matchRows = details.map((detail) => {
+    const heroName = detail.hero ? String(detail.hero).trim() : "?";
+    const heroImg = String(constHero[heroName] || "").trim();
+    const statSummary = detail.stats
+      ? `${formatCompactStat(detail.stats.heroDamage)} <span class="totwMatchDim">dealt</span> &middot; ${formatCompactStat(detail.stats.damageTaken)} <span class="totwMatchDim">taken</span> &middot; ${formatCompactStat(detail.stats.towerDamage)} <span class="totwMatchDim">tower</span> &middot; ${formatCompactStat(detail.stats.totalGold)} <span class="totwMatchDim">gold</span>`
+      : "";
+    return `
+      <div class="totwMatchRow">
+        <span class="totwMatchResult is-${detail.win ? "win" : "loss"}">${detail.win ? "W" : "L"}</span>
+        <span class="totwMatchTeams">
+          <span>${escapeHtml(detail.opponent ? teamLabel(detail.opponent) : "Unknown")}</span>
+        </span>
+        <span class="totwMatchHero">
+          ${heroImg ? `<img class="totwMatchHeroImg" src="${escapeHtml(heroImg)}" alt="${escapeHtml(heroName)}" loading="lazy">` : ""}
+          <span class="totwMatchHeroName">${escapeHtml(heroName)}</span>
+        </span>
+        <span class="totwMatchKda">${detail.kills}/${detail.deaths}/${detail.assists}</span>
+        <span class="totwMatchStats">${statSummary || `<span class="totwMatchDim">No performance data</span>`}</span>
+        <span class="totwMatchDate">${formatTotwDate(detail.date) || "&mdash;"}</span>
+      </div>
+    `;
+  }).join("") || `<div class="totwMatchDim">No match details.</div>`;
+
+  return `
+    <div class="h2hModalBackdrop" onclick="closeTotwPlayerModal()">
+      <div class="playerDetailsModal h2hModalCard totwModal totwPlayerModal" onclick="event.stopPropagation()">
+        <div class="h2hModalHead playerDetailsModalHead">
+          <h3>${escapeHtml(player.name)} <span class="totwModalWeek">Week ${week}</span></h3>
+          <button type="button" class="h2hModalClose" onclick="closeTotwPlayerModal()">Close</button>
+        </div>
+        <div class="totwPlayerHero">
+          <div class="totwPlayerHeroMedia">
+            ${picture
+              ? `<img class="totwPlayerHeroPortrait" src="${escapeHtml(picture)}" alt="${escapeHtml(player.name)}">`
+              : `<div class="totwPlayerHeroFallback">${escapeHtml(player.name.slice(0, 2).toUpperCase())}</div>`}
+          </div>
+          <div class="totwPlayerHeroMeta">
+            <div class="totwPlayerHeroName">${escapeHtml(player.name)}</div>
+            <div class="totwPlayerHeroRole">${escapeHtml(player.lane || "Unknown Role")}</div>
+            <div class="totwPlayerHeroTeam">
+              ${teamLogo ? `<img class="totwPlayerHeroTeamLog" src="${escapeHtml(teamLogo)}" alt="">` : ""}
+              <span>${escapeHtml(teamCode ? teamLabel(teamCode) : "Unknown Team")}</span>
+            </div>
+            <p class="totwPlayerHeroNote">Season stats for ${escapeHtml(seasonLabel())} &middot; Week ${week}</p>
+          </div>
+        </div>
+        <div class="totwPlayerStatsGrid">
+          ${statCards.map((card) => `
+            <div class="totwPlayerStatCard">
+              <div class="totwPlayerStatLabel">${escapeHtml(card.label)}</div>
+              <div class="totwPlayerStatValue">${escapeHtml(card.value)}</div>
+              <div class="totwPlayerStatSub">${escapeHtml(card.sub)}</div>
+            </div>
+          `).join("")}
+        </div>
+        <div class="totwPlayerMatches">
+          <div class="totwPlayerMatchesTitle">MATCHES THIS WEEK</div>
+          <div class="totwMatchList">${matchRows}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ===== Leaderboards =====
+
+const LEADERBOARD_BOARDS = [
+  {
+    key: "damage",
+    title: "THE PAIN TRAIN",
+    subtitle: "Most Hero Damage Dealt",
+    blurb: "All aboard — this train only knows how to run people over.",
+    metric: "heroDamage",
+    metricLabel: "Damage Dealt",
+    accent: "blue"
+  },
+  {
+    key: "taken",
+    title: "THE SANDBAG",
+    subtitle: "Most Damage Taken",
+    blurb: "Eat hits for breakfast, absorb punishment for dinner.",
+    metric: "damageTaken",
+    metricLabel: "Damage Taken",
+    accent: "red"
+  },
+  {
+    key: "tower",
+    title: "THE TOWER RENOVATOR",
+    subtitle: "Most Tower Damage",
+    blurb: "Full demolition service — no permit required.",
+    metric: "towerDamage",
+    metricLabel: "Tower Damage",
+    accent: "gold"
+  },
+  {
+    key: "gold",
+    title: "THE BANKROLL BANDIT",
+    subtitle: "Most Total Gold",
+    blurb: "Steals the gold, the farm, and the game.",
+    metric: "gold",
+    metricLabel: "Total Gold",
+    accent: "green"
+  }
+];
+
+let leaderboardTab = "damage";
+let leaderboardTeam = "ALL TEAMS";
+let leaderboardLane = "ALL ROLES";
+let leaderboardSearchState = { value: "", caret: 0 };
+
+function getBoardValue(player, board) {
+  return Number(player?.[board?.metric]) || 0;
+}
+
+function formatLeaderboardValue(value) {
+  return Math.round(Number(value) || 0).toLocaleString("en-US");
+}
+
+function renderLeaderboardPodium(topPlayers, board) {
+  if (!topPlayers.length) return "";
+
+  const ordered = [
+    topPlayers.find((p) => p.rank === 2),
+    topPlayers.find((p) => p.rank === 1),
+    topPlayers.find((p) => p.rank === 3)
+  ].filter(Boolean);
+
+  return `
+    <div class="lboardPodium">
+      ${ordered.map((p) => {
+        const picture = String(p.picture || "").trim();
+        const teamLogo = p.team ? (teamLogos[p.team] || "") : "";
+        return `
+          <div class="lboardPodiumCard is-rank-${p.rank}">
+            <div class="lboardPodiumMedal">#${p.rank}</div>
+            <button
+              type="button"
+              class="lboardPodiumPhotoTrigger"
+              onclick="openPlayerProfileModal(decodeURIComponent('${encodeInlineString(p.name)}'))"
+              aria-label="Open ${escapeHtml(p.name)} profile"
+            >
+              <span class="lboardPodiumPhotoWrap">
+                ${picture
+                  ? `<img class="lboardPodiumPhoto" src="${escapeHtml(picture)}" alt="${escapeHtml(p.name)}">`
+                  : `<span class="lboardPodiumPhotoFallback">${escapeHtml(p.name.slice(0, 2).toUpperCase())}</span>`}
+              </span>
+            </button>
+            <div class="lboardPodiumName">${escapeHtml(p.name)}</div>
+            <div class="lboardPodiumTeam">
+              ${teamLogo ? `<img class="lboardPodiumTeamLogo" src="${escapeHtml(teamLogo)}" alt="">` : ""}
+              <span>${escapeHtml(p.team ? teamLabel(p.team) : "Unknown")}</span>
+            </div>
+            <div class="lboardPodiumValue">${formatLeaderboardValue(getBoardValue(p, board))}</div>
+            <div class="lboardPodiumMeta">${p.gamesWithPerf} game${p.gamesWithPerf === 1 ? "" : "s"}</div>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function showLeaderboard(keepSearchFocus = false) {
+  const aggregates = calculatePlayerAggregates();
+  const players = Object.values(aggregates)
+    .map((entry) => ({
+      name: String(entry.name || "").trim(),
+      team: String(entry.team || "").trim(),
+      lane: String(entry.lane || "").trim(),
+      picture: String(entry.picture || "").trim(),
+      games: Number(entry.games) || 0,
+      gamesWithPerf: Number(entry.gamesWithPerf) || 0,
+      kills: Number(entry.kills) || 0,
+      deaths: Number(entry.deaths) || 0,
+      assists: Number(entry.assists) || 0,
+      kda: Number(entry.kda) || 0,
+      heroDamage: Number(entry.heroDamage) || 0,
+      damageTaken: Number(entry.damageTaken) || 0,
+      towerDamage: Number(entry.towerDamage) || 0,
+      gold: Number(entry.gold) || 0
+    }))
+    .filter((entry) => entry.gamesWithPerf > 0);
+
+  const board = LEADERBOARD_BOARDS.find((item) => item.key === leaderboardTab) || LEADERBOARD_BOARDS[0];
+  const boardTeams = [...new Set(players.map((entry) => entry.team).filter(Boolean))].sort((a, b) => teamLabel(a).localeCompare(teamLabel(b)));
+  const boardLanes = [...new Set(players.map((entry) => entry.lane).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+
+  const teamFilter = boardTeams.includes(leaderboardTeam) ? leaderboardTeam : "ALL TEAMS";
+  const laneFilter = boardLanes.includes(leaderboardLane) ? leaderboardLane : "ALL ROLES";
+  const query = String(leaderboardSearchState.value || "").trim().toLowerCase();
+
+  let ranked = players.filter((entry) => {
+    const teamMatch = teamFilter === "ALL TEAMS" || entry.team === teamFilter;
+    const laneMatch = laneFilter === "ALL ROLES" || entry.lane === laneFilter;
+    const nameMatch = !query || entry.name.toLowerCase().includes(query);
+    return teamMatch && laneMatch && nameMatch;
+  });
+
+  ranked.sort((a, b) => {
+    const valueDiff = getBoardValue(b, board) - getBoardValue(a, board);
+    if (valueDiff !== 0) return valueDiff;
+    if (b.kda !== a.kda) return b.kda - a.kda;
+    return a.name.localeCompare(b.name);
+  });
+
+  ranked = ranked.map((entry, index) => ({ ...entry, rank: index + 1 }));
+
+  const topPlayers = ranked.slice(0, 3);
+  const restTable = ranked;
+
+  function rankClass(rank) {
+    if (rank === 1) return "is-gold";
+    if (rank === 2) return "is-silver";
+    if (rank === 3) return "is-bronze";
+    return "";
+  }
+
+  const html = `
+    <h2 class="panel-title">LEADERBOARDS ${seasonLabel()}</h2>
+
+    <div class="lboardTabs">
+      ${LEADERBOARD_BOARDS.map((item) => `
+        <button
+          type="button"
+          class="lboardTab is-accent-${item.accent} ${item.key === board.key ? "is-active" : ""}"
+          onclick="setLeaderboardTab('${item.key}')"
+          aria-pressed="${item.key === board.key ? "true" : "false"}"
+        >
+          <span class="lboardTabTitle">${escapeHtml(item.title)}</span>
+          <span class="lboardTabSub">${escapeHtml(item.subtitle)}</span>
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="lboardFilterBar">
+      <label for="lboardTeamFilter">Team</label>
+      <select id="lboardTeamFilter" onchange="onLeaderboardTeamChange(this.value)">
+        <option value="ALL TEAMS">ALL TEAMS</option>
+        ${boardTeams.map((team) => `<option value="${escapeHtml(team)}" ${team === teamFilter ? "selected" : ""}>${escapeHtml(teamLabel(team))}</option>`).join("")}
+      </select>
+      <label for="lboardLaneFilter">Role</label>
+      <select id="lboardLaneFilter" onchange="onLeaderboardLaneChange(this.value)">
+        <option value="ALL ROLES">ALL ROLES</option>
+        ${boardLanes.map((lane) => `<option value="${escapeHtml(lane)}" ${lane === laneFilter ? "selected" : ""}>${escapeHtml(lane)}</option>`).join("")}
+      </select>
+      <input
+        id="lboardSearch"
+        type="text"
+        placeholder="Search player..."
+        value="${String(leaderboardSearchState.value || "").replace(/"/g, "&quot;")}"
+        oninput="onLeaderboardSearchInput(event)"
+      />
+    </div>
+
+    <section class="lboardBoardHeader is-accent-${board.accent}">
+      <h3>${escapeHtml(board.title)}</h3>
+      <p>${escapeHtml(board.subtitle)} &mdash; ${escapeHtml(board.blurb)}</p>
+    </section>
+
+    ${renderLeaderboardPodium(topPlayers, board)}
+
+    ${ranked.length ? `
+      <div class="lboardTableWrap">
+        <table class="lboardTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th>Team</th>
+              <th>Role</th>
+              <th>Games</th>
+              <th>${escapeHtml(board.metricLabel)}</th>
+              <th>Per Game</th>
+              <th>KDA</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${restTable.map((entry) => {
+              const picture = String(entry.picture || "").trim();
+              const teamLogo = entry.team ? (teamLogos[entry.team] || "") : "";
+              const perGame = entry.gamesWithPerf ? getBoardValue(entry, board) / entry.gamesWithPerf : 0;
+              return `
+                <tr class="${rankClass(entry.rank)}">
+                  <td class="lboardRank">#${entry.rank}</td>
+                  <td>
+                    <button
+                      type="button"
+                      class="lboardPlayerCell"
+                      onclick="openPlayerProfileModal(decodeURIComponent('${encodeInlineString(entry.name)}'))"
+                      aria-label="Open ${escapeHtml(entry.name)} profile"
+                    >
+                      ${picture ? `<img class="lboardPlayerFace" src="${escapeHtml(picture)}" alt="">` : `<span class="lboardPlayerFaceFallback">${escapeHtml(entry.name.slice(0, 2).toUpperCase())}</span>`}
+                      <span>${escapeHtml(entry.name)}</span>
+                    </button>
+                  </td>
+                  <td>
+                    <span class="lboardTeamCell">
+                      ${teamLogo ? `<img class="lboardTeamImg" src="${escapeHtml(teamLogo)}" alt="">` : ""}
+                      <span>${escapeHtml(entry.team ? teamLabel(entry.team) : "Unknown")}</span>
+                    </span>
+                  </td>
+                  <td>${escapeHtml(entry.lane || "-")}</td>
+                  <td>${entry.gamesWithPerf}</td>
+                  <td class="lboardStatValue">${formatLeaderboardValue(getBoardValue(entry, board))}</td>
+                  <td>${perGame.toLocaleString("en-US", { maximumFractionDigits: 0 })}</td>
+                  <td>${entry.kda.toFixed(2)}</td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+       </table>
+      </div>
+    ` : `
+      <div class="lboardEmpty">
+        <h3>No players yet.</h3>
+        <p>Leaderboards unlock once match performance data is entered.</p>
+      </div>
+    `}
+  `;
+
+  document.getElementById("output").innerHTML = html;
+
+  if (keepSearchFocus) {
+    requestAnimationFrame(() => {
+      const el = document.getElementById("lboardSearch");
+      if (!el) return;
+      el.focus();
+      const pos = Math.min(Number(leaderboardSearchState.caret) || 0, el.value.length);
+      el.setSelectionRange(pos, pos);
+    });
+  }
+}
+
+function setLeaderboardTab(key) {
+  if (!LEADERBOARD_BOARDS.some((item) => item.key === key)) return;
+  leaderboardTab = key;
+  showLeaderboard();
+}
+
+function onLeaderboardTeamChange(value) {
+  leaderboardTeam = String(value || "ALL TEAMS").trim() || "ALL TEAMS";
+  showLeaderboard();
+}
+
+function onLeaderboardLaneChange(value) {
+  leaderboardLane = String(value || "ALL ROLES").trim() || "ALL ROLES";
+  showLeaderboard();
+}
+
+function onLeaderboardSearchInput(event) {
+  leaderboardSearchState.value = String(event?.target?.value || "");
+  leaderboardSearchState.caret = event?.target?.selectionStart != null
+    ? event.target.selectionStart
+    : leaderboardSearchState.value.length;
+  showLeaderboard(true);
+}
+
 // ===== Sociabuzz Position Control =====
 let _sbEl = null;
 
@@ -4358,6 +5047,15 @@ export {
   showH2H,
   setH2hSubTab,
   getH2hSubTab,
+  showLeaderboard,
+  setLeaderboardTab,
+  onLeaderboardTeamChange,
+  onLeaderboardLaneChange,
+  onLeaderboardSearchInput,
+  showTotw,
+  openTotwPlayerModal,
+  closeTotwPlayerModal,
+  downloadTotwImage,
   setSupportPos
 };
 
