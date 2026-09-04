@@ -53,6 +53,15 @@ import {
   showH2H,
   setH2hSubTab,
   getH2hSubTab,
+  showLeaderboard,
+  setLeaderboardTab,
+  onLeaderboardTeamChange,
+  onLeaderboardLaneChange,
+  onLeaderboardSearchInput,
+  showTotw,
+  openTotwPlayerModal,
+  closeTotwPlayerModal,
+  downloadTotwImage,
   setSupportPos
 } from "./views.js";
 import {
@@ -106,7 +115,9 @@ const VIEW_ROUTES = {
   heroes: "/heroes",
   tierlist: "/tierlist",
   "hero pool": "/hero-pool",
-  "player pool": "/player-pool"
+  "player pool": "/player-pool",
+  leaderboard: "/leaderboard",
+  totw: "/totw"
 };
 
 const ROUTE_VIEWS = Object.fromEntries(
@@ -691,6 +702,20 @@ function showH2HView(...args) {
   return showH2H(...args);
 }
 
+function showLeaderboardView(...args) {
+  appState.view = "leaderboard";
+  updateUrlForView("leaderboard");
+  setActiveNavByLabel("Leaderboard");
+  return showLeaderboard(...args);
+}
+
+function showTotwView(...args) {
+  appState.view = "totw";
+  updateUrlForView("totw");
+  setActiveNavByLabel("TOTW");
+  return showTotw(...args);
+}
+
 function renderCurrentView() {
   if (appState.view === "schedule" && isViewAvailableForSeason("schedule")) return showScheduleView();
   if (appState.view === "transfer") return showTransferView();
@@ -700,6 +725,8 @@ function renderCurrentView() {
   if (appState.view === "hero pool") return showHeroPoolView();
   if (appState.view === "player pool") return showPlayerPoolsView();
   if (appState.view === "h2h") return showH2HView();
+  if (appState.view === "leaderboard") return showLeaderboardView();
+  if (appState.view === "totw") return showTotwView();
   return showTeamsView();
 }
 
@@ -838,6 +865,15 @@ window.onTierlistPointerMove = onTierlistPointerMove;
 window.onTierlistPointerUp = onTierlistPointerUp;
 window.endTierlistPointerDrag = endTierlistPointerDrag;
 window.downloadTierlistImage = downloadTierlistImage;
+window.showLeaderboard = showLeaderboardView;
+window.setLeaderboardTab = setLeaderboardTab;
+window.onLeaderboardTeamChange = onLeaderboardTeamChange;
+window.onLeaderboardLaneChange = onLeaderboardLaneChange;
+window.onLeaderboardSearchInput = onLeaderboardSearchInput;
+window.showTotw = showTotwView;
+window.openTotwPlayerModal = openTotwPlayerModal;
+window.closeTotwPlayerModal = closeTotwPlayerModal;
+window.downloadTotwImage = downloadTotwImage;
 window.invalidateStatsCache = invalidateStatsCache;
 
 window.addEventListener("DOMContentLoaded", () => {
