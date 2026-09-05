@@ -20213,7 +20213,232 @@
     "dayMatch": 1,
     "date": "2026-09-5",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TF",
+        "mvp": "VANIX",
+        "bans": [
+          "Gloo",
+          "Mathilda",
+          "Hirara",
+          "Lylia",
+          "Carmilla",
+          "Freya",
+          "Melissa",
+          "Selena",
+          "Nolan",
+          "Hanzo"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "VANIX",
+            "hero": "Claude",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 2
+          },
+          {
+            "team": "TF",
+            "name": "GARYY",
+            "hero": "Leomord",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "UK1R",
+            "hero": "Eudora",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 6
+          },
+          {
+            "team": "TF",
+            "name": "3MAR",
+            "hero": "Barats",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 4
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Marcel",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Moskov",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Paquito",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Rafaela",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 1
+          },
+          {
+            "team": "RRQ",
+            "name": "SMOOTH",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 0
+          },
+          {
+            "team": "RRQ",
+            "name": "JINZHAO",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 1,
+            "RRQ": 0
+          },
+          "turtle": {
+            "TF": 3,
+            "RRQ": 0
+          },
+          "tower": {
+            "TF": 9,
+            "RRQ": 2
+          }
+        }
+      },
+      {
+        "winner": "TF",
+        "mvp": "UK1R",
+        "bans": [
+          "Marcel",
+          "Selena",
+          "Barats",
+          "Chou",
+          "Brody",
+          "Freya",
+          "Hirara",
+          "Mathilda",
+          "Alice",
+          "Gloo"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "VANIX",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 12
+          },
+          {
+            "team": "TF",
+            "name": "GARYY",
+            "hero": "Paquito",
+            "kills": 10,
+            "deaths": 4,
+            "assists": 3
+          },
+          {
+            "team": "TF",
+            "name": "UK1R",
+            "hero": "Rafaela",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 13
+          },
+          {
+            "team": "TF",
+            "name": "3MAR",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Atlas",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 13
+          },
+          {
+            "team": "RRQ",
+            "name": "LOLEAL",
+            "hero": "Melissa",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 8
+          },
+          {
+            "team": "RRQ",
+            "name": "SUPERKENN",
+            "hero": "Suyou",
+            "kills": 7,
+            "deaths": 2,
+            "assists": 4
+          },
+          {
+            "team": "RRQ",
+            "name": "YEHEZKIEL",
+            "hero": "Lylia",
+            "kills": 3,
+            "deaths": 2,
+            "assists": 9
+          },
+          {
+            "team": "RRQ",
+            "name": "SMOOTH",
+            "hero": "Esmeralda",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "RRQ",
+            "name": "JINZHAO",
+            "hero": "Belerick",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 0,
+            "RRQ": 3
+          },
+          "turtle": {
+            "TF": 0,
+            "RRQ": 3
+          },
+          "tower": {
+            "TF": 7,
+            "RRQ": 8
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W4D2FLvsRRQ",
       "matchId": 301
