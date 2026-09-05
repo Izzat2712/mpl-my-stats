@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    THEME TOKENS
 ========================================================= */
 :root{
@@ -5124,4 +5124,173 @@ select option:hover{
     max-width:none !important;
     transform:none !important;
   }
+}
+/* =========================================================
+   LEADERBOARDS
+========================================================= */
+.lboardTabs{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:22px;}
+.lboardTab{display:flex;flex:1 1 210px;max-width:250px;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:14px 12px;border-radius:16px;border:1px solid var(--border);background:linear-gradient(160deg, rgba(9,19,52,0.82), rgba(13,28,70,0.6));color:#fff;cursor:pointer;font-family:"Orbitron","Rajdhani",sans-serif;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+.lboardTab:hover{transform:translateY(-3px);border-color:rgba(255,255,255,0.45);}
+.lboardTab.is-active{border-color:rgba(255,255,255,0.6);box-shadow:0 16px 30px rgba(0,0,0,0.4);}
+.lboardTab.is-accent-blue.is-active{background:linear-gradient(135deg, rgba(37,99,235,0.95), rgba(29,78,216,0.95));}
+.lboardTab.is-accent-red.is-active{background:linear-gradient(135deg, rgba(220,38,38,0.95), rgba(153,27,27,0.95));}
+.lboardTab.is-accent-gold.is-active{background:linear-gradient(135deg, rgba(217,119,6,0.95), rgba(180,83,9,0.95));}
+.lboardTab.is-accent-green.is-active{background:linear-gradient(135deg, rgba(5,150,105,0.95), rgba(4,120,87,0.95));}
+.lboardTabTitle{font-weight:900;font-size:1rem;letter-spacing:0.06em;}
+.lboardTabSub{font-size:0.72rem;letter-spacing:0.04em;opacity:0.8;}
+.lboardBoardHeader{max-width:820px;margin:0 auto 24px;padding:18px 22px;text-align:center;border-radius:20px;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(4,11,30,0.72));}
+.lboardBoardHeader h3{display:block;width:100%;margin:0 0 6px;padding:0;border:0;background:none;box-shadow:none;backdrop-filter:none;text-align:center;font-family:"Orbitron","Rajdhani",sans-serif;font-size:1.5rem;letter-spacing:0.08em;}
+.lboardBoardHeader h3::before,.lboardBoardHeader h3::after{content:none;}
+.lboardBoardHeader p{margin:0;opacity:0.8;}
+.lboardBoardHeader.is-accent-blue{box-shadow:inset 0 0 40px rgba(59,130,246,0.16);}
+.lboardBoardHeader.is-accent-red{box-shadow:inset 0 0 40px rgba(239,68,68,0.16);}
+.lboardBoardHeader.is-accent-gold{box-shadow:inset 0 0 40px rgba(251,191,36,0.16);}
+.lboardBoardHeader.is-accent-green{box-shadow:inset 0 0 40px rgba(16,185,129,0.16);}
+.lboardFilterBar{display:flex;align-items:flex-end;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.lboardFilterBar label{font-family:"Orbitron",sans-serif;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#dce8ff;}
+.lboardFilterBar select{padding:10px 14px;border-radius:14px;border:1px solid rgba(96,165,250,0.28);background:linear-gradient(180deg, rgba(16,24,46,0.95), rgba(7,12,28,0.95));color:white;}
+.lboardFilterBar input{padding:10px 14px;width:240px;border-radius:14px;border:1px solid rgba(96,165,250,0.28);background:linear-gradient(180deg, rgba(16,24,46,0.95), rgba(7,12,28,0.95));color:#fff;}
+.lboardPodium{display:grid;grid-template-columns:repeat(3, minmax(0, 210px));justify-content:center;align-items:end;gap:18px;margin:0 auto 28px;}
+.lboardPodiumCard{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 14px 16px;border-radius:22px;border:1px solid var(--border);background:linear-gradient(165deg, rgba(8,18,52,0.85), rgba(13,28,70,0.6));text-align:center;}
+.lboardPodiumCard.is-rank-1{transform:translateY(-14px) scale(1.05);border-color:rgba(251,191,36,0.65);box-shadow:0 0 34px rgba(251,191,36,0.2), 0 18px 36px rgba(0,0,0,0.45);}
+.lboardPodiumCard.is-rank-2{border-color:rgba(196,203,216,0.45);}
+.lboardPodiumCard.is-rank-3{border-color:rgba(205,127,50,0.55);}
+.lboardPodiumMedal{position:absolute;top:10px;left:14px;font-family:"Orbitron","Rajdhani",sans-serif;font-weight:900;font-size:1.05rem;color:#f9d56e;}
+.is-rank-2 .lboardPodiumMedal{color:#cfd6e4;}
+.is-rank-3 .lboardPodiumMedal{color:#e0955a;}
+.lboardPodiumPhotoTrigger{appearance:none;-webkit-appearance:none;background:none;border:0;padding:0;cursor:pointer;border-radius:50%;}
+.lboardPodiumPhotoTrigger:focus-visible{outline:2px solid rgba(250,204,21,0.95);outline-offset:4px;}
+.lboardPodiumPhotoWrap,.lboardPodiumPhoto,.lboardPodiumPhotoFallback{width:96px;height:96px;border-radius:50%;}
+.lboardPodiumPhotoWrap{display:flex;overflow:hidden;border:3px solid var(--yellow);box-shadow:0 10px 26px rgba(0,0,0,0.4);}
+.is-rank-1 .lboardPodiumPhotoWrap{border-color:#ffd700;box-shadow:0 0 22px rgba(255,215,0,0.35);}
+.is-rank-2 .lboardPodiumPhotoWrap{border-color:#c7cedb;}
+.is-rank-3 .lboardPodiumPhotoWrap{border-color:#cd7f32;}
+.lboardPodiumPhoto{width:100%;height:100%;object-fit:cover;}
+.lboardPodiumPhotoFallback{display:grid;place-items:center;font-weight:900;font-size:1.4rem;background:rgba(255,255,255,0.08);}
+.lboardPodiumName{font-weight:800;font-size:1.02rem;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.lboardPodiumTeam{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:0.82rem;font-weight:700;}
+.lboardPodiumTeamLogo{width:20px;height:20px;object-fit:contain;}
+.lboardPodiumValue{font-family:"Orbitron","Rajdhani",sans-serif;font-weight:900;font-size:1.25rem;color:#f9d56e;margin-top:4px;}
+.lboardPodiumMeta{font-size:0.78rem;opacity:0.75;}
+.lboardTableWrap{overflow-x:auto;border:1px solid var(--border);border-radius:18px;background:rgba(7,14,40,0.5);padding:10px;}
+.lboardTable{width:100%;border-collapse:collapse;min-width:800px;}
+.lboardTable th{text-align:center;font-family:"Orbitron","Rajdhani",sans-serif;font-size:0.72rem;letter-spacing:0.08em;padding:10px;color:rgba(255,255,255,0.75);text-transform:uppercase;}
+.lboardTable td{padding:10px 12px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;}
+.lboardTable tbody tr:hover{background:rgba(59,130,246,0.08);}
+.lboardRank{font-family:"Orbitron","Rajdhani",sans-serif;font-weight:900;color:#9db8df;}
+tr.is-gold .lboardRank{color:#ffd700;}
+tr.is-silver .lboardRank{color:#c7cedb;}
+tr.is-bronze .lboardRank{color:#cd7f32;}
+.lboardPlayerCell{display:inline-flex;align-items:center;gap:10px;background:none;border:0;color:white;cursor:pointer;font:inherit;text-align:left;}
+.lboardPlayerFace{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.25);}
+.lboardPlayerFaceFallback{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;background:rgba(255,255,255,0.08);}
+.lboardTeamCell{display:inline-flex;align-items:center;gap:8px;justify-content:center;}
+.lboardTeamImg{width:26px;height:26px;object-fit:contain;}
+.lboardStatValue{font-weight:900;color:#f9d56e;font-family:"Orbitron","Rajdhani",sans-serif;}
+.lboardEmpty{text-align:center;padding:34px;border:1px dashed rgba(255,255,255,0.18);border-radius:18px;}
+.lboardEmpty h3{margin:0 0 10px;}
+.lboardEmpty p{margin:0;opacity:0.8;}
+
+/* =========================================================
+   TOTW (TEAM OF THE WEEK)
+========================================================= */
+.totwToolbar{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:20px;}
+.totwWeekSelector{display:flex;align-items:center;gap:10px;}
+.totwWeekSelector label{font-family:"Orbitron",sans-serif;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#dce8ff;}
+.totwWeekSelector select{padding:10px 14px;min-width:170px;border-radius:14px;border:1px solid rgba(96,165,250,0.28);background:linear-gradient(180deg, rgba(16,24,46,0.95), rgba(7,12,28,0.95));color:white;}
+.totwHint{color:var(--muted);font-size:0.86rem;max-width:380px;text-align:center;}
+.totwMapWrap{max-width:1000px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.totwMap{position:relative;border:1px solid rgba(122,166,255,0.3);border-radius:22px;overflow:hidden;box-shadow:0 22px 46px rgba(0,0,0,0.42);}
+.totwMapImg{display:block;width:100%;height:auto;}
+.totwSideBadge{position:absolute;padding:8px 14px;border-radius:12px;font-family:"Orbitron","Rajdhani",sans-serif;font-weight:800;font-size:0.78rem;letter-spacing:0.08em;text-align:center;line-height:1.3;z-index:5;}
+.totwSideBadge.is-blue{bottom:12px;left:12px;color:#bfe6ff;background:rgba(21,84,196,0.78);border:1px solid rgba(122,190,255,0.6);}
+.totwSideBadge.is-red{top:12px;right:12px;color:#ffd7d7;background:rgba(190,38,48,0.82);border:1px solid rgba(255,140,150,0.6);}
+.totwSideSub{display:block;font-size:0.6rem;opacity:0.85;letter-spacing:0.1em;}
+.totwMarker{position:absolute;transform:translate(-50%, -50%);z-index:4;}
+.totwMarker.is-h2h-blue{transform:translate(calc(-100% - 6px), -50%);}
+.totwMarker.is-h2h-red{transform:translate(6px, -50%);}
+.totwMarkerCard{display:flex;align-items:center;gap:6px;min-width:0;max-width:172px;padding:6px 8px 6px 6px;border-radius:14px;border:1px solid rgba(255,255,255,0.22);background:rgba(4,10,30,0.86);color:white;text-align:left;box-shadow:0 12px 24px rgba(0,0,0,0.45);font-family:"Rajdhani","Segoe UI",Arial,sans-serif;}
+button.totwMarkerCard--open{cursor:pointer;transition:transform .2s ease;}
+button.totwMarkerCard--open:hover{transform:scale(1.05);}
+.totwMarker.is-blue .totwMarkerCard{border-color:rgba(96,182,255,0.7);box-shadow:0 0 18px rgba(59,130,246,0.3);}
+.totwMarker.is-red .totwMarkerCard{border-color:rgba(255,110,120,0.7);box-shadow:0 0 18px rgba(239,68,68,0.3);}
+.totwRoleBadgeWrap{flex:0 0 32px;}
+.totwRoleBadge{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,0.5);background:#0b1542;display:block;object-fit:cover;}
+.totwMarkerPortraitWrap{flex:0 0 42px;width:42px;height:42px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,0.08);border:2px solid rgba(255,255,255,0.6);display:flex;}
+.totwMarkerPortrait{width:100%;height:100%;object-fit:cover;display:block;}
+.totwMarkerPortraitFallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:900;}
+.totwMarkerInfo{display:flex;flex-direction:column;min-width:0;gap:2px;}
+.totwMarkerName{font-weight:800;font-size:0.85rem;letter-spacing:0.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.totwMarkerTeam{display:flex;align-items:center;gap:5px;font-size:0.68rem;opacity:0.8;white-space:nowrap;}
+.totwMarkerTeamLogo{width:14px;height:14px;object-fit:contain;}
+.totwMarkerKda{font-family:"Orbitron","Rajdhani",sans-serif;font-size:0.78rem;font-weight:800;color:#f9d56e;}
+.totwMarkerKda em{font-style:normal;opacity:0.7;font-size:0.66rem;margin-left:3px;}
+.totwMarketing{text-align:center;color:var(--muted);font-size:0.86rem;margin:16px 0 0;}
+.totwEmpty{text-align:center;padding:34px;border:1px dashed rgba(255,255,255,0.18);border-radius:18px;}
+.totwEmpty h3{margin:0 0 10px;}
+.totwEmpty p{margin:0;opacity:0.8;}
+
+
+
+.totwToolBtn{appearance:none;-webkit-appearance:none;padding:10px 18px;border-radius:10px;border:1px solid rgba(118,165,255,0.4);background:linear-gradient(135deg, rgba(20,38,92,0.9), rgba(11,26,66,0.9));color:#fff;cursor:pointer;font-family:"Orbitron","Rajdhani",sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase;transition:transform .2s ease, box-shadow .2s ease;}
+.totwToolBtn:hover{transform:translateY(-2px);}
+.totwToolBtn:disabled{opacity:0.6;cursor:default;transform:none;}
+.totwToolBtn.is-capturing-btn{font-size:0;position:relative;}
+.totwToolBtn.is-capturing-btn::after{content:"Saving...";font-size:0.8rem;}
+.totwMap.is-capturing .totwMarkerCard--open{pointer-events:none;}
+
+/* TOTW player modal */
+.totwPlayerModal{width:min(920px, calc(100vw - 20px));padding:0;overflow:auto;-webkit-overflow-scrolling:touch;}
+.totwModalWeek{color:#f9d56e;font-size:0.72em;}
+.totwPlayerHero{display:grid;grid-template-columns:170px minmax(0, 1fr);gap:18px;padding:16px;border-radius:18px;margin:0 14px 14px;background:radial-gradient(circle at 18% 28%, rgba(59,130,246,0.2), transparent 42%), linear-gradient(180deg, rgba(13,35,96,0.9), rgba(7,16,48,0.9));border:1px solid rgba(255,255,255,0.1);}
+.totwPlayerHeroMedia{min-height:200px;border-radius:16px;overflow:hidden;background:#060c20;}
+.totwPlayerHeroPortrait{width:100%;height:100%;object-fit:contain;display:block;}
+.totwPlayerHeroFallback{width:100%;min-height:200px;display:flex;align-items:center;justify-content:center;font-family:"Orbitron","Rajdhani",sans-serif;font-size:3rem;font-weight:900;color:#dce8ff;}
+.totwPlayerHeroMeta{display:flex;flex-direction:column;justify-content:center;gap:8px;min-width:0;}
+.totwPlayerHeroName{font-family:"Orbitron","Rajdhani",sans-serif;font-size:1.7rem;font-weight:900;letter-spacing:0.04em;}
+.totwPlayerHeroRole{color:#9db8df;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;font-size:0.88rem;}
+.totwPlayerHeroTeam{display:flex;align-items:center;gap:10px;font-weight:800;}
+.totwPlayerHeroTeamLog{width:38px;height:38px;object-fit:contain;}
+.totwPlayerHeroNote{margin:6px 0 0;opacity:0.7;font-size:0.86rem;}
+.totwPlayerStatsGrid{display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:10px;padding:0 14px 14px;}
+.totwPlayerStatCard{padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,0.1);background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(3,10,31,0.7));text-align:center;}
+.totwPlayerStatLabel{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.75;font-weight:800;}
+.totwPlayerStatValue{font-family:"Orbitron","Rajdhani",sans-serif;font-weight:900;font-size:1.15rem;color:#f9d56e;margin:4px 0 2px;}
+.totwPlayerStatSub{font-size:0.74rem;opacity:0.8;}
+.totwPlayerMatches{padding:0 14px 14px;}
+.totwPlayerMatchesTitle{font-family:"Orbitron","Rajdhani",sans-serif;font-weight:800;letter-spacing:0.08em;margin-bottom:10px;font-size:0.9rem;}
+.totwMatchList{display:grid;gap:8px;}
+.totwMatchRow{display:grid;grid-template-columns:auto minmax(0, 1fr) auto auto minmax(0, 1.4fr) auto;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);font-size:0.9rem;}
+.totwMatchResult{width:26px;text-align:center;border-radius:8px;font-weight:900;color:#fff;padding:3px 0;}
+.totwMatchResult.is-win{background:rgba(16,185,129,0.5);}
+.totwMatchResult.is-loss{background:rgba(239,68,68,0.55);}
+.totwMatchHero{display:inline-flex;align-items:center;gap:8px;min-width:0;vertical-align:middle;}
+.totwMatchHeroImg{width:30px;height:30px;border-radius:8px;object-fit:cover;flex:0 0 30px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.05);}
+.totwMatchHeroName{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.totwMatchKda{font-family:"Orbitron","Rajdhani",sans-serif;font-weight:800;white-space:nowrap;}
+.totwMatchStats{color:#f9d56e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.totwMatchDim{opacity:0.6;}
+.totwMatchDate{opacity:0.75;white-space:nowrap;}
+
+@media (max-width: 820px){
+  .lboardPodium{grid-template-columns:repeat(3, minmax(0, 1fr));gap:10px;}
+  .lboardPodiumPhotoWrap,.lboardPodiumPhoto,.lboardPodiumPhotoFallback{width:74px;height:74px;}
+  .lboardPodiumValue{font-size:1.02rem;}
+  .totwMap{min-width:860px;}  .totwMarkerCard{min-width:0;max-width:160px;gap:6px;padding:6px;}
+  .totwMarkerPortraitWrap{flex-basis:38px;width:38px;height:38px;}
+  .totwRoleBadge{width:26px;height:26px;}
+  .totwMarkerName{font-size:0.8rem;}
+  .totwMatchRow{grid-template-columns:auto minmax(0,1fr) auto auto;grid-template-rows:auto auto;}
+  .totwMatchStats{grid-column:2 / -1;}
+}
+@media (max-width: 560px){
+  .lboardPodiumCard.is-rank-1{transform:translateY(-6px) scale(1.03);}
+  .lboardFilterBar input{width:100%;}
+  .totwPlayerHero{grid-template-columns:1fr;}
+  .totwPlayerHeroMedia{min-height:150px;}
+  .totwSideBadge{font-size:0.6rem;padding:6px 8px;}
+  .totwMatchRow{grid-template-columns:auto 1fr auto;font-size:0.82rem;gap:8px;}
+  .totwMatchHero{grid-column:2;grid-row:2;}
+  .totwMatchStats{grid-column:1 / -1;grid-row:3;}
+  .totwMatchDate{display:none;}
 }
