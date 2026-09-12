@@ -4,15 +4,15 @@
     "team": "AC",
     "type": "player",
     "lane": "Midlaner",
-    "picture": "https://i.imgur.com/zayGy74.png",
-    "starter": true
+    "picture": "https://i.imgur.com/zayGy74.png"
   },
   {
     "name": "MARTZYY",
     "team": "AC",
     "type": "player",
     "lane": "Midlaner",
-    "picture": "https://i.imgur.com/UaBM7em.png"
+    "picture": "https://i.imgur.com/UaBM7em.png",
+    "starter": true
   },
   {
     "name": "MOMO",
@@ -35,16 +35,15 @@
     "team": "AC",
     "type": "player",
     "lane": "Roamer",
-    "starter": true,
-    "picture": "https://i.imgur.com/OQG737C.png"
+    "picture": "https://i.imgur.com/OQG737C.png",
+    "starter": true
   },
   {
     "name": "ZAHYED",
     "team": "AC",
     "type": "player",
     "lane": "Jungler",
-    "picture": "https://i.imgur.com/ovucGtF.png",
-    "starter": true
+    "picture": "https://i.imgur.com/ovucGtF.png"
   },
   {
     "name": "COACH SORA",
@@ -274,7 +273,8 @@
     "team": "RRQ",
     "type": "player",
     "lane": "Exp Laner",
-    "picture": "https://i.imgur.com/1sgaBbu.png"
+    "picture": "https://i.imgur.com/1sgaBbu.png",
+    "active": false
   },
   {
     "name": "LOLEAL",
@@ -305,7 +305,8 @@
     "team": "RRQ",
     "type": "player",
     "lane": "Roamer",
-    "picture": "https://i.imgur.com/E8IbjCa.png"
+    "picture": "https://i.imgur.com/E8IbjCa.png",
+    "active": false
   },
   {
     "name": "COACH ARCADIA",
@@ -552,15 +553,30 @@
     "picture": "https://i.imgur.com/fUUaAzk.png"
   },
   {
-    "name": "SMOOTH",
-    "team": "RRQ",
-    "lane": "Exp Laner",
-    "picture": "https://i.imgur.com/fUUaAzk.png"
-  },
-  {
     "name": "RANSEI",
     "team": "TF",
     "lane": "Assistant Coach",
     "picture": "https://i.imgur.com/ecac24B.png"
+  },
+  {
+    "name": "DEKU",
+    "team": "AC",
+    "lane": "Roamer",
+    "picture": "https://i.imgur.com/cJmkqmz.png",
+    "type": "player"
+  },
+  {
+    "name": "SYAF",
+    "team": "AC",
+    "lane": "Jungler",
+    "picture": "https://i.imgur.com/WCPIG2Q.png",
+    "type": "player",
+    "starter": true
+  },
+  {
+    "name": "PAK ATAN",
+    "team": "VMS",
+    "lane": "Analyst",
+    "picture": "https://i.imgur.com/uSPv30g.png"
   }
 ]

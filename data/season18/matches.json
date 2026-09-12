@@ -25540,7 +25540,232 @@
     "dayMatch": 1,
     "date": "2026-09-12",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TF",
+        "mvp": "VANIX",
+        "bans": [
+          "Atlas",
+          "Gloo",
+          "Melissa",
+          "Carmilla",
+          "Kaja",
+          "Freya",
+          "Marcel",
+          "Selena",
+          "Dyrroth",
+          "Barats"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "VANIX",
+            "hero": "Miya",
+            "kills": 7,
+            "deaths": 0,
+            "assists": 7
+          },
+          {
+            "team": "TF",
+            "name": "GARYY",
+            "hero": "Hirara",
+            "kills": 5,
+            "deaths": 3,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "UK1R",
+            "hero": "Rafaela",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 12
+          },
+          {
+            "team": "TF",
+            "name": "3MAR",
+            "hero": "Ruby",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 8
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 13
+          },
+          {
+            "team": "AC",
+            "name": "NETS",
+            "hero": "Hanabi",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 8
+          },
+          {
+            "team": "AC",
+            "name": "SYAF",
+            "hero": "Nolan",
+            "kills": 10,
+            "deaths": 3,
+            "assists": 0
+          },
+          {
+            "team": "AC",
+            "name": "MARTZYY",
+            "hero": "Eudora",
+            "kills": 2,
+            "deaths": 5,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Uranus",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "REYZAR",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 6
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 2,
+            "AC": 1
+          },
+          "turtle": {
+            "TF": 1,
+            "AC": 2
+          },
+          "tower": {
+            "TF": 8,
+            "AC": 5
+          }
+        }
+      },
+      {
+        "winner": "TF",
+        "mvp": "VANIX",
+        "bans": [
+          "Marcel",
+          "Selena",
+          "Uranus",
+          "Carmilla",
+          "Belerick",
+          "Freya",
+          "Hirara",
+          "Melissa",
+          "Fanny",
+          "Esmeralda"
+        ],
+        "players": [
+          {
+            "team": "TF",
+            "name": "VANIX",
+            "hero": "Hanabi",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 6
+          },
+          {
+            "team": "TF",
+            "name": "GARYY",
+            "hero": "Nolan",
+            "kills": 4,
+            "deaths": 4,
+            "assists": 5
+          },
+          {
+            "team": "TF",
+            "name": "UK1R",
+            "hero": "Rafaela",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 11
+          },
+          {
+            "team": "TF",
+            "name": "3MAR",
+            "hero": "Barats",
+            "kills": 3,
+            "deaths": 3,
+            "assists": 9
+          },
+          {
+            "team": "TF",
+            "name": "XORN",
+            "hero": "Gloo",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 10
+          },
+          {
+            "team": "AC",
+            "name": "NETS",
+            "hero": "Claude",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "SYAF",
+            "hero": "Paquito",
+            "kills": 7,
+            "deaths": 3,
+            "assists": 3
+          },
+          {
+            "team": "AC",
+            "name": "MARTZYY",
+            "hero": "Eudora",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "MOMO",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 7
+          },
+          {
+            "team": "AC",
+            "name": "REYZAR",
+            "hero": "Atlas",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 8
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "TF": 1,
+            "AC": 1
+          },
+          "turtle": {
+            "TF": 0,
+            "AC": 3
+          },
+          "tower": {
+            "TF": 9,
+            "AC": 4
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W5D2FLvsAC",
       "matchId": 308

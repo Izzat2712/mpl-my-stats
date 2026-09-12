@@ -58,6 +58,33 @@
       "toTeam": "RRQ",
       "role": "Exp Laner",
       "picture": "https://i.imgur.com/fUUaAzk.png"
+    },
+    {
+      "player": "DEKU",
+      "type": "Transfer Out",
+      "week": 5,
+      "fromTeam": "FREE AGENT",
+      "toTeam": "AC",
+      "role": "Roamer",
+      "picture": "https://i.imgur.com/cJmkqmz.png"
+    },
+    {
+      "player": "SYAF",
+      "type": "Transfer In",
+      "week": 5,
+      "fromTeam": "DX KINGZ",
+      "toTeam": "AC",
+      "role": "Jungler",
+      "picture": "https://i.imgur.com/WCPIG2Q.png"
+    },
+    {
+      "player": "PAK ATAN",
+      "type": "Transfer In",
+      "week": 5,
+      "fromTeam": "FREE AGENT",
+      "toTeam": "VMS",
+      "role": "Analyst",
+      "picture": "https://i.imgur.com/uSPv30g.png"
     }
   ]
 }
