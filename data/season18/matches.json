@@ -33352,7 +33352,31 @@
             "hero": "Clint",
             "kills": 0,
             "deaths": 3,
-            "assists": 1
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/AC/S18-NETS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T073617Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=cafb86e77883580ac0bed743ce437166e4ff768d939e8b94c93270e16bfe2cc2",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/13.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/1221.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2303.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3004.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2004.png"
+              ],
+              "stats": {
+                "towerDamage": 6086,
+                "damageTaken": 29966,
+                "heroDamage": 24768,
+                "totalGold": 8101
+              }
+            }
           },
           {
             "team": "AC",
@@ -33360,7 +33384,30 @@
             "hero": "Hirara",
             "kills": 0,
             "deaths": 1,
-            "assists": 4
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/AC/Syaf.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T053019Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=8d6c399e52c25dc0ee11357f077b91fbfd27887125b3ebe39d112c53c671f525",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/266/1810181178495.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/531.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3432.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 23292,
+                "heroDamage": 11176,
+                "totalGold": 7855
+              }
+            }
           },
           {
             "team": "AC",
@@ -33368,7 +33415,29 @@
             "hero": "Valentina",
             "kills": 0,
             "deaths": 5,
-            "assists": 4
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/AC/S18-IZANAMI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072546Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6729d55efc48b7f20a761943bc4e58165b0f41a48d92efe24885024b7bbc3ca5",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/110.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3110.png"
+              ],
+              "stats": {
+                "towerDamage": 452,
+                "damageTaken": 32401,
+                "heroDamage": 16043,
+                "totalGold": 5593
+              }
+            }
           },
           {
             "team": "AC",
@@ -33376,7 +33445,30 @@
             "hero": "Gatotkaca",
             "kills": 4,
             "deaths": 4,
-            "assists": 0
+            "assists": 0,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/AC/S18-MOMO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072546Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=765d7b96fe899bfa2bfc8143cec1e6eced54e43a2b041e6d1001287376c2ff3a",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/41.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 124389,
+                "heroDamage": 19083,
+                "totalGold": 5836
+              }
+            }
           },
           {
             "team": "AC",
@@ -33384,7 +33476,29 @@
             "hero": "Minotaur",
             "kills": 0,
             "deaths": 3,
-            "assists": 4
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://my.mpl.mobilelegends.com/images/logo/logo-large.png",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/19.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3112.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3523.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3205.png"
+              ],
+              "stats": {
+                "towerDamage": 132,
+                "damageTaken": 67343,
+                "heroDamage": 14278,
+                "totalGold": 5832
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33392,7 +33506,31 @@
             "hero": "Bruno",
             "kills": 4,
             "deaths": 0,
-            "assists": 9
+            "assists": 9,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_INNOCENT.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5671141da5f5e84564089a9b588e40ab30c77c921de192b80bfb88cd016e3059",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/254/1010582743577.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/1221.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3003.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1006.png"
+              ],
+              "stats": {
+                "towerDamage": 20882,
+                "damageTaken": 31128,
+                "heroDamage": 40714,
+                "totalGold": 10455
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33400,7 +33538,31 @@
             "hero": "Nolan",
             "kills": 5,
             "deaths": 0,
-            "assists": 7
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_SEKYSSS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f7ad6fb39c679b630dae25ac553db598df083179e0a2240463f1de80753529e1",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/122.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3432.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2103.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 19281,
+                "heroDamage": 33895,
+                "totalGold": 10801
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33408,7 +33570,29 @@
             "hero": "Eudora",
             "kills": 4,
             "deaths": 1,
-            "assists": 7
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_STORMIE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0e5167fe1a57306972e3f3fcfbab48529647867c50d05495da0fc22d1bf8315e",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/15.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2304.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2112.png"
+              ],
+              "stats": {
+                "towerDamage": 882,
+                "damageTaken": 9110,
+                "heroDamage": 36040,
+                "totalGold": 8354
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33416,7 +33600,31 @@
             "hero": "Esmeralda",
             "kills": 3,
             "deaths": 1,
-            "assists": 7
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_KRAMM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5841b28dae5d8b6604b1b471e255623202643df4e1a26916e14cd7feb79ca02d",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/81.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3104.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2106.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3208.png"
+              ],
+              "stats": {
+                "towerDamage": 1900,
+                "damageTaken": 88977,
+                "heroDamage": 42848,
+                "totalGold": 10449
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33424,7 +33632,29 @@
             "hero": "Atlas",
             "kills": 0,
             "deaths": 2,
-            "assists": 10
+            "assists": 10,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_YUMS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=14058e6b3b0ec72713959171799042985897897a8d8bb85d44413b1b2006c5e7",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/93.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/531.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3207.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3561.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3206.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 37253,
+                "heroDamage": 6770,
+                "totalGold": 6871
+              }
+            }
           }
         ],
         "objectives": {
@@ -33464,7 +33694,31 @@
             "hero": "Claude",
             "kills": 0,
             "deaths": 1,
-            "assists": 3
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/AC/S18-NETS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T073617Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=cafb86e77883580ac0bed743ce437166e4ff768d939e8b94c93270e16bfe2cc2",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/65.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/1211.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2004.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1002.png"
+              ],
+              "stats": {
+                "towerDamage": 7285,
+                "damageTaken": 43164,
+                "heroDamage": 42152,
+                "totalGold": 7914
+              }
+            }
           },
           {
             "team": "AC",
@@ -33472,7 +33726,30 @@
             "hero": "Nolan",
             "kills": 1,
             "deaths": 5,
-            "assists": 1
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/AC/Syaf.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T053019Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=8d6c399e52c25dc0ee11357f077b91fbfd27887125b3ebe39d112c53c671f525",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/122.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3432.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 25598,
+                "heroDamage": 14509,
+                "totalGold": 7321
+              }
+            }
           },
           {
             "team": "AC",
@@ -33480,7 +33757,29 @@
             "hero": "Selena",
             "kills": 2,
             "deaths": 2,
-            "assists": 1
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/AC/S18-IZANAMI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072546Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6729d55efc48b7f20a761943bc4e58165b0f41a48d92efe24885024b7bbc3ca5",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/63.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2303.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2106.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 27795,
+                "heroDamage": 43505,
+                "totalGold": 5473
+              }
+            }
           },
           {
             "team": "AC",
@@ -33488,7 +33787,29 @@
             "hero": "Sora",
             "kills": 2,
             "deaths": 5,
-            "assists": 1
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/AC/S18-MOMO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072546Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=765d7b96fe899bfa2bfc8143cec1e6eced54e43a2b041e6d1001287376c2ff3a",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/2512/1717443916579.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2208.png"
+              ],
+              "stats": {
+                "towerDamage": 873,
+                "damageTaken": 77983,
+                "heroDamage": 38224,
+                "totalGold": 5664
+              }
+            }
           },
           {
             "team": "AC",
@@ -33496,7 +33817,29 @@
             "hero": "Carmilla",
             "kills": 0,
             "deaths": 5,
-            "assists": 3
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://my.mpl.mobilelegends.com/images/logo/logo-large.png",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/27/p/252/1317582665675.jpg",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/531.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3561.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 87797,
+                "heroDamage": 15835,
+                "totalGold": 5488
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33504,7 +33847,30 @@
             "hero": "Bruno",
             "kills": 3,
             "deaths": 2,
-            "assists": 5
+            "assists": 5,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_INNOCENT.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5671141da5f5e84564089a9b588e40ab30c77c921de192b80bfb88cd016e3059",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/254/1010582743577.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/1211.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2011.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3003.png"
+              ],
+              "stats": {
+                "towerDamage": 23166,
+                "damageTaken": 39018,
+                "heroDamage": 54527,
+                "totalGold": 8914
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33512,7 +33878,31 @@
             "hero": "Paquito",
             "kills": 6,
             "deaths": 0,
-            "assists": 5
+            "assists": 5,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_SEKYSSS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f7ad6fb39c679b630dae25ac553db598df083179e0a2240463f1de80753529e1",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614085454643.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/531.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3431.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2208.png"
+              ],
+              "stats": {
+                "towerDamage": 7520,
+                "damageTaken": 30282,
+                "heroDamage": 30580,
+                "totalGold": 9897
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33520,7 +33910,29 @@
             "hero": "Eudora",
             "kills": 7,
             "deaths": 1,
-            "assists": 9
+            "assists": 9,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_STORMIE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0e5167fe1a57306972e3f3fcfbab48529647867c50d05495da0fc22d1bf8315e",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/15.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2304.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3111.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2112.png"
+              ],
+              "stats": {
+                "towerDamage": 4301,
+                "damageTaken": 20112,
+                "heroDamage": 44868,
+                "totalGold": 7948
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33528,7 +33940,29 @@
             "hero": "Minotaur",
             "kills": 1,
             "deaths": 2,
-            "assists": 16
+            "assists": 16,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_KRAMM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5841b28dae5d8b6604b1b471e255623202643df4e1a26916e14cd7feb79ca02d",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/19.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2306.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png"
+              ],
+              "stats": {
+                "towerDamage": 540,
+                "damageTaken": 114498,
+                "heroDamage": 23838,
+                "totalGold": 7136
+              }
+            }
           },
           {
             "team": "SRG",
@@ -33536,7 +33970,30 @@
             "hero": "Gatotkaca",
             "kills": 1,
             "deaths": 0,
-            "assists": 14
+            "assists": 14,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_YUMS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=14058e6b3b0ec72713959171799042985897897a8d8bb85d44413b1b2006c5e7",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/41.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3521.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3202.png"
+              ],
+              "stats": {
+                "towerDamage": 154,
+                "damageTaken": 94331,
+                "heroDamage": 21861,
+                "totalGold": 7492
+              }
+            }
           }
         ],
         "objectives": {
@@ -33569,7 +34026,1030 @@
     "dayMatch": 1,
     "date": "2026-09-20",
     "startTime": "2:30 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "IG",
+        "mvp": "TREACKY",
+        "bans": [
+          "Selena",
+          "Guinevere",
+          "Chou",
+          "Yuzhong",
+          "Benedetta",
+          "Hirara",
+          "Esmeralda",
+          "Freya",
+          "Eudora",
+          "Carmilla"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "AMZZIQ",
+            "hero": "Bruno",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 5,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Amzziq.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T084152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=27b56d554bd8b44897913e8424c83a2dce6ba81d2c2b0ab73f080a75e112503e",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/254/1010582743577.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/1211.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3003.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2005.png"
+              ],
+              "stats": {
+                "towerDamage": 6454,
+                "damageTaken": 48166,
+                "heroDamage": 50074,
+                "totalGold": 8438
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Paquito",
+            "kills": 3,
+            "deaths": 4,
+            "assists": 8,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Chibi.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T074943Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6411aab5fbb73ec27e3fae73894b3506acc9245f4c79e072115ede1b346e406a",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614085454643.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3422.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2208.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1001.png"
+              ],
+              "stats": {
+                "towerDamage": 3788,
+                "damageTaken": 58837,
+                "heroDamage": 32639,
+                "totalGold": 8113
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valir",
+            "kills": 5,
+            "deaths": 5,
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Zieyy.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=040b7cbe0380d162d2f3a7e17518dff95ba536d5fe9a8f3c59f032be0a7ccca0",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/57.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2303.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1104.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3104.png"
+              ],
+              "stats": {
+                "towerDamage": 1076,
+                "damageTaken": 43410,
+                "heroDamage": 55085,
+                "totalGold": 6969
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Belerick",
+            "kills": 4,
+            "deaths": 4,
+            "assists": 8,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Jeymz.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=bbd6e8a624a4f0625215948afb68c5c315d27d5a38cee3128fdad2cb2a83af15",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614104933588.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/311.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 149738,
+                "heroDamage": 43315,
+                "totalGold": 6112
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Atlas",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 12,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-GRboy.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=40e496d7229005c583f82fde0efa0a4a512368d9dda01cac4555f03cb57f8c93",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/93.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3561.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3207.png"
+              ],
+              "stats": {
+                "towerDamage": 450,
+                "damageTaken": 87530,
+                "heroDamage": 21422,
+                "totalGold": 6314
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "ROKJI",
+            "hero": "Obsidia",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWROKJI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0cfab32c7535ca3b0ab11c6f93cced8f68f23d652e5d40f197d94c8e7da58092",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/2511/1010583049059.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/1211.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1004.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1006.png"
+              ],
+              "stats": {
+                "towerDamage": 14514,
+                "damageTaken": 41570,
+                "heroDamage": 31440,
+                "totalGold": 7866
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "LUNNN",
+            "hero": "Alice",
+            "kills": 5,
+            "deaths": 2,
+            "assists": 13,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWLUNNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=dd9ad7f61645f7539791d9ec8c86062686eba866ddd80d11851e8d7b36b99686",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/253/3015072019610.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2107.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3433.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3208.png"
+              ],
+              "stats": {
+                "towerDamage": 3179,
+                "damageTaken": 91693,
+                "heroDamage": 65837,
+                "totalGold": 9044
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "TREACKY",
+            "hero": "Valentina",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 11,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-TREACKY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a6efaf447a550e042c517e302fad3ed1b394668817bbeb6977ad7b8dd46866be",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/110.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2303.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3108.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3110.png"
+              ],
+              "stats": {
+                "towerDamage": 3938,
+                "damageTaken": 35594,
+                "heroDamage": 46492,
+                "totalGold": 8164
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "YE3",
+            "hero": "Cici",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-YE3.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=8967de6fc38ad05abf3e5a063a32fe8bb9d9f73eb99f9a78a3e29c6027c2d0b9",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/256/0913143393900.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/311.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3208.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png"
+              ],
+              "stats": {
+                "towerDamage": 13433,
+                "damageTaken": 51414,
+                "heroDamage": 45666,
+                "totalGold": 9283
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "ATANNN",
+            "hero": "Minotaur",
+            "kills": 1,
+            "deaths": 6,
+            "assists": 15,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWATANNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=76f048e5c9dfb4b372b09ba11ebd52840215f8cd8168dd43bda307a447a31c1f",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/19.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3523.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3112.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1203.png"
+              ],
+              "stats": {
+                "towerDamage": 900,
+                "damageTaken": 95548,
+                "heroDamage": 20817,
+                "totalGold": 7456
+              }
+            }
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 0,
+            "IG": 1
+          },
+          "turtle": {
+            "BTR": 1,
+            "IG": 2
+          },
+          "tower": {
+            "BTR": 3,
+            "IG": 7
+          }
+        }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "AMZZIQ",
+        "bans": [
+          "Hirara",
+          "Esmeralda",
+          "Carmilla",
+          "Uranus",
+          "Barats",
+          "Freya",
+          "Paquito",
+          "Guinevere",
+          "Chou",
+          "Hilda"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "AMZZIQ",
+            "hero": "Bruno",
+            "kills": 8,
+            "deaths": 0,
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Amzziq.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T084152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=27b56d554bd8b44897913e8424c83a2dce6ba81d2c2b0ab73f080a75e112503e",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/254/1010582743577.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3003.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3012.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png"
+              ],
+              "stats": {
+                "towerDamage": 23556,
+                "damageTaken": 27837,
+                "heroDamage": 37824,
+                "totalGold": 9036
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Nolan",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Chibi.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T074943Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6411aab5fbb73ec27e3fae73894b3506acc9245f4c79e072115ede1b346e406a",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/122.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3422.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1002.png"
+              ],
+              "stats": {
+                "towerDamage": 1911,
+                "damageTaken": 18262,
+                "heroDamage": 31230,
+                "totalGold": 8313
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 0,
+            "assists": 10,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Zieyy.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=040b7cbe0380d162d2f3a7e17518dff95ba536d5fe9a8f3c59f032be0a7ccca0",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/110.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3108.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png"
+              ],
+              "stats": {
+                "towerDamage": 3475,
+                "damageTaken": 34068,
+                "heroDamage": 38926,
+                "totalGold": 6487
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Ruby",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 11,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Jeymz.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=bbd6e8a624a4f0625215948afb68c5c315d27d5a38cee3128fdad2cb2a83af15",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/29.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2206.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2208.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 53859,
+                "heroDamage": 22612,
+                "totalGold": 6226
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Atlas",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 13,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-GRboy.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=40e496d7229005c583f82fde0efa0a4a512368d9dda01cac4555f03cb57f8c93",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/93.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20008.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3521.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2204.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 46333,
+                "heroDamage": 11935,
+                "totalGold": 5795
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "ROKJI",
+            "hero": "Obsidia",
+            "kills": 1,
+            "deaths": 2,
+            "assists": 0,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWROKJI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0cfab32c7535ca3b0ab11c6f93cced8f68f23d652e5d40f197d94c8e7da58092",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/2511/1010583049059.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png"
+              ],
+              "stats": {
+                "towerDamage": 2423,
+                "damageTaken": 21232,
+                "heroDamage": 15942,
+                "totalGold": 6699
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "LUNNN",
+            "hero": "Alice",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWLUNNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=dd9ad7f61645f7539791d9ec8c86062686eba866ddd80d11851e8d7b36b99686",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/253/3015072019610.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3433.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1205.png"
+              ],
+              "stats": {
+                "towerDamage": 2067,
+                "damageTaken": 70003,
+                "heroDamage": 35196,
+                "totalGold": 5758
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "TREACKY",
+            "hero": "Selena",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-TREACKY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a6efaf447a550e042c517e302fad3ed1b394668817bbeb6977ad7b8dd46866be",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/63.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2303.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2106.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 29491,
+                "heroDamage": 29511,
+                "totalGold": 5550
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "YE3",
+            "hero": "Cici",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-YE3.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=8967de6fc38ad05abf3e5a063a32fe8bb9d9f73eb99f9a78a3e29c6027c2d0b9",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/256/0913143393900.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3208.png"
+              ],
+              "stats": {
+                "towerDamage": 270,
+                "damageTaken": 41329,
+                "heroDamage": 16527,
+                "totalGold": 5177
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "ATANNN",
+            "hero": "Minotaur",
+            "kills": 0,
+            "deaths": 5,
+            "assists": 2,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWATANNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=76f048e5c9dfb4b372b09ba11ebd52840215f8cd8168dd43bda307a447a31c1f",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/19.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20008.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3523.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2206.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3112.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 47587,
+                "heroDamage": 14011,
+                "totalGold": 4581
+              }
+            }
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "IG": 0
+          },
+          "turtle": {
+            "BTR": 2,
+            "IG": 1
+          },
+          "tower": {
+            "BTR": 7,
+            "IG": 2
+          }
+        }
+      },
+      {
+        "winner": "BTR",
+        "mvp": "CHIBII",
+        "bans": [
+          "Guinevere",
+          "Chou",
+          "Valentina",
+          "Marcel",
+          "Mathilda",
+          "Hirara",
+          "Esmeralda",
+          "Carmilla",
+          "Lylia",
+          "Eudora"
+        ],
+        "players": [
+          {
+            "team": "BTR",
+            "name": "AMZZIQ",
+            "hero": "Bruno",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 6,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Amzziq.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T084152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=27b56d554bd8b44897913e8424c83a2dce6ba81d2c2b0ab73f080a75e112503e",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/254/1010582743577.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/1211.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3003.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2005.png"
+              ],
+              "stats": {
+                "towerDamage": 25105,
+                "damageTaken": 11189,
+                "heroDamage": 36496,
+                "totalGold": 8699
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "CHIBII",
+            "hero": "Nolan",
+            "kills": 8,
+            "deaths": 1,
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Chibi.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T074943Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6411aab5fbb73ec27e3fae73894b3506acc9245f4c79e072115ede1b346e406a",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/122.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3422.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2001.png"
+              ],
+              "stats": {
+                "towerDamage": 2601,
+                "damageTaken": 21576,
+                "heroDamage": 46353,
+                "totalGold": 9518
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "ZIEYY",
+            "hero": "Valir",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 10,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Zieyy.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=040b7cbe0380d162d2f3a7e17518dff95ba536d5fe9a8f3c59f032be0a7ccca0",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/57.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2303.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2112.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3104.png"
+              ],
+              "stats": {
+                "towerDamage": 2314,
+                "damageTaken": 14491,
+                "heroDamage": 47461,
+                "totalGold": 7505
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "JEYMZ",
+            "hero": "Freya",
+            "kills": 0,
+            "deaths": 2,
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-Jeymz.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=bbd6e8a624a4f0625215948afb68c5c315d27d5a38cee3128fdad2cb2a83af15",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/22.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/721.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png"
+              ],
+              "stats": {
+                "towerDamage": 7711,
+                "damageTaken": 38529,
+                "heroDamage": 11951,
+                "totalGold": 7366
+              }
+            }
+          },
+          {
+            "team": "BTR",
+            "name": "GRBOY",
+            "hero": "Atlas",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 14,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/BTRM/S18-GRboy.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T083152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=40e496d7229005c583f82fde0efa0a4a512368d9dda01cac4555f03cb57f8c93",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/93.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3521.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png"
+              ],
+              "stats": {
+                "towerDamage": 812,
+                "damageTaken": 57373,
+                "heroDamage": 12897,
+                "totalGold": 6660
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "ROKJI",
+            "hero": "Obsidia",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 0,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWROKJI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0cfab32c7535ca3b0ab11c6f93cced8f68f23d652e5d40f197d94c8e7da58092",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/2511/1010583049059.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/1211.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 24437,
+                "heroDamage": 20059,
+                "totalGold": 7397
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "LUNNN",
+            "hero": "Baxia",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWLUNNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=dd9ad7f61645f7539791d9ec8c86062686eba866ddd80d11851e8d7b36b99686",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/87.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1413.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3201.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 81285,
+                "heroDamage": 11167,
+                "totalGold": 4685
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "TREACKY",
+            "hero": "Selena",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-TREACKY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a6efaf447a550e042c517e302fad3ed1b394668817bbeb6977ad7b8dd46866be",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/63.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2106.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2304.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 20748,
+                "heroDamage": 25013,
+                "totalGold": 5088
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "YE3",
+            "hero": "Paquito",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-YE3.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=8967de6fc38ad05abf3e5a063a32fe8bb9d9f73eb99f9a78a3e29c6027c2d0b9",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614085454643.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/721.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2208.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 43100,
+                "heroDamage": 17078,
+                "totalGold": 6298
+              }
+            }
+          },
+          {
+            "team": "IG ........",
+            "name": "ATANNN",
+            "hero": "Hylos",
+            "kills": 0,
+            "deaths": 6,
+            "assists": 0,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/Invictus-Gaming/S18-NEWATANNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T080824Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=76f048e5c9dfb4b372b09ba11ebd52840215f8cd8168dd43bda307a447a31c1f",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/49.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3561.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 65260,
+                "heroDamage": 3480,
+                "totalGold": 4582
+              }
+            }
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "BTR": 1,
+            "IG": 0
+          },
+          "turtle": {
+            "BTR": 3,
+            "IG": 0
+          },
+          "tower": {
+            "BTR": 8,
+            "IG": 0
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W6D3BTRMvsIG",
       "matchId": 318
@@ -33584,7 +35064,1042 @@
     "dayMatch": 2,
     "date": "2026-09-20",
     "startTime": "5:00 PM",
-    "games": [],
+    "games": [
+      {
+        "winner": "TR",
+        "mvp": "DOLYNN",
+        "bans": [
+          "Atlas",
+          "Barats",
+          "Carmilla",
+          "Selena",
+          "Lylia",
+          "Freya",
+          "Hirara",
+          "Paquito",
+          "Bruno",
+          "Clint"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Melissa",
+            "kills": 2,
+            "deaths": 2,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_INNOCENT.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5671141da5f5e84564089a9b588e40ab30c77c921de192b80bfb88cd016e3059",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/253/1318001527975.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png"
+              ],
+              "stats": {
+                "towerDamage": 2211,
+                "damageTaken": 34041,
+                "heroDamage": 60392,
+                "totalGold": 8215
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Fanny",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 0,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_SEKYSSS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f7ad6fb39c679b630dae25ac553db598df083179e0a2240463f1de80753529e1",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/17.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3422.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 31694,
+                "heroDamage": 18930,
+                "totalGold": 7195
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Eudora",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_STORMIE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0e5167fe1a57306972e3f3fcfbab48529647867c50d05495da0fc22d1bf8315e",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/15.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2304.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2112.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 25583,
+                "heroDamage": 27515,
+                "totalGold": 6359
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Ruby",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_KRAMM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5841b28dae5d8b6604b1b471e255623202643df4e1a26916e14cd7feb79ca02d",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/29.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2208.png"
+              ],
+              "stats": {
+                "towerDamage": 1712,
+                "damageTaken": 49677,
+                "heroDamage": 17838,
+                "totalGold": 6405
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_YUMS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=14058e6b3b0ec72713959171799042985897897a8d8bb85d44413b1b2006c5e7",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614104933588.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3561.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2203.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 65525,
+                "heroDamage": 17538,
+                "totalGold": 6442
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "CLIVEEE",
+            "hero": "Moskov",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-CLIVEEE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0dda2cc90c85b7ef1a70bcbefe7406fd2edd88ab7bf0cd468fb7f7f1e5962172",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/31.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2011.png"
+              ],
+              "stats": {
+                "towerDamage": 22966,
+                "damageTaken": 27181,
+                "heroDamage": 40431,
+                "totalGold": 10860
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "DOLYNN",
+            "hero": "Nolan",
+            "kills": 5,
+            "deaths": 0,
+            "assists": 5,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-DOLYNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a4fe706d636899f6c038eab5bdffdeca5fbdaf2fd02755b3e5421c65502e19cb",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/122.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3432.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2005.png"
+              ],
+              "stats": {
+                "towerDamage": 6031,
+                "damageTaken": 14517,
+                "heroDamage": 28108,
+                "totalGold": 11575
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "KYYM",
+            "hero": "Valentina",
+            "kills": 3,
+            "deaths": 1,
+            "assists": 7,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-KYYM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=587bf3a773c54d60eaa4e242c61ab47f738de9ca2b4ef8f5f30875b27ddb0935",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/110.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3110.png"
+              ],
+              "stats": {
+                "towerDamage": 1312,
+                "damageTaken": 31253,
+                "heroDamage": 27590,
+                "totalGold": 7582
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "SEPAT",
+            "hero": "Hylos",
+            "kills": 4,
+            "deaths": 2,
+            "assists": 6,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/Sepat.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T084727Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6e5e38162cec64d0207ea9b3fda02514bc4ddf0b0bcba6a665dc1f4a33395794",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/49.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/721.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3206.png"
+              ],
+              "stats": {
+                "towerDamage": 267,
+                "damageTaken": 123248,
+                "heroDamage": 21817,
+                "totalGold": 7333
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "NOVAXCOBAR",
+            "hero": "Minotaur",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 8,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-NOVAXCOBAR.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a9954d0851342bd6b25c26b32cb89dfd9663b7181b31bc937212e751b7c98f31",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/19.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3523.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3112.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 60571,
+                "heroDamage": 18325,
+                "totalGold": 7259
+              }
+            }
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 0,
+            "TR": 1
+          },
+          "turtle": {
+            "SRG": 0,
+            "TR": 3
+          },
+          "tower": {
+            "SRG": 2,
+            "TR": 7
+          }
+        }
+      },
+      {
+        "winner": "SRG",
+        "mvp": "INNOCENT",
+        "bans": [
+          "Atlas",
+          "Paquito",
+          "Nolan",
+          "Clint",
+          "Bruno",
+          "Freya",
+          "Selena",
+          "Valentina",
+          "Barats",
+          "Gloo"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Miya",
+            "kills": 9,
+            "deaths": 2,
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_INNOCENT.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5671141da5f5e84564089a9b588e40ab30c77c921de192b80bfb88cd016e3059",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/1.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3012.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2014.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png"
+              ],
+              "stats": {
+                "towerDamage": 32572,
+                "damageTaken": 52068,
+                "heroDamage": 62018,
+                "totalGold": 14215
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Leomord",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 9,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_SEKYSSS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f7ad6fb39c679b630dae25ac553db598df083179e0a2240463f1de80753529e1",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/67.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/531.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3422.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2208.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3004.png"
+              ],
+              "stats": {
+                "towerDamage": 648,
+                "damageTaken": 73783,
+                "heroDamage": 62153,
+                "totalGold": 11481
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Rafaela",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 11,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_STORMIE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0e5167fe1a57306972e3f3fcfbab48529647867c50d05495da0fc22d1bf8315e",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/14.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3112.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3533.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3102.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2106.png"
+              ],
+              "stats": {
+                "towerDamage": 2306,
+                "damageTaken": 33988,
+                "heroDamage": 42794,
+                "totalGold": 9969
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Esmeralda",
+            "kills": 2,
+            "deaths": 1,
+            "assists": 8,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_KRAMM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5841b28dae5d8b6604b1b471e255623202643df4e1a26916e14cd7feb79ca02d",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/81.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/311.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3104.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2106.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3207.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3208.png"
+              ],
+              "stats": {
+                "towerDamage": 2267,
+                "damageTaken": 243514,
+                "heroDamage": 84707,
+                "totalGold": 12034
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Carmilla",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 12,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_YUMS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=14058e6b3b0ec72713959171799042985897897a8d8bb85d44413b1b2006c5e7",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/27/p/252/1317582665675.jpg",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2306.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3207.png"
+              ],
+              "stats": {
+                "towerDamage": 1250,
+                "damageTaken": 140857,
+                "heroDamage": 24223,
+                "totalGold": 8810
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "CLIVEEE",
+            "hero": "Moskov",
+            "kills": 4,
+            "deaths": 0,
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-CLIVEEE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0dda2cc90c85b7ef1a70bcbefe7406fd2edd88ab7bf0cd468fb7f7f1e5962172",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/31.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3005.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2011.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png"
+              ],
+              "stats": {
+                "towerDamage": 2917,
+                "damageTaken": 53407,
+                "heroDamage": 84931,
+                "totalGold": 13002
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "DOLYNN",
+            "hero": "Hirara",
+            "kills": 2,
+            "deaths": 3,
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-DOLYNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a4fe706d636899f6c038eab5bdffdeca5fbdaf2fd02755b3e5421c65502e19cb",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/266/1810181178495.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/531.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3432.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2013.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3208.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 67438,
+                "heroDamage": 55807,
+                "totalGold": 12338
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "KYYM",
+            "hero": "Lylia",
+            "kills": 2,
+            "deaths": 4,
+            "assists": 2,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-KYYM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=587bf3a773c54d60eaa4e242c61ab47f738de9ca2b4ef8f5f30875b27ddb0935",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/86.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2303.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1103.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2112.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 66665,
+                "heroDamage": 53934,
+                "totalGold": 8406
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "SEPAT",
+            "hero": "Minotaur",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/Sepat.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T084727Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6e5e38162cec64d0207ea9b3fda02514bc4ddf0b0bcba6a665dc1f4a33395794",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/19.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/311.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2206.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2306.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3206.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 126615,
+                "heroDamage": 18859,
+                "totalGold": 6541
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "NOVAXCOBAR",
+            "hero": "Belerick",
+            "kills": 0,
+            "deaths": 4,
+            "assists": 3,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-NOVAXCOBAR.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a9954d0851342bd6b25c26b32cb89dfd9663b7181b31bc937212e751b7c98f31",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/258/0614104933588.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/731.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3561.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1202.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 160593,
+                "heroDamage": 26350,
+                "totalGold": 7797
+              }
+            }
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 3,
+            "TR": 0
+          },
+          "turtle": {
+            "SRG": 3,
+            "TR": 0
+          },
+          "tower": {
+            "SRG": 9,
+            "TR": 2
+          }
+        }
+      },
+      {
+        "winner": "TR",
+        "mvp": "DOLYNN",
+        "bans": [
+          "Atlas",
+          "Barats",
+          "Rafaela",
+          "Belerick",
+          "Hylos",
+          "Hirara",
+          "Paquito",
+          "Freya",
+          "Badang",
+          "Kalea"
+        ],
+        "players": [
+          {
+            "team": "SRG",
+            "name": "INNOCENT",
+            "hero": "Obsidia",
+            "kills": 1,
+            "deaths": 0,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_INNOCENT.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5671141da5f5e84564089a9b588e40ab30c77c921de192b80bfb88cd016e3059",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/2511/1010583049059.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1006.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2006.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png"
+              ],
+              "stats": {
+                "towerDamage": 6141,
+                "damageTaken": 17071,
+                "heroDamage": 33824,
+                "totalGold": 10018
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "SEKYSSS",
+            "hero": "Nolan",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_SEKYSSS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f7ad6fb39c679b630dae25ac553db598df083179e0a2240463f1de80753529e1",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/122.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3432.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3004.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 31632,
+                "heroDamage": 24729,
+                "totalGold": 9495
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "STORMIE",
+            "hero": "Eudora",
+            "kills": 1,
+            "deaths": 3,
+            "assists": 2,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_STORMIE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0e5167fe1a57306972e3f3fcfbab48529647867c50d05495da0fc22d1bf8315e",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/15.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2304.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3101.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2112.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 22477,
+                "heroDamage": 35443,
+                "totalGold": 7079
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "KRAMM",
+            "hero": "Minotaur",
+            "kills": 0,
+            "deaths": 1,
+            "assists": 2,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_KRAMM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5841b28dae5d8b6604b1b471e255623202643df4e1a26916e14cd7feb79ca02d",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/19.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2306.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3204.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2205.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 107725,
+                "heroDamage": 15807,
+                "totalGold": 6749
+              }
+            }
+          },
+          {
+            "team": "SRG",
+            "name": "YUMS",
+            "hero": "Gatotkaca",
+            "kills": 0,
+            "deaths": 3,
+            "assists": 2,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/SRG/S18_YUMS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T072013Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=14058e6b3b0ec72713959171799042985897897a8d8bb85d44413b1b2006c5e7",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/41.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1511.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3205.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 169354,
+                "heroDamage": 20189,
+                "totalGold": 7446
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "CLIVEEE",
+            "hero": "Bruno",
+            "kills": 2,
+            "deaths": 0,
+            "assists": 0,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-CLIVEEE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0dda2cc90c85b7ef1a70bcbefe7406fd2edd88ab7bf0cd468fb7f7f1e5962172",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/33/p/254/1010582743577.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20007.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/111.png",
+                "https://mlbb-image.scoregg.com/rune/621.png",
+                "https://mlbb-image.scoregg.com/rune/132.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3015.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3002.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2011.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3003.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3012.png"
+              ],
+              "stats": {
+                "towerDamage": 21392,
+                "damageTaken": 21643,
+                "heroDamage": 59351,
+                "totalGold": 11409
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "DOLYNN",
+            "hero": "Fanny",
+            "kills": 6,
+            "deaths": 1,
+            "assists": 1,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-DOLYNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a4fe706d636899f6c038eab5bdffdeca5fbdaf2fd02755b3e5421c65502e19cb",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/17.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20005.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/112.png",
+                "https://mlbb-image.scoregg.com/rune/122.png",
+                "https://mlbb-image.scoregg.com/rune/131.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3012.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3001.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3007.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3422.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3009.png"
+              ],
+              "stats": {
+                "towerDamage": 22964,
+                "damageTaken": 15289,
+                "heroDamage": 29321,
+                "totalGold": 12572
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "KYYM",
+            "hero": "Selena",
+            "kills": 0,
+            "deaths": 0,
+            "assists": 4,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-KYYM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=587bf3a773c54d60eaa4e242c61ab47f738de9ca2b4ef8f5f30875b27ddb0935",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/63.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20006.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/611.png",
+                "https://mlbb-image.scoregg.com/rune/821.png",
+                "https://mlbb-image.scoregg.com/rune/631.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3534.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2106.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1008.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3105.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2112.png"
+              ],
+              "stats": {
+                "towerDamage": 553,
+                "damageTaken": 13248,
+                "heroDamage": 56834,
+                "totalGold": 8630
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "SEPAT",
+            "hero": "Uranus",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 6,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/Sepat.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T084727Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6e5e38162cec64d0207ea9b3fda02514bc4ddf0b0bcba6a665dc1f4a33395794",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/hero_h/59.png",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/811.png",
+                "https://mlbb-image.scoregg.com/rune/121.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2301.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3212.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3206.png"
+              ],
+              "stats": {
+                "towerDamage": 41,
+                "damageTaken": 143233,
+                "heroDamage": 43000,
+                "totalGold": 8272
+              }
+            }
+          },
+          {
+            "team": "TR",
+            "name": "NOVAXCOBAR",
+            "hero": "Carmilla",
+            "kills": 1,
+            "deaths": 1,
+            "assists": 5,
+            "performance": {
+              "portraitUrl": "https://mplmy-storage.sgp1.digitaloceanspaces.com/season18/player/TEAMREY/S18-NOVAXCOBAR.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00ECUAXGCNWBJAD992%2F20260920%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20260920T075317Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a9954d0851342bd6b25c26b32cb89dfd9663b7181b31bc937212e751b7c98f31",
+              "heroImageUrl": "https://mlbb-image.scoregg.com/m/27/p/252/1317582665675.jpg",
+              "emblemUrl": "https://mlbb-image.scoregg.com/emblem/20003.png",
+              "runeUrls": [
+                "https://mlbb-image.scoregg.com/rune/711.png",
+                "https://mlbb-image.scoregg.com/rune/321.png",
+                "https://mlbb-image.scoregg.com/rune/331.png"
+              ],
+              "itemUrls": [
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3203.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2302.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/2201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/1201.png",
+                "https://wsrv.nl/?url=https://ik.imagekit.io/nloe8dhf7w/mlbb/2024/equipments/3210.png"
+              ],
+              "stats": {
+                "towerDamage": 0,
+                "damageTaken": 52774,
+                "heroDamage": 21040,
+                "totalGold": 7186
+              }
+            }
+          }
+        ],
+        "objectives": {
+          "lord": {
+            "SRG": 0,
+            "TR": 2
+          },
+          "turtle": {
+            "SRG": 0,
+            "TR": 2
+          },
+          "tower": {
+            "SRG": 2,
+            "TR": 9
+          }
+        }
+      }
+    ],
     "mpl": {
       "slug": "W6D3SRGvsTR",
       "matchId": 319
